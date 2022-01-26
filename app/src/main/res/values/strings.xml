@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">TR-808 Drum Pad Beat maker</string>
+    <string name="textView">bd_short_01</string>
+    <string name="textView2">bd_long_02</string>
+    <string name="textView3">bd_long_03</string>
+    <string name="textView4">rs09</string>
+    <string name="textView5">bd_short_05</string>
+    <string name="textView6">hc03</string>
+    <string name="textView7">lc08</string>
+    <string name="textView8">lt02</string>
+    <string name="textView9">cy04</string>
+    <string name="textView10">mc05</string>
+    <string name="textView11">cb07</string>
+    <string name="textView12">sd09</string>
+    <string name="textView13">bd_long_07</string>
+    <string name="textView14">lc10</string>
+    <string name="textView15">oh09</string>
+    <string name="play">play</string>
+    <string name="end">EXIT</string>
+    <string name="menu10">choose</string>
+    <string name="menu">menu</string>
+
+    <string name="error">This audio file cannot be specified.</string>
+
+    <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
+    <string name="onRequestPermissionsResult2">Permissions is denied.</string>
+
+
+    <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
+
+    <string name="menu5">Watch video ads &amp; hide banner ads</string>
+    <string name="menu5a">Do you want to hide banner ads \nby watching video ads?</string>
+    <string name="menu5b">(It can be hidden until the next time \nit is started.)</string>
+    <string name="menu5c">Video ads have been viewed.</string>
+    <string name="menu6">Do you want to exit?</string>
+
+    <string name="back">back</string>
+
+    <string name="change"><b>Touch the pad to change the pad sound.</b></string>
+    <string name="change2"><b>Play mode</b></string>
+
+    <string name="reset1">Reset the sound settings</string>
+    <string name="reset2">Reset drum pads</string>
+
+    <string name="textView16o">VOLUME</string>
+    <string name="textView17o">PITCH</string>
+    <string name="textView16">V\nO\nL\nU\nM\nE</string>
+    <string name="textView17">P\nI\nT\nC\nH</string>
+
+    <string-array name="spinnerItems">
+        <item>BASS DRUM [BD]</item>
+        <item>HAND CLAP [CP]</item>
+        <item>CLAVES [CL]</item>
+        <item>CLSD HI HAT [CH]</item>
+        <item>CONGA [HC-MC-LC]</item>
+        <item>COWBELL [CB]</item>
+        <item>CYMBAL [CY]</item>
+        <item>MARACAS [MA]</item>
+        <item>OPEN HI HAT [OH]</item>
+        <item>RIMSHOT [RS]</item>
+        <item>SNARE DRUM [SD]</item>
+        <item>TOM [LT-MT-HT]</item>
+        <item>Sample Loops</item>
+        <item>Internal sounds</item>
+        <item>External sounds</item>
+    </string-array>
+
+    <string-array name="spinnerItems2">
+        <item>Play mode ↔ <h1><font color="#FFA630">Change pad sounds</font></h1></item>
+        <item>Metronome Loops</item>
+        <item>Sample Loops</item>
+        <item>External sound Loops</item>
+        <item>Reset drum pads</item>
+    </string-array>
+
+
+</resources>

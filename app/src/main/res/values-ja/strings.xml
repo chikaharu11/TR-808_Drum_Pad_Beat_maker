@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">TR-808 Drum Pad Beat maker</string>
+    <string name="textView">bd_short_01</string>
+    <string name="textView2">bd_long_02</string>
+    <string name="textView3">bd_long_03</string>
+    <string name="textView4">rs09</string>
+    <string name="textView5">bd_short_05</string>
+    <string name="textView6">hc03</string>
+    <string name="textView7">lc08</string>
+    <string name="textView8">lt02</string>
+    <string name="textView9">cy04</string>
+    <string name="textView10">mc05</string>
+    <string name="textView11">cb07</string>
+    <string name="textView12">sd09</string>
+    <string name="textView13">bd_long_07</string>
+    <string name="textView14">lc10</string>
+    <string name="textView15">oh09</string>
+    <string name="play">再生</string>
+    <string name="end">終了する</string>
+    <string name="menu10">選択</string>
+    <string name="menu">メニュー</string>
+
+    <string name="error">このオーディオファイルは指定できません。</string>
+
+    <string name="onRequestPermissionsResult1">権限が付与されました。もう一度押してください。</string>
+    <string name="onRequestPermissionsResult2">権限が拒否されました。</string>
+
+    <string name="READ_REQUEST_CODE2">Musicフォルダ以外の音声ファイルは指定できません。</string>
+
+    <string name="menu5">動画広告を視聴する</string>
+    <string name="menu5a">動画広告を見て、バナー広告を\n非表示にしますか？</string>
+    <string name="menu5b">(次回起動時まで非表示にできます)</string>
+    <string name="menu5c">動画広告は視聴済みです</string>
+    <string name="menu6">終了しますか？</string>
+
+    <string name="back">戻る</string>
+
+    <string name="change"><b>パッドをタッチするとパッド音を変更できます</b></string>
+    <string name="change2"><b>演奏モード</b></string>
+
+    <string name="reset1">サウンドの設定をリセット</string>
+    <string name="reset2">ドラムパッドをリセット</string>
+
+    <string name="textView16o">VOLUME</string>
+    <string name="textView17o">PITCH</string>
+    <string name="textView16">V\nO\nL\nU\nM\nE</string>
+    <string name="textView17">P\nI\nT\nC\nH</string>
+
+    <string-array name="spinnerItems">
+        <item>BASS DRUM [BD]</item>
+        <item>HAND CLAP [CP]</item>
+        <item>CLAVES [CL]</item>
+        <item>CLSD HI HAT [CH]</item>
+        <item>CONGA [HC-MC-LC]</item>
+        <item>COWBELL [CB]</item>
+        <item>CYMBAL [CY]</item>
+        <item>MARACAS [MA]</item>
+        <item>OPEN HI HAT [OH]</item>
+        <item>RIMSHOT [RS]</item>
+        <item>SNARE DRUM [SD]</item>
+        <item>TOM [LT-MT-HT]</item>
+        <item>Sample Loops</item>
+        <item>内部サウンド</item>
+        <item>外部サウンド</item>
+    </string-array>
+
+    <string-array name="spinnerItems2">
+        <item>演奏モード⇔<h1><font color="#FFA630">パッド音の変更</font></h1></item>
+        <item>メトロノーム・ループ</item>
+        <item>サンプル・ループ</item>
+        <item>外部サウンド・ループ</item>
+        <item>ドラムパッドをリセット</item>
+    </string-array>
+
+
+</resources>
