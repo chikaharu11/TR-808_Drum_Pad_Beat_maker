@@ -2382,11 +2382,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lmp.volumeMinus()
             if (count > 0.1f) {
                 count -= 0.1f
-                count = "%.1f".format(count).toFloat()
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
                 }
             }
@@ -2395,11 +2396,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lmp.volumePlus()
             if (count < 1.0f) {
                 count += 0.1f
-                count = "%.1f".format(count).toFloat()
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
                 }
             }
@@ -2408,11 +2410,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lmp.speedDown()
             if (bpm > 0.1f) {
                 bpm -= 0.1f
-                bpm = "%.1f".format(bpm).toFloat()
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
@@ -2424,11 +2427,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lmp.speedUp()
             if (bpm < 6.0f) {
                 bpm += 0.1f
-                bpm = "%.1f".format(bpm).toFloat()
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
@@ -4426,12 +4430,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == RECORD_AUDIO_PERMISSION_REQUEST_CODE) {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
+                stickyImmersiveMode()
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult1,
                         Toast.LENGTH_LONG
                 ).show()
             } else {
+                stickyImmersiveMode()
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult2,
@@ -4442,12 +4448,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE) {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
+                stickyImmersiveMode()
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult1,
                         Toast.LENGTH_LONG
                 ).show()
             } else {
+                stickyImmersiveMode()
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult2,

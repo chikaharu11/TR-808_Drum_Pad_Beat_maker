@@ -5,8 +5,6 @@ import android.media.MediaPlayer
 import android.media.MediaPlayer.OnCompletionListener
 import android.media.PlaybackParams
 import android.net.Uri
-import android.util.Log
-import android.widget.Toast
 
 
 class LoopMediaPlayer(context: Context, resId: Uri) {
@@ -14,15 +12,15 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mResId: Uri? = null
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
-    private var count = 0.5f
-    private var bpm = 1.0f
+    private var count2 = 0.5f
+    private var bpm2 = 1.0f
 
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
         mCurrentPlayer!!.setOnCompletionListener(onCompletionListener)
-        setVolume(count,count)
-        speed(bpm)
+        setVolume(count2,count2)
+        speed(bpm2)
     }
 
     private val onCompletionListener =
@@ -41,19 +39,19 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun volumePlus() {
-        if (count < 1.0f) {
-            count += 0.1f
-            count = "%.1f".format(count).toFloat()
+        if (count2 < 1.0f) {
+            count2 += 0.1f
         }
-        setVolume(count, count)
+        count2 = "%.1f".format(count2).toFloat()
+        setVolume(count2, count2)
     }
 
     fun volumeMinus() {
-        if (count > 0.1f) {
-            count -= 0.1f
-            count = "%.1f".format(count).toFloat()
+        if (count2 > 0.1f) {
+            count2 -= 0.1f
         }
-        setVolume(count,count)
+        count2 = "%.1f".format(count2).toFloat()
+        setVolume(count2,count2)
     }
 
     private fun speed(tempo : Float) {
@@ -63,19 +61,19 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun speedUp() {
-        if (bpm < 6.0f) {
-            bpm += 0.1f
-            bpm = "%.1f".format(bpm).toFloat()
+        if (bpm2 < 6.0f) {
+            bpm2 += 0.1f
         }
-        speed(bpm)
+        bpm2 = "%.1f".format(bpm2).toFloat()
+        speed(bpm2)
     }
 
     fun speedDown() {
-        if (bpm > 0.1f) {
-            bpm -= 0.1f
-            bpm = "%.1f".format(bpm).toFloat()
+        if (bpm2 > 0.1f) {
+            bpm2 -= 0.1f
         }
-        speed(bpm)
+        bpm2 = "%.1f".format(bpm2).toFloat()
+        speed(bpm2)
     }
 
     @Throws(IllegalStateException::class)
