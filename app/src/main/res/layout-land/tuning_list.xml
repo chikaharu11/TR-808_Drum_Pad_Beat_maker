@@ -229,7 +229,7 @@
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <Button
+    <ImageButton
         android:id="@+id/pad1"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -242,7 +242,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus1"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -597,7 +597,7 @@
         app:layout_constraintTop_toTopOf="@+id/volume_plus0"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <ImageButton
         android:id="@+id/pad3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -610,7 +610,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus3"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad4"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -623,7 +623,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus4"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad5"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -636,7 +636,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus5"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad6"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -649,7 +649,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus6"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad7"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -840,7 +840,7 @@
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <Button
+    <ImageButton
         android:id="@+id/pad8"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -853,7 +853,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus8"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad9"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -866,7 +866,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus9"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad10"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -879,7 +879,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus10"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad11"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -892,7 +892,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus11"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad12"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -905,7 +905,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus12"
         tools:ignore="MissingConstraints,TooManyViews"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad13"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -918,7 +918,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus13"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad14"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -931,7 +931,7 @@
         app:layout_constraintEnd_toEndOf="@id/volume_minus14"
         tools:ignore="MissingConstraints"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pad15"
         android:layout_width="0dp"
         android:layout_height="0dp"

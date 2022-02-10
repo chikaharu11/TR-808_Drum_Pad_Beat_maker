@@ -2460,7 +2460,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad1).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad1).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -2468,7 +2468,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad2).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad2).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
@@ -2476,7 +2476,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad3).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad3).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
@@ -2484,7 +2484,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad4).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad4).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
@@ -2492,7 +2492,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad5).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad5).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
@@ -2500,7 +2500,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad6).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad6).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
@@ -2508,7 +2508,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad7).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad7).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
@@ -2516,7 +2516,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad8).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad8).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
@@ -2524,7 +2524,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad9).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad9).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
@@ -2532,7 +2532,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad10).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad10).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
@@ -2540,7 +2540,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad11).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad11).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
@@ -2548,7 +2548,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad12).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad12).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
@@ -2556,7 +2556,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad13).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad13).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
@@ -2564,7 +2564,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad14).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad14).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
@@ -2572,7 +2572,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.pad15).setOnTouchListener { _, event ->
+        findViewById<ImageButton>(R.id.pad15).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
