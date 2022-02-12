@@ -330,10 +330,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad1"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus1"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -343,10 +343,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/volume_minus1"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad1"
+        app:layout_constraintTop_toTopOf="@+id/pad1"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -356,10 +356,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toEndOf="@id/pad1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus1"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus1"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -369,10 +369,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/tempo_minus1"
         app:layout_constraintEnd_toEndOf="@id/pad1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus1"
+        app:layout_constraintTop_toTopOf="@+id/pad1"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -382,10 +382,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad2"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad2"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus2"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -395,10 +395,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/volume_minus2"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad2"
+        app:layout_constraintTop_toTopOf="@+id/pad2"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -408,10 +408,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad2"
         app:layout_constraintEnd_toEndOf="@id/pad2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus2"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus2"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -421,10 +421,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/tempo_minus2"
         app:layout_constraintEnd_toEndOf="@id/pad2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus2"
+        app:layout_constraintTop_toTopOf="@+id/pad2"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -434,10 +434,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad3"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad3"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus3"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -447,10 +447,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/volume_minus3"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad3"
+        app:layout_constraintTop_toTopOf="@+id/pad3"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -460,10 +460,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad3"
         app:layout_constraintEnd_toEndOf="@id/pad3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus3"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus3"
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -473,10 +473,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/tempo_minus3"
         app:layout_constraintEnd_toEndOf="@id/pad3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus3"
+        app:layout_constraintTop_toTopOf="@+id/pad3"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -1113,6 +1113,7 @@
         android:lines="1"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
         
         android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/loop"
@@ -1122,227 +1123,242 @@
 
     <TextView
         android:id="@+id/padText1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
         
         app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toEndOf="@+id/pad1"
         app:layout_constraintStart_toStartOf="@+id/pad1"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad2"
         app:layout_constraintEnd_toEndOf="@+id/pad2"
         app:layout_constraintStart_toStartOf="@+id/pad2"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad3"
         app:layout_constraintEnd_toEndOf="@+id/pad3"
         app:layout_constraintStart_toStartOf="@+id/pad3"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad4"
         app:layout_constraintEnd_toEndOf="@+id/pad4"
         app:layout_constraintStart_toStartOf="@+id/pad4"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad5"
         app:layout_constraintEnd_toEndOf="@+id/pad5"
         app:layout_constraintStart_toStartOf="@+id/pad5"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad6"
         app:layout_constraintEnd_toEndOf="@+id/pad6"
         app:layout_constraintStart_toStartOf="@+id/pad6"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad7"
         app:layout_constraintEnd_toEndOf="@+id/pad7"
         app:layout_constraintStart_toStartOf="@+id/pad7"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad8"
         app:layout_constraintEnd_toEndOf="@+id/pad8"
         app:layout_constraintStart_toStartOf="@+id/pad8"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText9"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad9"
         app:layout_constraintEnd_toEndOf="@+id/pad9"
         app:layout_constraintStart_toStartOf="@+id/pad9"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText10"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad10"
         app:layout_constraintEnd_toEndOf="@+id/pad10"
         app:layout_constraintStart_toStartOf="@+id/pad10"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText11"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad11"
         app:layout_constraintEnd_toEndOf="@+id/pad11"
         app:layout_constraintStart_toStartOf="@+id/pad11"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText12"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad12"
         app:layout_constraintEnd_toEndOf="@+id/pad12"
         app:layout_constraintStart_toStartOf="@+id/pad12"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText13"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad13"
         app:layout_constraintEnd_toEndOf="@+id/pad13"
         app:layout_constraintStart_toStartOf="@+id/pad13"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText14"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad14"
         app:layout_constraintEnd_toEndOf="@+id/pad14"
         app:layout_constraintStart_toStartOf="@+id/pad14"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/padText15"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="6"
+        
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="@+id/pad15"
         app:layout_constraintEnd_toEndOf="@+id/pad15"
         app:layout_constraintStart_toStartOf="@+id/pad15"
-
-         />
+        android:paddingBottom="2dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
