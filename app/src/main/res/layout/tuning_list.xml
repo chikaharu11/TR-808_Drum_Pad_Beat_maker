@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5A5A66">
+    android:background="#5A5A66"
+    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck">
 
     <TextView
         android:id="@+id/textView17"
@@ -38,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus0"
@@ -48,7 +49,7 @@
         app:layout_constraintStart_toEndOf="@+id/volume_minus0"
         app:layout_constraintTop_toTopOf="@+id/volume_minus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus0"
@@ -58,7 +59,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus0"
@@ -68,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/volume_minus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/loop"
@@ -81,7 +82,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus0"
         app:layout_constraintStart_toEndOf="@+id/volume_plus0"
         app:layout_constraintTop_toTopOf="@+id/volume_minus0"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad1"
@@ -96,7 +97,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad4"
         app:layout_constraintEnd_toStartOf="@+id/pad2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/loop"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad2"
@@ -111,7 +113,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad5"
         app:layout_constraintEnd_toStartOf="@+id/pad3"
         app:layout_constraintStart_toEndOf="@+id/pad1"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/loop"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad3"
@@ -126,7 +129,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pad2"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/loop"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad4"
@@ -141,7 +145,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad7"
         app:layout_constraintEnd_toStartOf="@+id/pad5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pad1" />
+        app:layout_constraintTop_toBottomOf="@+id/pad1"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad5"
@@ -156,7 +161,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad8"
         app:layout_constraintEnd_toStartOf="@+id/pad6"
         app:layout_constraintStart_toEndOf="@+id/pad4"
-        app:layout_constraintTop_toBottomOf="@+id/pad2" />
+        app:layout_constraintTop_toBottomOf="@+id/pad2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad6"
@@ -171,7 +177,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pad5"
-        app:layout_constraintTop_toBottomOf="@+id/pad3" />
+        app:layout_constraintTop_toBottomOf="@+id/pad3"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad7"
@@ -186,7 +193,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad10"
         app:layout_constraintEnd_toStartOf="@+id/pad8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pad4" />
+        app:layout_constraintTop_toBottomOf="@+id/pad4"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad8"
@@ -201,7 +209,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad11"
         app:layout_constraintEnd_toStartOf="@+id/pad9"
         app:layout_constraintStart_toEndOf="@+id/pad7"
-        app:layout_constraintTop_toBottomOf="@+id/pad5" />
+        app:layout_constraintTop_toBottomOf="@+id/pad5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad9"
@@ -216,7 +225,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pad8"
-        app:layout_constraintTop_toBottomOf="@+id/pad6" />
+        app:layout_constraintTop_toBottomOf="@+id/pad6"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad10"
@@ -231,7 +241,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad13"
         app:layout_constraintEnd_toStartOf="@+id/pad11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pad7" />
+        app:layout_constraintTop_toBottomOf="@+id/pad7"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad11"
@@ -246,7 +257,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad14"
         app:layout_constraintEnd_toStartOf="@+id/pad12"
         app:layout_constraintStart_toEndOf="@+id/pad10"
-        app:layout_constraintTop_toBottomOf="@+id/pad8" />
+        app:layout_constraintTop_toBottomOf="@+id/pad8"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad12"
@@ -261,7 +273,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pad15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pad11"
-        app:layout_constraintTop_toBottomOf="@+id/pad9" />
+        app:layout_constraintTop_toBottomOf="@+id/pad9"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad13"
@@ -276,7 +289,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pad14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pad10" />
+        app:layout_constraintTop_toBottomOf="@+id/pad10"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad14"
@@ -291,7 +305,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pad15"
         app:layout_constraintStart_toEndOf="@+id/pad13"
-        app:layout_constraintTop_toBottomOf="@+id/pad11" />
+        app:layout_constraintTop_toBottomOf="@+id/pad11"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pad15"
@@ -306,7 +321,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pad14"
-        app:layout_constraintTop_toBottomOf="@+id/pad12" />
+        app:layout_constraintTop_toBottomOf="@+id/pad12"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus1"
@@ -314,12 +330,12 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad1"
+        app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad1"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus1"
@@ -327,12 +343,12 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/volume_minus1"
+        app:layout_constraintBottom_toTopOf="@+id/volume_minus1"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad1"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus1"
@@ -340,12 +356,12 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@id/pad1"
+        app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toEndOf="@id/pad1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus1"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus1"
@@ -353,108 +369,116 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@id/tempo_minus1"
+        app:layout_constraintBottom_toTopOf="@+id/tempo_minus1"
         app:layout_constraintEnd_toEndOf="@id/pad1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus1"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/pad2"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad2"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/volume_minus2"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad2"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/pad2"
         app:layout_constraintEnd_toEndOf="@id/pad2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus2"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/tempo_minus2"
         app:layout_constraintEnd_toEndOf="@id/pad2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus2"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/pad3"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad3"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/volume_minus3"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad3"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/pad3"
         app:layout_constraintEnd_toEndOf="@id/pad3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus3"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/tempo_minus3"
         app:layout_constraintEnd_toEndOf="@id/pad3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus3"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus4"
@@ -467,7 +491,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad4"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus4"
@@ -480,7 +504,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad4"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus4"
@@ -493,7 +517,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus4"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus4"
@@ -506,7 +530,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus4"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus5"
@@ -519,7 +543,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad5"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus5"
@@ -532,7 +556,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad5"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus5"
@@ -545,7 +569,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus5"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus5"
@@ -558,7 +582,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus5"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus6"
@@ -571,7 +595,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad6"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus6"
@@ -584,7 +608,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad6"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus6"
@@ -597,7 +621,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus6"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus6"
@@ -610,7 +634,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus6"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus7"
@@ -623,7 +647,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad7"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus7"
@@ -636,7 +660,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad7"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus7"
@@ -649,7 +673,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus7"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus7"
@@ -662,7 +686,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus7"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus8"
@@ -675,7 +699,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad8"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus8"
@@ -688,7 +712,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad8"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus8"
@@ -701,7 +725,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus8"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus8"
@@ -714,7 +738,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus8"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus9"
@@ -727,7 +751,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad9"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus9"
@@ -740,7 +764,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad9"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus9"
@@ -753,7 +777,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus9"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus9"
@@ -766,7 +790,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus9"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus10"
@@ -779,7 +803,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad10"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus10"
@@ -792,7 +816,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad10"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus10"
@@ -805,7 +829,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus10"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus10"
@@ -818,7 +842,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus10"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus11"
@@ -831,7 +855,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad11"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus11"
@@ -844,7 +868,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad11"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus11"
@@ -857,7 +881,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus11"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus11"
@@ -870,7 +894,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus11"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus12"
@@ -883,7 +907,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad12"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus12"
@@ -896,7 +920,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad12"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus12"
@@ -909,7 +933,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus12"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus12"
@@ -922,7 +946,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus12"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus13"
@@ -935,7 +959,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad13"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus13"
@@ -948,7 +972,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad13"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus13"
@@ -961,7 +985,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus13"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus13"
@@ -974,7 +998,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus13"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus14"
@@ -987,7 +1011,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad14"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus14"
@@ -1000,7 +1024,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad14"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus14"
@@ -1013,7 +1037,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus14"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus14"
@@ -1026,7 +1050,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus14"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_minus15"
@@ -1039,7 +1063,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad15"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,TooManyViews,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus15"
@@ -1052,7 +1076,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad15"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus15"
@@ -1065,7 +1089,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus15"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus15"
@@ -1078,7 +1102,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus15"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/padText0"
@@ -1089,7 +1113,7 @@
         android:lines="1"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+        
         android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/loop"
         app:layout_constraintEnd_toEndOf="@+id/loop"
@@ -1104,12 +1128,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+        
         app:layout_constraintBottom_toBottomOf="@+id/pad1"
         app:layout_constraintEnd_toEndOf="@+id/pad1"
         app:layout_constraintStart_toStartOf="@+id/pad1"
-        app:layout_constraintTop_toTopOf="@+id/pad1"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText2"
@@ -1119,12 +1143,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad2"
         app:layout_constraintEnd_toEndOf="@+id/pad2"
         app:layout_constraintStart_toStartOf="@+id/pad2"
-        app:layout_constraintTop_toTopOf="@+id/pad2"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText3"
@@ -1134,12 +1158,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad3"
         app:layout_constraintEnd_toEndOf="@+id/pad3"
         app:layout_constraintStart_toStartOf="@+id/pad3"
-        app:layout_constraintTop_toTopOf="@+id/pad3"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText4"
@@ -1149,12 +1173,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad4"
         app:layout_constraintEnd_toEndOf="@+id/pad4"
         app:layout_constraintStart_toStartOf="@+id/pad4"
-        app:layout_constraintTop_toTopOf="@+id/pad4"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText5"
@@ -1164,12 +1188,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad5"
         app:layout_constraintEnd_toEndOf="@+id/pad5"
         app:layout_constraintStart_toStartOf="@+id/pad5"
-        app:layout_constraintTop_toTopOf="@+id/pad5"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText6"
@@ -1179,12 +1203,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad6"
         app:layout_constraintEnd_toEndOf="@+id/pad6"
         app:layout_constraintStart_toStartOf="@+id/pad6"
-        app:layout_constraintTop_toTopOf="@+id/pad6"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText7"
@@ -1194,12 +1218,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad7"
         app:layout_constraintEnd_toEndOf="@+id/pad7"
         app:layout_constraintStart_toStartOf="@+id/pad7"
-        app:layout_constraintTop_toTopOf="@+id/pad7"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText8"
@@ -1209,12 +1233,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad8"
         app:layout_constraintEnd_toEndOf="@+id/pad8"
         app:layout_constraintStart_toStartOf="@+id/pad8"
-        app:layout_constraintTop_toTopOf="@+id/pad8"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText9"
@@ -1224,12 +1248,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad9"
         app:layout_constraintEnd_toEndOf="@+id/pad9"
         app:layout_constraintStart_toStartOf="@+id/pad9"
-        app:layout_constraintTop_toTopOf="@+id/pad9"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText10"
@@ -1239,12 +1263,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad10"
         app:layout_constraintEnd_toEndOf="@+id/pad10"
         app:layout_constraintStart_toStartOf="@+id/pad10"
-        app:layout_constraintTop_toTopOf="@+id/pad10"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText11"
@@ -1254,12 +1278,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad11"
         app:layout_constraintEnd_toEndOf="@+id/pad11"
         app:layout_constraintStart_toStartOf="@+id/pad11"
-        app:layout_constraintTop_toTopOf="@+id/pad11"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText12"
@@ -1269,12 +1293,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad12"
         app:layout_constraintEnd_toEndOf="@+id/pad12"
         app:layout_constraintStart_toStartOf="@+id/pad12"
-        app:layout_constraintTop_toTopOf="@+id/pad12"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText13"
@@ -1284,12 +1308,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad13"
         app:layout_constraintEnd_toEndOf="@+id/pad13"
         app:layout_constraintStart_toStartOf="@+id/pad13"
-        app:layout_constraintTop_toTopOf="@+id/pad13"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText14"
@@ -1299,12 +1323,12 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad14"
         app:layout_constraintEnd_toEndOf="@+id/pad14"
         app:layout_constraintStart_toStartOf="@+id/pad14"
-        app:layout_constraintTop_toTopOf="@+id/pad14"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
     <TextView
         android:id="@+id/padText15"
@@ -1314,11 +1338,11 @@
         android:gravity="center"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/pad15"
         app:layout_constraintEnd_toEndOf="@+id/pad15"
         app:layout_constraintStart_toStartOf="@+id/pad15"
-        app:layout_constraintTop_toTopOf="@+id/pad15"
-        app:layout_constraintVertical_bias="0.05" />
+
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
