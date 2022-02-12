@@ -589,6 +589,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.VISIBLE
                     binding.textView14.visibility = View.VISIBLE
                     binding.textView15.visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.VISIBLE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x3" -> {
@@ -631,6 +644,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x3" -> {
@@ -673,6 +699,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "5x2" -> {
@@ -715,6 +754,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView9.visibility = View.GONE
                     binding.textView12.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x2" -> {
@@ -757,6 +809,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x2" -> {
@@ -799,6 +864,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "2x2" -> {
@@ -841,6 +919,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "2x1" -> {
@@ -883,6 +974,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad2).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad5).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad7).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad8).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
+                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
             }
