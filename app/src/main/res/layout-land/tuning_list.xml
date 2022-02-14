@@ -89,12 +89,10 @@
 
     <TextView
         android:id="@+id/padText0"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:ellipsize="middle"
         android:gravity="center"
-        android:lines="1"
-        android:rotation="-90"
         android:text="@string/s1"
         android:textColor="#000000"
         android:textStyle="bold"
