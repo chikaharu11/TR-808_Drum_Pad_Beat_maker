@@ -304,7 +304,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView13.text = "tr_909_cymbal_01".replace("_"," ").uppercase()
                 binding.textView14.text = "tr_909_cymbal_02".replace("_"," ").uppercase()
                 binding.textView15.text = "clap_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText0).text = "l\no\no\np"
+                findViewById<TextView>(R.id.padText0).text = "loop"
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
                 findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = "open_hi_hat_01".replace("_"," ").uppercase()
                 findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
@@ -2494,7 +2494,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n" + "l\no\no\np" + "\n" + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
                 }
             }
         }
@@ -2508,7 +2508,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n" + "l\no\no\np" + "\n" + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
                 }
             }
         }
@@ -2522,7 +2522,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n" + "l\no\no\np" + "\n" + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
                 invalidateOptionsMenu()
@@ -2539,7 +2539,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n" + "l\no\no\np" + "\n" + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
                 invalidateOptionsMenu()
