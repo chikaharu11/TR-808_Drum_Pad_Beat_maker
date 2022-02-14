@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="@string/textView16"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@id/volume_plus0"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/volume_plus0"
         tools:ignore="MissingConstraints" />
@@ -27,7 +27,7 @@
         android:text="@string/textView17"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/tempo_minus0"
-        app:layout_constraintEnd_toStartOf="@id/tempo_plus0"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -35,22 +35,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
-        app:layout_constraintEnd_toEndOf="@id/volume_plus0"
+        app:layout_constraintEnd_toEndOf="@+id/volume_plus0"
         app:layout_constraintStart_toStartOf="@+id/volume_plus0"
         app:layout_constraintTop_toBottomOf="@+id/volume_plus0"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
-        app:layout_constraintEnd_toStartOf="@+id/pad1"
+        app:layout_constraintEnd_toStartOf="@+id/include_view"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus0"
@@ -58,10 +58,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pad3"
+        app:layout_constraintEnd_toStartOf="@+id/include_view3"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus0"
@@ -69,10 +69,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#e2e3e3"
         app:layout_constraintBottom_toTopOf="@+id/tempo_minus0"
-        app:layout_constraintEnd_toEndOf="@id/tempo_minus0"
+        app:layout_constraintEnd_toEndOf="@+id/tempo_minus0"
         app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/loop"
@@ -81,1242 +81,177 @@
         android:backgroundTint="#e2e3e3"
         android:ellipsize="middle"
         android:lines="1"
-        app:layout_constraintTop_toBottomOf="@id/volume_minus0"
-        app:layout_constraintBottom_toTopOf="@id/tempo_plus0"
-        app:layout_constraintStart_toStartOf="@id/volume_minus0"
-        app:layout_constraintEnd_toEndOf="@id/volume_minus0"
-        tools:ignore="MissingConstraints"/>
-
-    <ImageButton
-        android:id="@+id/pad1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/pad2"
-        app:layout_constraintEnd_toStartOf="@+id/pad4"
-        app:layout_constraintStart_toEndOf="@id/loop"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/pad3"
-        app:layout_constraintEnd_toStartOf="@+id/pad5"
-        app:layout_constraintStart_toEndOf="@id/loop"
-        app:layout_constraintTop_toBottomOf="@+id/pad1"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pad6"
-        app:layout_constraintStart_toEndOf="@id/loop"
-        app:layout_constraintTop_toBottomOf="@+id/pad2"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad5"
-        app:layout_constraintEnd_toStartOf="@id/pad7"
-        app:layout_constraintStart_toEndOf="@id/pad1"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad6"
-        app:layout_constraintEnd_toStartOf="@id/pad8"
-        app:layout_constraintStart_toEndOf="@id/pad2"
-        app:layout_constraintTop_toBottomOf="@id/pad4"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pad9"
-        app:layout_constraintStart_toEndOf="@id/pad3"
-        app:layout_constraintTop_toBottomOf="@id/pad5"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad8"
-        app:layout_constraintEnd_toStartOf="@id/pad10"
-        app:layout_constraintStart_toEndOf="@id/pad4"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad9"
-        app:layout_constraintEnd_toStartOf="@id/pad11"
-        app:layout_constraintStart_toEndOf="@id/pad5"
-        app:layout_constraintTop_toBottomOf="@id/pad7"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pad12"
-        app:layout_constraintStart_toEndOf="@id/pad6"
-        app:layout_constraintTop_toBottomOf="@id/pad8"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad11"
-        app:layout_constraintEnd_toStartOf="@id/pad13"
-        app:layout_constraintStart_toEndOf="@id/pad7"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad12"
-        app:layout_constraintEnd_toStartOf="@id/pad14"
-        app:layout_constraintStart_toEndOf="@id/pad8"
-        app:layout_constraintTop_toBottomOf="@id/pad10"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pad15"
-        app:layout_constraintStart_toEndOf="@id/pad9"
-        app:layout_constraintTop_toBottomOf="@id/pad11"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad13"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/pad10"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad14"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/pad15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/pad11"
-        app:layout_constraintTop_toBottomOf="@id/pad13"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pad15"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/pad12"
-        app:layout_constraintTop_toBottomOf="@id/pad14"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad1"
-        app:layout_constraintTop_toBottomOf="@+id/volume_plus1"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad1"
-        app:layout_constraintTop_toTopOf="@+id/pad1"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus1"
-        app:layout_constraintTop_toBottomOf="@+id/tempo_plus1"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus1"
-        app:layout_constraintTop_toTopOf="@+id/pad1"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad2"
-        app:layout_constraintTop_toBottomOf="@+id/volume_plus2"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad2"
-        app:layout_constraintTop_toTopOf="@+id/pad2"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus2"
-        app:layout_constraintTop_toBottomOf="@+id/tempo_plus2"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus2"
-        app:layout_constraintTop_toTopOf="@+id/pad2"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad3"
-        app:layout_constraintTop_toBottomOf="@+id/volume_plus3"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad3"
-        app:layout_constraintTop_toTopOf="@+id/pad3"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus3"
-        app:layout_constraintTop_toBottomOf="@+id/tempo_plus3"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintEnd_toEndOf="@id/pad3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus3"
-        app:layout_constraintTop_toTopOf="@+id/pad3"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus4"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad4"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad4"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad4"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus4"
-        app:layout_constraintEnd_toEndOf="@id/pad4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus4"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad4"
-        app:layout_constraintEnd_toEndOf="@id/pad4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus4"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus5"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad5"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad5"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad5"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus5"
-        app:layout_constraintEnd_toEndOf="@id/pad5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus5"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad5"
-        app:layout_constraintEnd_toEndOf="@id/pad5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus5"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus6"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad6"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad6"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad6"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus6"
-        app:layout_constraintEnd_toEndOf="@id/pad6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus6"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad6"
-        app:layout_constraintEnd_toEndOf="@id/pad6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus6"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus7"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad7"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad7"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad7"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus7"
-        app:layout_constraintEnd_toEndOf="@id/pad7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus7"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad7"
-        app:layout_constraintEnd_toEndOf="@id/pad7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus7"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus8"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad8"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad8"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad8"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus8"
-        app:layout_constraintEnd_toEndOf="@id/pad8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus8"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad8"
-        app:layout_constraintEnd_toEndOf="@id/pad8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus8"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus9"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad9"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad9"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad9"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus9"
-        app:layout_constraintEnd_toEndOf="@id/pad9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus9"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad9"
-        app:layout_constraintEnd_toEndOf="@id/pad9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus9"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus10"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad10"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad10"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad10"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus10"
-        app:layout_constraintEnd_toEndOf="@id/pad10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus10"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad10"
-        app:layout_constraintEnd_toEndOf="@id/pad10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus10"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus11"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad11"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad11"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad11"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus11"
-        app:layout_constraintEnd_toEndOf="@id/pad11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus11"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad11"
-        app:layout_constraintEnd_toEndOf="@id/pad11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus11"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus12"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad12"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad12"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad12"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus12"
-        app:layout_constraintEnd_toEndOf="@id/pad12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus12"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad12"
-        app:layout_constraintEnd_toEndOf="@id/pad12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus12"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus13"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad13"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad13"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad13"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus13"
-        app:layout_constraintEnd_toEndOf="@id/pad13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus13"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad13"
-        app:layout_constraintEnd_toEndOf="@id/pad13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus13"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus14"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad14"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad14"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad14"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus14"
-        app:layout_constraintEnd_toEndOf="@id/pad14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus14"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad14"
-        app:layout_constraintEnd_toEndOf="@id/pad14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus14"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_minus15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/volume_plus15"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad15"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,TooManyViews,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad15"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/pad15"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toBottomOf="@id/tempo_plus15"
-        app:layout_constraintEnd_toEndOf="@id/pad15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus15"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-
-        app:layout_constraintTop_toTopOf="@id/pad15"
-        app:layout_constraintEnd_toEndOf="@id/pad15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus15"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintBottom_toTopOf="@+id/tempo_plus0"
+        app:layout_constraintEnd_toEndOf="@+id/volume_minus0"
+        app:layout_constraintStart_toStartOf="@+id/volume_minus0"
+        app:layout_constraintTop_toBottomOf="@+id/volume_minus0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/padText0"
         android:layout_width="100dp"
         android:layout_height="0dp"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:lines="1"
+        android:rotation="-90"
         android:text="@string/s1"
         android:textColor="#000000"
-        android:ellipsize="middle"
-        android:lines="1"
         android:textStyle="bold"
-        android:rotation="-90"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/volume_minus0"
-        app:layout_constraintBottom_toTopOf="@id/tempo_plus0"
-        app:layout_constraintStart_toStartOf="@id/volume_minus0"
-        app:layout_constraintEnd_toEndOf="@id/volume_minus0"
-        android:translationZ="10dp" />
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tempo_plus0"
+        app:layout_constraintEnd_toEndOf="@+id/volume_minus0"
+        app:layout_constraintStart_toStartOf="@+id/volume_minus0"
+        app:layout_constraintTop_toBottomOf="@+id/volume_minus0" />
 
-    <TextView
-        android:id="@+id/padText1"
+    <include
+        android:id="@+id/include_view"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view2"
+        app:layout_constraintEnd_toStartOf="@+id/include_view4"
+        app:layout_constraintStart_toEndOf="@+id/loop"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad1"
-        app:layout_constraintEnd_toEndOf="@+id/pad1"
-        app:layout_constraintStart_toStartOf="@+id/pad1"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText2"
+    <include
+        android:id="@+id/include_view2"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view3"
+        app:layout_constraintEnd_toStartOf="@+id/include_view5"
+        app:layout_constraintStart_toEndOf="@+id/loop"
+        app:layout_constraintTop_toBottomOf="@+id/include_view"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad2"
-        app:layout_constraintEnd_toEndOf="@+id/pad2"
-        app:layout_constraintStart_toStartOf="@+id/pad2"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText3"
+    <include
+        android:id="@+id/include_view3"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_view6"
+        app:layout_constraintStart_toEndOf="@+id/loop"
+        app:layout_constraintTop_toBottomOf="@+id/include_view2"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad3"
-        app:layout_constraintEnd_toEndOf="@+id/pad3"
-        app:layout_constraintStart_toStartOf="@+id/pad3"
-        android:paddingBottom="2dp"
-        tools:ignore="TooManyViews" />
-
-    <TextView
-        android:id="@+id/padText4"
+    <include
+        android:id="@+id/include_view4"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view5"
+        app:layout_constraintEnd_toStartOf="@+id/include_view7"
+        app:layout_constraintStart_toEndOf="@+id/include_view"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad4"
-        app:layout_constraintEnd_toEndOf="@+id/pad4"
-        app:layout_constraintStart_toStartOf="@+id/pad4"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText5"
+    <include
+        android:id="@+id/include_view5"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view6"
+        app:layout_constraintEnd_toStartOf="@+id/include_view8"
+        app:layout_constraintStart_toEndOf="@+id/include_view2"
+        app:layout_constraintTop_toBottomOf="@+id/include_view4"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad5"
-        app:layout_constraintEnd_toEndOf="@+id/pad5"
-        app:layout_constraintStart_toStartOf="@+id/pad5"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText6"
+    <include
+        android:id="@+id/include_view6"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_view9"
+        app:layout_constraintStart_toEndOf="@+id/include_view3"
+        app:layout_constraintTop_toBottomOf="@+id/include_view5"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad6"
-        app:layout_constraintEnd_toEndOf="@+id/pad6"
-        app:layout_constraintStart_toStartOf="@+id/pad6"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText7"
+    <include
+        android:id="@+id/include_view7"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view8"
+        app:layout_constraintEnd_toStartOf="@+id/include_view10"
+        app:layout_constraintStart_toEndOf="@+id/include_view4"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad7"
-        app:layout_constraintEnd_toEndOf="@+id/pad7"
-        app:layout_constraintStart_toStartOf="@+id/pad7"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText8"
+    <include
+        android:id="@+id/include_view8"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view9"
+        app:layout_constraintEnd_toStartOf="@+id/include_view11"
+        app:layout_constraintStart_toEndOf="@+id/include_view5"
+        app:layout_constraintTop_toBottomOf="@+id/include_view7"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad8"
-        app:layout_constraintEnd_toEndOf="@+id/pad8"
-        app:layout_constraintStart_toStartOf="@+id/pad8"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText9"
+    <include
+        android:id="@+id/include_view9"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_view12"
+        app:layout_constraintStart_toEndOf="@+id/include_view6"
+        app:layout_constraintTop_toBottomOf="@+id/include_view8"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad9"
-        app:layout_constraintEnd_toEndOf="@+id/pad9"
-        app:layout_constraintStart_toStartOf="@+id/pad9"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText10"
+    <include
+        android:id="@+id/include_view10"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view11"
+        app:layout_constraintEnd_toStartOf="@+id/include_view13"
+        app:layout_constraintStart_toEndOf="@+id/include_view7"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad10"
-        app:layout_constraintEnd_toEndOf="@+id/pad10"
-        app:layout_constraintStart_toStartOf="@+id/pad10"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText11"
+    <include
+        android:id="@+id/include_view11"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view12"
+        app:layout_constraintEnd_toStartOf="@+id/include_view14"
+        app:layout_constraintStart_toEndOf="@+id/include_view8"
+        app:layout_constraintTop_toBottomOf="@+id/include_view10"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad11"
-        app:layout_constraintEnd_toEndOf="@+id/pad11"
-        app:layout_constraintStart_toStartOf="@+id/pad11"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText12"
+    <include
+        android:id="@+id/include_view12"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_view15"
+        app:layout_constraintStart_toEndOf="@+id/include_view9"
+        app:layout_constraintTop_toBottomOf="@+id/include_view11"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad12"
-        app:layout_constraintEnd_toEndOf="@+id/pad12"
-        app:layout_constraintStart_toStartOf="@+id/pad12"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText13"
+    <include
+        android:id="@+id/include_view13"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/include_view10"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad13"
-        app:layout_constraintEnd_toEndOf="@+id/pad13"
-        app:layout_constraintStart_toStartOf="@+id/pad13"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText14"
+    <include
+        android:id="@+id/include_view14"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_view15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/include_view11"
+        app:layout_constraintTop_toBottomOf="@+id/include_view13"/>
 
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad14"
-        app:layout_constraintEnd_toEndOf="@+id/pad14"
-        app:layout_constraintStart_toStartOf="@+id/pad14"
-        android:paddingBottom="2dp"
-        />
-
-    <TextView
-        android:id="@+id/padText15"
+    <include
+        android:id="@+id/include_view15"
+        layout="@layout/tuning_pad"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        android:gravity="center"
-        android:text="@string/s1"
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="@+id/pad15"
-        app:layout_constraintEnd_toEndOf="@+id/pad15"
-        app:layout_constraintStart_toStartOf="@+id/pad15"
-        android:paddingBottom="2dp"
-        />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/include_view12"
+        app:layout_constraintTop_toBottomOf="@+id/include_view14"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

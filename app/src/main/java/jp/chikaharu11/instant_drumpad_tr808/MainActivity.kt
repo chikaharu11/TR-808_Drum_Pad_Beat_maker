@@ -212,7 +212,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var adCheck = 0
 
 
-    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         initAdMob()
         loadAdMob()
         loadRewardedAd()
-
+        
         val orientation = resources.configuration.orientation
         when (orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
@@ -242,21 +242,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView14.text = "high_conga_01".replace("_"," ").uppercase()
                 binding.textView15.text = "TR-8_rimshot_03".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText0).text = actionTitle
-                findViewById<TextView>(R.id.padText1).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText2).text = "cowbell_01b".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText3).text = "TR-909_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText4).text = "open_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText5).text = "clap_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText6).text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText7).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText8).text = "high_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText9).text = "mid_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText10).text = "snare_drum_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText11).text = "bass_drum_short_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText12).text = "low_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText13).text = "claves_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText14).text = "high_conga_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText15).text = "TR-8_rimshot_03".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = "cowbell_01b".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = "TR-909_cymbal_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = "open_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = "clap_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = "TR-909_cymbal_02".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = "high_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = "mid_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = "snare_drum_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = "bass_drum_short_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = "low_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = "claves_02".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = "high_conga_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = "TR-8_rimshot_03".replace("_"," ").uppercase()
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 mpDuration = 320
@@ -305,21 +305,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView14.text = "tr_909_cymbal_02".replace("_"," ").uppercase()
                 binding.textView15.text = "clap_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText0).text = actionTitle
-                findViewById<TextView>(R.id.padText1).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText2).text = "open_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText3).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText4).text = "cowbell_01b".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText5).text = "low_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText6).text = "snare_drum_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText7).text = "tr_8_rimshot_03".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText8).text = "mid_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText9).text = "bass_drum_short_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText10).text = "claves_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText11).text = "high_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText12).text = "high_conga_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText13).text = "tr_909_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText14).text = "tr_909_cymbal_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText15).text = "clap_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = "open_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = "cowbell_01b".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = "low_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = "snare_drum_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = "tr_8_rimshot_03".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = "mid_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = "bass_drum_short_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = "claves_02".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = "high_tom_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = "high_conga_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = "tr_909_cymbal_01".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = "tr_909_cymbal_02".replace("_"," ").uppercase()
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = "clap_01".replace("_"," ").uppercase()
             }
             Configuration.ORIENTATION_SQUARE -> {
                 TODO()
@@ -395,21 +395,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
                     findViewById<TextView>(R.id.padText0).text = actionTitle
-                    findViewById<TextView>(R.id.padText1).text = padText1
-                    findViewById<TextView>(R.id.padText2).text = padText2
-                    findViewById<TextView>(R.id.padText3).text = padText3
-                    findViewById<TextView>(R.id.padText4).text = padText4
-                    findViewById<TextView>(R.id.padText5).text = padText5
-                    findViewById<TextView>(R.id.padText6).text = padText6
-                    findViewById<TextView>(R.id.padText7).text = padText7
-                    findViewById<TextView>(R.id.padText8).text = padText8
-                    findViewById<TextView>(R.id.padText9).text = padText9
-                    findViewById<TextView>(R.id.padText10).text = padText10
-                    findViewById<TextView>(R.id.padText11).text = padText11
-                    findViewById<TextView>(R.id.padText12).text = padText12
-                    findViewById<TextView>(R.id.padText13).text = padText13
-                    findViewById<TextView>(R.id.padText14).text = padText14
-                    findViewById<TextView>(R.id.padText15).text = padText15
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
                     Toast.makeText(applicationContext, R.string.reset1, Toast.LENGTH_LONG).show()
                 }
@@ -490,21 +490,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
                     findViewById<TextView>(R.id.padText0).text = actionTitle
-                    findViewById<TextView>(R.id.padText1).text = padText1
-                    findViewById<TextView>(R.id.padText2).text = padText2
-                    findViewById<TextView>(R.id.padText3).text = padText3
-                    findViewById<TextView>(R.id.padText4).text = padText4
-                    findViewById<TextView>(R.id.padText5).text = padText5
-                    findViewById<TextView>(R.id.padText6).text = padText6
-                    findViewById<TextView>(R.id.padText7).text = padText7
-                    findViewById<TextView>(R.id.padText8).text = padText8
-                    findViewById<TextView>(R.id.padText9).text = padText9
-                    findViewById<TextView>(R.id.padText10).text = padText10
-                    findViewById<TextView>(R.id.padText11).text = padText11
-                    findViewById<TextView>(R.id.padText12).text = padText12
-                    findViewById<TextView>(R.id.padText13).text = padText13
-                    findViewById<TextView>(R.id.padText14).text = padText14
-                    findViewById<TextView>(R.id.padText15).text = padText15
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
                     Toast.makeText(applicationContext, R.string.reset1, Toast.LENGTH_LONG).show()
                 }
@@ -589,19 +589,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.VISIBLE
                     binding.textView14.visibility = View.VISIBLE
                     binding.textView15.visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x3" -> {
@@ -644,19 +644,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x3" -> {
@@ -699,19 +699,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "5x2" -> {
@@ -754,19 +754,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView9.visibility = View.GONE
                     binding.textView12.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x2" -> {
@@ -809,19 +809,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x2" -> {
@@ -864,19 +864,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "2x2" -> {
@@ -919,19 +919,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.VISIBLE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "2x1" -> {
@@ -974,19 +974,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.visibility = View.GONE
                     binding.textView14.visibility = View.GONE
                     binding.textView15.visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad2).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad3).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad5).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad6).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad7).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad8).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad9).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad10).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad11).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad12).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad13).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad14).visibility = View.GONE
-                    findViewById<ImageButton>(R.id.pad15).visibility = View.GONE
+                    findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).visibility = View.GONE
                     binding.gridView.visibility = View.INVISIBLE
                 }
             }
@@ -1085,21 +1085,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.text = ""
                     binding.textView14.text = ""
                     binding.textView15.text = ""
-                    findViewById<TextView>(R.id.padText1).text = ""
-                    findViewById<TextView>(R.id.padText2).text = ""
-                    findViewById<TextView>(R.id.padText3).text = ""
-                    findViewById<TextView>(R.id.padText4).text = ""
-                    findViewById<TextView>(R.id.padText5).text = ""
-                    findViewById<TextView>(R.id.padText6).text = ""
-                    findViewById<TextView>(R.id.padText7).text = ""
-                    findViewById<TextView>(R.id.padText8).text = ""
-                    findViewById<TextView>(R.id.padText9).text = ""
-                    findViewById<TextView>(R.id.padText10).text = ""
-                    findViewById<TextView>(R.id.padText11).text = ""
-                    findViewById<TextView>(R.id.padText12).text = ""
-                    findViewById<TextView>(R.id.padText13).text = ""
-                    findViewById<TextView>(R.id.padText14).text = ""
-                    findViewById<TextView>(R.id.padText15).text = ""
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                     padText1 = ""
                     padText2 = ""
                     padText3 = ""
@@ -1251,21 +1251,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.text = ""
                     binding.textView14.text = ""
                     binding.textView15.text = ""
-                    findViewById<TextView>(R.id.padText1).text = ""
-                    findViewById<TextView>(R.id.padText2).text = ""
-                    findViewById<TextView>(R.id.padText3).text = ""
-                    findViewById<TextView>(R.id.padText4).text = ""
-                    findViewById<TextView>(R.id.padText5).text = ""
-                    findViewById<TextView>(R.id.padText6).text = ""
-                    findViewById<TextView>(R.id.padText7).text = ""
-                    findViewById<TextView>(R.id.padText8).text = ""
-                    findViewById<TextView>(R.id.padText9).text = ""
-                    findViewById<TextView>(R.id.padText10).text = ""
-                    findViewById<TextView>(R.id.padText11).text = ""
-                    findViewById<TextView>(R.id.padText12).text = ""
-                    findViewById<TextView>(R.id.padText13).text = ""
-                    findViewById<TextView>(R.id.padText14).text = ""
-                    findViewById<TextView>(R.id.padText15).text = ""
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                     padText1 = ""
                     padText2 = ""
                     padText3 = ""
@@ -2566,7 +2566,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad1).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -2574,7 +2574,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad2).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
@@ -2582,7 +2582,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad3).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
@@ -2590,7 +2590,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad4).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view4).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
@@ -2598,7 +2598,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad5).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
@@ -2606,7 +2606,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad6).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
@@ -2614,7 +2614,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad7).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
@@ -2622,7 +2622,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad8).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
@@ -2630,7 +2630,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad9).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
@@ -2638,7 +2638,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad10).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
@@ -2646,7 +2646,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad11).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
@@ -2654,7 +2654,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad12).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
@@ -2662,7 +2662,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad13).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
@@ -2670,7 +2670,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad14).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
@@ -2678,7 +2678,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.pad15).setOnTouchListener { _, event ->
+        findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
@@ -2686,663 +2686,663 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
+        findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume > 0.1f) {
                 soundPoolVolume -= 0.1f
                 soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
+        findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume < 1.0f) {
                 soundPoolVolume += 0.1f
                 soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
+        findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo > 0.2f) {
                 soundPoolTempo -= 0.1f
                 soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             } else if (soundPoolTempo == 0.2f) {
                 soundPoolTempo = 0.125f
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
+        findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo == 0.125f) {
                 soundPoolTempo = 0.2f
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             } else if (soundPoolTempo < 8.0f) {
                 soundPoolTempo += 0.1f
                 soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-                findViewById<TextView>(R.id.padText1).text = ""
-                findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText1).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.uppercase()
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
-        findViewById<ImageButton>(R.id.volume_minus2).setOnClickListener {
+        findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume2 > 0.1f) {
                 soundPoolVolume2 -= 0.1f
                 soundPoolVolume2 = "%.1f".format(soundPoolVolume2).toFloat()
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
-        findViewById<ImageButton>(R.id.volume_plus2).setOnClickListener {
+        findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume2 < 1.0f) {
                 soundPoolVolume2 += 0.1f
                 soundPoolVolume2 = "%.1f".format(soundPoolVolume2).toFloat()
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
-        findViewById<ImageButton>(R.id.tempo_minus2).setOnClickListener {
+        findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo2 > 0.2f) {
                 soundPoolTempo2 -= 0.1f
                 soundPoolTempo2 = "%.1f".format(soundPoolTempo2).toFloat()
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             } else if (soundPoolTempo2 == 0.2f) {
                 soundPoolTempo2 = 0.125f
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
-        findViewById<ImageButton>(R.id.tempo_plus2).setOnClickListener {
+        findViewById<View>(R.id.include_view2).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo2 == 0.125f) {
                 soundPoolTempo2 = 0.2f
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             } else if (soundPoolTempo2 < 8.0f) {
                 soundPoolTempo2 += 0.1f
                 soundPoolTempo2 = "%.1f".format(soundPoolTempo2).toFloat()
-                findViewById<TextView>(R.id.padText2).text = ""
-                findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText2).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.uppercase()
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
-        findViewById<ImageButton>(R.id.volume_minus3).setOnClickListener {
+        findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume3 > 0.1f) {
                 soundPoolVolume3 -= 0.1f
                 soundPoolVolume3 = "%.1f".format(soundPoolVolume3).toFloat()
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
-        findViewById<ImageButton>(R.id.volume_plus3).setOnClickListener {
+        findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume3 < 1.0f) {
                 soundPoolVolume3 += 0.1f
                 soundPoolVolume3 = "%.1f".format(soundPoolVolume3).toFloat()
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
-        findViewById<ImageButton>(R.id.tempo_minus3).setOnClickListener {
+        findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo3 > 0.2f) {
                 soundPoolTempo3 -= 0.1f
                 soundPoolTempo3 = "%.1f".format(soundPoolTempo3).toFloat()
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             } else if (soundPoolTempo3 == 0.2f) {
                 soundPoolTempo3 = 0.125f
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
-        findViewById<ImageButton>(R.id.tempo_plus3).setOnClickListener {
+        findViewById<View>(R.id.include_view3).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo3 == 0.125f) {
                 soundPoolTempo3 = 0.2f
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             } else if (soundPoolTempo3 < 8.0f) {
                 soundPoolTempo3 += 0.1f
                 soundPoolTempo3 = "%.1f".format(soundPoolTempo3).toFloat()
-                findViewById<TextView>(R.id.padText3).text = ""
-                findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText3).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.uppercase()
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
-        findViewById<ImageButton>(R.id.volume_minus4).setOnClickListener {
+        findViewById<View>(R.id.include_view4).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume4 > 0.1f) {
                 soundPoolVolume4 -= 0.1f
                 soundPoolVolume4 = "%.1f".format(soundPoolVolume4).toFloat()
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
-        findViewById<ImageButton>(R.id.volume_plus4).setOnClickListener {
+        findViewById<View>(R.id.include_view4).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume4 < 1.0f) {
                 soundPoolVolume4 += 0.1f
                 soundPoolVolume4 = "%.1f".format(soundPoolVolume4).toFloat()
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
-        findViewById<ImageButton>(R.id.tempo_minus4).setOnClickListener {
+        findViewById<View>(R.id.include_view4).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo4 > 0.2f) {
                 soundPoolTempo4 -= 0.1f
                 soundPoolTempo4 = "%.1f".format(soundPoolTempo4).toFloat()
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             } else if (soundPoolTempo4 == 0.2f) {
                 soundPoolTempo4 = 0.125f
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
-        findViewById<ImageButton>(R.id.tempo_plus4).setOnClickListener {
+        findViewById<View>(R.id.include_view4).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo4 == 0.125f) {
                 soundPoolTempo4 = 0.2f
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             } else if (soundPoolTempo4 < 8.0f) {
                 soundPoolTempo4 += 0.1f
                 soundPoolTempo4 = "%.1f".format(soundPoolTempo4).toFloat()
-                findViewById<TextView>(R.id.padText4).text = ""
-                findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText4).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.uppercase()
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
-        findViewById<ImageButton>(R.id.volume_minus5).setOnClickListener {
+        findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume5 > 0.1f) {
                 soundPoolVolume5 -= 0.1f
                 soundPoolVolume5 = "%.1f".format(soundPoolVolume5).toFloat()
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
-        findViewById<ImageButton>(R.id.volume_plus5).setOnClickListener {
+        findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume5 < 1.0f) {
                 soundPoolVolume5 += 0.1f
                 soundPoolVolume5 = "%.1f".format(soundPoolVolume5).toFloat()
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
-        findViewById<ImageButton>(R.id.tempo_minus5).setOnClickListener {
+        findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo5 > 0.2f) {
                 soundPoolTempo5 -= 0.1f
                 soundPoolTempo5 = "%.1f".format(soundPoolTempo5).toFloat()
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             } else if (soundPoolTempo5 == 0.2f) {
                 soundPoolTempo5 = 0.125f
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
-        findViewById<ImageButton>(R.id.tempo_plus5).setOnClickListener {
+        findViewById<View>(R.id.include_view5).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo5 == 0.125f) {
                 soundPoolTempo5 = 0.2f
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             } else if (soundPoolTempo5 < 8.0f) {
                 soundPoolTempo5 += 0.1f
                 soundPoolTempo5 = "%.1f".format(soundPoolTempo5).toFloat()
-                findViewById<TextView>(R.id.padText5).text = ""
-                findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText5).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.uppercase()
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
-        findViewById<ImageButton>(R.id.volume_minus6).setOnClickListener {
+        findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume6 > 0.1f) {
                 soundPoolVolume6 -= 0.1f
                 soundPoolVolume6 = "%.1f".format(soundPoolVolume6).toFloat()
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
-        findViewById<ImageButton>(R.id.volume_plus6).setOnClickListener {
+        findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume6 < 1.0f) {
                 soundPoolVolume6 += 0.1f
                 soundPoolVolume6 = "%.1f".format(soundPoolVolume6).toFloat()
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
-        findViewById<ImageButton>(R.id.tempo_minus6).setOnClickListener {
+        findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo6 > 0.2f) {
                 soundPoolTempo6 -= 0.1f
                 soundPoolTempo6 = "%.1f".format(soundPoolTempo6).toFloat()
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             } else if (soundPoolTempo6 == 0.2f) {
                 soundPoolTempo6 = 0.125f
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
-        findViewById<ImageButton>(R.id.tempo_plus6).setOnClickListener {
+        findViewById<View>(R.id.include_view6).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo6 == 0.125f) {
                 soundPoolTempo6 = 0.2f
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             } else if (soundPoolTempo6 < 8.0f) {
                 soundPoolTempo6 += 0.1f
                 soundPoolTempo6 = "%.1f".format(soundPoolTempo6).toFloat()
-                findViewById<TextView>(R.id.padText6).text = ""
-                findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText6).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.uppercase()
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
-        findViewById<ImageButton>(R.id.volume_minus7).setOnClickListener {
+        findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume7 > 0.1f) {
                 soundPoolVolume7 -= 0.1f
                 soundPoolVolume7 = "%.1f".format(soundPoolVolume7).toFloat()
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
-        findViewById<ImageButton>(R.id.volume_plus7).setOnClickListener {
+        findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume7 < 1.0f) {
                 soundPoolVolume7 += 0.1f
                 soundPoolVolume7 = "%.1f".format(soundPoolVolume7).toFloat()
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
-        findViewById<ImageButton>(R.id.tempo_minus7).setOnClickListener {
+        findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo7 > 0.2f) {
                 soundPoolTempo7 -= 0.1f
                 soundPoolTempo7 = "%.1f".format(soundPoolTempo7).toFloat()
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             } else if (soundPoolTempo7 == 0.2f) {
                 soundPoolTempo7 = 0.125f
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
-        findViewById<ImageButton>(R.id.tempo_plus7).setOnClickListener {
+        findViewById<View>(R.id.include_view7).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo7 == 0.125f) {
                 soundPoolTempo7 = 0.2f
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             } else if (soundPoolTempo7 < 8.0f) {
                 soundPoolTempo7 += 0.1f
                 soundPoolTempo7 = "%.1f".format(soundPoolTempo7).toFloat()
-                findViewById<TextView>(R.id.padText7).text = ""
-                findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText7).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.uppercase()
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
-        findViewById<ImageButton>(R.id.volume_minus8).setOnClickListener {
+        findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume8 > 0.1f) {
                 soundPoolVolume8 -= 0.1f
                 soundPoolVolume8 = "%.1f".format(soundPoolVolume8).toFloat()
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
-        findViewById<ImageButton>(R.id.volume_plus8).setOnClickListener {
+        findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume8 < 1.0f) {
                 soundPoolVolume8 += 0.1f
                 soundPoolVolume8 = "%.1f".format(soundPoolVolume8).toFloat()
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
-        findViewById<ImageButton>(R.id.tempo_minus8).setOnClickListener {
+        findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo8 > 0.2f) {
                 soundPoolTempo8 -= 0.1f
                 soundPoolTempo8 = "%.1f".format(soundPoolTempo8).toFloat()
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             } else if (soundPoolTempo8 == 0.2f) {
                 soundPoolTempo8 = 0.125f
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
-        findViewById<ImageButton>(R.id.tempo_plus8).setOnClickListener {
+        findViewById<View>(R.id.include_view8).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo8 == 0.125f) {
                 soundPoolTempo8 = 0.2f
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             } else if (soundPoolTempo8 < 8.0f) {
                 soundPoolTempo8 += 0.1f
                 soundPoolTempo8 = "%.1f".format(soundPoolTempo8).toFloat()
-                findViewById<TextView>(R.id.padText8).text = ""
-                findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText8).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.uppercase()
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
-        findViewById<ImageButton>(R.id.volume_minus9).setOnClickListener {
+        findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume9 > 0.1f) {
                 soundPoolVolume9 -= 0.1f
                 soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
-        findViewById<ImageButton>(R.id.volume_plus9).setOnClickListener {
+        findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume9 < 1.0f) {
                 soundPoolVolume9 += 0.1f
                 soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
-        findViewById<ImageButton>(R.id.tempo_minus9).setOnClickListener {
+        findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo9 > 0.2f) {
                 soundPoolTempo9 -= 0.1f
                 soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             } else if (soundPoolTempo9 == 0.2f) {
                 soundPoolTempo9 = 0.125f
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
-        findViewById<ImageButton>(R.id.tempo_plus9).setOnClickListener {
+        findViewById<View>(R.id.include_view9).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo9 == 0.125f) {
                 soundPoolTempo9 = 0.2f
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             } else if (soundPoolTempo9 < 8.0f) {
                 soundPoolTempo9 += 0.1f
                 soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
-                findViewById<TextView>(R.id.padText9).text = ""
-                findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText9).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.uppercase()
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
-        findViewById<ImageButton>(R.id.volume_minus10).setOnClickListener {
+        findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume10 > 0.1f) {
                 soundPoolVolume10 -= 0.1f
                 soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
-        findViewById<ImageButton>(R.id.volume_plus10).setOnClickListener {
+        findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume10 < 1.0f) {
                 soundPoolVolume10 += 0.1f
                 soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
-        findViewById<ImageButton>(R.id.tempo_minus10).setOnClickListener {
+        findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo10 > 0.2f) {
                 soundPoolTempo10 -= 0.1f
                 soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             } else if (soundPoolTempo10 == 0.2f) {
                 soundPoolTempo10 = 0.125f
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
-        findViewById<ImageButton>(R.id.tempo_plus10).setOnClickListener {
+        findViewById<View>(R.id.include_view10).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo10 == 0.125f) {
                 soundPoolTempo10 = 0.2f
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             } else if (soundPoolTempo10 < 8.0f) {
                 soundPoolTempo10 += 0.1f
                 soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
-                findViewById<TextView>(R.id.padText10).text = ""
-                findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText10).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.uppercase()
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
-        findViewById<ImageButton>(R.id.volume_minus11).setOnClickListener {
+        findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume11 > 0.1f) {
                 soundPoolVolume11 -= 0.1f
                 soundPoolVolume11 = "%.1f".format(soundPoolVolume11).toFloat()
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
-        findViewById<ImageButton>(R.id.volume_plus11).setOnClickListener {
+        findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume11 < 1.0f) {
                 soundPoolVolume11 += 0.1f
                 soundPoolVolume11 = "%.1f".format(soundPoolVolume11).toFloat()
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
-        findViewById<ImageButton>(R.id.tempo_minus11).setOnClickListener {
+        findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo11 > 0.2f) {
                 soundPoolTempo11 -= 0.1f
                 soundPoolTempo11 = "%.1f".format(soundPoolTempo11).toFloat()
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             } else if (soundPoolTempo11 == 0.2f) {
                 soundPoolTempo11 = 0.125f
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
-        findViewById<ImageButton>(R.id.tempo_plus11).setOnClickListener {
+        findViewById<View>(R.id.include_view11).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo11 == 0.125f) {
                 soundPoolTempo11 = 0.2f
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             } else if (soundPoolTempo11 < 8.0f) {
                 soundPoolTempo11 += 0.1f
                 soundPoolTempo11 = "%.1f".format(soundPoolTempo11).toFloat()
-                findViewById<TextView>(R.id.padText11).text = ""
-                findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText11).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.uppercase()
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
-        findViewById<ImageButton>(R.id.volume_minus12).setOnClickListener {
+        findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume12 > 0.1f) {
                 soundPoolVolume12 -= 0.1f
                 soundPoolVolume12 = "%.1f".format(soundPoolVolume12).toFloat()
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
-        findViewById<ImageButton>(R.id.volume_plus12).setOnClickListener {
+        findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume12 < 1.0f) {
                 soundPoolVolume12 += 0.1f
                 soundPoolVolume12 = "%.1f".format(soundPoolVolume12).toFloat()
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
-        findViewById<ImageButton>(R.id.tempo_minus12).setOnClickListener {
+        findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo12 > 0.2f) {
                 soundPoolTempo12 -= 0.1f
                 soundPoolTempo12 = "%.1f".format(soundPoolTempo12).toFloat()
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             } else if (soundPoolTempo12 == 0.2f) {
                 soundPoolTempo12 = 0.125f
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
-        findViewById<ImageButton>(R.id.tempo_plus12).setOnClickListener {
+        findViewById<View>(R.id.include_view12).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo12 == 0.125f) {
                 soundPoolTempo12 = 0.2f
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             } else if (soundPoolTempo12 < 8.0f) {
                 soundPoolTempo12 += 0.1f
                 soundPoolTempo12 = "%.1f".format(soundPoolTempo12).toFloat()
-                findViewById<TextView>(R.id.padText12).text = ""
-                findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText12).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.uppercase()
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
-        findViewById<ImageButton>(R.id.volume_minus13).setOnClickListener {
+        findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume13 > 0.1f) {
                 soundPoolVolume13 -= 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.volume_plus13).setOnClickListener {
+        findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume13 < 1.0f) {
                 soundPoolVolume13 += 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.tempo_minus13).setOnClickListener {
+        findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo13 > 0.2f) {
                 soundPoolTempo13 -= 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             } else if (soundPoolTempo13 == 0.2f) {
                 soundPoolTempo13 = 0.125f
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.tempo_plus13).setOnClickListener {
+        findViewById<View>(R.id.include_view13).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo13 == 0.125f) {
                 soundPoolTempo13 = 0.2f
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             } else if (soundPoolTempo13 < 8.0f) {
                 soundPoolTempo13 += 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
-                findViewById<TextView>(R.id.padText13).text = ""
-                findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.uppercase()
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.volume_minus14).setOnClickListener {
+        findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume14 > 0.1f) {
                 soundPoolVolume14 -= 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.volume_plus14).setOnClickListener {
+        findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume14 < 1.0f) {
                 soundPoolVolume14 += 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.tempo_minus14).setOnClickListener {
+        findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo14 > 0.2f) {
                 soundPoolTempo14 -= 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             } else if (soundPoolTempo14 == 0.2f) {
                 soundPoolTempo14 = 0.125f
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.tempo_plus14).setOnClickListener {
+        findViewById<View>(R.id.include_view14).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo14 == 0.125f) {
                 soundPoolTempo14 = 0.2f
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             } else if (soundPoolTempo14 < 8.0f) {
                 soundPoolTempo14 += 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
-                findViewById<TextView>(R.id.padText14).text = ""
-                findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.uppercase()
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.volume_minus15).setOnClickListener {
+        findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.volume_minus).setOnClickListener {
             if (soundPoolVolume15 > 0.1f) {
                 soundPoolVolume15 -= 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.volume_plus15).setOnClickListener {
+        findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.volume_plus).setOnClickListener {
             if (soundPoolVolume15 < 1.0f) {
                 soundPoolVolume15 += 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.tempo_minus15).setOnClickListener {
+        findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.tempo_minus).setOnClickListener {
             if (soundPoolTempo15 > 0.2f) {
                 soundPoolTempo15 -= 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             } else if (soundPoolTempo15 == 0.2f) {
                 soundPoolTempo15 = 0.125f
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.tempo_plus15).setOnClickListener {
+        findViewById<View>(R.id.include_view15).findViewById<ImageButton>(R.id.tempo_plus).setOnClickListener {
             if (soundPoolTempo15 == 0.125f) {
                 soundPoolTempo15 = 0.2f
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             } else if (soundPoolTempo15 < 8.0f) {
                 soundPoolTempo15 += 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
-                findViewById<TextView>(R.id.padText15).text = ""
-                findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.uppercase()
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
