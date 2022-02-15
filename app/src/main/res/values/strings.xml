@@ -25,7 +25,6 @@
     <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
     <string name="onRequestPermissionsResult2">Permissions is denied.</string>
 
-
     <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
 
     <string name="menu5">Watch video ads &amp; hide banner ads</string>

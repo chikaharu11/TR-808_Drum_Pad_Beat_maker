@@ -611,7 +611,7 @@
         app:layout_constraintStart_toEndOf="@id/space2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="4"/>
+        app:layout_constraintHorizontal_weight="2"/>
 
     <Space
         android:id="@+id/space2"
@@ -628,13 +628,15 @@
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:background="#5A5A66"
-        android:numColumns="2"
+        android:numColumns="1"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintHorizontal_weight="1"/>
 
     <Space
@@ -647,7 +649,7 @@
         app:layout_constraintEnd_toStartOf="@id/grid_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="0"/>
+        app:layout_constraintHorizontal_weight="1"/>
 
     <FrameLayout
         android:id="@+id/adView"

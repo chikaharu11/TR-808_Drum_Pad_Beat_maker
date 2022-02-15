@@ -633,6 +633,7 @@
         android:id="@+id/grid_view_choose"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="48dp"
         android:background="#5A5A66"
         android:numColumns="1"
@@ -657,14 +658,16 @@
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:background="#5A5A66"
-        android:numColumns="2"
+        android:numColumns="1"
         android:visibility="invisible"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="3"/>
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintHorizontal_weight="1"/>
 
     <Space
         android:id="@+id/space3"
