@@ -335,9 +335,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "サウンドの設定をリセット",
                 "バナー広告を非表示にする",
                 "終了する",
-                "5x3","5x2",
-                "4x3","4x2",
-                "3x3","3x2",
+                "5x3","5x2","5x1",
+                "4x3","4x2","4x1",
+                "3x3","3x2","3x1",
                 "2x2","2x1"
             ) } else {
             arrayOf(
@@ -345,9 +345,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Reset the sound settings",
                 "Hide banner Ads",
                 "EXIT",
-                "5x3","5x2",
-                "4x3","4x2",
-                "3x3","3x2",
+                "5x3","5x2","5x1",
+                "4x3","4x2","4x1",
+                "3x3","3x2","3x1",
                 "2x2","2x1"
             )
             }
@@ -977,6 +977,171 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view5).visibility = View.GONE
                     findViewById<View>(R.id.include_view6).visibility = View.GONE
                     findViewById<View>(R.id.include_view7).visibility = View.GONE
+                    findViewById<View>(R.id.include_view8).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).visibility = View.GONE
+                    findViewById<View>(R.id.include_view10).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).visibility = View.GONE
+                    binding.gridView.visibility = View.INVISIBLE
+                }
+                "5x1" -> {
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView10.visibility = View.VISIBLE
+                    binding.imageView13.visibility = View.VISIBLE
+                    binding.imageView2.visibility = View.GONE
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView5.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView8.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView10.visibility = View.VISIBLE
+                    binding.backgroundView13.visibility = View.VISIBLE
+                    binding.backgroundView2.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView5.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView8.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView10.visibility = View.VISIBLE
+                    binding.textView13.visibility = View.VISIBLE
+                    binding.textView2.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView5.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView8.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                    findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view13).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view2).visibility = View.GONE
+                    findViewById<View>(R.id.include_view3).visibility = View.GONE
+                    findViewById<View>(R.id.include_view5).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).visibility = View.GONE
+                    findViewById<View>(R.id.include_view8).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).visibility = View.GONE
+                    binding.gridView.visibility = View.INVISIBLE
+                }
+                "4x1" -> {
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView10.visibility = View.VISIBLE
+                    binding.imageView2.visibility = View.GONE
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView5.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView8.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView10.visibility = View.VISIBLE
+                    binding.backgroundView2.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView5.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView8.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView10.visibility = View.VISIBLE
+                    binding.textView2.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView5.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView8.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                    findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view10).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view2).visibility = View.GONE
+                    findViewById<View>(R.id.include_view3).visibility = View.GONE
+                    findViewById<View>(R.id.include_view5).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).visibility = View.GONE
+                    findViewById<View>(R.id.include_view8).visibility = View.GONE
+                    findViewById<View>(R.id.include_view9).visibility = View.GONE
+                    findViewById<View>(R.id.include_view11).visibility = View.GONE
+                    findViewById<View>(R.id.include_view12).visibility = View.GONE
+                    findViewById<View>(R.id.include_view13).visibility = View.GONE
+                    findViewById<View>(R.id.include_view14).visibility = View.GONE
+                    findViewById<View>(R.id.include_view15).visibility = View.GONE
+                    binding.gridView.visibility = View.INVISIBLE
+                }
+                "3x1" -> {
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView2.visibility = View.GONE
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView5.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView8.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView10.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView2.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView5.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView8.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView10.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView2.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView5.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView8.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView10.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                    findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
+                    findViewById<View>(R.id.include_view2).visibility = View.GONE
+                    findViewById<View>(R.id.include_view3).visibility = View.GONE
+                    findViewById<View>(R.id.include_view5).visibility = View.GONE
+                    findViewById<View>(R.id.include_view6).visibility = View.GONE
                     findViewById<View>(R.id.include_view8).visibility = View.GONE
                     findViewById<View>(R.id.include_view9).visibility = View.GONE
                     findViewById<View>(R.id.include_view10).visibility = View.GONE
