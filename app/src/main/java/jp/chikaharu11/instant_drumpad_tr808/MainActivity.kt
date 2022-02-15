@@ -331,8 +331,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val tuning = if (locale == Locale.JAPAN) {
             arrayOf(
-                "サウンドの設定をリセット",
                 "サウンドの調整",
+                "サウンドの設定をリセット",
                 "バナー広告を非表示にする",
                 "終了する",
                 "5x3","5x2",
@@ -341,8 +341,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "2x2","2x1"
             ) } else {
             arrayOf(
-                "Reset the sound settings",
                 "Adjusting Sounds",
+                "Reset the sound settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2",
@@ -394,7 +394,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolTempo14 = 1.0f
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
-                    findViewById<TextView>(R.id.padText0).text = actionTitle
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
@@ -489,7 +488,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolTempo14 = 1.0f
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
-                    findViewById<TextView>(R.id.padText0).text = actionTitle
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
