@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:foreground="@drawable/my_ripple"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,49 +21,57 @@
     <ImageButton
         android:id="@+id/volume_minus"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:backgroundTint="#e2e3e3"
+        app:layout_constraintBottom_toTopOf="@+id/center_space"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad"
         app:layout_constraintTop_toBottomOf="@+id/volume_plus"
         app:srcCompat="@drawable/horizontal_rule_24"
+        android:scaleType="fitCenter"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/volume_plus"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:backgroundTint="#e2e3e3"
+        app:layout_constraintBottom_toTopOf="@+id/volume_minus"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/pad"
-        app:layout_constraintTop_toTopOf="@+id/pad"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add_24"
+        android:scaleType="fitCenter"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/tempo_minus"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:backgroundTint="#e2e3e3"
+        app:layout_constraintBottom_toTopOf="@+id/center_space"
         app:layout_constraintEnd_toEndOf="@id/pad"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_minus"
         app:layout_constraintTop_toBottomOf="@+id/tempo_plus"
         app:srcCompat="@drawable/horizontal_rule_24"
+        android:scaleType="fitCenter"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/tempo_plus"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:backgroundTint="#e2e3e3"
+        app:layout_constraintBottom_toTopOf="@+id/tempo_minus"
         app:layout_constraintEnd_toEndOf="@id/pad"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/volume_plus"
-        app:layout_constraintTop_toTopOf="@+id/pad"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add_24"
+        android:scaleType="fitCenter"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -71,12 +79,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingBottom="2dp"
         android:text="@string/s1"
         android:textColor="#2b2b2b"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/pad"
         app:layout_constraintEnd_toEndOf="@+id/pad"
-        app:layout_constraintStart_toStartOf="@+id/pad"
-        android:paddingBottom="2dp" />
+        app:layout_constraintStart_toStartOf="@+id/pad" />
+
+    <Space
+        android:id="@+id/center_space"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
