@@ -3578,6 +3578,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (mRewardedAd != null) {
             mRewardedAd?.show(this) { rewardItem ->
                 binding.adView.visibility = View.GONE
+                binding.bottomSpace.visibility = View.GONE
                 binding.gridView.visibility = View.INVISIBLE
                 adCheck = 1
                 stickyImmersiveMode()
@@ -4551,6 +4552,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         adCheck = savedInstanceState.getInt("DATA")
         if ( adCheck == 1) {
             binding.adView.visibility = View.GONE
+            binding.bottomSpace.visibility = View.GONE
         }
     }
 }
