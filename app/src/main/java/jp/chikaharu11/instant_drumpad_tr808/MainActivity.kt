@@ -994,14 +994,30 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val choose = if (locale == Locale.JAPAN) {
             arrayOf(
-                "演奏モード⇔パッド音の変更",
+                "パッド音の変更",
                 "メトロノーム・ループ",
                 "サンプル・ループ",
                 "外部サウンド・ループ",
                 "ドラムパッドをリセット"
             ) } else {
             arrayOf(
-                "Play mode ↔ Change pad sounds",
+                "Change Pad Sounds",
+                "Metronome Loops",
+                "Sample Loops",
+                "External sound Loops",
+                "Reset drum pads"
+            )
+        }
+        val choose2 = if (locale == Locale.JAPAN) {
+            arrayOf(
+                "プレイモードに変更",
+                "メトロノーム・ループ",
+                "サンプル・ループ",
+                "外部サウンド・ループ",
+                "ドラムパッドをリセット"
+            ) } else {
+            arrayOf(
+                "Change to Play Mode",
                 "Metronome Loops",
                 "Sample Loops",
                 "External sound Loops",
@@ -1009,27 +1025,44 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             )
         }
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
+        val adapter2a = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose2)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
         gridView2.adapter = adapter2
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
-                "演奏モード⇔パッド音の変更" -> {
-                    when (paste) {
-                        0 -> {
+                "パッド音の変更" -> {
                             paste = 1
                             invalidateOptionsMenu()
                             Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
                             gridView2.visibility = View.INVISIBLE
-                        }
-                        1 -> {
+                            gridView2.adapter = adapter2a
+                            adapter2a.notifyDataSetChanged()
+                }
+                "プレイモードに変更" -> {
                             paste = 0
                             invalidateOptionsMenu()
                             Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
                             gridView2.visibility = View.INVISIBLE
-                        }
-                    }
+                            gridView2.adapter = adapter2
+                            adapter2.notifyDataSetChanged()
+                }
+                "Change Pad Sounds" -> {
+                    paste = 1
+                    invalidateOptionsMenu()
+                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                    gridView2.visibility = View.INVISIBLE
+                    gridView2.adapter = adapter2a
+                    adapter2a.notifyDataSetChanged()
+                }
+                "Change to Play Mode" -> {
+                    paste = 0
+                    invalidateOptionsMenu()
+                    Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                    gridView2.visibility = View.INVISIBLE
+                    gridView2.adapter = adapter2
+                    adapter2.notifyDataSetChanged()
                 }
                 "メトロノーム・ループ" -> {
                     lmp.stop()
@@ -1180,22 +1213,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     gridView2.visibility = View.INVISIBLE
                     Toast.makeText(applicationContext, R.string.reset2, Toast.LENGTH_LONG).show()
-                }
-                "Play mode ↔ Change pad sounds" -> {
-                    when (paste) {
-                        0 -> {
-                            paste = 1
-                            invalidateOptionsMenu()
-                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
-                            gridView2.visibility = View.INVISIBLE
-                        }
-                        1 -> {
-                            paste = 0
-                            invalidateOptionsMenu()
-                            Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
-                            gridView2.visibility = View.INVISIBLE
-                        }
-                    }
                 }
                 "Metronome Loops" -> {
                     lmp.stop()
