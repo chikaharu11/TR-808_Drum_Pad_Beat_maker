@@ -20,6 +20,7 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
@@ -217,6 +218,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
             .apply { setContentView(this.root) }
+
+        setSupportActionBar(findViewById(R.id.toolbar_main))
 
         stickyImmersiveMode()
         initAdMob()
@@ -3902,6 +3905,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (mRewardedAd != null) {
             mRewardedAd?.show(this) { rewardItem ->
                 binding.adView.visibility = View.GONE
+                binding.topSpace.visibility = View.GONE
                 binding.bottomSpace.visibility = View.GONE
                 binding.gridView.visibility = View.INVISIBLE
                 adCheck = 1
@@ -3942,8 +3946,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         admobmAdView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
 
         admobmAdView.adListener = object : AdListener() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                binding.topSpace.visibility = View.GONE
+            }
             override fun onAdLoaded() {
                 adViewContainer.addView(admobmAdView)
+                binding.topSpace.visibility = View.GONE
             }
         }
     }
@@ -4876,6 +4884,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         adCheck = savedInstanceState.getInt("DATA")
         if ( adCheck == 1) {
             binding.adView.visibility = View.GONE
+            binding.topSpace.visibility = View.GONE
             binding.bottomSpace.visibility = View.GONE
         }
     }

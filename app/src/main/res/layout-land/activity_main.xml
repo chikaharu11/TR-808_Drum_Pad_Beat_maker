@@ -10,6 +10,43 @@
     tools:context=".MainActivity"
     tools:ignore="MissingDefaultResource,ContentDescription">
 
+    <FrameLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/topSpace"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#e2e3e3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adView"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/bottomSpace"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="#e2e3e3"
+        app:layout_constraintTop_toBottomOf="@id/topSpace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomSpace"/>
+
     <ImageView
         android:id="@+id/background_view"
         android:layout_width="0dp"
@@ -20,7 +57,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         />
 
     <ImageView
@@ -45,7 +82,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         />
 
@@ -56,7 +93,7 @@
         android:layout_margin="1dp"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintBottom_toTopOf="@id/imageView5"
         app:layout_constraintEnd_toStartOf="@id/imageView7"
@@ -84,7 +121,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
         />
 
@@ -95,7 +132,7 @@
         android:layout_margin="1dp"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView4"
         app:layout_constraintBottom_toTopOf="@id/imageView8"
         app:layout_constraintEnd_toStartOf="@id/imageView10"
@@ -123,7 +160,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
         />
 
@@ -134,7 +171,7 @@
         android:layout_margin="1dp"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView7"
         app:layout_constraintBottom_toTopOf="@id/imageView11"
         app:layout_constraintEnd_toStartOf="@id/imageView13"
@@ -162,7 +199,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
         />
 
@@ -173,7 +210,7 @@
         android:layout_margin="1dp"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView10"
         app:layout_constraintBottom_toTopOf="@id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +239,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         />
 
     <ImageView
@@ -211,7 +248,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
@@ -239,7 +276,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         android:foreground="@drawable/my_ripple"
         />
@@ -250,7 +287,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintBottom_toTopOf="@id/imageView5"
         app:layout_constraintEnd_toStartOf="@id/imageView7"
@@ -278,7 +315,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
         android:foreground="@drawable/my_ripple"
         />
@@ -289,7 +326,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView4"
         app:layout_constraintBottom_toTopOf="@id/imageView8"
         app:layout_constraintEnd_toStartOf="@id/imageView10"
@@ -317,7 +354,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
         android:foreground="@drawable/my_ripple"
         />
@@ -328,7 +365,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView7"
         app:layout_constraintBottom_toTopOf="@id/imageView11"
         app:layout_constraintEnd_toStartOf="@id/imageView13"
@@ -356,7 +393,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
         android:foreground="@drawable/my_ripple"
         />
@@ -367,7 +404,7 @@
         android:layout_height="0dp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/imageView10"
         app:layout_constraintBottom_toTopOf="@id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
@@ -396,7 +433,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         android:foreground="@drawable/my_ripple"
         />
 
@@ -610,16 +647,6 @@
         app:layout_constraintStart_toStartOf="@+id/imageView15"
         android:paddingBottom="2dp"/>
 
-    <ImageView
-        android:id="@+id/bottomSpace"
-        android:layout_width="match_parent"
-        android:layout_height="16dp"
-        app:layout_constraintBottom_toTopOf="@id/adView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:foreground="@drawable/background"
-        tools:ignore="MissingConstraints" />
-
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/menu_spinner"
         android:layout_width="0dp"
@@ -627,7 +654,7 @@
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"/>
 
     <Space
         android:id="@+id/space"
@@ -636,7 +663,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/menu_spinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"/>
 
     <GridView
         android:id="@+id/grid_view_choose"
@@ -647,10 +674,10 @@
         android:background="#5A5A66"
         android:numColumns="1"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/space2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintHorizontal_weight="2" />
 
     <Space
@@ -662,7 +689,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/grid_view_choose"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintHorizontal_weight="3" />
 
     <GridView
@@ -673,10 +700,10 @@
         android:background="#5A5A66"
         android:numColumns="1"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         app:layout_constraintHorizontal_weight="1"/>
 
     <Space
@@ -688,16 +715,8 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/grid_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintHorizontal_weight="2" />
-
-    <FrameLayout
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
     <ListView
@@ -709,8 +728,8 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/space5"
         app:layout_constraintStart_toEndOf="@id/space4"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf= "parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintHorizontal_weight="3" />
 
     <Space
@@ -722,7 +741,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/list_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintHorizontal_weight="1" />
 
     <Space
@@ -734,17 +753,17 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/list_view"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintHorizontal_weight="1" />
 
     <jp.chikaharu11.instant_drumpad_tr808.TuningView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpace"
+        app:layout_constraintBottom_toBottomOf= "parent"
         android:visibility="invisible"
         tools:ignore="MissingConstraints" />
 
