@@ -334,8 +334,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val tuning = if (locale == Locale.JAPAN) {
             arrayOf(
+                "パッド音の変更",
                 "サウンドの調整",
-                "サウンドの設定をリセット",
                 "バナー広告を非表示にする",
                 "終了する",
                 "5x3","5x2","5x1",
@@ -344,8 +344,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "2x2","2x1"
             ) } else {
             arrayOf(
+                "Change Pad Sounds",
                 "Adjusting Sounds",
-                "Reset the sound settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -354,12 +354,67 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "2x2","2x1"
             )
             }
+        val tuning2 = if (locale == Locale.JAPAN) {
+            arrayOf(
+                "プレイモードに変更",
+                "サウンドの調整",
+                "バナー広告を非表示にする",
+                "終了する",
+                "5x3","5x2","5x1",
+                "4x3","4x2","4x1",
+                "3x3","3x2","3x1",
+                "2x2","2x1"
+            ) } else {
+            arrayOf(
+                "Change to Play Mode",
+                "Adjusting Sounds",
+                "Hide banner Ads",
+                "EXIT",
+                "5x3","5x2","5x1",
+                "4x3","4x2","4x1",
+                "3x3","3x2","3x1",
+                "2x2","2x1"
+            )
+        }
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
+        val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
+                "パッド音の変更" -> {
+                    paste = 1
+                    binding.toolbarMain.setBackgroundColor(Color.parseColor("#FFA630"))
+                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                    gridView.visibility = View.INVISIBLE
+                    gridView.adapter = adapterA
+                    adapterA.notifyDataSetChanged()
+                }
+                "プレイモードに変更" -> {
+                    paste = 0
+                    binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+                    Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                    gridView.visibility = View.INVISIBLE
+                    gridView.adapter = adapter
+                    adapter.notifyDataSetChanged()
+                }
+                "Change Pad Sounds" -> {
+                    paste = 1
+                    binding.toolbarMain.setBackgroundColor(Color.parseColor("#FFA630"))
+                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                    gridView.visibility = View.INVISIBLE
+                    gridView.adapter = adapterA
+                    adapterA.notifyDataSetChanged()
+                }
+                "Change to Play Mode" -> {
+                    paste = 0
+                    binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+                    Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                    gridView.visibility = View.INVISIBLE
+                    gridView.adapter = adapter
+                    adapter.notifyDataSetChanged()
+                }
                 "サウンドの調整" -> {
                     binding.view.visibility = View.VISIBLE
                     gridView.visibility = View.INVISIBLE
@@ -1160,76 +1215,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val choose = if (locale == Locale.JAPAN) {
             arrayOf(
-                "パッド音の変更",
                 "メトロノーム・ループ",
                 "サンプル・ループ",
-                "外部サウンド・ループ",
-                "ドラムパッドをリセット"
+                "外部サウンド・ループ"
             ) } else {
             arrayOf(
-                "Change Pad Sounds",
                 "Metronome Loops",
                 "Sample Loops",
-                "External sound Loops",
-                "Reset drum pads"
-            )
-        }
-        val choose2 = if (locale == Locale.JAPAN) {
-            arrayOf(
-                "プレイモードに変更",
-                "メトロノーム・ループ",
-                "サンプル・ループ",
-                "外部サウンド・ループ",
-                "ドラムパッドをリセット"
-            ) } else {
-            arrayOf(
-                "Change to Play Mode",
-                "Metronome Loops",
-                "Sample Loops",
-                "External sound Loops",
-                "Reset drum pads"
+                "External sound Loops"
             )
         }
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
-        val adapter2a = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose2)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
         gridView2.adapter = adapter2
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
-                "パッド音の変更" -> {
-                            paste = 1
-                            invalidateOptionsMenu()
-                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
-                            gridView2.visibility = View.INVISIBLE
-                            gridView2.adapter = adapter2a
-                            adapter2a.notifyDataSetChanged()
-                }
-                "プレイモードに変更" -> {
-                            paste = 0
-                            invalidateOptionsMenu()
-                            Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
-                            gridView2.visibility = View.INVISIBLE
-                            gridView2.adapter = adapter2
-                            adapter2.notifyDataSetChanged()
-                }
-                "Change Pad Sounds" -> {
-                    paste = 1
-                    invalidateOptionsMenu()
-                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
-                    gridView2.visibility = View.INVISIBLE
-                    gridView2.adapter = adapter2a
-                    adapter2a.notifyDataSetChanged()
-                }
-                "Change to Play Mode" -> {
-                    paste = 0
-                    invalidateOptionsMenu()
-                    Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
-                    gridView2.visibility = View.INVISIBLE
-                    gridView2.adapter = adapter2
-                    adapter2.notifyDataSetChanged()
-                }
                 "メトロノーム・ループ" -> {
                     lmp.stop()
                     menuSwitch = true
@@ -4733,13 +4735,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuLamp.setIcon(R.drawable.ic_baseline_play_arrow_24)
         } else {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
-        }
-
-        val menuLamp2 = menu.findItem(R.id.menu10)
-        if (paste == 1) {
-            menuLamp2.setIcon(R.drawable.ic_baseline_library_music_24_c)
-        } else if (paste == 2) {
-            menuLamp2.setIcon(R.drawable.ic_baseline_library_music_24)
         }
 
         return true
