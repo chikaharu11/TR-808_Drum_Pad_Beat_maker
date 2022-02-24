@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = "rimshot_01" + " loop"
+    private var actionTitle = "rimshot_01"
     private var padText1 = "tr_8_cymbal_01"
     private var padText2 = "open_hi_hat_01"
     private var padText3 = "clsd_hi_hat_01"
@@ -260,7 +260,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
         when (orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
-                findViewById<TextView>(R.id.padText0).text = actionTitle
+                findViewById<TextView>(R.id.padText0).text = "$actionTitle loop"
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 findViewById<TextView>(R.id.padText0).text = "loop"
@@ -1982,7 +1982,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title = actionTitle
+        supportActionBar?.title = "$actionTitle loop"
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -2138,33 +2138,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
 
-                sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
+                sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
 
-                sound3 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
 
-                sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
+                sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
 
-                sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
+                sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
 
-                sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
 
-                sound7 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
 
-                sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
+                sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
 
-                sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
+                sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
 
-                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
 
-                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
 
-                sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
+                sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
 
-                sound13 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
 
-                sound14 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
+                sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
 
-                sound15 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
+                sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.rimshot_01))
 
@@ -4753,6 +4753,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onSaveInstanceState(outState)
         outState.putInt("DATA", adCheck)
         outState.putString("pad1", padText1.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad2", padText2.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad3", padText3.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad4", padText4.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad5", padText5.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad6", padText6.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad7", padText7.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad8", padText8.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad9", padText9.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad10", padText10.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad11", padText11.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad12", padText12.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad13", padText13.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad14", padText14.replace(" ", "_").replace("-", "_").lowercase())
+        outState.putString("pad15", padText15.replace(" ", "_").replace("-", "_").lowercase())
     }
 
     @SuppressLint("SetTextI18n")
@@ -4760,6 +4774,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onRestoreInstanceState(savedInstanceState)
         adCheck = savedInstanceState.getInt("DATA")
         padText1 = savedInstanceState.getString("pad1").toString()
+        padText2 = savedInstanceState.getString("pad2").toString()
+        padText3 = savedInstanceState.getString("pad3").toString()
+        padText4 = savedInstanceState.getString("pad4").toString()
+        padText5 = savedInstanceState.getString("pad5").toString()
+        padText6 = savedInstanceState.getString("pad6").toString()
+        padText7 = savedInstanceState.getString("pad7").toString()
+        padText8 = savedInstanceState.getString("pad8").toString()
+        padText9 = savedInstanceState.getString("pad9").toString()
+        padText10 = savedInstanceState.getString("pad10").toString()
+        padText11 = savedInstanceState.getString("pad11").toString()
+        padText12 = savedInstanceState.getString("pad12").toString()
+        padText13 = savedInstanceState.getString("pad13").toString()
+        padText14 = savedInstanceState.getString("pad14").toString()
+        padText15 = savedInstanceState.getString("pad15").toString()
         println(padText1)
         if ( adCheck == 1) {
             binding.adView.visibility = View.GONE
@@ -4798,7 +4826,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replace("_"," ").uppercase()
         when (resources.configuration.orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
-                findViewById<TextView>(R.id.padText0).text = actionTitle
+                findViewById<TextView>(R.id.padText0).text = "$actionTitle loop"
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 findViewById<TextView>(R.id.padText0).text = "loop"
@@ -4810,34 +4838,125 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 TODO()
             }
         }
-        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-
-        sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
-
-        sound3 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
-
-        sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
-
-        sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
-
-        sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
-
-        sound7 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
-
-        sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
-
-        sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
-
-        sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
-
-        sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
-
-        sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
-
-        sound13 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
-
-        sound14 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
-
-        sound15 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
+        try {
+            sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+        } catch (e: Exception) {
+            sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText1 = ""
+            binding.textView.text = ""
+            findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+        } catch (e: Exception) {
+            sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText2 = ""
+            binding.textView2.text = ""
+            findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
+        } catch (e: Exception) {
+            sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText3 = ""
+            binding.textView3.text = ""
+            findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+        } catch (e: Exception) {
+            sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText4 = ""
+            binding.textView4.text = ""
+            findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+        } catch (e: Exception) {
+            sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText5 = ""
+            binding.textView5.text = ""
+            findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
+        } catch (e: Exception) {
+            sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText6 = ""
+            binding.textView6.text = ""
+            findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+        } catch (e: Exception) {
+            sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText7 = ""
+            binding.textView7.text = ""
+            findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
+        } catch (e: Exception) {
+            sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText8 = ""
+            binding.textView8.text = ""
+            findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
+        } catch (e: Exception) {
+            sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText9 = ""
+            binding.textView9.text = ""
+            findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+        } catch (e: Exception) {
+            sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText10 = ""
+            binding.textView10.text = ""
+            findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
+        } catch (e: Exception) {
+            sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText11 = ""
+            binding.textView11.text = ""
+            findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
+        } catch (e: Exception) {
+            sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText12 = ""
+            binding.textView12.text = ""
+            findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+        } catch (e: Exception) {
+            sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText13 = ""
+            binding.textView13.text = ""
+            findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
+        } catch (e: Exception) {
+            sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText14 = ""
+            binding.textView14.text = ""
+            findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+        }
+        try {
+            sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+        } catch (e: Exception) {
+            sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+            padText15 = ""
+            binding.textView15.text = ""
+            findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
+        }
     }
 }
