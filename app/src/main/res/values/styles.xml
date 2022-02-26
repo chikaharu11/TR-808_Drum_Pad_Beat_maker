@@ -30,6 +30,10 @@
         <item name="android:colorBackground">#5A5A66</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <color name="colorPrimary">#5A5A66</color>
     <color name="colorPrimaryDark">#e2e3e3</color>
     <color name="colorAccent">#FFA630</color>
