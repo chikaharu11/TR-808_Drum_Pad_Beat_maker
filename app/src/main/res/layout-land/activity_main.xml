@@ -652,10 +652,9 @@
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/menu_spinner"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@id/space"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf= "@+id/toolbar_main"/>
 
