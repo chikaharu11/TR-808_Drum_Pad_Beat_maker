@@ -39,7 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/textView18"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:background="#e2e3e3"

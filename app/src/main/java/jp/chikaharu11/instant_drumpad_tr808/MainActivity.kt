@@ -4681,7 +4681,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         soundPoolTempo14 = savedInstanceState.getFloat("spt14")
         soundPoolTempo15 = savedInstanceState.getFloat("spt15")
         println(padText1)
-        if ( adCheck == 1) {
+        if (adCheck == 1) {
             binding.adView.visibility = View.GONE
             binding.topSpace.visibility = View.GONE
             binding.bottomSpace.visibility = View.GONE
