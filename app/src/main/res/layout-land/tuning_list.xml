@@ -30,6 +30,19 @@
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="16sp"
+        android:layout_height="wrap_content"
+        android:text="@string/textView18"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:background="#e2e3e3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/loop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/volume_minus0"
         android:layout_width="wrap_content"
