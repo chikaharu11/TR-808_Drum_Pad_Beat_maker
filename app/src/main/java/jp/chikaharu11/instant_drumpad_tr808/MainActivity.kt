@@ -228,21 +228,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         loadAdMob()
         loadRewardedAd()
 
-        binding.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView2.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView3.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView4.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView5.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView6.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView7.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView8.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView9.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView10.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView11.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView12.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView13.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView14.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView15.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -376,21 +376,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText13 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
                     padText14 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
                     padText15 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    binding.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView2.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView3.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView4.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView5.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView6.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView7.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView8.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView9.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView10.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView11.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView12.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView13.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView14.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView15.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -439,21 +439,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText13 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
                     padText14 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
                     padText15 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    binding.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView2.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView3.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView4.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView5.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView6.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView7.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView8.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView9.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView10.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView11.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView12.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView13.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView14.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.textView15.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -770,21 +770,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "ドラムパッドをリセット" -> {
-                    binding.textView.text = ""
-                    binding.textView2.text = ""
-                    binding.textView3.text = ""
-                    binding.textView4.text = ""
-                    binding.textView5.text = ""
-                    binding.textView6.text = ""
-                    binding.textView7.text = ""
-                    binding.textView8.text = ""
-                    binding.textView9.text = ""
-                    binding.textView10.text = ""
-                    binding.textView11.text = ""
-                    binding.textView12.text = ""
-                    binding.textView13.text = ""
-                    binding.textView14.text = ""
-                    binding.textView15.text = ""
+                    binding.includeMainView.textView.text = ""
+                    binding.includeMainView2.textView.text = ""
+                    binding.includeMainView3.textView.text = ""
+                    binding.includeMainView4.textView.text = ""
+                    binding.includeMainView5.textView.text = ""
+                    binding.includeMainView6.textView.text = ""
+                    binding.includeMainView7.textView.text = ""
+                    binding.includeMainView8.textView.text = ""
+                    binding.includeMainView9.textView.text = ""
+                    binding.includeMainView10.textView.text = ""
+                    binding.includeMainView11.textView.text = ""
+                    binding.includeMainView12.textView.text = ""
+                    binding.includeMainView13.textView.text = ""
+                    binding.includeMainView14.textView.text = ""
+                    binding.includeMainView15.textView.text = ""
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
@@ -918,118 +918,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     tCustomAdapter.notifyDataSetChanged()
                     soundListView.visibility = View.VISIBLE
                     gridView2.visibility = View.INVISIBLE
-                }
-                "Reset drum pads" -> {
-                    binding.textView.text = ""
-                    binding.textView2.text = ""
-                    binding.textView3.text = ""
-                    binding.textView4.text = ""
-                    binding.textView5.text = ""
-                    binding.textView6.text = ""
-                    binding.textView7.text = ""
-                    binding.textView8.text = ""
-                    binding.textView9.text = ""
-                    binding.textView10.text = ""
-                    binding.textView11.text = ""
-                    binding.textView12.text = ""
-                    binding.textView13.text = ""
-                    binding.textView14.text = ""
-                    binding.textView15.text = ""
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
-                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
-                    padText1 = ""
-                    padText2 = ""
-                    padText3 = ""
-                    padText4 = ""
-                    padText5 = ""
-                    padText6 = ""
-                    padText7 = ""
-                    padText8 = ""
-                    padText9 = ""
-                    padText10 = ""
-                    padText11 = ""
-                    padText12 = ""
-                    padText13 = ""
-                    padText14 = ""
-                    padText15 = ""
-                    mpDuration = 0
-                    mpDuration2 = 0
-                    mpDuration3 = 0
-                    mpDuration4 = 0
-                    mpDuration5 = 0
-                    mpDuration6 = 0
-                    mpDuration7 = 0
-                    mpDuration8 = 0
-                    mpDuration9 = 0
-                    mpDuration10 = 0
-                    mpDuration11 = 0
-                    mpDuration12 = 0
-                    mpDuration13 = 0
-                    mpDuration14 = 0
-                    mpDuration15 = 0
-                    count = 0.5f
-                    bpm = 1.0f
-                    soundPoolVolume = 0.5f
-                    soundPoolTempo = 1.0f
-                    soundPoolVolume2 = 0.5f
-                    soundPoolTempo2 = 1.0f
-                    soundPoolVolume3 = 0.5f
-                    soundPoolTempo3 = 1.0f
-                    soundPoolVolume4 = 0.5f
-                    soundPoolTempo4 = 1.0f
-                    soundPoolVolume5 = 0.5f
-                    soundPoolTempo5 = 1.0f
-                    soundPoolVolume6 = 0.5f
-                    soundPoolTempo6 = 1.0f
-                    soundPoolVolume7 = 0.5f
-                    soundPoolTempo7 = 1.0f
-                    soundPoolVolume8 = 0.5f
-                    soundPoolTempo8 = 1.0f
-                    soundPoolVolume9 = 0.5f
-                    soundPoolTempo9 = 1.0f
-                    soundPoolVolume10 = 0.5f
-                    soundPoolTempo10 = 1.0f
-                    soundPoolVolume11 = 0.5f
-                    soundPoolTempo11 = 1.0f
-                    soundPoolVolume12 = 0.5f
-                    soundPoolTempo12 = 1.0f
-                    soundPoolVolume13 = 0.5f
-                    soundPoolTempo13 = 1.0f
-                    soundPoolVolume14 = 0.5f
-                    soundPoolTempo14 = 1.0f
-                    soundPoolVolume15 = 0.5f
-                    soundPoolTempo15 = 1.0f
-                    sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    gridView2.visibility = View.INVISIBLE
-                    Toast.makeText(applicationContext, R.string.reset2, Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -1729,7 +1617,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         lmp.stop()
 
 
-        binding.imageView.setOnTouchListener { _, event ->
+        binding.includeMainView.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1747,7 +1635,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView2.setOnTouchListener { _, event ->
+        binding.includeMainView2.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1765,7 +1653,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView3.setOnTouchListener { _, event ->
+        binding.includeMainView3.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1783,7 +1671,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView4.setOnTouchListener { _, event ->
+        binding.includeMainView4.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1801,7 +1689,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView5.setOnTouchListener { _, event ->
+        binding.includeMainView5.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1819,7 +1707,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView6.setOnTouchListener { _, event ->
+        binding.includeMainView6.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1837,7 +1725,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView7.setOnTouchListener { _, event ->
+        binding.includeMainView7.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1855,7 +1743,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView8.setOnTouchListener { _, event ->
+        binding.includeMainView8.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1873,7 +1761,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView9.setOnTouchListener { _, event ->
+        binding.includeMainView9.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1892,7 +1780,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         }
 
-        binding.imageView10.setOnTouchListener { _, event ->
+        binding.includeMainView10.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1910,7 +1798,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView11.setOnTouchListener { _, event ->
+        binding.includeMainView11.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1928,7 +1816,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView12.setOnTouchListener { _, event ->
+        binding.includeMainView12.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1946,7 +1834,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView13.setOnTouchListener { _, event ->
+        binding.includeMainView13.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1964,7 +1852,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView14.setOnTouchListener { _, event ->
+        binding.includeMainView14.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -1982,7 +1870,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 false
         }
 
-        binding.imageView15.setOnTouchListener { _, event ->
+        binding.includeMainView15.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
@@ -2001,105 +1889,105 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
 
-        binding.imageView.setOnClickListener {
+        binding.includeMainView.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 1
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView2.setOnClickListener {
+        binding.includeMainView2.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 2
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView3.setOnClickListener {
+        binding.includeMainView3.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 3
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView4.setOnClickListener {
+        binding.includeMainView4.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 4
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView5.setOnClickListener {
+        binding.includeMainView5.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 5
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView6.setOnClickListener {
+        binding.includeMainView6.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 6
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView7.setOnClickListener {
+        binding.includeMainView7.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 7
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView8.setOnClickListener {
+        binding.includeMainView8.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 8
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView9.setOnClickListener {
+        binding.includeMainView9.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 9
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView10.setOnClickListener {
+        binding.includeMainView10.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 10
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView11.setOnClickListener {
+        binding.includeMainView11.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 11
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView12.setOnClickListener {
+        binding.includeMainView12.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 12
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView13.setOnClickListener {
+        binding.includeMainView13.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 13
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView14.setOnClickListener {
+        binding.includeMainView14.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 14
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
-        binding.imageView15.setOnClickListener {
+        binding.includeMainView15.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 15
                 meSpinner.avoidDropdownFocus()
@@ -3296,45 +3184,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
     private fun x53() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.VISIBLE
-        binding.imageView6.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView9.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView11.visibility = View.VISIBLE
-        binding.imageView12.visibility = View.VISIBLE
-        binding.imageView13.visibility = View.VISIBLE
-        binding.imageView14.visibility = View.VISIBLE
-        binding.imageView15.visibility = View.VISIBLE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.VISIBLE
-        binding.backgroundView6.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView9.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView11.visibility = View.VISIBLE
-        binding.backgroundView12.visibility = View.VISIBLE
-        binding.backgroundView13.visibility = View.VISIBLE
-        binding.backgroundView14.visibility = View.VISIBLE
-        binding.backgroundView15.visibility = View.VISIBLE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView3.visibility = View.VISIBLE
-        binding.textView6.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView9.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView11.visibility = View.VISIBLE
-        binding.textView12.visibility = View.VISIBLE
-        binding.textView13.visibility = View.VISIBLE
-        binding.textView14.visibility = View.VISIBLE
-        binding.textView15.visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view6).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view11).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view12).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view13).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view14).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view15).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view3).visibility = View.VISIBLE
@@ -3352,45 +3214,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x43() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.VISIBLE
-        binding.imageView6.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView9.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView11.visibility = View.VISIBLE
-        binding.imageView12.visibility = View.VISIBLE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.VISIBLE
-        binding.backgroundView6.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView9.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView11.visibility = View.VISIBLE
-        binding.backgroundView12.visibility = View.VISIBLE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView3.visibility = View.VISIBLE
-        binding.textView6.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView9.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView11.visibility = View.VISIBLE
-        binding.textView12.visibility = View.VISIBLE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view6).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view11).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view12).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view3).visibility = View.VISIBLE
@@ -3408,45 +3244,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x33() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.VISIBLE
-        binding.imageView6.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView9.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.VISIBLE
-        binding.backgroundView6.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView9.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView3.visibility = View.VISIBLE
-        binding.textView6.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView9.visibility = View.VISIBLE
-        binding.textView10.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view6).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view10).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view3).visibility = View.VISIBLE
@@ -3464,45 +3274,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x52() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView11.visibility = View.VISIBLE
-        binding.imageView13.visibility = View.VISIBLE
-        binding.imageView14.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView11.visibility = View.VISIBLE
-        binding.backgroundView13.visibility = View.VISIBLE
-        binding.backgroundView14.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView11.visibility = View.VISIBLE
-        binding.textView13.visibility = View.VISIBLE
-        binding.textView14.visibility = View.VISIBLE
-        binding.textView3.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view11).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view14).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
@@ -3520,45 +3304,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x42() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView11.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView11.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView11.visibility = View.VISIBLE
-        binding.textView3.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view11).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
@@ -3576,45 +3334,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x32() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView8.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView10.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView8.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView10.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView8.visibility = View.VISIBLE
-        binding.textView3.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView10.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view8).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
@@ -3632,45 +3364,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x22() {
-        binding.imageView2.visibility = View.VISIBLE
-        binding.imageView5.visibility = View.VISIBLE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView7.visibility = View.GONE
-        binding.imageView8.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView10.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.VISIBLE
-        binding.backgroundView5.visibility = View.VISIBLE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView7.visibility = View.GONE
-        binding.backgroundView8.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView10.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.VISIBLE
-        binding.textView5.visibility = View.VISIBLE
-        binding.textView3.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView7.visibility = View.GONE
-        binding.textView8.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView10.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view5).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view8).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view5).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view3).visibility = View.GONE
@@ -3688,45 +3394,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x21() {
-        binding.imageView2.visibility = View.GONE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView5.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView7.visibility = View.GONE
-        binding.imageView8.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView10.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView2.visibility = View.GONE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView5.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView7.visibility = View.GONE
-        binding.backgroundView8.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView10.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView2.visibility = View.GONE
-        binding.textView3.visibility = View.GONE
-        binding.textView5.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView7.visibility = View.GONE
-        binding.textView8.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView10.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view2).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view5).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view8).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view2).visibility = View.GONE
         findViewById<View>(R.id.include_view3).visibility = View.GONE
         findViewById<View>(R.id.include_view5).visibility = View.GONE
@@ -3744,45 +3424,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x51() {
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView13.visibility = View.VISIBLE
-        binding.imageView2.visibility = View.GONE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView5.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView8.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView13.visibility = View.VISIBLE
-        binding.backgroundView2.visibility = View.GONE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView5.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView8.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView13.visibility = View.VISIBLE
-        binding.textView2.visibility = View.GONE
-        binding.textView3.visibility = View.GONE
-        binding.textView5.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView8.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view13).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view2).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view5).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view8).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view10).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view13).visibility = View.VISIBLE
@@ -3800,45 +3454,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x41(){
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView10.visibility = View.VISIBLE
-        binding.imageView2.visibility = View.GONE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView5.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView8.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView10.visibility = View.VISIBLE
-        binding.backgroundView2.visibility = View.GONE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView5.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView8.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView10.visibility = View.VISIBLE
-        binding.textView2.visibility = View.GONE
-        binding.textView3.visibility = View.GONE
-        binding.textView5.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView8.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view10).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view2).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view5).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view8).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view10).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view2).visibility = View.GONE
@@ -3856,45 +3484,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.gridView.visibility = View.INVISIBLE
     }
     private fun x31() {
-        binding.imageView7.visibility = View.VISIBLE
-        binding.imageView2.visibility = View.GONE
-        binding.imageView3.visibility = View.GONE
-        binding.imageView5.visibility = View.GONE
-        binding.imageView6.visibility = View.GONE
-        binding.imageView8.visibility = View.GONE
-        binding.imageView9.visibility = View.GONE
-        binding.imageView10.visibility = View.GONE
-        binding.imageView11.visibility = View.GONE
-        binding.imageView12.visibility = View.GONE
-        binding.imageView13.visibility = View.GONE
-        binding.imageView14.visibility = View.GONE
-        binding.imageView15.visibility = View.GONE
-        binding.backgroundView7.visibility = View.VISIBLE
-        binding.backgroundView2.visibility = View.GONE
-        binding.backgroundView3.visibility = View.GONE
-        binding.backgroundView5.visibility = View.GONE
-        binding.backgroundView6.visibility = View.GONE
-        binding.backgroundView8.visibility = View.GONE
-        binding.backgroundView9.visibility = View.GONE
-        binding.backgroundView10.visibility = View.GONE
-        binding.backgroundView11.visibility = View.GONE
-        binding.backgroundView12.visibility = View.GONE
-        binding.backgroundView13.visibility = View.GONE
-        binding.backgroundView14.visibility = View.GONE
-        binding.backgroundView15.visibility = View.GONE
-        binding.textView7.visibility = View.VISIBLE
-        binding.textView2.visibility = View.GONE
-        binding.textView3.visibility = View.GONE
-        binding.textView5.visibility = View.GONE
-        binding.textView6.visibility = View.GONE
-        binding.textView8.visibility = View.GONE
-        binding.textView9.visibility = View.GONE
-        binding.textView10.visibility = View.GONE
-        binding.textView11.visibility = View.GONE
-        binding.textView12.visibility = View.GONE
-        binding.textView13.visibility = View.GONE
-        binding.textView14.visibility = View.GONE
-        binding.textView15.visibility = View.GONE
+        findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
+        findViewById<View>(R.id.include_main_view2).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view3).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view5).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view6).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view8).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view9).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view10).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view11).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view12).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view13).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view14).visibility = View.GONE
+        findViewById<View>(R.id.include_main_view15).visibility = View.GONE
         findViewById<View>(R.id.include_view7).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view2).visibility = View.GONE
         findViewById<View>(R.id.include_view3).visibility = View.GONE
@@ -4060,7 +3662,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         try {
             when {
                 buttonA == 1 && buttonB == 1 -> {
-                    effect(binding.imageView,400)
+                    effect(binding.includeMainView.imageView,400)
                     sound1 = soundPool.load(soundList.name, 1)
                     println(soundList.name)
                     getmpDuration = MediaPlayer()
@@ -4071,7 +3673,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText1 = soundList.name
@@ -4082,7 +3684,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 2 && buttonB == 1 -> {
-                    effect(binding.imageView2,400)
+                    effect(binding.includeMainView2.imageView,400)
                     sound2 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4092,7 +3694,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView2.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText2 = soundList.name
@@ -4103,7 +3705,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 3 && buttonB == 1 -> {
-                    effect(binding.imageView3,400)
+                    effect(binding.includeMainView3.imageView,400)
                     sound3 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4113,7 +3715,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView3.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText3 = soundList.name
@@ -4124,7 +3726,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 4 && buttonB == 1 -> {
-                    effect(binding.imageView4,400)
+                    effect(binding.includeMainView4.imageView,400)
                     sound4 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4134,7 +3736,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView4.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText4 = soundList.name
@@ -4145,7 +3747,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 5 && buttonB == 1 -> {
-                    effect(binding.imageView5,400)
+                    effect(binding.includeMainView5.imageView,400)
                     sound5 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4155,7 +3757,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView5.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText5 = soundList.name
@@ -4166,7 +3768,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 6 && buttonB == 1 -> {
-                    effect(binding.imageView6,400)
+                    effect(binding.includeMainView6.imageView,400)
                     sound6 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4176,7 +3778,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView6.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText6 = soundList.name
@@ -4187,7 +3789,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 7 && buttonB == 1 -> {
-                    effect(binding.imageView7,400)
+                    effect(binding.includeMainView7.imageView,400)
                     sound7 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4197,7 +3799,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView7.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText7 = soundList.name
@@ -4208,7 +3810,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 8 && buttonB == 1 -> {
-                    effect(binding.imageView8,400)
+                    effect(binding.includeMainView8.imageView,400)
                     sound8 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4218,7 +3820,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView8.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText8 = soundList.name
@@ -4229,7 +3831,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 9 && buttonB == 1 -> {
-                    effect(binding.imageView9,400)
+                    effect(binding.includeMainView9.imageView,400)
                     sound9 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4239,7 +3841,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView9.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText9 = soundList.name
@@ -4250,7 +3852,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 10 && buttonB == 1 -> {
-                    effect(binding.imageView10,400)
+                    effect(binding.includeMainView10.imageView,400)
                     sound10 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4260,7 +3862,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView10.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText10 = soundList.name
@@ -4271,7 +3873,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 11 && buttonB == 1 -> {
-                    effect(binding.imageView11,400)
+                    effect(binding.includeMainView11.imageView,400)
                     sound11 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4281,7 +3883,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView11.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText11 = soundList.name
@@ -4292,7 +3894,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 12 && buttonB == 1 -> {
-                    effect(binding.imageView12,400)
+                    effect(binding.includeMainView12.imageView,400)
                     sound12 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4302,7 +3904,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView12.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText12 = soundList.name
@@ -4313,7 +3915,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 13 && buttonB == 1 -> {
-                    effect(binding.imageView13,400)
+                    effect(binding.includeMainView13.imageView,400)
                     sound13 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4323,7 +3925,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView13.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText13 = soundList.name
@@ -4334,7 +3936,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 14 && buttonB == 1 -> {
-                    effect(binding.imageView14,400)
+                    effect(binding.includeMainView14.imageView,400)
                     sound14 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4344,7 +3946,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView14.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText14 = soundList.name
@@ -4355,7 +3957,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 15 && buttonB == 1 -> {
-                    effect(binding.imageView15,400)
+                    effect(binding.includeMainView15.imageView,400)
                     sound15 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -4365,7 +3967,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    binding.includeMainView15.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText15 = soundList.name
@@ -4389,7 +3991,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                 }
                 buttonA == 1 && buttonB == 2 -> {
-                    effect(binding.imageView,400)
+                    effect(binding.includeMainView.imageView,400)
                     sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4401,7 +4003,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText1 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4410,7 +4012,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
                 }
                 buttonA == 2 && buttonB == 2 -> {
-                    effect(binding.imageView2,400)
+                    effect(binding.includeMainView2.imageView,400)
                     sound2 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4422,7 +4024,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView2.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView2.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText2 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4431,7 +4033,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
                 }
                 buttonA == 3 && buttonB == 2 -> {
-                    effect(binding.imageView3,400)
+                    effect(binding.includeMainView3.imageView,400)
                     sound3 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4443,7 +4045,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView3.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView3.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText3 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4452,7 +4054,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
                 }
                 buttonA == 4 && buttonB == 2 -> {
-                    effect(binding.imageView4,400)
+                    effect(binding.includeMainView4.imageView,400)
                     sound4 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4464,7 +4066,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView4.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView4.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText4 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4473,7 +4075,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4
                 }
                 buttonA == 5 && buttonB == 2 -> {
-                    effect(binding.imageView5,400)
+                    effect(binding.includeMainView5.imageView,400)
                     sound5 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4485,7 +4087,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView5.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView5.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText5 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4494,7 +4096,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5
                 }
                 buttonA == 6 && buttonB == 2 -> {
-                    effect(binding.imageView6,400)
+                    effect(binding.includeMainView6.imageView,400)
                     sound6 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4506,7 +4108,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView6.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView6.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText6 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4515,7 +4117,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6
                 }
                 buttonA == 7 && buttonB == 2 -> {
-                    effect(binding.imageView7,400)
+                    effect(binding.includeMainView7.imageView,400)
                     sound7 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4527,7 +4129,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView7.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView7.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText7 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4536,7 +4138,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7
                 }
                 buttonA == 8 && buttonB == 2 -> {
-                    effect(binding.imageView8,400)
+                    effect(binding.includeMainView8.imageView,400)
                     sound8 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4548,7 +4150,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView8.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView8.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText8 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4557,7 +4159,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8
                 }
                 buttonA == 9 && buttonB == 2 -> {
-                    effect(binding.imageView9,400)
+                    effect(binding.includeMainView9.imageView,400)
                     sound9 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4569,7 +4171,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView9.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView9.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText9 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4578,7 +4180,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9
                 }
                 buttonA == 10 && buttonB == 2 -> {
-                    effect(binding.imageView10,400)
+                    effect(binding.includeMainView10.imageView,400)
                     sound10 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4590,7 +4192,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView10.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView10.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText10 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4599,7 +4201,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10
                 }
                 buttonA == 11 && buttonB == 2 -> {
-                    effect(binding.imageView11,400)
+                    effect(binding.includeMainView11.imageView,400)
                     sound11 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4611,7 +4213,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView11.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView11.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText11 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4620,7 +4222,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11
                 }
                 buttonA == 12 && buttonB == 2 -> {
-                    effect(binding.imageView12,400)
+                    effect(binding.includeMainView12.imageView,400)
                     sound12 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4632,7 +4234,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView12.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView12.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText12 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4641,7 +4243,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12
                 }
                 buttonA == 13 && buttonB == 2 -> {
-                    effect(binding.imageView13,400)
+                    effect(binding.includeMainView13.imageView,400)
                     sound13 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4653,7 +4255,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView13.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView13.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText13 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4662,7 +4264,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13
                 }
                 buttonA == 14 && buttonB == 2 -> {
-                    effect(binding.imageView14,400)
+                    effect(binding.includeMainView14.imageView,400)
                     sound14 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4674,7 +4276,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView14.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView14.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText14 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -4683,7 +4285,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14
                 }
                 buttonA == 15 && buttonB == 2 -> {
-                    effect(binding.imageView15,400)
+                    effect(binding.includeMainView15.imageView,400)
                     sound15 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -4695,7 +4297,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView15.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.includeMainView15.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText15 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -5032,21 +4634,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             binding.topSpace.visibility = View.GONE
             binding.bottomSpace.visibility = View.GONE
         }
-        binding.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView2.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView3.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView4.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView5.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView6.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView7.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView8.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView9.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView10.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView11.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView12.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView13.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView14.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        binding.textView15.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -5115,105 +4717,105 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
         } catch (e: Exception) {
             sound1 = soundPool.load(padText1, 1)
-            binding.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
         } catch (e: Exception) {
             sound2 = soundPool.load(padText2, 1)
-            binding.textView2.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
         } catch (e: Exception) {
             sound3 = soundPool.load(padText3, 1)
-            binding.textView3.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
         } catch (e: Exception) {
             sound4 = soundPool.load(padText4, 1)
-            binding.textView4.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
         } catch (e: Exception) {
             sound5 = soundPool.load(padText5, 1)
-            binding.textView5.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
         } catch (e: Exception) {
             sound6 = soundPool.load(padText6, 1)
-            binding.textView6.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
         } catch (e: Exception) {
             sound7 = soundPool.load(padText7, 1)
-            binding.textView7.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
         } catch (e: Exception) {
             sound8 = soundPool.load(padText8, 1)
-            binding.textView8.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
         } catch (e: Exception) {
             sound9 = soundPool.load(padText9, 1)
-            binding.textView9.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
         } catch (e: Exception) {
             sound10 = soundPool.load(padText10, 1)
-            binding.textView10.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
         } catch (e: Exception) {
             sound11 = soundPool.load(padText11, 1)
-            binding.textView11.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
         } catch (e: Exception) {
             sound12 = soundPool.load(padText12, 1)
-            binding.textView12.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
         } catch (e: Exception) {
             sound13 = soundPool.load(padText13, 1)
-            binding.textView13.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
         } catch (e: Exception) {
             sound14 = soundPool.load(padText14, 1)
-            binding.textView14.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
         try {
             sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
         } catch (e: Exception) {
             sound15 = soundPool.load(padText15, 1)
-            binding.textView15.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
             findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
         }
     }
