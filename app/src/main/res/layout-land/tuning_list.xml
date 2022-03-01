@@ -10,10 +10,12 @@
     <TextView
         android:id="@+id/textView16"
         android:layout_width="16sp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/textView16"
         android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_minus0"
         app:layout_constraintEnd_toStartOf="@+id/volume_plus0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/volume_plus0"
@@ -22,19 +24,22 @@
     <TextView
         android:id="@+id/textView17"
         android:layout_width="16sp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/textView17"
         android:textColor="#FFFFFF"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/tempo_minus0"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus0" />
 
-    <TextView
+    <Button
         android:id="@+id/textView18"
-        android:layout_width="16sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/textView18"
+        android:textSize="10sp"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:background="#e2e3e3"

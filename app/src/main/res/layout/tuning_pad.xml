@@ -85,7 +85,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/pad"
         app:layout_constraintEnd_toEndOf="@+id/pad"
-        app:layout_constraintStart_toStartOf="@+id/pad" />
+        app:layout_constraintStart_toStartOf="@+id/pad"
+        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp" />
 
     <Space
         android:id="@+id/center_space"

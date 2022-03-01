@@ -30,10 +30,10 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <Button
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:textColor="#FFFFFF"
         android:text="@string/textView18o"
         android:background="#e2e3e3"
