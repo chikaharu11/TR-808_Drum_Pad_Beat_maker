@@ -34,7 +34,19 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.261" />
         <entry key="app/src/main/res/drawable/icon_background.xml" value="0.261" />
         <entry key="app/src/main/res/drawable/my_ripple.xml" value="0.3421875" />
+        <entry key="app/src/main/res/drawable/my_ripple2.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/my_ripple3.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/my_ripple4.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/my_ripple5.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/my_ripple6.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/my_ripple7.xml" value="0.3285" />
         <entry key="app/src/main/res/drawable/round_corners.xml" value="0.261" />
+        <entry key="app/src/main/res/drawable/round_corners2.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/round_corners3.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/round_corners4.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/round_corners5.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/round_corners6.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/round_corners7.xml" value="0.3285" />
         <entry key="app/src/main/res/drawable/square.xml" value="0.3421875" />
         <entry key="app/src/main/res/drawable/square2.xml" value="0.3421875" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.335" />

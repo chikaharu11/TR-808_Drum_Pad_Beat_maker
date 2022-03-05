@@ -357,6 +357,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Change Pad Sounds",
                 "Random Pad Sounds",
                 "Adjusting Sounds",
+                "Change Pad Color",
                 "Save Sound Settings",
                 "Load Sound Settings",
                 "Hide banner Ads",
@@ -382,6 +383,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Change to Play Mode",
                 "Random Pad Sounds",
                 "Adjusting Sounds",
+                "Change Pad Color",
                 "Save Sound Settings",
                 "Load Sound Settings",
                 "Hide banner Ads",
@@ -430,6 +432,51 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.visibility = View.INVISIBLE
                     gridView.adapter = adapter
                     adapter.notifyDataSetChanged()
+                }
+                "Change Pad Color" -> {
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                            findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                            findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
+                            findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
+                            findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
+                            findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
+                            findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                            findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                            findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
+
                 }
                 "Random Pad Sounds" -> {
                     padText1 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
@@ -4734,6 +4781,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.check = padCheck
             mRealm.copyToRealm(ss)
         }
+        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
     }
 
     private fun update() {
@@ -4786,6 +4834,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tempo15 = soundPoolTempo15
             data?.check = padCheck
         }
+        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
     }
 
     @SuppressLint("SetTextI18n")
@@ -5111,6 +5160,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                 }
             }
+            Toast.makeText(applicationContext, R.string.Loaded, Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
         }
