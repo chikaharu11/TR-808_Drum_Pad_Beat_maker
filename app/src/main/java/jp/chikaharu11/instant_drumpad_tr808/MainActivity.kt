@@ -28,6 +28,9 @@ import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import io.realm.Realm
+import io.realm.RealmConfiguration
+import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import java.util.*
 import kotlin.math.hypot
@@ -188,6 +191,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var sSoundList: MutableList<SoundList>
     private lateinit var tSoundList: MutableList<SoundList>
 
+    private lateinit var mRealm: Realm
+
     private var sound1 = 0
     private var sound2 = 0
     private var sound3 = 0
@@ -227,6 +232,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         initAdMob()
         loadAdMob()
         loadRewardedAd()
+
+        Realm.init(this)
+        val realmConfig = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .allowWritesOnUiThread(true)
+            .build()
+        mRealm = Realm.getInstance(realmConfig)
+
+        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+            padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
+            padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad2.toString())
+            padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad3.toString())
+            padText4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad4.toString())
+            padText5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad5.toString())
+            padText6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad6.toString())
+            padText7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad7.toString())
+            padText8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad8.toString())
+            padText9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad9.toString())
+            padText10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad10.toString())
+            padText11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad11.toString())
+            padText12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad12.toString())
+            padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
+            padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
+            padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
+        }
 
         binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -291,6 +321,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Change Pad Sounds",
                 "Random Pad Sounds",
                 "Adjusting Sounds",
+                "Save Sound Settings",
+                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -312,7 +344,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ) } else {
             arrayOf(
                 "Change to Play Mode",
+                "Random Pad Sounds",
                 "Adjusting Sounds",
+                "Save Sound Settings",
+                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -484,6 +519,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
                     sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
                     sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+                    gridView.visibility = View.INVISIBLE
+                }
+                "Save Sound Settings" -> {
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
+                        create()
+                    } else {
+                        update()
+                    }
+                    gridView.visibility = View.INVISIBLE
+                }
+                "Load Sound Settings" -> {
+                    read()
                     gridView.visibility = View.INVISIBLE
                 }
                 "サウンドの調整" -> {
@@ -4434,6 +4481,255 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    private fun create () {
+        mRealm.executeTransaction {
+            val ss = mRealm.createObject<SaveSlot>(primaryKeyValue = "1")
+            ss.pad = padText1
+            ss.pad2 = padText2
+            ss.pad3 = padText3
+            ss.pad4 = padText4
+            ss.pad5 = padText5
+            ss.pad6 = padText6
+            ss.pad7 = padText7
+            ss.pad8 = padText8
+            ss.pad9 = padText9
+            ss.pad10 = padText10
+            ss.pad11 = padText11
+            ss.pad12 = padText12
+            ss.pad13 = padText13
+            ss.pad14 = padText14
+            ss.pad15 = padText15
+            mRealm.copyToRealm(ss)
+        }
+    }
+
+    private fun update() {
+        val data = mRealm.where(SaveSlot::class.java).equalTo("id","1").findFirst()
+        mRealm.executeTransaction {
+            data?.pad = padText1
+            data?.pad2 = padText2
+            data?.pad3 = padText3
+            data?.pad4 = padText4
+            data?.pad5 = padText5
+            data?.pad6 = padText6
+            data?.pad7 = padText7
+            data?.pad8 = padText8
+            data?.pad9 = padText9
+            data?.pad10 = padText10
+            data?.pad11 = padText11
+            data?.pad12 = padText12
+            data?.pad13 = padText13
+            data?.pad14 = padText14
+            data?.pad15 = padText15
+        }
+    }
+
+    private fun read() {
+        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+            padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
+            padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad2.toString())
+            padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad3.toString())
+            padText4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad4.toString())
+            padText5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad5.toString())
+            padText6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad6.toString())
+            padText7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad7.toString())
+            padText8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad8.toString())
+            padText9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad9.toString())
+            padText10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad10.toString())
+            padText11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad11.toString())
+            padText12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad12.toString())
+            padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
+            padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
+            padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
+            binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            when (resources.configuration.orientation) {
+                Configuration.ORIENTATION_PORTRAIT -> {
+                    findViewById<TextView>(R.id.padText0).text = "${actionTitle.uppercase()} loop"
+                }
+                Configuration.ORIENTATION_LANDSCAPE -> {
+                    findViewById<TextView>(R.id.padText0).text = "loop"
+                }
+                Configuration.ORIENTATION_SQUARE -> {
+                    TODO()
+                }
+                Configuration.ORIENTATION_UNDEFINED -> {
+                    TODO()
+                }
+            }
+            when (padCheck) {
+                53 -> {
+                    x53()
+                }
+                43 -> {
+                    x43()
+                }
+                33 -> {
+                    x33()
+                }
+                52 -> {
+                    x52()
+                }
+                42 -> {
+                    x42()
+                }
+                32 -> {
+                    x32()
+                }
+                22 -> {
+                    x22()
+                }
+                21 -> {
+                    x21()
+                }
+                51 -> {
+                    x51()
+                }
+                41 -> {
+                    x41()
+                }
+                31 -> {
+                    x31()
+                }
+            }
+            try {
+                sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+            } catch (e: Exception) {
+                sound1 = soundPool.load(padText1, 1)
+                binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+            } catch (e: Exception) {
+                sound2 = soundPool.load(padText2, 1)
+                binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
+            } catch (e: Exception) {
+                sound3 = soundPool.load(padText3, 1)
+                binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+            } catch (e: Exception) {
+                sound4 = soundPool.load(padText4, 1)
+                binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+            } catch (e: Exception) {
+                sound5 = soundPool.load(padText5, 1)
+                binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
+            } catch (e: Exception) {
+                sound6 = soundPool.load(padText6, 1)
+                binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+            } catch (e: Exception) {
+                sound7 = soundPool.load(padText7, 1)
+                binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
+            } catch (e: Exception) {
+                sound8 = soundPool.load(padText8, 1)
+                binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
+            } catch (e: Exception) {
+                sound9 = soundPool.load(padText9, 1)
+                binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+            } catch (e: Exception) {
+                sound10 = soundPool.load(padText10, 1)
+                binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
+            } catch (e: Exception) {
+                sound11 = soundPool.load(padText11, 1)
+                binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
+            } catch (e: Exception) {
+                sound12 = soundPool.load(padText12, 1)
+                binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+            } catch (e: Exception) {
+                sound13 = soundPool.load(padText13, 1)
+                binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
+            } catch (e: Exception) {
+                sound14 = soundPool.load(padText14, 1)
+                binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+            try {
+                sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+            } catch (e: Exception) {
+                sound15 = soundPool.load(padText15, 1)
+                binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            }
+        } else {
+            Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -4558,6 +4854,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         soundPool.release()
 
         super.onDestroy()
+        mRealm.close()
     }
 
     override fun onPause() {

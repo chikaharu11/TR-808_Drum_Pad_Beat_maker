@@ -48,6 +48,8 @@
     <string name="textView18">R\nE\nS\nE\nT</string>
     <string name="textView18o">RESET</string>
 
+    <string name="empty">empty</string>
+
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
         <item>HAND CLAP [CP]</item>
