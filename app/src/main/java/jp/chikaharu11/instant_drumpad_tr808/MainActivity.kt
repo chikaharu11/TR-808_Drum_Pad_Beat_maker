@@ -256,6 +256,42 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
             padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
             padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
+            padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
+            when (padCheck) {
+                53 -> {
+                    x53()
+                }
+                43 -> {
+                    x43()
+                }
+                33 -> {
+                    x33()
+                }
+                52 -> {
+                    x52()
+                }
+                42 -> {
+                    x42()
+                }
+                32 -> {
+                    x32()
+                }
+                22 -> {
+                    x22()
+                }
+                21 -> {
+                    x21()
+                }
+                51 -> {
+                    x51()
+                }
+                41 -> {
+                    x41()
+                }
+                31 -> {
+                    x31()
+                }
+            }
         }
 
         binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1629,35 +1665,201 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-                sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-
-                sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
-
-                sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
-
-                sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-
-                sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
-
-                sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
-
-                sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-
-                sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
-
-                sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
-
-                sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-
-                sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
-
-                sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
-
-                sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-
-                sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
-
-                sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+        try {
+            sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound1 = soundPool.load(padText1, 1)
+                binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView.textView.text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound2 = soundPool.load(padText2, 1)
+                binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView2.textView.text = ""
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound3 = soundPool.load(padText3, 1)
+                binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView3.textView.text = ""
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound4 = soundPool.load(padText4, 1)
+                binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView4.textView.text = ""
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound5 = soundPool.load(padText5, 1)
+                binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView5.textView.text = ""
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound6 = soundPool.load(padText6, 1)
+                binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView6.textView.text = ""
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound7 = soundPool.load(padText7, 1)
+                binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView7.textView.text = ""
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound8 = soundPool.load(padText8, 1)
+                binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView8.textView.text = ""
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound9 = soundPool.load(padText9, 1)
+                binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView9.textView.text = ""
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound10 = soundPool.load(padText10, 1)
+                binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView10.textView.text = ""
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound11 = soundPool.load(padText11, 1)
+                binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView11.textView.text = ""
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound12 = soundPool.load(padText12, 1)
+                binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView12.textView.text = ""
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound13 = soundPool.load(padText13, 1)
+                binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView13.textView.text = ""
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound14 = soundPool.load(padText14, 1)
+                binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView14.textView.text = ""
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
+        try {
+            sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+        } catch (e: Exception) {
+            try {
+                sound15 = soundPool.load(padText15, 1)
+                binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView15.textView.text = ""
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
+            }
+        }
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.rimshot_01))
 
@@ -4499,6 +4701,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.pad13 = padText13
             ss.pad14 = padText14
             ss.pad15 = padText15
+            ss.volume = soundPoolVolume
+            ss.volume2 = soundPoolVolume2
+            ss.volume3 = soundPoolVolume3
+            ss.volume4 = soundPoolVolume4
+            ss.volume5 = soundPoolVolume5
+            ss.volume6 = soundPoolVolume6
+            ss.volume7 = soundPoolVolume7
+            ss.volume8 = soundPoolVolume8
+            ss.volume9 = soundPoolVolume9
+            ss.volume10 = soundPoolVolume10
+            ss.volume11 = soundPoolVolume11
+            ss.volume12 = soundPoolVolume12
+            ss.volume13 = soundPoolVolume13
+            ss.volume14 = soundPoolVolume14
+            ss.volume15 = soundPoolVolume15
+            ss.tempo = soundPoolTempo
+            ss.tempo2 = soundPoolTempo2
+            ss.tempo3 = soundPoolTempo3
+            ss.tempo4 = soundPoolTempo4
+            ss.tempo5 = soundPoolTempo5
+            ss.tempo6 = soundPoolTempo6
+            ss.tempo7 = soundPoolTempo7
+            ss.tempo8 = soundPoolTempo8
+            ss.tempo9 = soundPoolTempo9
+            ss.tempo10 = soundPoolTempo10
+            ss.tempo11 = soundPoolTempo11
+            ss.tempo12 = soundPoolTempo12
+            ss.tempo13 = soundPoolTempo13
+            ss.tempo14 = soundPoolTempo14
+            ss.tempo15 = soundPoolTempo15
+            ss.check = padCheck
             mRealm.copyToRealm(ss)
         }
     }
@@ -4521,9 +4754,41 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.pad13 = padText13
             data?.pad14 = padText14
             data?.pad15 = padText15
+            data?.volume = soundPoolVolume
+            data?.volume2 = soundPoolVolume2
+            data?.volume3 = soundPoolVolume3
+            data?.volume4 = soundPoolVolume4
+            data?.volume5 = soundPoolVolume5
+            data?.volume6 = soundPoolVolume6
+            data?.volume7 = soundPoolVolume7
+            data?.volume8 = soundPoolVolume8
+            data?.volume9 = soundPoolVolume9
+            data?.volume10 = soundPoolVolume10
+            data?.volume11 = soundPoolVolume11
+            data?.volume12 = soundPoolVolume12
+            data?.volume13 = soundPoolVolume13
+            data?.volume14 = soundPoolVolume14
+            data?.volume15 = soundPoolVolume15
+            data?.tempo = soundPoolTempo
+            data?.tempo2 = soundPoolTempo2
+            data?.tempo3 = soundPoolTempo3
+            data?.tempo4 = soundPoolTempo4
+            data?.tempo5 = soundPoolTempo5
+            data?.tempo6 = soundPoolTempo6
+            data?.tempo7 = soundPoolTempo7
+            data?.tempo8 = soundPoolTempo8
+            data?.tempo9 = soundPoolTempo9
+            data?.tempo10 = soundPoolTempo10
+            data?.tempo11 = soundPoolTempo11
+            data?.tempo12 = soundPoolTempo12
+            data?.tempo13 = soundPoolTempo13
+            data?.tempo14 = soundPoolTempo14
+            data?.tempo15 = soundPoolTempo15
+            data?.check = padCheck
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun read() {
         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
             padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
@@ -4541,6 +4806,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
             padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
             padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
+            soundPoolVolume = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume!!)
+            soundPoolVolume2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume2!!)
+            soundPoolVolume3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume3!!)
+            soundPoolVolume4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume4!!)
+            soundPoolVolume5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume5!!)
+            soundPoolVolume6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume6!!)
+            soundPoolVolume7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume7!!)
+            soundPoolVolume8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume8!!)
+            soundPoolVolume9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume9!!)
+            soundPoolVolume10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume10!!)
+            soundPoolVolume11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume11!!)
+            soundPoolVolume12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume12!!)
+            soundPoolVolume13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume13!!)
+            soundPoolVolume14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume14!!)
+            soundPoolVolume15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume15!!)
+            soundPoolTempo = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo!!)
+            soundPoolTempo2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo2!!)
+            soundPoolTempo3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo3!!)
+            soundPoolTempo4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo4!!)
+            soundPoolTempo5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo5!!)
+            soundPoolTempo6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo6!!)
+            soundPoolTempo7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo7!!)
+            soundPoolTempo8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo8!!)
+            soundPoolTempo9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo9!!)
+            soundPoolTempo10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo10!!)
+            soundPoolTempo11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo11!!)
+            soundPoolTempo12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo12!!)
+            soundPoolTempo13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo13!!)
+            soundPoolTempo14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo14!!)
+            soundPoolTempo15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo15!!)
+            padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
             binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -4623,107 +4919,197 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             try {
                 sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
             } catch (e: Exception) {
-                sound1 = soundPool.load(padText1, 1)
-                binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound1 = soundPool.load(padText1, 1)
+                    binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView.textView.text = ""
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
             } catch (e: Exception) {
-                sound2 = soundPool.load(padText2, 1)
-                binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound2 = soundPool.load(padText2, 1)
+                    binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView2.textView.text = ""
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
             } catch (e: Exception) {
-                sound3 = soundPool.load(padText3, 1)
-                binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound3 = soundPool.load(padText3, 1)
+                    binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView3.textView.text = ""
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
             } catch (e: Exception) {
-                sound4 = soundPool.load(padText4, 1)
-                binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound4 = soundPool.load(padText4, 1)
+                    binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView4.textView.text = ""
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
             } catch (e: Exception) {
-                sound5 = soundPool.load(padText5, 1)
-                binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound5 = soundPool.load(padText5, 1)
+                    binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView5.textView.text = ""
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
             } catch (e: Exception) {
-                sound6 = soundPool.load(padText6, 1)
-                binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound6 = soundPool.load(padText6, 1)
+                    binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView6.textView.text = ""
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
             } catch (e: Exception) {
-                sound7 = soundPool.load(padText7, 1)
-                binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound7 = soundPool.load(padText7, 1)
+                    binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView7.textView.text = ""
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
             } catch (e: Exception) {
-                sound8 = soundPool.load(padText8, 1)
-                binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound8 = soundPool.load(padText8, 1)
+                    binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView8.textView.text = ""
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
             } catch (e: Exception) {
-                sound9 = soundPool.load(padText9, 1)
-                binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound9 = soundPool.load(padText9, 1)
+                    binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView9.textView.text = ""
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
             } catch (e: Exception) {
-                sound10 = soundPool.load(padText10, 1)
-                binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound10 = soundPool.load(padText10, 1)
+                    binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView10.textView.text = ""
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
             } catch (e: Exception) {
-                sound11 = soundPool.load(padText11, 1)
-                binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound11 = soundPool.load(padText11, 1)
+                    binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView11.textView.text = ""
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
             } catch (e: Exception) {
-                sound12 = soundPool.load(padText12, 1)
-                binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound12 = soundPool.load(padText12, 1)
+                    binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView12.textView.text = ""
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
             } catch (e: Exception) {
-                sound13 = soundPool.load(padText13, 1)
-                binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound13 = soundPool.load(padText13, 1)
+                    binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView13.textView.text = ""
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
             } catch (e: Exception) {
-                sound14 = soundPool.load(padText14, 1)
-                binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound14 = soundPool.load(padText14, 1)
+                    binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView14.textView.text = ""
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
             try {
                 sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
             } catch (e: Exception) {
-                sound15 = soundPool.load(padText15, 1)
-                binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                try {
+                    sound15 = soundPool.load(padText15, 1)
+                    binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                } catch (e: Exception) {
+                    sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    binding.includeMainView15.textView.text = ""
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
+                }
             }
         } else {
             Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
@@ -5065,107 +5451,197 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         try {
             sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
         } catch (e: Exception) {
-            sound1 = soundPool.load(padText1, 1)
-            binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound1 = soundPool.load(padText1, 1)
+                binding.includeMainView.textView.text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView.textView.text = ""
+                findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
         } catch (e: Exception) {
-            sound2 = soundPool.load(padText2, 1)
-            binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound2 = soundPool.load(padText2, 1)
+                binding.includeMainView2.textView.text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView2.textView.text = ""
+                findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
         } catch (e: Exception) {
-            sound3 = soundPool.load(padText3, 1)
-            binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound3 = soundPool.load(padText3, 1)
+                binding.includeMainView3.textView.text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView3.textView.text = ""
+                findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
         } catch (e: Exception) {
-            sound4 = soundPool.load(padText4, 1)
-            binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound4 = soundPool.load(padText4, 1)
+                binding.includeMainView4.textView.text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView4.textView.text = ""
+                findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
         } catch (e: Exception) {
-            sound5 = soundPool.load(padText5, 1)
-            binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound5 = soundPool.load(padText5, 1)
+                binding.includeMainView5.textView.text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView5.textView.text = ""
+                findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
         } catch (e: Exception) {
-            sound6 = soundPool.load(padText6, 1)
-            binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound6 = soundPool.load(padText6, 1)
+                binding.includeMainView6.textView.text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView6.textView.text = ""
+                findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
         } catch (e: Exception) {
-            sound7 = soundPool.load(padText7, 1)
-            binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound7 = soundPool.load(padText7, 1)
+                binding.includeMainView7.textView.text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView7.textView.text = ""
+                findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
         } catch (e: Exception) {
-            sound8 = soundPool.load(padText8, 1)
-            binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound8 = soundPool.load(padText8, 1)
+                binding.includeMainView8.textView.text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView8.textView.text = ""
+                findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
         } catch (e: Exception) {
-            sound9 = soundPool.load(padText9, 1)
-            binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound9 = soundPool.load(padText9, 1)
+                binding.includeMainView9.textView.text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView9.textView.text = ""
+                findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
         } catch (e: Exception) {
-            sound10 = soundPool.load(padText10, 1)
-            binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound10 = soundPool.load(padText10, 1)
+                binding.includeMainView10.textView.text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView10.textView.text = ""
+                findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
         } catch (e: Exception) {
-            sound11 = soundPool.load(padText11, 1)
-            binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound11 = soundPool.load(padText11, 1)
+                binding.includeMainView11.textView.text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView11.textView.text = ""
+                findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
         } catch (e: Exception) {
-            sound12 = soundPool.load(padText12, 1)
-            binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound12 = soundPool.load(padText12, 1)
+                binding.includeMainView12.textView.text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView12.textView.text = ""
+                findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
         } catch (e: Exception) {
-            sound13 = soundPool.load(padText13, 1)
-            binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound13 = soundPool.load(padText13, 1)
+                binding.includeMainView13.textView.text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView13.textView.text = ""
+                findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
         } catch (e: Exception) {
-            sound14 = soundPool.load(padText14, 1)
-            binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound14 = soundPool.load(padText14, 1)
+                binding.includeMainView14.textView.text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView14.textView.text = ""
+                findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
         try {
             sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
         } catch (e: Exception) {
-            sound15 = soundPool.load(padText15, 1)
-            binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
-            findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            try {
+                sound15 = soundPool.load(padText15, 1)
+                binding.includeMainView15.textView.text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15.replaceBeforeLast("/", "").replace("/", "").replace(".ogg", "").uppercase()
+            } catch (e: Exception) {
+                sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                binding.includeMainView15.textView.text = ""
+                findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
+            }
         }
     }
 }
