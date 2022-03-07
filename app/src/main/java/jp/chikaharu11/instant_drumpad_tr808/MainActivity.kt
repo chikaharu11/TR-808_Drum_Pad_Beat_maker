@@ -13,6 +13,7 @@ import android.media.MediaPlayer
 import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -677,16 +678,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Save Sound Settings" -> {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
-                        showInterstitial()
+                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+                        Handler().postDelayed({
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            showInterstitial()
+                        }, 2000)
                     } else {
                         update()
-                        showInterstitial()
+                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+                        Handler().postDelayed({
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            showInterstitial()
+                        }, 2000)
                     }
                     gridView.visibility = View.INVISIBLE
                 }
                 "Load Sound Settings" -> {
                     read()
-                    showInterstitial()
+                    window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(applicationContext, R.string.Loaded, Toast.LENGTH_SHORT).show()
+                    Handler().postDelayed({
+                        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        showInterstitial()
+                    }, 2000)
                     gridView.visibility = View.INVISIBLE
                 }
                 "Adjusting Sounds" -> {
@@ -4585,7 +4601,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.c_check = colorCheck
             mRealm.copyToRealm(ss)
         }
-        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+
     }
 
     private fun update() {
@@ -4639,7 +4655,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.check = padCheck
             data?.c_check = colorCheck
         }
-        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -5053,7 +5069,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                 }
             }
-            Toast.makeText(applicationContext, R.string.Loaded, Toast.LENGTH_SHORT).show()
+
         } else {
             Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
         }
