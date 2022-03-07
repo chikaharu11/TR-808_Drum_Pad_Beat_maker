@@ -24,6 +24,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import io.realm.Realm
@@ -42,6 +44,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
+
+    private var interstitial: InterstitialAd? = null
+    private val adInter = "ca-app-pub-3940256099942544/1033173712"
 
     private var mpDuration = 320
     private var mpDuration2 = 625
@@ -672,13 +677,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Save Sound Settings" -> {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
+                        showInterstitial()
                     } else {
                         update()
+                        showInterstitial()
                     }
                     gridView.visibility = View.INVISIBLE
                 }
                 "Load Sound Settings" -> {
                     read()
+                    showInterstitial()
                     gridView.visibility = View.INVISIBLE
                 }
                 "Adjusting Sounds" -> {
@@ -3637,8 +3645,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-        decorView.setOnSystemUiVisibilityChangeListener { visibility -> // Note that system bars will only be "visible" if none of the
-            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+        decorView.setOnSystemUiVisibilityChangeListener { visibility ->
             if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
                 Log.d("debug", "The system bars are visible")
             } else {
@@ -3730,6 +3737,32 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 adViewContainer.addView(admobmAdView)
                 binding.topSpace.visibility = View.GONE
             }
+        }
+    }
+
+    private fun loadInterstitial(){
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this,adInter,adRequest,object : InterstitialAdLoadCallback(){
+            override fun onAdLoaded(p0: InterstitialAd) {
+                interstitial = p0
+                interstitial?.fullScreenContentCallback = object : FullScreenContentCallback(){
+                    override fun onAdDismissedFullScreenContent() {
+
+                    }
+                    override fun onAdShowedFullScreenContent() {
+                        interstitial = null
+                    }
+                }
+            }
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                interstitial = null
+            }
+        })
+    }
+
+    private fun showInterstitial(){
+        if (interstitial != null){
+            interstitial?.show(this)
         }
     }
 
@@ -5170,6 +5203,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             soundPool.autoPause()
 
         super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        loadInterstitial()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
