@@ -52,5 +52,6 @@ open class SaveSlot(
     var tempo13: Float = 0f,
     var tempo14: Float = 0f,
     var tempo15: Float = 0f,
-    var check : Int = 0
+    var check : Int = 0,
+    var c_check : Int = 0
 ) : RealmObject()
