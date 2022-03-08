@@ -49,8 +49,8 @@
     <string name="textView18o">RESET</string>
 
     <string name="empty">empty</string>
-    <string name="Saved">Saved</string>
-    <string name="Loaded">Loaded</string>
+    <string name="Saved">Saving… Please wait.</string>
+    <string name="Loaded">Loading… Please wait.</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>

@@ -29,6 +29,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.google.android.material.snackbar.Snackbar
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
@@ -220,6 +221,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var buttonB = 0
 
     private var adCheck = 0
+
+    private var interCheck = 0
 
     private var padCheck = 53
 
@@ -679,7 +682,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+                        Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             showInterstitial()
@@ -687,7 +690,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     } else {
                         update()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(applicationContext, R.string.Saved, Toast.LENGTH_SHORT).show()
+                        Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             showInterstitial()
@@ -697,12 +700,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 "Load Sound Settings" -> {
                     read()
-                    window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                    Toast.makeText(applicationContext, R.string.Loaded, Toast.LENGTH_SHORT).show()
-                    Handler().postDelayed({
-                        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        showInterstitial()
-                    }, 2000)
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Snackbar.make(findViewById(R.id.snack_space), R.string.Loaded, Snackbar.LENGTH_LONG).show()
+                        Handler().postDelayed({
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            showInterstitial()
+                        }, 2000)
+                    }
                     gridView.visibility = View.INVISIBLE
                 }
                 "Adjusting Sounds" -> {
@@ -3777,8 +3782,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     private fun showInterstitial(){
-        if (interstitial != null){
+        if (interstitial != null && interCheck == 0) {
             interstitial?.show(this)
+            interCheck = 1
         }
     }
 
@@ -5230,6 +5236,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("DATA", adCheck)
+        outState.putInt("DATA2", interCheck)
         outState.putInt("padCheck", padCheck)
         outState.putInt("colorCheck", colorCheck)
         outState.putString("pad1", padText1.replace(" ", "_").replace("-", "_").lowercase())
@@ -5283,6 +5290,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         adCheck = savedInstanceState.getInt("DATA")
+        interCheck = savedInstanceState.getInt("DATA2")
         padCheck = savedInstanceState.getInt("padCheck")
         colorCheck = savedInstanceState.getInt("colorCheck")
         padText1 = savedInstanceState.getString("pad1").toString()
