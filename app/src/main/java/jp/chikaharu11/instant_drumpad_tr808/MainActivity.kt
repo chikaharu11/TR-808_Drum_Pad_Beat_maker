@@ -442,10 +442,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "Change Pad Sounds",
                 "Random Pad Sounds",
+                "Change Pad Colors",
+                "Save Pad Settings",
+                "Load Pad Settings",
                 "Adjusting Sounds",
-                "Change Pad Color",
-                "Save Sound Settings",
-                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -456,10 +456,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "Change Pad Sounds",
                 "Random Pad Sounds",
+                "Change Pad Colors",
+                "Save Pad Settings",
+                "Load Pad Settings",
                 "Adjusting Sounds",
-                "Change Pad Color",
-                "Save Sound Settings",
-                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -472,10 +472,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "Change to Play Mode",
                 "Random Pad Sounds",
+                "Change Pad Colors",
+                "Save Pad Settings",
+                "Load Pad Settings",
                 "Adjusting Sounds",
-                "Change Pad Color",
-                "Save Sound Settings",
-                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -486,10 +486,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "Change to Play Mode",
                 "Random Pad Sounds",
+                "Change Pad Colors",
+                "Save Pad Settings",
+                "Load Pad Settings",
                 "Adjusting Sounds",
-                "Change Pad Color",
-                "Save Sound Settings",
-                "Load Sound Settings",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2","5x1",
@@ -521,7 +521,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
-                "Change Pad Color" -> {
+                "Change Pad Colors" -> {
                     if (colorCheck == 0) {
                         when (orientation) {
                             Configuration.ORIENTATION_PORTRAIT -> {
@@ -678,7 +678,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
                     gridView.visibility = View.INVISIBLE
                 }
-                "Save Sound Settings" -> {
+                "Save Pad Settings" -> {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -698,7 +698,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView.visibility = View.INVISIBLE
                 }
-                "Load Sound Settings" -> {
+                "Load Pad Settings" -> {
                     read()
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
