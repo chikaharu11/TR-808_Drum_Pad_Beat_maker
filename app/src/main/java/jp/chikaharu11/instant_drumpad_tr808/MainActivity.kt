@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var colorCheck = 0
 
 
-    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -682,7 +682,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG).show()
+                        val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                        val snackTextView: TextView = snackBar.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                        snackBar.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             showInterstitial()
@@ -690,7 +693,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     } else {
                         update()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG).show()
+                        val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                        val snackTextView: TextView = snackBar.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                        snackBar.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             showInterstitial()
@@ -702,7 +708,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     read()
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Snackbar.make(findViewById(R.id.snack_space), R.string.Loaded, Snackbar.LENGTH_LONG).show()
+                        val snackBar2 = Snackbar.make(findViewById(R.id.snack_space) , R.string.Loaded, Snackbar.LENGTH_LONG)
+                        val snackTextView2: TextView = snackBar2.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                        snackBar2.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             showInterstitial()
