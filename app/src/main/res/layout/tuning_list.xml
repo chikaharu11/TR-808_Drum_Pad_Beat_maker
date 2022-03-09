@@ -34,12 +34,22 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:text="@string/textView18o"
         android:background="#e2e3e3"
+        android:text="@string/textView18o"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/loop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/loop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#e2e3e3"
+        android:text="@string/textView19o"
+        android:textColor="#2b2b2b"
+        app:layout_constraintBottom_toTopOf="@+id/loop"
+        app:layout_constraintStart_toStartOf="@id/loop"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton

@@ -45,8 +45,10 @@
     <string name="textView17o">PITCH</string>
     <string name="textView16">V\nO\nL\nU\nM\nE</string>
     <string name="textView17">P\nI\nT\nC\nH</string>
-    <string name="textView18">R\nE\nS\nE\nT</string>
+    <string name="textView18">R\nS\nT</string>
     <string name="textView18o">RESET</string>
+    <string name="textView19">A\nC</string>
+    <string name="textView19o">ACCENT</string>
 
     <string name="empty">empty</string>
     <string name="Saved">Saving… Please wait.</string>
