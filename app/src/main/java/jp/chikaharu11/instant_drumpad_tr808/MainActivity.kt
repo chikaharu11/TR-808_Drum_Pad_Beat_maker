@@ -25,8 +25,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.material.snackbar.Snackbar
@@ -46,9 +44,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
-
-    private var interstitial: InterstitialAd? = null
-    private val adInter = "ca-app-pub-3940256099942544/1033173712"
 
     private var mpDuration = 320
     private var mpDuration2 = 625
@@ -221,8 +216,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var buttonB = 0
 
     private var adCheck = 0
-
-    private var interCheck = 0
 
     private var padCheck = 53
 
@@ -688,7 +681,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         snackBar.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            showInterstitial()
                         }, 2000)
                     } else {
                         update()
@@ -699,7 +691,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         snackBar.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            showInterstitial()
                         }, 2000)
                     }
                     gridView.visibility = View.INVISIBLE
@@ -714,7 +705,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         snackBar2.setDuration(2000).show()
                         Handler().postDelayed({
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            showInterstitial()
                         }, 2000)
                     }
                     gridView.visibility = View.INVISIBLE
@@ -2201,7 +2191,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.textView18).setOnTouchListener { _, event ->
+        findViewById<TextView>(R.id.textView18).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPoolVolume = 0.5f
@@ -2253,7 +2243,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        findViewById<Button>(R.id.textView19).setOnTouchListener { _, event ->
+        findViewById<TextView>(R.id.textView19).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     soundPoolVolume = 1.0f
@@ -3807,33 +3797,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    private fun loadInterstitial(){
-        val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(this,adInter,adRequest,object : InterstitialAdLoadCallback(){
-            override fun onAdLoaded(p0: InterstitialAd) {
-                interstitial = p0
-                interstitial?.fullScreenContentCallback = object : FullScreenContentCallback(){
-                    override fun onAdDismissedFullScreenContent() {
-
-                    }
-                    override fun onAdShowedFullScreenContent() {
-                        interstitial = null
-                    }
-                }
-            }
-            override fun onAdFailedToLoad(p0: LoadAdError) {
-                interstitial = null
-            }
-        })
-    }
-
-    private fun showInterstitial(){
-        if (interstitial != null && interCheck == 0) {
-            interstitial?.show(this)
-            interCheck = 1
-        }
-    }
-
     private fun loadAdMob() {
         val request = AdRequest.Builder().build()
         admobmAdView.adSize = adSize
@@ -5273,16 +5236,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onPause()
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        loadInterstitial()
-    }
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("DATA", adCheck)
-        outState.putInt("DATA2", interCheck)
         outState.putInt("padCheck", padCheck)
         outState.putInt("colorCheck", colorCheck)
         outState.putString("pad1", padText1.replace(" ", "_").replace("-", "_").lowercase())
@@ -5336,7 +5292,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         adCheck = savedInstanceState.getInt("DATA")
-        interCheck = savedInstanceState.getInt("DATA2")
         padCheck = savedInstanceState.getInt("padCheck")
         colorCheck = savedInstanceState.getInt("colorCheck")
         padText1 = savedInstanceState.getString("pad1").toString()
