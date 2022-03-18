@@ -792,11 +792,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val choose = if (locale == Locale.JAPAN) {
             arrayOf(
+                "2x1 BPM:120 EXAMPLE BEAT1",
+                "2x1 BPM:120 EXAMPLE BEAT2",
                 "Metronome Loops",
                 "Sample Loops",
                 "External sound Loops"
             ) } else {
             arrayOf(
+                "2x1 BPM:120 EXAMPLE BEAT1",
+                "2x1 BPM:120 EXAMPLE BEAT2",
                 "Metronome Loops",
                 "Sample Loops",
                 "External sound Loops"
@@ -809,6 +813,48 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
+                "2x1 BPM:120 EXAMPLE BEAT1" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "bass_drum_short_01"
+                    padText4 = "snare_drum_01"
+                    actionTitle = "example_beat1"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    x21()
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "2x1 BPM:120 EXAMPLE BEAT2" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "bass_drum_short_01"
+                    padText4 = "snare_drum_01"
+                    actionTitle = "example_beat2"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    x21()
+                    gridView2.visibility = View.INVISIBLE
+                }
                 "Metronome Loops" -> {
                     lmp.stop()
                     menuSwitch = true
