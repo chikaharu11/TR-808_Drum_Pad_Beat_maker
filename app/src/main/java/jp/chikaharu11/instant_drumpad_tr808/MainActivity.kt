@@ -418,7 +418,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
         when (orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
-                findViewById<TextView>(R.id.padText0).text = "${actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()} loop"
+                findViewById<TextView>(R.id.padText0).text =
+                    actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 findViewById<TextView>(R.id.padText0).text = "loop"
@@ -790,22 +791,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
 
-        val choose = if (locale == Locale.JAPAN) {
-            arrayOf(
-                "2x1 BPM:120 EXAMPLE BEAT1",
-                "2x1 BPM:120 EXAMPLE BEAT2",
-                "Metronome Loops",
-                "Sample Loops",
-                "External sound Loops"
-            ) } else {
-            arrayOf(
-                "2x1 BPM:120 EXAMPLE BEAT1",
-                "2x1 BPM:120 EXAMPLE BEAT2",
-                "Metronome Loops",
-                "Sample Loops",
-                "External sound Loops"
+        val choose = arrayOf(
+                "DEMO",
+                "EXAMPLE BEAT1",
+                "EXAMPLE BEAT2",
+                "External Sounds"
             )
-        }
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
@@ -813,7 +804,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
-                "2x1 BPM:120 EXAMPLE BEAT1" -> {
+                "EXAMPLE BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -829,12 +820,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    count = 0.5f
+                    bpm = 1.0f
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x1 BPM:120 EXAMPLE BEAT2" -> {
+                "EXAMPLE BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -850,8 +843,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    count = 0.5f
+                    bpm = 1.0f
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
@@ -879,8 +874,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.VISIBLE
                     gridView2.visibility = View.INVISIBLE
                 }
-
-                "External sound Loops" -> {
+                "External Sounds" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1402,7 +1396,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title = "${actionTitle.replace("_", " ").uppercase()} loop"
+        supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -2144,7 +2138,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                     count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
@@ -2163,7 +2157,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                     count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     count = "%.1f".format(count).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
@@ -2182,7 +2176,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                     bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
@@ -2204,7 +2198,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                     bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop" + " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     bpm = "%.1f".format(bpm).toFloat()
                     findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
@@ -4212,7 +4206,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 0.5f
                     bpm = 1.0f
                     actionTitle = soundList.name
-                    supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
+                    supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -4539,7 +4534,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 0.5f
                     bpm = 1.0f
                     actionTitle = soundList.name.replace(".ogg","")
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -4800,7 +4796,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             when (resources.configuration.orientation) {
                 Configuration.ORIENTATION_PORTRAIT -> {
-                    findViewById<TextView>(R.id.padText0).text = "${actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()} loop"
+                    findViewById<TextView>(R.id.padText0).text = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                 }
                 Configuration.ORIENTATION_LANDSCAPE -> {
                     findViewById<TextView>(R.id.padText0).text = "loop"
@@ -5424,7 +5420,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         when (resources.configuration.orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
-                findViewById<TextView>(R.id.padText0).text = "${actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()} loop"
+                findViewById<TextView>(R.id.padText0).text = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 findViewById<TextView>(R.id.padText0).text = "loop"
@@ -5756,12 +5752,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         try {
             lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
             lmp.stop()
-            supportActionBar?.title = actionTitle.replace("_", " ").uppercase() + " loop"
+            supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
         } catch (e: Exception) {
             try {
                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(actionTitle))
                 lmp.stop()
-                supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
+                supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
             } catch (e: Exception) {
                 lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/soundless"))
                 lmp.stop()
