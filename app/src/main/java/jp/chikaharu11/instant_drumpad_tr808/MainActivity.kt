@@ -432,66 +432,34 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
 
-        val tuning = if (locale == Locale.JAPAN) {
-            arrayOf(
-                "Change Pad Sounds",
-                "Random Pad Sounds",
-                "Change Pad Colors",
-                "Save Pad Settings",
-                "Load Pad Settings",
-                "Adjusting Sounds",
-                "Hide banner Ads",
-                "EXIT",
-                "5x3","5x2","5x1",
-                "4x3","4x2","4x1",
-                "3x3","3x2","3x1",
-                "2x2","2x1"
-            ) } else {
-            arrayOf(
-                "Change Pad Sounds",
-                "Random Pad Sounds",
-                "Change Pad Colors",
-                "Save Pad Settings",
-                "Load Pad Settings",
-                "Adjusting Sounds",
-                "Hide banner Ads",
-                "EXIT",
-                "5x3","5x2","5x1",
-                "4x3","4x2","4x1",
-                "3x3","3x2","3x1",
-                "2x2","2x1"
-            )
-            }
-        val tuning2 = if (locale == Locale.JAPAN) {
-            arrayOf(
-                "Change to Play Mode",
-                "Random Pad Sounds",
-                "Change Pad Colors",
-                "Save Pad Settings",
-                "Load Pad Settings",
-                "Adjusting Sounds",
-                "Hide banner Ads",
-                "EXIT",
-                "5x3","5x2","5x1",
-                "4x3","4x2","4x1",
-                "3x3","3x2","3x1",
-                "2x2","2x1"
-            ) } else {
-            arrayOf(
-                "Change to Play Mode",
-                "Random Pad Sounds",
-                "Change Pad Colors",
-                "Save Pad Settings",
-                "Load Pad Settings",
-                "Adjusting Sounds",
-                "Hide banner Ads",
-                "EXIT",
-                "5x3","5x2","5x1",
-                "4x3","4x2","4x1",
-                "3x3","3x2","3x1",
-                "2x2","2x1"
-            )
-        }
+        val tuning = arrayOf(
+            "Change Pad Sounds",
+            "Random Pad Sounds",
+            "Change Pad Colors",
+            "Save Pad Settings",
+            "Load Pad Settings",
+            "Adjusting Sounds",
+            "Hide banner Ads",
+            "EXIT",
+            "5x3","5x2","5x1",
+            "4x3","4x2","4x1",
+            "3x3","3x2","3x1",
+            "2x2","2x1"
+        )
+        val tuning2 = arrayOf(
+            "Change to Play Mode",
+            "Random Pad Sounds",
+            "Change Pad Colors",
+            "Save Pad Settings",
+            "Load Pad Settings",
+            "Adjusting Sounds",
+            "Hide banner Ads",
+            "EXIT",
+            "5x3","5x2","5x1",
+            "4x3","4x2","4x1",
+            "3x3","3x2","3x1",
+            "2x2","2x1"
+        )
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
         val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
         val gridView: GridView = findViewById(R.id.grid_view)
@@ -792,14 +760,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         val choose = arrayOf(
-            "DEMO",
             "2x1 EXAMPLE BEAT1",
             "2x1 EXAMPLE BEAT2",
             "3x1 EXAMPLE BEAT3",
             "3x1 EXAMPLE BEAT4",
             "4x1 EXAMPLE BEAT5",
             "4x1 EXAMPLE BEAT6",
-            "External Sounds"
+            "BPM120 METRONOME",
+            "BPM150 METRONOME",
+            "EXTERNAL SOUNDS"
             )
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
@@ -1013,7 +982,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText4 = "high_tom_05"
                     padText7 = "tr_909_clsd_hi_hat_02"
                     padText10 = "snare_drum_10"
-                    actionTitle = "bpm75_example_beat6"
+                    actionTitle = "bpm150_example_beat6"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1048,31 +1017,61 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x41()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "Metronome Loops" -> {
+                "BPM120 METRONOME" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    buttonA = 16
-                    buttonB = 2
-                    soundListView.adapter = nCustomAdapter
-                    nCustomAdapter.notifyDataSetChanged()
-                    soundListView.visibility = View.VISIBLE
+                    actionTitle = "bpm120_metronome"
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 0.5f
+                    bpm = 1.0f
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "Sample Loops" -> {
+                "BPM150 METRONOME" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    buttonA = 16
-                    buttonB = 2
-                    soundListView.adapter = oCustomAdapter
-                    oCustomAdapter.notifyDataSetChanged()
-                    soundListView.visibility = View.VISIBLE
+                    actionTitle = "bpm150_metronome"
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 0.5f
+                    bpm = 1.0f
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "External Sounds" -> {
+                "EXTERNAL SOUNDS" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
