@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = "rimshot_01"
+    private var actionTitle = "bpm120_metronome"
     private var padText1 = "tr_8_cymbal_01"
     private var padText2 = "open_hi_hat_01"
     private var padText3 = "clsd_hi_hat_01"
@@ -111,8 +111,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var soundPoolTempo14 = 1.0f
     private var soundPoolVolume15 = 0.5f
     private var soundPoolTempo15 = 1.0f
-
-    private val locale: Locale = Locale.getDefault()
 
     companion object {
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
@@ -4424,11 +4422,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText1 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText1 = soundList.name.replace(".ogg","")
                     soundPoolVolume = 0.5f
                     soundPoolTempo = 1.0f
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = padText1
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 2 && buttonB == 2 -> {
                     effect(binding.includeMainView2.imageView,800)
@@ -4445,11 +4443,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView2.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText2 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText2 = soundList.name.replace(".ogg","")
                     soundPoolVolume2 = 0.5f
                     soundPoolTempo2 = 1.0f
-                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = padText2
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 3 && buttonB == 2 -> {
                     effect(binding.includeMainView3.imageView,800)
@@ -4466,11 +4464,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView3.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText3 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText3 = soundList.name.replace(".ogg","")
                     soundPoolVolume3 = 0.5f
                     soundPoolTempo3 = 1.0f
-                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = padText3
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 4 && buttonB == 2 -> {
                     effect(binding.includeMainView4.imageView,800)
@@ -4487,11 +4485,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView4.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText4 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText4 = soundList.name.replace(".ogg","")
                     soundPoolVolume4 = 0.5f
                     soundPoolTempo4 = 1.0f
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = padText4
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 5 && buttonB == 2 -> {
                     effect(binding.includeMainView5.imageView,800)
@@ -4508,11 +4506,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView5.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText5 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText5 = soundList.name.replace(".ogg","")
                     soundPoolVolume5 = 0.5f
                     soundPoolTempo5 = 1.0f
-                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = padText5
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 6 && buttonB == 2 -> {
                     effect(binding.includeMainView6.imageView,800)
@@ -4529,11 +4527,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView6.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText6 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText6 = soundList.name.replace(".ogg","")
                     soundPoolVolume6 = 0.5f
                     soundPoolTempo6 = 1.0f
-                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = padText6
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 7 && buttonB == 2 -> {
                     effect(binding.includeMainView7.imageView,800)
@@ -4550,11 +4548,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView7.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText7 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText7 = soundList.name.replace(".ogg","")
                     soundPoolVolume7 = 0.5f
                     soundPoolTempo7 = 1.0f
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = padText7
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 8 && buttonB == 2 -> {
                     effect(binding.includeMainView8.imageView,800)
@@ -4571,11 +4569,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView8.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText8 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText8 = soundList.name.replace(".ogg","")
                     soundPoolVolume8 = 0.5f
                     soundPoolTempo8 = 1.0f
-                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = padText8
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 9 && buttonB == 2 -> {
                     effect(binding.includeMainView9.imageView,800)
@@ -4592,11 +4590,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView9.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText9 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText9 = soundList.name.replace(".ogg","")
                     soundPoolVolume9 = 0.5f
                     soundPoolTempo9 = 1.0f
-                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = padText9
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 10 && buttonB == 2 -> {
                     effect(binding.includeMainView10.imageView,800)
@@ -4613,11 +4611,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView10.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText10 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText10 = soundList.name.replace(".ogg","")
                     soundPoolVolume10 = 0.5f
                     soundPoolTempo10 = 1.0f
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = padText10
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 11 && buttonB == 2 -> {
                     effect(binding.includeMainView11.imageView,800)
@@ -4634,11 +4632,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView11.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText11 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText11 = soundList.name.replace(".ogg","")
                     soundPoolVolume11 = 0.5f
                     soundPoolTempo11 = 1.0f
-                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = padText11
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 12 && buttonB == 2 -> {
                     effect(binding.includeMainView12.imageView,800)
@@ -4655,11 +4653,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView12.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText12 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText12 = soundList.name.replace(".ogg","")
                     soundPoolVolume12 = 0.5f
                     soundPoolTempo12 = 1.0f
-                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = padText12
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 13 && buttonB == 2 -> {
                     effect(binding.includeMainView13.imageView,800)
@@ -4676,11 +4674,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView13.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText13 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText13 = soundList.name.replace(".ogg","")
                     soundPoolVolume13 = 0.5f
                     soundPoolTempo13 = 1.0f
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = padText13
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 14 && buttonB == 2 -> {
                     effect(binding.includeMainView14.imageView,800)
@@ -4697,11 +4695,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView14.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText14 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText14 = soundList.name.replace(".ogg","")
                     soundPoolVolume14 = 0.5f
                     soundPoolTempo14 = 1.0f
-                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = padText14
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 15 && buttonB == 2 -> {
                     effect(binding.includeMainView15.imageView,800)
@@ -4718,11 +4716,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     binding.includeMainView15.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    padText15 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    padText15 = soundList.name.replace(".ogg","")
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
-                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = padText15
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 -> {
                     lmp.release()
