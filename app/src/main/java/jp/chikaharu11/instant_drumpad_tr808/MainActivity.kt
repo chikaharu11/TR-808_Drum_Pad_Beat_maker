@@ -14,6 +14,7 @@ import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -2317,6 +2318,384 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
         binding.includeMainView15.imageView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 15
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+
+        binding.includeMainView.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView2.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView3.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView4.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView5.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView6.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView7.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView8.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView9.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                }
+            }
+            false
+
+        }
+
+        binding.includeMainView10.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView11.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView12.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView13.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView14.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                }
+            }
+            false
+        }
+
+        binding.includeMainView15.backgroundView.setOnTouchListener { _, event ->
+            when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
+                }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                }
+            }
+            false
+        }
+
+
+        binding.includeMainView.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 1
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView2.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 2
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView3.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 3
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView4.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 4
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView5.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 5
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView6.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 6
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView7.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 7
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView8.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 8
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView9.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 9
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView10.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 10
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView11.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 11
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView12.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 12
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView13.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 13
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView14.backgroundView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 14
+                meSpinner.avoidDropdownFocus()
+                meSpinner.performClick()
+            }
+        }
+        binding.includeMainView15.backgroundView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 15
                 meSpinner.avoidDropdownFocus()
@@ -5346,6 +5725,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var menuSwitch2 = true
     private var switch1 = 0
 
+    fun example1() {
+        binding.includeMainView.imageView.visibility = View.INVISIBLE
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.includeMainView.imageView.visibility = View.VISIBLE
+        }, 2000)
+    }
 
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -5377,6 +5762,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     switch1 = 2
                 } else {
                     lmp.start()
+                    example1()
                     menuSwitch = false
                     invalidateOptionsMenu()
                     switch1 = 1
