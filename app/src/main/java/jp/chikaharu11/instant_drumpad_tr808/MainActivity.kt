@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = "bpm120_metronome"
+    private var actionTitle = "cowbell_01b"
     private var padText1 = "tr_8_cymbal_01"
     private var padText2 = "open_hi_hat_01"
     private var padText3 = "clsd_hi_hat_01"
@@ -79,8 +79,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText14 = "tr_909_cymbal_02"
     private var padText15 = "clap_01"
 
-    private var count = 0.5f
-    private var bpm = 1.0f
+    private var count = 5
+    private var bpm = 10
 
     private var soundPoolVolume = 0.5f
     private var soundPoolTempo = 1.0f
@@ -792,15 +792,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -828,15 +828,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -868,15 +868,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -908,15 +908,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -952,15 +952,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -996,15 +996,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -1024,15 +1024,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     actionTitle = "bpm120_metronome"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -1051,15 +1051,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     actionTitle = "bpm150_metronome"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
                     when (orientation) {
                         Configuration.ORIENTATION_PORTRAIT -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_LANDSCAPE -> {
-                            findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                         }
                         Configuration.ORIENTATION_SQUARE -> {
                             TODO()
@@ -2707,15 +2707,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
             lmp.volumeMinus()
-            if (count > 0.1f) {
-                count -= 0.1f
+            if (count > 1) {
+                count -= 1
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
             }
                 }
@@ -2726,15 +2726,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
             lmp.volumePlus()
-            if (count < 1.0f) {
-                count += 0.1f
+            if (count < 10) {
+                count += 1
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    count = "%.1f".format(count).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
             }
                 }
@@ -2745,15 +2745,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
             lmp.speedDown()
-            if (bpm > 0.1f) {
-                bpm -= 0.1f
+            if (bpm > 1) {
+                bpm -= 1
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
                 invalidateOptionsMenu()
@@ -2767,15 +2767,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
             lmp.speedUp()
-            if (bpm < 6.0f) {
-                bpm += 0.1f
+            if (bpm < 60) {
+                bpm += 1
                 findViewById<Button>(R.id.loop).text = ""
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    bpm = "%.1f".format(bpm).toFloat()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + bpm.toString().replace("f", "").uppercase()
+                    
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
                 invalidateOptionsMenu()
@@ -4777,11 +4777,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     actionTitle = soundList.name
                     supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -5105,11 +5105,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     lmp.stop()
-                    count = 0.5f
-                    bpm = 1.0f
+                    count = 5
+                    bpm = 10
                     actionTitle = soundList.name.replace(".ogg","")
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
-                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + bpm.toString().replace("f", "").uppercase()
+                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
