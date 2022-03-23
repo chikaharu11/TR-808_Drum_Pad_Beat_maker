@@ -113,6 +113,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var soundPoolVolume15 = 0.5f
     private var soundPoolTempo15 = 1.0f
 
+    private var spvF = 5
+    private var sptF = 10
+    private var spvF2 = 5
+    private var sptF2 = 10
+    private var spvF3 = 5
+    private var sptF3 = 10
+    private var spvF4 = 5
+    private var sptF4 = 10
+    private var spvF5 = 5
+    private var sptF5 = 10
+    private var spvF6 = 5
+    private var sptF6 = 10
+    private var spvF7 = 5
+    private var sptF7 = 10
+    private var spvF8 = 5
+    private var sptF8 = 10
+    private var spvF9 = 5
+    private var sptF9 = 10
+    private var spvF10 = 5
+    private var sptF10 = 10
+    private var spvF11 = 5
+    private var sptF11 = 10
+    private var spvF12 = 5
+    private var sptF12 = 10
+    private var spvF13 = 5
+    private var sptF13 = 10
+    private var spvF14 = 5
+    private var sptF14 = 10
+    private var spvF15 = 5
+    private var sptF15 = 10
+
     companion object {
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
         private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 42
@@ -3017,9 +3048,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.volume_minus).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    if (soundPoolVolume > 0.1f) {
-                        soundPoolVolume -= 0.1f
-                        soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+                    if (spvF > 1) {
+                        spvF -= 1
+                        soundPoolVolume = spvF/10.0f
                         findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
                             ""
                         findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
@@ -3035,9 +3066,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.volume_plus).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+            if (spvF < 10) {
+                spvF += 1
+                soundPoolVolume = spvF/10.0f
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
             }
@@ -3049,9 +3080,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.tempo_minus).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
+            if (sptF > 2) {
+                sptF -= 1
+                soundPoolTempo = sptF/10.0f
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
             } else if (soundPoolTempo == 0.2f) {
@@ -3071,9 +3102,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolTempo = 0.2f
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
+            } else if (sptF < 80) {
+                sptF += 1
+                soundPoolTempo = sptF/10.0f
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
                 findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
             }
