@@ -5725,13 +5725,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var menuSwitch2 = true
     private var switch1 = 0
 
-    fun example1() {
-        binding.includeMainView.imageView.visibility = View.INVISIBLE
-        Handler(Looper.getMainLooper()).postDelayed({
-            binding.includeMainView.imageView.visibility = View.VISIBLE
-        }, 2000)
-    }
-
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
@@ -5762,7 +5755,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     switch1 = 2
                 } else {
                     lmp.start()
-                    example1()
                     menuSwitch = false
                     invalidateOptionsMenu()
                     switch1 = 1

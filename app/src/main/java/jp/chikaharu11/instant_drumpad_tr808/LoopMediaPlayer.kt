@@ -12,15 +12,17 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mResId: Uri? = null
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
-    private var count2 = 0.5f
-    private var bpm2 = 1.0f
+    private var count2 = 5
+    private var bpm2 = 10
+    private var count2f = 0.5f
+    private var bpm2f = 1.0f
 
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
         mCurrentPlayer!!.setOnCompletionListener(onCompletionListener)
-        setVolume(count2,count2)
-        speed(bpm2)
+        setVolume(count2f,count2f)
+        speed(bpm2f)
     }
 
     private val onCompletionListener =
@@ -39,19 +41,21 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun volumePlus() {
-        if (count2 < 1.0f) {
-            count2 += 0.1f
+        if (count2 < 10) {
+            count2 += 1
         }
-        count2 = "%.1f".format(count2).toFloat()
-        setVolume(count2, count2)
+        count2f = count2/10.0f
+        setVolume(count2f, count2f)
+        println(count2f)
     }
 
     fun volumeMinus() {
-        if (count2 > 0.1f) {
-            count2 -= 0.1f
+        if (count2 > 1) {
+            count2 -= 1
         }
-        count2 = "%.1f".format(count2).toFloat()
-        setVolume(count2,count2)
+        count2f = count2/10.0f
+        setVolume(count2f,count2f)
+        println(count2f)
     }
 
     private fun speed(tempo : Float) {
@@ -61,19 +65,21 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun speedUp() {
-        if (bpm2 < 6.0f) {
-            bpm2 += 0.1f
+        if (bpm2 < 60) {
+            bpm2 += 1
         }
-        bpm2 = "%.1f".format(bpm2).toFloat()
-        speed(bpm2)
+        bpm2f = bpm2/10.0f
+        speed(bpm2f)
+        println(bpm2f)
     }
 
     fun speedDown() {
-        if (bpm2 > 0.1f) {
-            bpm2 -= 0.1f
+        if (bpm2 > 1) {
+            bpm2 -= 1
         }
-        bpm2 = "%.1f".format(bpm2).toFloat()
-        speed(bpm2)
+        bpm2f = bpm2/10.0f
+        speed(bpm2f)
+        println(bpm2f)
     }
 
     @Throws(IllegalStateException::class)
