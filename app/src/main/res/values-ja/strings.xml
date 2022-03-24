@@ -15,10 +15,10 @@
     <string name="textView13">bd_long_07</string>
     <string name="textView14">lc10</string>
     <string name="textView15">oh09</string>
-    <string name="play">再生</string>
-    <string name="end">終了する</string>
-    <string name="menu10">選択</string>
-    <string name="menu">メニュー</string>
+    <string name="play">play/stop</string>
+    <string name="end">EXIT</string>
+    <string name="menu10">metronome&amp;samples</string>
+    <string name="menu">setup</string>
 
     <string name="error">このオーディオファイルは指定できません。</string>
 
