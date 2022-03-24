@@ -14,7 +14,6 @@ import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -33,7 +32,6 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
-import java.util.*
 import kotlin.math.hypot
 
 
@@ -5303,6 +5301,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.tempo13 = soundPoolTempo13
             ss.tempo14 = soundPoolTempo14
             ss.tempo15 = soundPoolTempo15
+            ss.vF = spvF
+            ss.vF2 = spvF2
+            ss.vF3 = spvF3
+            ss.vF4 = spvF4
+            ss.vF5 = spvF5
+            ss.vF6 = spvF6
+            ss.vF7 = spvF7
+            ss.vF8 = spvF8
+            ss.vF9 = spvF9
+            ss.vF10 = spvF10
+            ss.vF11 = spvF11
+            ss.vF12 = spvF12
+            ss.vF13 = spvF13
+            ss.vF14 = spvF14
+            ss.vF15 = spvF15
+            ss.tF = sptF
+            ss.tF2 = sptF2
+            ss.tF3 = sptF3
+            ss.tF4 = sptF4
+            ss.tF5 = sptF5
+            ss.tF6 = sptF6
+            ss.tF7 = sptF7
+            ss.tF8 = sptF8
+            ss.tF9 = sptF9
+            ss.tF10 = sptF10
+            ss.tF11 = sptF11
+            ss.tF12 = sptF12
+            ss.tF13 = sptF13
+            ss.tF14 = sptF14
+            ss.tF15 = sptF15
             ss.check = padCheck
             ss.c_check = colorCheck
             mRealm.copyToRealm(ss)
@@ -5358,6 +5386,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tempo13 = soundPoolTempo13
             data?.tempo14 = soundPoolTempo14
             data?.tempo15 = soundPoolTempo15
+            data?.vF = spvF
+            data?.vF2 = spvF2
+            data?.vF3 = spvF3
+            data?.vF4 = spvF4
+            data?.vF5 = spvF5
+            data?.vF6 = spvF6
+            data?.vF7 = spvF7
+            data?.vF8 = spvF8
+            data?.vF9 = spvF9
+            data?.vF10 = spvF10
+            data?.vF11 = spvF11
+            data?.vF12 = spvF12
+            data?.vF13 = spvF13
+            data?.vF14 = spvF14
+            data?.vF15 = spvF15
+            data?.tF = sptF
+            data?.tF2 = sptF2
+            data?.tF3 = sptF3
+            data?.tF4 = sptF4
+            data?.tF5 = sptF5
+            data?.tF6 = sptF6
+            data?.tF7 = sptF7
+            data?.tF8 = sptF8
+            data?.tF9 = sptF9
+            data?.tF10 = sptF10
+            data?.tF11 = sptF11
+            data?.tF12 = sptF12
+            data?.tF13 = sptF13
+            data?.tF14 = sptF14
+            data?.tF15 = sptF15
             data?.check = padCheck
             data?.c_check = colorCheck
         }
@@ -5412,6 +5470,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             soundPoolTempo13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo13!!)
             soundPoolTempo14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo14!!)
             soundPoolTempo15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo15!!)
+            spvF = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF!!)
+            spvF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF2!!)
+            spvF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF3!!)
+            spvF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF4!!)
+            spvF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF5!!)
+            spvF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF6!!)
+            spvF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF7!!)
+            spvF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF8!!)
+            spvF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF9!!)
+            spvF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF10!!)
+            spvF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF11!!)
+            spvF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF12!!)
+            spvF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF13!!)
+            spvF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF14!!)
+            spvF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF15!!)
+            sptF = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF!!)
+            sptF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF2!!)
+            sptF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF3!!)
+            sptF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF4!!)
+            sptF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF5!!)
+            sptF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF6!!)
+            sptF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF7!!)
+            sptF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF8!!)
+            sptF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF9!!)
+            sptF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF10!!)
+            sptF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF11!!)
+            sptF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF12!!)
+            sptF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF13!!)
+            sptF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF14!!)
+            sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF15!!)
             padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
             colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.c_check!!)
             binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
