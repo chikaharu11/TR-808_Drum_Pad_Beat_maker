@@ -2869,6 +2869,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolTempo14 = 1.0f
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
+                    spvF = 5
+                    sptF = 10
+                    spvF2 = 5
+                    sptF2 = 10
+                    spvF3 = 5
+                    sptF3 = 10
+                    spvF4 = 5
+                    sptF4 = 10
+                    spvF5 = 5
+                    sptF5 = 10
+                    spvF6 = 5
+                    sptF6 = 10
+                    spvF7 = 5
+                    sptF7 = 10
+                    spvF8 = 5
+                    sptF8 = 10
+                    spvF9 = 5
+                    sptF9 = 10
+                    spvF10 = 5
+                    sptF10 = 10
+                    spvF11 = 5
+                    sptF11 = 10
+                    spvF12 = 5
+                    sptF12 = 10
+                    spvF13 = 5
+                    sptF13 = 10
+                    spvF14 = 5
+                    sptF14 = 10
+                    spvF15 = 5
+                    sptF15 = 10
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -2906,6 +2936,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolVolume13 = 1.0f
                     soundPoolVolume14 = 1.0f
                     soundPoolVolume15 = 1.0f
+                    spvF = 10
+                    spvF2 = 10
+                    spvF3 = 10
+                    spvF4 = 10
+                    spvF5 = 10
+                    spvF6 = 10
+                    spvF7 = 10
+                    spvF8 = 10
+                    spvF9 = 10
+                    spvF10 = 10
+                    spvF11 = 10
+                    spvF12 = 10
+                    spvF13 = 10
+                    spvF14 = 10
+                    spvF15 = 10
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -5932,6 +5977,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putFloat("spt13", soundPoolTempo13)
         outState.putFloat("spt14", soundPoolTempo14)
         outState.putFloat("spt15", soundPoolTempo15)
+        outState.putInt("spvF1", spvF)
+        outState.putInt("spvF2", spvF2)
+        outState.putInt("spvF3", spvF3)
+        outState.putInt("spvF4", spvF4)
+        outState.putInt("spvF5", spvF5)
+        outState.putInt("spvF6", spvF6)
+        outState.putInt("spvF7", spvF7)
+        outState.putInt("spvF8", spvF8)
+        outState.putInt("spvF9", spvF9)
+        outState.putInt("spvF10", spvF10)
+        outState.putInt("spvF11", spvF11)
+        outState.putInt("spvF12", spvF12)
+        outState.putInt("spvF13", spvF13)
+        outState.putInt("spvF14", spvF14)
+        outState.putInt("spvF15", spvF15)
+        outState.putInt("sptF1", sptF)
+        outState.putInt("sptF2", sptF2)
+        outState.putInt("sptF3", sptF3)
+        outState.putInt("sptF4", sptF4)
+        outState.putInt("sptF5", sptF5)
+        outState.putInt("sptF6", sptF6)
+        outState.putInt("sptF7", sptF7)
+        outState.putInt("sptF8", sptF8)
+        outState.putInt("sptF9", sptF9)
+        outState.putInt("sptF10", sptF10)
+        outState.putInt("sptF11", sptF11)
+        outState.putInt("sptF12", sptF12)
+        outState.putInt("sptF13", sptF13)
+        outState.putInt("sptF14", sptF14)
+        outState.putInt("sptF15", sptF15)
     }
 
     @SuppressLint("SetTextI18n")
@@ -5986,6 +6061,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         soundPoolTempo13 = savedInstanceState.getFloat("spt13")
         soundPoolTempo14 = savedInstanceState.getFloat("spt14")
         soundPoolTempo15 = savedInstanceState.getFloat("spt15")
+
+        spvF = savedInstanceState.getInt("spvF1")
+        spvF2 = savedInstanceState.getInt("spvF2")
+        spvF3 = savedInstanceState.getInt("spvF3")
+        spvF4 = savedInstanceState.getInt("spvF4")
+        spvF5 = savedInstanceState.getInt("spvF5")
+        spvF6 = savedInstanceState.getInt("spvF6")
+        spvF7 = savedInstanceState.getInt("spvF7")
+        spvF8 = savedInstanceState.getInt("spvF8")
+        spvF9 = savedInstanceState.getInt("spvF9")
+        spvF10 = savedInstanceState.getInt("spvF10")
+        spvF11 = savedInstanceState.getInt("spvF11")
+        spvF12 = savedInstanceState.getInt("spvF12")
+        spvF13 = savedInstanceState.getInt("spvF13")
+        spvF14 = savedInstanceState.getInt("spvF14")
+        spvF15 = savedInstanceState.getInt("spvF15")
+        sptF = savedInstanceState.getInt("sptF1")
+        sptF2 = savedInstanceState.getInt("sptF2")
+        sptF3 = savedInstanceState.getInt("sptF3")
+        sptF4 = savedInstanceState.getInt("sptF4")
+        sptF5 = savedInstanceState.getInt("sptF5")
+        sptF6 = savedInstanceState.getInt("sptF6")
+        sptF7 = savedInstanceState.getInt("sptF7")
+        sptF8 = savedInstanceState.getInt("sptF8")
+        sptF9 = savedInstanceState.getInt("sptF9")
+        sptF10 = savedInstanceState.getInt("sptF10")
+        sptF11 = savedInstanceState.getInt("sptF11")
+        sptF12 = savedInstanceState.getInt("sptF12")
+        sptF13 = savedInstanceState.getInt("sptF13")
+        sptF14 = savedInstanceState.getInt("sptF14")
+        sptF15 = savedInstanceState.getInt("sptF15")
         println(padText1)
         if (adCheck == 1) {
             binding.adView.visibility = View.GONE
