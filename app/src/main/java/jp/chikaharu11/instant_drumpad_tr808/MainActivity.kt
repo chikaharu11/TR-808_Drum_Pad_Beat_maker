@@ -33,6 +33,7 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlin.math.hypot
+import kotlin.time.seconds
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -467,6 +468,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Save Pad Settings",
             "Load Pad Settings",
             "Adjusting Sounds",
+            "Lock Settings",
             "Hide banner Ads",
             "EXIT",
             "5x3","5x2","5x1",
@@ -481,6 +483,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Save Pad Settings",
             "Load Pad Settings",
             "Adjusting Sounds",
+            "Lock Settings",
             "Hide banner Ads",
             "EXIT",
             "5x3","5x2","5x1",
@@ -709,6 +712,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Adjusting Sounds" -> {
                     binding.view.visibility = View.VISIBLE
                     gridView.visibility = View.INVISIBLE
+                }
+                "Lock Settings" -> {
+                    paste = 0
+                    menuSwitchLock = false
+                    invalidateOptionsMenu()
+                    binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+                    Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                    gridView.visibility = View.INVISIBLE
+                    gridView.adapter = adapter
+                    adapter.notifyDataSetChanged()
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -5718,11 +5731,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
         }
 
+        val menuLampLock = menu.findItem(R.id.action_settings)
+        if (menuSwitchLock) {
+            menuLampLock.setIcon(R.drawable.ic_baseline_tune_24)
+        } else {
+            menuLampLock.setIcon(R.drawable.ic_baseline_lock_24)
+        }
+
         return true
     }
 
     private var menuSwitch = true
     private var menuSwitch2 = true
+    private var menuSwitchLock = true
     private var switch1 = 0
 
     @SuppressLint("SimpleDateFormat")
@@ -5736,81 +5757,90 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         when (item.itemId) {
 
             R.id.menu1 -> {
-                when {
-                    soundListView.isVisible -> {
-                        soundListView.visibility = View.INVISIBLE
+                if (menuSwitchLock) {
+                    when {
+                        soundListView.isVisible -> {
+                            soundListView.visibility = View.INVISIBLE
+                        }
+                        actionGridView.isVisible -> {
+                            actionGridView.visibility = View.INVISIBLE
+                        }
+                        chooseGridView.isVisible -> {
+                            chooseGridView.visibility = View.INVISIBLE
+                        }
                     }
-                    actionGridView.isVisible -> {
-                        actionGridView.visibility = View.INVISIBLE
+                    if (switch1 == 1) {
+                        lmp.stop()
+                        soundPool.autoPause()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                    } else {
+                        lmp.start()
+                        menuSwitch = false
+                        invalidateOptionsMenu()
+                        switch1 = 1
                     }
-                    chooseGridView.isVisible -> {
-                        chooseGridView.visibility = View.INVISIBLE
-                    }
-                }
-                if (switch1 == 1) {
-                    lmp.stop()
-                    soundPool.autoPause()
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                } else {
-                    lmp.start()
-                    menuSwitch = false
-                    invalidateOptionsMenu()
-                    switch1 = 1
                 }
                 return true
             }
 
             R.id.menu10 -> {
-                when {
-                    chooseGridView.isVisible -> {
-                        actionGridView.visibility = View.INVISIBLE
-                        chooseGridView.visibility = View.INVISIBLE
-                        tuningView.visibility = View.INVISIBLE
-                    }
-                    soundListView.isVisible -> {
-                        chooseGridView.visibility = View.VISIBLE
-                        soundListView.visibility = View.INVISIBLE
-                    }
-                    actionGridView.isVisible -> {
-                        chooseGridView.visibility = View.VISIBLE
-                        actionGridView.visibility = View.INVISIBLE
-                        tuningView.visibility = View.INVISIBLE
-                    }
-                    tuningView.isVisible -> {
-                        chooseGridView.visibility = View.VISIBLE
-                        actionGridView.visibility = View.INVISIBLE
-                        tuningView.visibility = View.INVISIBLE
-                    }
-                    soundListView.isInvisible && actionGridView.isInvisible && tuningView.isInvisible -> {
-                        chooseGridView.visibility = View.VISIBLE
+                if (menuSwitchLock) {
+                    when {
+                        chooseGridView.isVisible -> {
+                            actionGridView.visibility = View.INVISIBLE
+                            chooseGridView.visibility = View.INVISIBLE
+                            tuningView.visibility = View.INVISIBLE
+                        }
+                        soundListView.isVisible -> {
+                            chooseGridView.visibility = View.VISIBLE
+                            soundListView.visibility = View.INVISIBLE
+                        }
+                        actionGridView.isVisible -> {
+                            chooseGridView.visibility = View.VISIBLE
+                            actionGridView.visibility = View.INVISIBLE
+                            tuningView.visibility = View.INVISIBLE
+                        }
+                        tuningView.isVisible -> {
+                            chooseGridView.visibility = View.VISIBLE
+                            actionGridView.visibility = View.INVISIBLE
+                            tuningView.visibility = View.INVISIBLE
+                        }
+                        soundListView.isInvisible && actionGridView.isInvisible && tuningView.isInvisible -> {
+                            chooseGridView.visibility = View.VISIBLE
+                        }
                     }
                 }
                 return true
             }
 
             R.id.action_settings -> {
-                when {
-                    chooseGridView.isVisible -> {
-                        actionGridView.visibility = View.VISIBLE
-                        chooseGridView.visibility = View.INVISIBLE
-                        tuningView.visibility = View.INVISIBLE
+                if (menuSwitchLock) {
+                    when {
+                        chooseGridView.isVisible -> {
+                            actionGridView.visibility = View.VISIBLE
+                            chooseGridView.visibility = View.INVISIBLE
+                            tuningView.visibility = View.INVISIBLE
+                        }
+                        soundListView.isVisible -> {
+                            actionGridView.visibility = View.VISIBLE
+                            soundListView.visibility = View.INVISIBLE
+                        }
+                        actionGridView.isInvisible && tuningView.isVisible -> {
+                            tuningView.visibility = View.INVISIBLE
+                        }
+                        actionGridView.isInvisible -> {
+                            actionGridView.visibility = View.VISIBLE
+                        }
+                        actionGridView.isVisible -> {
+                            actionGridView.visibility = View.INVISIBLE
+                            tuningView.visibility = View.INVISIBLE
+                        }
                     }
-                    soundListView.isVisible -> {
-                        actionGridView.visibility = View.VISIBLE
-                        soundListView.visibility = View.INVISIBLE
-                    }
-                    actionGridView.isInvisible && tuningView.isVisible -> {
-                        tuningView.visibility = View.INVISIBLE
-                    }
-                    actionGridView.isInvisible -> {
-                        actionGridView.visibility = View.VISIBLE
-                    }
-                    actionGridView.isVisible -> {
-                        actionGridView.visibility = View.INVISIBLE
-                        tuningView.visibility = View.INVISIBLE
-                    }
+                } else {
+                    menuSwitchLock = true
+                    invalidateOptionsMenu()
                 }
                 return true
             }
