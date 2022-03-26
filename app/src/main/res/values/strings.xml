@@ -53,6 +53,7 @@
     <string name="empty">empty</string>
     <string name="Saved">Saving… Please wait.</string>
     <string name="Loaded">Loading… Please wait.</string>
+    <string name="lock">Locked</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
