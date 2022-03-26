@@ -33,7 +33,6 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlin.math.hypot
-import kotlin.time.seconds
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -4502,11 +4501,38 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
     }
 
+    private fun playMode() {
+        val tuning = arrayOf(
+            "Change Pad Sounds",
+            "Random Pad Sounds",
+            "Change Pad Colors",
+            "Save Pad Settings",
+            "Load Pad Settings",
+            "Adjusting Sounds",
+            "Lock Settings",
+            "Hide banner Ads",
+            "EXIT",
+            "5x3","5x2","5x1",
+            "4x3","4x2","4x1",
+            "3x3","3x2","3x1",
+            "2x2","2x1"
+        )
+        val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
+        val gridView: GridView = findViewById(R.id.grid_view)
+        gridView.adapter = adapter
+        paste = 0
+        binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+        gridView.visibility = View.INVISIBLE
+        gridView.adapter = adapter
+        adapter.notifyDataSetChanged()
+    }
+
     @SuppressLint("SetTextI18n")
     override fun clicked2(soundList: SoundList) {
         try {
             when {
                 buttonA == 1 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView.imageView,800)
                     sound1 = soundPool.load(soundList.name, 1)
                     println(soundList.name)
@@ -4529,6 +4555,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 2 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView2.imageView,800)
                     sound2 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4550,6 +4577,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 3 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView3.imageView,800)
                     sound3 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4571,6 +4599,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 4 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView4.imageView,800)
                     sound4 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4592,6 +4621,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 5 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView5.imageView,800)
                     sound5 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4613,6 +4643,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 6 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView6.imageView,800)
                     sound6 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4634,6 +4665,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 7 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView7.imageView,800)
                     sound7 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4655,6 +4687,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 8 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView8.imageView,800)
                     sound8 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4676,6 +4709,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 9 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView9.imageView,800)
                     sound9 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4697,6 +4731,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 10 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView10.imageView,800)
                     sound10 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4718,6 +4753,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 11 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView11.imageView,800)
                     sound11 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4739,6 +4775,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 12 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView12.imageView,800)
                     sound12 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4760,6 +4797,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 13 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView13.imageView,800)
                     sound13 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4781,6 +4819,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 14 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView14.imageView,800)
                     sound14 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4802,6 +4841,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 15 && buttonB == 1 -> {
+                    playMode()
                     effect(binding.includeMainView15.imageView,800)
                     sound15 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
@@ -4836,6 +4876,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                 }
                 buttonA == 1 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView.imageView,800)
                     sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4857,6 +4898,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 2 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView2.imageView,800)
                     sound2 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4878,6 +4920,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 3 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView3.imageView,800)
                     sound3 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4899,6 +4942,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 4 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView4.imageView,800)
                     sound4 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4920,6 +4964,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 5 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView5.imageView,800)
                     sound5 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4941,6 +4986,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 6 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView6.imageView,800)
                     sound6 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4962,6 +5008,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 7 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView7.imageView,800)
                     sound7 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -4983,6 +5030,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 8 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView8.imageView,800)
                     sound8 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5004,6 +5052,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 9 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView9.imageView,800)
                     sound9 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5025,6 +5074,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 10 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView10.imageView,800)
                     sound10 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5046,6 +5096,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 11 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView11.imageView,800)
                     sound11 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5067,6 +5118,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 12 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView12.imageView,800)
                     sound12 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5088,6 +5140,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 13 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView13.imageView,800)
                     sound13 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5109,6 +5162,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 14 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView14.imageView,800)
                     sound14 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
@@ -5130,6 +5184,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 15 && buttonB == 2 -> {
+                    playMode()
                     effect(binding.includeMainView15.imageView,800)
                     sound15 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
