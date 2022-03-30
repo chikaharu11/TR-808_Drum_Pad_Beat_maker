@@ -27,7 +27,9 @@ import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.messaging.FirebaseMessaging
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
@@ -257,6 +259,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             .apply { setContentView(this.root) }
 
         setSupportActionBar(findViewById(R.id.toolbar_main))
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("MainActivity", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            val token = task.result
+
+            Log.d("MainActivity", "Current token: $token")
+        })
 
         stickyImmersiveMode()
         initAdMob()
