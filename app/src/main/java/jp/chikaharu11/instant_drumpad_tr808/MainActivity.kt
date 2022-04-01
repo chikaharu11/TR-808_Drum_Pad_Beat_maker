@@ -816,9 +816,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "2x1 EXAMPLE BEAT1",
             "2x1 EXAMPLE BEAT2",
             "2x1 EXAMPLE BEAT3",
+            "2x2 EXAMPLE BEAT1",
+            "2x2 EXAMPLE BEAT2",
+            "2x2 EXAMPLE BEAT3",
             "3x1 EXAMPLE BEAT1",
             "3x1 EXAMPLE BEAT2",
             "3x1 EXAMPLE BEAT3",
+            "3x2 EXAMPLE BEAT1",
             "4x1 EXAMPLE BEAT1",
             "4x1 EXAMPLE BEAT2",
             "5x1 EXAMPLE BEAT1",
@@ -943,6 +947,138 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
+                "2x2 EXAMPLE BEAT1" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "claves_05"
+                    padText2 = "tr_909_cymbal_02"
+                    padText4 = "tr_909_bass_drum_01"
+                    padText5 = "bass_drum_short_12"
+                    actionTitle = "bpm140_2x2_beat1"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 5
+                    bpm = 10
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
+                    x22()
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "2x2 EXAMPLE BEAT2" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "clap_15"
+                    padText2 = "tr_8_clap_03"
+                    padText4 = "high_tom_08"
+                    padText5 = "bass_drum_short_12"
+                    actionTitle = "bpm120_2x2_beat2"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 5
+                    bpm = 10
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
+                    x22()
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "2x2 EXAMPLE BEAT3" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "clsd_hi_hat_01"
+                    padText2 = "tr_909_open_hi_hat_01"
+                    padText4 = "tr_8_snare_drum_04"
+                    padText5 = "bass_drum_short_08"
+                    actionTitle = "bpm174_2x2_beat3"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 5
+                    bpm = 10
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
+                    x22()
+                    gridView2.visibility = View.INVISIBLE
+                }
                 "3x1 EXAMPLE BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
@@ -1061,6 +1197,58 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     x31()
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "3x2 EXAMPLE BEAT1" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    padText1 = "tr_909_bass_drum_03"
+                    padText2 = "tr_8_snare_drum_04"
+                    padText4 = "tr_8_bass_drum_04"
+                    padText5 = "snare_drum_01"
+                    padText7 = "bass_drum_short_08"
+                    padText8 = "tr_909_snare_drum_02"
+                    actionTitle = "bpm110_3x2_beat1"
+                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                    sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
+                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    lmp.stop()
+                    count = 5
+                    bpm = 10
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    when (orientation) {
+                        Configuration.ORIENTATION_PORTRAIT -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_LANDSCAPE -> {
+                            findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
+                        }
+                        Configuration.ORIENTATION_SQUARE -> {
+                            TODO()
+                        }
+                        Configuration.ORIENTATION_UNDEFINED -> {
+                            TODO()
+                        }
+                    }
+                    x32()
                     gridView2.visibility = View.INVISIBLE
                 }
                 "4x1 EXAMPLE BEAT1" -> {
