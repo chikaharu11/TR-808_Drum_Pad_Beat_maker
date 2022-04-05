@@ -2565,6 +2565,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                 }
@@ -2582,6 +2585,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
@@ -2601,6 +2607,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
                 }
@@ -2618,6 +2627,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
@@ -2637,6 +2649,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
                 }
@@ -2654,6 +2669,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
@@ -2673,6 +2691,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                 }
@@ -2691,6 +2712,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
                 }
@@ -2708,6 +2732,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
@@ -2728,6 +2755,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                 }
@@ -2745,6 +2775,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
@@ -2764,6 +2797,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
                 }
@@ -2781,6 +2817,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
@@ -2800,6 +2839,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
                 }
@@ -2817,6 +2859,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
+                }
+                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
