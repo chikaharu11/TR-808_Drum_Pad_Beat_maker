@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = "bpm120_metronome"
+    private var actionTitle = "bpm120_bass_drum"
     private var padText1 = "tr_8_cymbal_01"
     private var padText2 = "open_hi_hat_01"
     private var padText3 = "clsd_hi_hat_01"
@@ -805,12 +805,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "4x1 EXAMPLE BEAT2",
             "5x1 EXAMPLE BEAT1",
             "5x1 EXAMPLE BEAT2",
-            "BPM100 METRONOME",
-            "BPM110 METRONOME",
-            "BPM120 METRONOME",
-            "BPM140 METRONOME",
-            "BPM150 METRONOME",
-            "BPM174 METRONOME",
+            "BPM100 BASS DRUM",
+            "BPM110 BASS DRUM",
+            "BPM120 BASS DRUM",
+            "BPM140 BASS DRUM",
+            "BPM150 BASS DRUM",
+            "BPM174 BASS DRUM",
             "EXTERNAL SOUNDS"
             )
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
@@ -1304,12 +1304,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x51()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM100 METRONOME" -> {
+                "BPM100 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm100_metronome"
+                    actionTitle = "bpm100_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
@@ -1323,12 +1323,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM110 METRONOME" -> {
+                "BPM110 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm110_metronome"
+                    actionTitle = "bpm110_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
@@ -1342,12 +1342,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM120 METRONOME" -> {
+                "BPM120 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm120_metronome"
+                    actionTitle = "bpm120_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
@@ -1361,12 +1361,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM140 METRONOME" -> {
+                "BPM140 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm140_metronome"
+                    actionTitle = "bpm140_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
@@ -1380,12 +1380,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM150 METRONOME" -> {
+                "BPM150 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm150_metronome"
+                    actionTitle = "bpm150_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
@@ -1399,12 +1399,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BPM174 METRONOME" -> {
+                "BPM174 BASS DRUM" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    actionTitle = "bpm174_metronome"
+                    actionTitle = "bpm174_bass_drum"
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
                     count = 5
