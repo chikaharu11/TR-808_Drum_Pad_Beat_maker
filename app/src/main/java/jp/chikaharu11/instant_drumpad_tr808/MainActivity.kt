@@ -820,7 +820,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
-                "2x1 EXAMPLE BEAT1" -> {
+                "BPM120 2x1 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -838,7 +838,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -848,7 +848,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x1 EXAMPLE BEAT2" -> {
+                "BPM120 2x1 BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -876,7 +876,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x1 EXAMPLE BEAT3" -> {
+                "BPM120 2x1 BEAT3" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -904,7 +904,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x21()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x2 EXAMPLE BEAT1" -> {
+                "BPM140 2x2 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -940,7 +940,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x22()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x2 EXAMPLE BEAT2" -> {
+                "BPM120 2x2 BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -976,7 +976,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x22()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "2x2 EXAMPLE BEAT3" -> {
+                "BPM174 2x2 BEAT3" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1012,7 +1012,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x22()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "3x1 EXAMPLE BEAT1" -> {
+                "BPM120 3x1 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1044,7 +1044,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x31()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "3x1 EXAMPLE BEAT2" -> {
+                "BPM120 3x1 BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1076,7 +1076,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x31()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "3x1 EXAMPLE BEAT3" -> {
+                "BPM120 3x1 BEAT3" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1108,7 +1108,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x31()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "3x2 EXAMPLE BEAT1" -> {
+                "BPM110 3x2 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1152,7 +1152,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x32()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "4x1 EXAMPLE BEAT1" -> {
+                "BPM120 4x1 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1188,7 +1188,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x41()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "4x1 EXAMPLE BEAT2" -> {
+                "BPM150 4x1 BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1224,7 +1224,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x41()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "5x1 EXAMPLE BEAT1" -> {
+                "BPM100 5x1 BEAT1" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1264,7 +1264,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x51()
                     gridView2.visibility = View.INVISIBLE
                 }
-                "5x1 EXAMPLE BEAT2" -> {
+                "BPM120 5x1 BEAT2" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
