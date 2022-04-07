@@ -866,7 +866,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -894,7 +894,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -930,7 +930,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -966,7 +966,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1002,7 +1002,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1034,7 +1034,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1066,7 +1066,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1098,7 +1098,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1142,7 +1142,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1178,7 +1178,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1214,7 +1214,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1254,7 +1254,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1294,7 +1294,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase().replace("X", "x")
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
