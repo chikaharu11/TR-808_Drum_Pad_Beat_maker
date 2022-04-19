@@ -5,6 +5,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -22,6 +23,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
@@ -38,6 +40,7 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlin.math.hypot
+import kotlin.properties.Delegates
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -254,8 +257,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var colorCheck = 1
 
+    private var beatCheck = ""
 
-    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
+        "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -854,6 +859,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x31()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.hiphop, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "ELECTRONICA 1 BPM90" -> {
@@ -891,6 +900,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x41()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.electronica, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DUBSTEP 1 BPM140" -> {
@@ -928,6 +941,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x41()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.dubstep, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "HOUSE 1 BPM130" -> {
@@ -969,6 +986,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.house, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DISCO 1 BPM110" -> {
@@ -1010,6 +1031,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.disco, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "TECHNO 1 BPM110" -> {
@@ -1051,6 +1076,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.techno, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "EUROBEAT 1 BPM130" -> {
@@ -1088,6 +1117,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x41()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.eurobeat, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "2 STEP 1 BPM100" -> {
@@ -1129,6 +1162,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.two_step, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DRUM'N'BASS 1 BPM170" -> {
@@ -1166,6 +1203,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x41()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.drum_n_bass, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "SAMPLE BEAT 1 BPM120" -> {
@@ -1195,6 +1236,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x21()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_1, null))
+                        binding.notes.visibility = View.VISIBLE
+                        beatCheck = "sample_beat_1"
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "SAMPLE BEAT 2 BPM120" -> {
@@ -1228,6 +1274,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x31()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat2_1, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "SAMPLE BEAT 3 BPM100" -> {
@@ -1269,6 +1319,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat3_1, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "SAMPLE BEAT 4 BPM110" -> {
@@ -4395,7 +4449,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
-        }
+    }
 
     private fun x53() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4426,6 +4480,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.VISIBLE
         padCheck = 53
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x43() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4456,6 +4511,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 43
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x33() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4486,6 +4542,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 33
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x52() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4516,6 +4573,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 52
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x42() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4546,6 +4604,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 42
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x32() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4576,6 +4635,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 32
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x22() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -4606,6 +4666,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 22
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x21() {
         findViewById<View>(R.id.include_main_view2).visibility = View.GONE
@@ -4636,6 +4697,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 21
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x51() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -4666,6 +4728,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 51
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x41(){
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -4696,6 +4759,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 41
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
     private fun x31() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -4726,6 +4790,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 31
         binding.gridView.visibility = View.INVISIBLE
+        binding.notes.visibility = View.GONE
     }
 
     private fun stickyImmersiveMode() {
