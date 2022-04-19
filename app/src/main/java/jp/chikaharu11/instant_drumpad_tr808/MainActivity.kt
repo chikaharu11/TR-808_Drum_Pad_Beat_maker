@@ -15,6 +15,7 @@ import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration13 = 1050
     private var mpDuration14 = 608
     private var mpDuration15 = 55
-    private var noteDuration = 0
+    private var noteDuration = 1000
 
     private var actionTitle = "bpm120_bass_drum"
     private var padText1 = "tr_8_cymbal_01"
@@ -260,18 +261,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var beatCheck = ""
 
-    var noteCount = 10000
+    var noteCount = 0
 
-    private var runnable = object: Runnable{
+    val handler = Handler(Looper.getMainLooper())
+
+    private val runnable = object: Runnable{
         override fun run () {
+            handler.postDelayed(this, noteDuration.toLong())
             noteCount++
-            Handler().postDelayed(this, noteDuration.toLong())
             println(noteCount)
-            if (noteCount == 4 && beatCheck == "house") {
-                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.eurobeat, null))
+            if (noteCount == 2 && beatCheck == "sample_beat_1") {
+                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_2, null))
+                noteCount = 0
             }
-            if (noteCount == 5 && beatCheck == "house") {
-                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.house, null))
+            if (noteCount == 1 && beatCheck == "sample_beat_1") {
+                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_1, null))
             }
         }
     }
@@ -993,12 +997,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration
-                    getmpDuration.release()
-                    beatCheck = "house"
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "HOUSE 1 BPM130"
@@ -1249,6 +1247,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    getmpDuration.prepare()
+                    noteDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    beatCheck = "sample_beat_1"
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 1 BPM120"
@@ -1287,6 +1291,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    getmpDuration.prepare()
+                    noteDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    beatCheck = "sample_beat_2"
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 2 BPM120"
@@ -1332,6 +1342,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    getmpDuration.prepare()
+                    noteDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    beatCheck = "sample_beat_3"
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 3 BPM100"
@@ -1381,6 +1397,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+                    getmpDuration.prepare()
+                    noteDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    beatCheck = "sample_beat_4"
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 4 BPM110"
@@ -6390,7 +6412,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     if (switch1 == 1) {
                         lmp.stop()
-                        Handler().removeCallbacks(runnable)
+                        handler.removeCallbacks(runnable)
                         noteCount = 0
                         soundPool.autoPause()
                         menuSwitch = true
@@ -6399,7 +6421,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     } else {
                         lmp.start()
                         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                            Handler().post(runnable)
+                            handler.post(runnable)
                         }
                         menuSwitch = false
                         invalidateOptionsMenu()
@@ -6480,7 +6502,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         mp.release()
         soundPool.autoPause()
         soundPool.release()
-        Handler().removeCallbacks(runnable)
+        handler.removeCallbacks(runnable)
         noteCount = 0
         super.onDestroy()
         mRealm.close()
