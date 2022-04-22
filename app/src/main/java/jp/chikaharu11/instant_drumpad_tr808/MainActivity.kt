@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -41,7 +40,6 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlin.math.hypot
-import kotlin.properties.Delegates
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -68,7 +66,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration13 = 1050
     private var mpDuration14 = 608
     private var mpDuration15 = 55
-    private var noteDuration = 1000
+    private var noteDuration = 1000.toLong()
+    private var noteDurationConst = 1000.toLong()
 
     private var actionTitle = "bpm120_bass_drum"
     private var padText1 = "tr_8_cymbal_01"
@@ -267,15 +266,54 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private val runnable = object: Runnable{
         override fun run () {
-            handler.postDelayed(this, noteDuration.toLong())
+            handler.postDelayed(this, noteDuration)
             noteCount++
-            println(noteCount)
-            if (noteCount == 2 && beatCheck == "sample_beat_1") {
-                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_2, null))
-                noteCount = 0
-            }
-            if (noteCount == 1 && beatCheck == "sample_beat_1") {
-                binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_1, null))
+            when {
+                noteCount == 1 && beatCheck == "sample_beat_1" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_1, null))
+                }
+                noteCount == 2 && beatCheck == "sample_beat_1" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat1_2, null))
+                    noteCount = 0
+                }
+                noteCount == 1 && beatCheck == "sample_beat_2" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat2_1, null))
+                }
+                noteCount == 2 && beatCheck == "sample_beat_2" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat2_2, null))
+                    noteCount = 0
+                }
+                noteCount == 1 && beatCheck == "sample_beat_3" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat3_1, null))
+                }
+                noteCount == 2 && beatCheck == "sample_beat_3" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat3_2, null))
+                    noteCount = 0
+                }
+                noteCount == 1 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_1, null))
+                }
+                noteCount == 5 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_2, null))
+                }
+                noteCount == 7 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_3, null))
+                }
+                noteCount == 9 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_4, null))
+                }
+                noteCount == 11 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_5, null))
+                }
+                noteCount == 13 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_6, null))
+                }
+                noteCount == 15 && beatCheck == "sample_beat_4" -> {
+                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_7, null))
+                }
+                noteCount == 16 && beatCheck == "sample_beat_4" -> {
+                    noteCount = 0
+                }
             }
         }
     }
@@ -870,6 +908,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "hiphop_1_bpm80"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "HIPHOP 1 BPM80"
@@ -911,6 +952,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "electronica_1_bpm90"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "ELECTRONICA 1 BPM90"
@@ -952,6 +996,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "dubstep_1_bpm140"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DUBSTEP 1 BPM140"
@@ -997,6 +1044,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "house_1_bpm130"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "HOUSE 1 BPM130"
@@ -1042,6 +1092,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "disco_1_bpm110"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DISCO 1 BPM110"
@@ -1087,6 +1140,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "techno_1_bpm110"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "TECHNO 1 BPM110"
@@ -1128,6 +1184,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "eurobeat_1_bpm130"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "EUROBEAT 1 BPM130"
@@ -1150,10 +1209,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     invalidateOptionsMenu()
                     switch1 = 2
                     padText1 = "tr_909_clsd_hi_hat_02"
-                    padText4 = "snare_drum_02"
-                    padText7 = "tr_909_bass_drum_02"
-                    padText10 = "tr_909_clap"
-                    padText13 = "tr_909_open_hi_hat_01"
+                    padText4 = "tr_909_open_hi_hat_01"
+                    padText7 = "snare_drum_02"
+                    padText10 = "tr_909_bass_drum_02"
+                    padText13 = "tr_909_clap"
                     actionTitle = "two_step_1_bpm100"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1173,6 +1232,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "two_step_1_bpm100"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "2 STEP 1 BPM100"
@@ -1214,6 +1276,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = "drum_n_bass_1_bpm170"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DRUM'N'BASS 1 BPM170"
@@ -1250,9 +1315,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration
+                    noteDuration = getmpDuration.duration / 2.toLong()
+                    noteDurationConst = getmpDuration.duration / 2.toLong()
                     getmpDuration.release()
                     beatCheck = "sample_beat_1"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 1 BPM120"
@@ -1294,9 +1362,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration
+                    noteDuration = getmpDuration.duration / 2.toLong()
+                    noteDurationConst = getmpDuration.duration / 2.toLong()
                     getmpDuration.release()
                     beatCheck = "sample_beat_2"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 2 BPM120"
@@ -1345,9 +1416,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration
+                    noteDuration = getmpDuration.duration / 2.toLong()
+                    noteDurationConst = getmpDuration.duration / 2.toLong()
                     getmpDuration.release()
                     beatCheck = "sample_beat_3"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 3 BPM100"
@@ -1400,9 +1474,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration
+                    noteDuration = getmpDuration.duration / 16.toLong()
+                    noteDurationConst = getmpDuration.duration / 16.toLong()
                     getmpDuration.release()
                     beatCheck = "sample_beat_4"
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "SAMPLE BEAT 4 BPM110"
@@ -1413,6 +1490,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
                     x32()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        binding.notes.setImageDrawable(getDrawable(resources, R.drawable.sample_beat4_1, null))
+                        binding.notes.visibility = View.VISIBLE
+                    }
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BPM80 BASS DRUM" -> {
@@ -1424,6 +1505,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1444,6 +1528,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1464,6 +1551,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1484,6 +1574,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1504,6 +1597,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1524,6 +1620,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1544,6 +1643,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1564,6 +1666,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1584,6 +1689,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1604,6 +1712,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
                     lmp.stop()
+                    beatCheck = ""
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
@@ -1619,6 +1730,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
+                    beatCheck = ""
+                    noteCount = 0
                     switch1 = 2
                     buttonA = 16
                     buttonB = 1
@@ -3223,7 +3336,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     
                     findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    
+                    noteDuration = (noteDurationConst / (bpm / 10.0)).toLong()
                     findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
@@ -3245,7 +3358,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     
                     findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                 } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    
+                    noteDuration = (noteDurationConst / (bpm / 10.0)).toLong()
                     findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
                 }
                 menuSwitch = false
@@ -5014,7 +5127,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     playMode()
                     effect(binding.includeMainView.imageView,800)
                     sound1 = soundPool.load(soundList.name, 1)
-                    println(soundList.name)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
                     getmpDuration.prepare()
@@ -5345,6 +5457,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     lmp.stop()
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     actionTitle = soundList.name
@@ -5688,6 +5802,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     lmp.stop()
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
                     count = 5
                     bpm = 10
                     actionTitle = soundList.name.replace(".ogg","")
@@ -6512,6 +6628,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         menuSwitch = true
         invalidateOptionsMenu()
         switch1 = 2
+        handler.removeCallbacks(runnable)
+        noteCount = 0
         if (mp.isPlaying) {
             mp.stop()
             mp.prepare()
