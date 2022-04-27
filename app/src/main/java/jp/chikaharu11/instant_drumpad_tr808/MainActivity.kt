@@ -923,13 +923,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "DRUM'N'BASS 1 BPM170",
             "BEAT 1 BPM120",
             "BEAT 2 BPM120",
-            "BEAT 3 BPM100",
-            "BEAT 4 BPM110",
-            "BEAT 5 BPM110",
+            "BEAT 3 BPM110",
+            "BEAT 4 BPM100",
+            "BEAT 5 BPM90",
             "BEAT 6 BPM100",
-            "BEAT 7 BPM90",
+            "BEAT 7 BPM120",
             "BEAT 8 BPM100",
-            "BEAT 9 BPM120",
+            "BEAT 9 BPM110",
             "BPM80 BASS DRUM",
             "BPM90 BASS DRUM",
             "BPM100 BASS DRUM",
@@ -1445,7 +1445,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 2 BPM120" -> {
+                "BEAT 7 BPM120" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1453,7 +1453,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText1 = "bass_drum_short_08"
                     padText4 = "low_tom_06"
                     padText7 = "maracas_03"
-                    actionTitle = "beat_2_bpm120"
+                    actionTitle = "beat_7_bpm120"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1491,7 +1491,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 3 BPM100" -> {
+                "BEAT 8 BPM100" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1501,7 +1501,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText7 = "claves_05"
                     padText10 = "clsd_hi_hat_09"
                     padText13 = "high_conga_08"
-                    actionTitle = "beat_3_bpm100"
+                    actionTitle = "beat_8_bpm100"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1545,7 +1545,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 4 BPM110" -> {
+                "BEAT 9 BPM110" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1556,7 +1556,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText5 = "snare_drum_01"
                     padText7 = "bass_drum_short_08"
                     padText8 = "tr_909_snare_drum_02"
-                    actionTitle = "beat_4_bpm110"
+                    actionTitle = "beat_9_bpm110"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1603,7 +1603,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 5 BPM110" -> {
+                "BEAT 3 BPM110" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1611,7 +1611,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText1 = "clsd_hi_hat_01"
                     padText4 = "snare_drum_05"
                     padText7 = "tr_909_bass_drum_02"
-                    actionTitle = "beat_5_bpm110"
+                    actionTitle = "beat_3_bpm110"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1643,7 +1643,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 6 BPM100" -> {
+                "BEAT 4 BPM100" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1651,7 +1651,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText1 = "tr_909_bass_drum_02"
                     padText4 = "tr_8_snare_drum_03"
                     padText7 = "open_hi_hat_08"
-                    actionTitle = "beat_6_bpm100"
+                    actionTitle = "beat_4_bpm100"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1683,7 +1683,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 7 BPM90" -> {
+                "BEAT 5 BPM90" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1691,7 +1691,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText1 = "clsd_hi_hat_03"
                     padText4 = "snare_drum_02"
                     padText7 = "bass_drum_short_01"
-                    actionTitle = "beat_7_bpm90"
+                    actionTitle = "beat_5_bpm90"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1723,7 +1723,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 8 BPM100" -> {
+                "BEAT 6 BPM100" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
@@ -1732,7 +1732,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     padText4 = "snare_drum_15"
                     padText7 = "tr_909_bass_drum_03"
                     padText10 = "tr_8_open_hi_hat_03"
-                    actionTitle = "beat_8_bpm100"
+                    actionTitle = "beat_6_bpm100"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -1753,7 +1753,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "BEAT 8 BPM100"
+                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -1767,14 +1767,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "BEAT 9 BPM120" -> {
+                "BEAT 2 BPM120" -> {
                     lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
                     padText1 = "bass_drum_short_01"
                     padText4 = "snare_drum_01"
-                    actionTitle = "beat_9_bpm120"
+                    actionTitle = "beat_2_bpm120"
                     binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
