@@ -332,6 +332,17 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar_main"
         tools:ignore="MissingConstraints" />
 
+    <jp.chikaharu11.instant_drumpad_tr808.SequencerView
+        android:id="@+id/sequencer_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+        tools:ignore="MissingConstraints" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

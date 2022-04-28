@@ -12,6 +12,7 @@ import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
 import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -770,7 +771,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         create()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
-                        val snackTextView: TextView = snackBar.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                         snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         snackBar.setDuration(2000).show()
                         Handler().postDelayed({
@@ -796,7 +797,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         update()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
-                        val snackTextView: TextView = snackBar.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                         snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         snackBar.setDuration(2000).show()
                         Handler().postDelayed({
@@ -810,7 +811,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         val snackBar2 = Snackbar.make(findViewById(R.id.snack_space) , R.string.Loaded, Snackbar.LENGTH_LONG)
-                        val snackTextView2: TextView = snackBar2.view.findViewById(com.google.android.material.R.id.snackbar_text)
+                        val snackTextView2: TextView = snackBar2.view.findViewById(R.id.snackbar_text)
                         snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         snackBar2.setDuration(2000).show()
                         Handler().postDelayed({
@@ -1541,6 +1542,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat3_1, null))
+                        binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
                     gridView2.visibility = View.INVISIBLE
