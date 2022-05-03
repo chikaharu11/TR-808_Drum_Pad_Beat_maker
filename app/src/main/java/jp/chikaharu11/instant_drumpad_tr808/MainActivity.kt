@@ -3047,282 +3047,282 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         lmp.stop()
 
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
             if (a1 == 0) {
                 a1 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 a1 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
 
             if (a2 == 0) {
                 a2 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 a2 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
 
             if (a3 == 0) {
                 a3 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 a3 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
 
             if (a4 == 0) {
                 a4 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 a4 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
 
             if (a5 == 0) {
                 a5 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 a5 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
 
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
             if (b1 == 0) {
                 b1 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 b1 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
 
             if (b2 == 0) {
                 b2 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 b2 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
 
             if (b3 == 0) {
                 b3 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 b3 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
 
             if (b4 == 0) {
                 b4 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 b4 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
 
             if (b5 == 0) {
                 b5 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 b5 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
 
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
             if (c1 == 0) {
                 c1 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 c1 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
 
             if (c2 == 0) {
                 c2 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 c2 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
 
             if (c3 == 0) {
                 c3 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 c3 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
 
             if (c4 == 0) {
                 c4 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 c4 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
 
             if (c5 == 0) {
                 c5 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 c5 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
 
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
             if (d1 == 0) {
                 d1 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 d1 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
 
             if (d2 == 0) {
                 d2 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 d2 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
 
             if (d3 == 0) {
                 d3 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 d3 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
 
             if (d4 == 0) {
                 d4 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 d4 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
 
             if (d5 == 0) {
                 d5 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 d5 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
 
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
             if (e1 == 0) {
                 e1 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 e1 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
 
             if (e2 == 0) {
                 e2 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 e2 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
 
             if (e3 == 0) {
                 e3 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 e3 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
 
             if (e4 == 0) {
                 e4 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 e4 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
-        binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
 
             if (e5 == 0) {
                 e5 = 1
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
             } else {
                 e5 = 0
-                binding.sequencerView.findViewById<ImageView>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
             }
             false
         }
