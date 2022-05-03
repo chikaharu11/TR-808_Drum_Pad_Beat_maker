@@ -3107,7 +3107,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (b1 == 0) {
                 b1 = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e98e2f"))
             } else {
                 b1 = 0
                 findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3118,7 +3118,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (b2 == 0) {
                 b2 = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e98e2f"))
             } else {
                 b2 = 0
                 findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3129,7 +3129,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (b3 == 0) {
                 b3 = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f"))
             } else {
                 b3 = 0
                 findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3140,7 +3140,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (b4 == 0) {
                 b4 = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f"))
             } else {
                 b4 = 0
                 findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3151,7 +3151,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (b5 == 0) {
                 b5 = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e98e2f"))
             } else {
                 b5 = 0
                 findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3163,7 +3163,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (c1 == 0) {
                 c1 = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#dfd441"))
             } else {
                 c1 = 0
                 findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3174,7 +3174,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (c2 == 0) {
                 c2 = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#dfd441"))
             } else {
                 c2 = 0
                 findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3185,7 +3185,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (c3 == 0) {
                 c3 = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#dfd441"))
             } else {
                 c3 = 0
                 findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3196,7 +3196,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (c4 == 0) {
                 c4 = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
             } else {
                 c4 = 0
                 findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3207,7 +3207,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (c5 == 0) {
                 c5 = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#dfd441"))
             } else {
                 c5 = 0
                 findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3219,7 +3219,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (d1 == 0) {
                 d1 = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7"))
             } else {
                 d1 = 0
                 findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3230,7 +3230,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (d2 == 0) {
                 d2 = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e9e8e7"))
             } else {
                 d2 = 0
                 findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3241,7 +3241,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (d3 == 0) {
                 d3 = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e9e8e7"))
             } else {
                 d3 = 0
                 findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3252,7 +3252,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (d4 == 0) {
                 d4 = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e9e8e7"))
             } else {
                 d4 = 0
                 findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3263,7 +3263,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (d5 == 0) {
                 d5 = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7"))
             } else {
                 d5 = 0
                 findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3275,7 +3275,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (e1 == 0) {
                 e1 = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#ffffff"))
             } else {
                 e1 = 0
                 findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3286,7 +3286,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (e2 == 0) {
                 e2 = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#ffffff"))
             } else {
                 e2 = 0
                 findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3297,7 +3297,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (e3 == 0) {
                 e3 = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#ffffff"))
             } else {
                 e3 = 0
                 findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3308,7 +3308,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (e4 == 0) {
                 e4 = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#ffffff"))
             } else {
                 e4 = 0
                 findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -3319,7 +3319,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             if (e5 == 0) {
                 e5 = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff"))
             } else {
                 e5 = 0
                 findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
