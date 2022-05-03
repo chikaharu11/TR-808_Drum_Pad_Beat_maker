@@ -6,164 +6,164 @@
     android:layout_height="match_parent"
     tools:ignore="ContentDescription">
 
-    <ImageButton
-        android:id="@+id/button"
+    <ImageView
+        android:id="@+id/sequence"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        
+        app:layout_constraintEnd_toStartOf="@+id/sequence2"
+        android:foreground="@drawable/sequence_corner"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/button2"
+    <ImageView
+        android:id="@+id/sequence2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence3"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence" />
 
-    <ImageButton
-        android:id="@+id/button3"
+    <ImageView
+        android:id="@+id/sequence3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence4"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence2" />
 
-    <ImageButton
-        android:id="@+id/button4"
+    <ImageView
+        android:id="@+id/sequence4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence5"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence3" />
 
-    <ImageButton
-        android:id="@+id/button5"
+    <ImageView
+        android:id="@+id/sequence5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence6"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence4" />
 
-    <ImageButton
-        android:id="@+id/button6"
+    <ImageView
+        android:id="@+id/sequence6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
-        
-        app:layout_constraintStart_toEndOf="@+id/button5" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence7"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence5" />
 
-    <ImageButton
-        android:id="@+id/button7"
+    <ImageView
+        android:id="@+id/sequence7"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
-        
-        app:layout_constraintStart_toEndOf="@+id/button6" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence8"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence6" />
 
-    <ImageButton
-        android:id="@+id/button8"
+    <ImageView
+        android:id="@+id/sequence8"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        
-        app:layout_constraintStart_toEndOf="@+id/button7" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence9"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence7" />
 
-    <ImageButton
-        android:id="@+id/button9"
+    <ImageView
+        android:id="@+id/sequence9"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        
-        app:layout_constraintStart_toEndOf="@+id/button8" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence10"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence8" />
 
-    <ImageButton
-        android:id="@+id/button10"
+    <ImageView
+        android:id="@+id/sequence10"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button11"
-        
-        app:layout_constraintStart_toEndOf="@+id/button9" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence11"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence9" />
 
-    <ImageButton
-        android:id="@+id/button11"
+    <ImageView
+        android:id="@+id/sequence11"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
-        
-        app:layout_constraintStart_toEndOf="@+id/button10" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence12"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence10" />
 
-    <ImageButton
-        android:id="@+id/button12"
+    <ImageView
+        android:id="@+id/sequence12"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
-        
-        app:layout_constraintStart_toEndOf="@+id/button11" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence13"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence11" />
 
-    <ImageButton
-        android:id="@+id/button13"
+    <ImageView
+        android:id="@+id/sequence13"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
-        
-        app:layout_constraintStart_toEndOf="@+id/button12" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence14"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence12" />
 
-    <ImageButton
-        android:id="@+id/button14"
+    <ImageView
+        android:id="@+id/sequence14"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button15"
-        
-        app:layout_constraintStart_toEndOf="@+id/button13" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence15"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence13" />
 
-    <ImageButton
-        android:id="@+id/button15"
+    <ImageView
+        android:id="@+id/sequence15"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
-        
-        app:layout_constraintStart_toEndOf="@+id/button14" />
+        app:layout_constraintEnd_toStartOf="@+id/sequence16"
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence14" />
 
-    <ImageButton
-        android:id="@+id/button16"
+    <ImageView
+        android:id="@+id/sequence16"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        
-        app:layout_constraintStart_toEndOf="@+id/button15" />
+        android:foreground="@drawable/sequence_corner"
+        app:layout_constraintStart_toEndOf="@+id/sequence15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
