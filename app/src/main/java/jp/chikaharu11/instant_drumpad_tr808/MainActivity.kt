@@ -12,7 +12,6 @@ import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
 import android.net.Uri
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -40,7 +39,6 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
-import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.math.hypot
@@ -351,6 +349,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e14 = 0
     private var e15 = 0
     private var e16 = 0
+    
+    var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
         soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
@@ -478,8 +478,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    private fun soundpool() {
-        Timer().scheduleAtFixedRate(0, 115) {
+    private fun sequencerPlay() {
+        timer = Timer()
+        timer!!.scheduleAtFixedRate(0, 115) {
             sequencerCount++
             when (sequencerCount) {
                 1 -> {
@@ -629,6 +630,28 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
             }
         }
+    }
+
+    private fun sequencerStop() {
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        sequencerCount = 0
+        timer?.cancel()
+        timer = null
     }
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
@@ -867,9 +890,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
                 "test" -> {
-                    soundpool()
                 }
                 "Change Pad Sounds" -> {
+                    sequencerCount = 0
+                    timer?.cancel()
+                    timer = null
                     paste = 1
                     binding.toolbarMain.setBackgroundColor(Color.parseColor("#FFA630"))
                     Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
@@ -7986,18 +8011,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     if (switch1 == 1) {
-                        lmp.stop()
-                        handler.removeCallbacks(runnable)
-                        noteCount = 0
-                        soundPool.autoPause()
+                        sequencerStop()
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
                     } else {
-                        lmp.start()
-                        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                            handler.post(runnable)
-                        }
+                        sequencerPlay()
                         menuSwitch = false
                         invalidateOptionsMenu()
                         switch1 = 1
@@ -8077,6 +8096,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         mp.release()
         soundPool.autoPause()
         soundPool.release()
+        sequencerCount = 0
+        timer?.cancel()
+        timer = null
         handler.removeCallbacks(runnable)
         noteCount = 0
         super.onDestroy()
@@ -8089,6 +8111,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         switch1 = 2
         handler.removeCallbacks(runnable)
         noteCount = 0
+        sequencerStop()
         if (mp.isPlaying) {
             mp.stop()
             mp.prepare()
