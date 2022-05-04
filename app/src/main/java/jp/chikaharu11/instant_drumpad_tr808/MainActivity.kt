@@ -39,8 +39,13 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
+import kotlin.coroutines.CoroutineContext
 import kotlin.math.hypot
 import kotlin.properties.Delegates
 
@@ -478,152 +483,154 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 115) {
             sequencerCount++
             when (sequencerCount) {
                 1 -> {
-                    if (a1 == 1) { se1++ }
-                    if (b1 == 1) { se2++ }
-                    if (c1 == 1) { se3++ }
-                    if (d1 == 1) { se4++ }
-                    if (e1 == 1) { se5++ }
+                    GlobalScope.launch { if (a1 == 1) { se1++ } }
+                    GlobalScope.launch { if (b1 == 1) { se2++ } }
+                    GlobalScope.launch { if (c1 == 1) { se3++ } }
+                    GlobalScope.launch { if (d1 == 1) { se4++ } }
+                    GlobalScope.launch { if (e1 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 2 -> {
-                    if (a2 == 1) { se1++ }
-                    if (b2 == 1) { se2++ }
-                    if (c2 == 1) { se3++ }
-                    if (d2 == 1) { se4++ }
-                    if (e2 == 1) { se5++ }
+                    GlobalScope.launch { if (a2 == 1) { se1++ } }
+                    GlobalScope.launch { if (b2 == 1) { se2++ } }
+                    GlobalScope.launch { if (c2 == 1) { se3++ } }
+                    GlobalScope.launch { if (d2 == 1) { se4++ } }
+                    GlobalScope.launch { if (e2 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
                 }
                 3 -> {
-                    if (a3 == 1) { se1++ }
-                    if (b3 == 1) { se2++ }
-                    if (c3 == 1) { se3++ }
-                    if (d3 == 1) { se4++ }
-                    if (e3 == 1) { se5++ }
+                    GlobalScope.launch { if (a3 == 1) { se1++ } }
+                    GlobalScope.launch { if (b3 == 1) { se2++ } }
+                    GlobalScope.launch { if (c3 == 1) { se3++ } }
+                    GlobalScope.launch { if (d3 == 1) { se4++ } }
+                    GlobalScope.launch { if (e3 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 4 -> {
-                    if (a4 == 1) { se1++ }
-                    if (b4 == 1) { se2++ }
-                    if (c4 == 1) { se3++ }
-                    if (d4 == 1) { se4++ }
-                    if (e4 == 1) { se5++ }
+                    GlobalScope.launch { if (a4 == 1) { se1++ } }
+                    GlobalScope.launch { if (b4 == 1) { se2++ } }
+                    GlobalScope.launch { if (c4 == 1) { se3++ } }
+                    GlobalScope.launch { if (d4 == 1) { se4++ } }
+                    GlobalScope.launch { if (e4 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
-                    if (a5 == 1) { se1++ }
-                    if (b5 == 1) { se2++ }
-                    if (c5 == 1) { se3++ }
-                    if (d5 == 1) { se4++ }
-                    if (e5 == 1) { se5++ }
+                    GlobalScope.launch { if (a5 == 1) { se1++ } }
+                    GlobalScope.launch { if (b5 == 1) { se2++ } }
+                    GlobalScope.launch { if (c5 == 1) { se3++ } }
+                    GlobalScope.launch { if (d5 == 1) { se4++ } }
+                    GlobalScope.launch { if (e5 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 6 -> {
-                    if (a6 == 1) { se1++ }
-                    if (b6 == 1) { se2++ }
-                    if (c6 == 1) { se3++ }
-                    if (d6 == 1) { se4++ }
-                    if (e6 == 1) { se5++ }
+                    GlobalScope.launch { if (a6 == 1) { se1++ } }
+                    GlobalScope.launch { if (b6 == 1) { se2++ } }
+                    GlobalScope.launch { if (c6 == 1) { se3++ } }
+                    GlobalScope.launch { if (d6 == 1) { se4++ } }
+                    GlobalScope.launch { if (e6 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
-                    if (a7 == 1) { se1++ }
-                    if (b7 == 1) { se2++ }
-                    if (c7 == 1) { se3++ }
-                    if (d7 == 1) { se4++ }
-                    if (e7 == 1) { se5++ }
+                    GlobalScope.launch { if (a7 == 1) { se1++ } }
+                    GlobalScope.launch { if (b7 == 1) { se2++ } }
+                    GlobalScope.launch { if (c7 == 1) { se3++ } }
+                    GlobalScope.launch { if (d7 == 1) { se4++ } }
+                    GlobalScope.launch { if (e7 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 8 -> {
-                    if (a8 == 1) { se1++ }
-                    if (b8 == 1) { se2++ }
-                    if (c8 == 1) { se3++ }
-                    if (d8 == 1) { se4++ }
-                    if (e8 == 1) { se5++ }
+                    GlobalScope.launch { if (a8 == 1) { se1++ } }
+                    GlobalScope.launch { if (b8 == 1) { se2++ } }
+                    GlobalScope.launch { if (c8 == 1) { se3++ } }
+                    GlobalScope.launch { if (d8 == 1) { se4++ } }
+                    GlobalScope.launch { if (e8 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
-                    if (a9 == 1) { se1++ }
-                    if (b9 == 1) { se2++ }
-                    if (c9 == 1) { se3++ }
-                    if (d9 == 1) { se4++ }
-                    if (e9 == 1) { se5++ }
+                    GlobalScope.launch { if (a9 == 1) { se1++ } }
+                    GlobalScope.launch { if (b9 == 1) { se2++ } }
+                    GlobalScope.launch { if (c9 == 1) { se3++ } }
+                    GlobalScope.launch { if (d9 == 1) { se4++ } }
+                    GlobalScope.launch { if (e9 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 10 -> {
-                    if (a10 == 1) { se1++ }
-                    if (b10 == 1) { se2++ }
-                    if (c10 == 1) { se3++ }
-                    if (d10 == 1) { se4++ }
-                    if (e10 == 1) { se5++ }
+                    GlobalScope.launch { if (a10 == 1) { se1++ } }
+                    GlobalScope.launch { if (b10 == 1) { se2++ } }
+                    GlobalScope.launch { if (c10 == 1) { se3++ } }
+                    GlobalScope.launch { if (d10 == 1) { se4++ } }
+                    GlobalScope.launch { if (e10 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
-                    if (a11 == 1) { se1++ }
-                    if (b11 == 1) { se2++ }
-                    if (c11 == 1) { se3++ }
-                    if (d11 == 1) { se4++ }
-                    if (e11 == 1) { se5++ }
+                    GlobalScope.launch { if (a11 == 1) { se1++ } }
+                    GlobalScope.launch { if (b11 == 1) { se2++ } }
+                    GlobalScope.launch { if (c11 == 1) { se3++ } }
+                    GlobalScope.launch { if (d11 == 1) { se4++ } }
+                    GlobalScope.launch { if (e11 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 12 -> {
-                    if (a12 == 1) { se1++ }
-                    if (b12 == 1) { se2++ }
-                    if (c12 == 1) { se3++ }
-                    if (d12 == 1) { se4++ }
-                    if (e12 == 1) { se5++ }
+                    GlobalScope.launch { if (a12 == 1) { se1++ } }
+                    GlobalScope.launch { if (b12 == 1) { se2++ } }
+                    GlobalScope.launch { if (c12 == 1) { se3++ } }
+                    GlobalScope.launch { if (d12 == 1) { se4++ } }
+                    GlobalScope.launch { if (e12 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
-                    if (a13 == 1) { se1++ }
-                    if (b13 == 1) { se2++ }
-                    if (c13 == 1) { se3++ }
-                    if (d13 == 1) { se4++ }
-                    if (e13 == 1) { se5++ }
+                    GlobalScope.launch { if (a13 == 1) { se1++ } }
+                    GlobalScope.launch { if (b13 == 1) { se2++ } }
+                    GlobalScope.launch { if (c13 == 1) { se3++ } }
+                    GlobalScope.launch { if (d13 == 1) { se4++ } }
+                    GlobalScope.launch { if (e13 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 14 -> {
-                    if (a14 == 1) { se1++ }
-                    if (b14 == 1) { se2++ }
-                    if (c14 == 1) { se3++ }
-                    if (d14 == 1) { se4++ }
-                    if (e14 == 1) { se5++ }
+                    GlobalScope.launch { if (a14 == 1) { se1++ } }
+                    GlobalScope.launch { if (b14 == 1) { se2++ } }
+                    GlobalScope.launch { if (c14 == 1) { se3++ } }
+                    GlobalScope.launch { if (d14 == 1) { se4++ } }
+                    GlobalScope.launch { if (e14 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
-                    if (a15 == 1) { se1++ }
-                    if (b15 == 1) { se2++ }
-                    if (c15 == 1) { se3++ }
-                    if (d15 == 1) { se4++ }
-                    if (e15 == 1) { se5++ }
+                    GlobalScope.launch { if (a15 == 1) { se1++ } }
+                    GlobalScope.launch { if (b15 == 1) { se2++ } }
+                    GlobalScope.launch { if (c15 == 1) { se3++ } }
+                    GlobalScope.launch { if (d15 == 1) { se4++ } }
+                    GlobalScope.launch { if (e15 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 16 -> {
-                    if (a16 == 1) { se1++ }
-                    if (b16 == 1) { se2++ }
-                    if (c16 == 1) { se3++ }
-                    if (d16 == 1) { se4++ }
-                    if (e16 == 1) { se5++ }
+                    GlobalScope.launch { if (a16 == 1) { se1++ } }
+                    GlobalScope.launch { if (b16 == 1) { se2++ } }
+                    GlobalScope.launch { if (c16 == 1) { se3++ } }
+                    GlobalScope.launch { if (d16 == 1) { se4++ } }
+                    GlobalScope.launch { if (e16 == 1) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
