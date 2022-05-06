@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat.getDrawable
+import androidx.core.os.postDelayed
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
@@ -39,10 +40,8 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
+import java.lang.Runnable
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.coroutines.CoroutineContext
@@ -254,6 +253,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound14 = 0
     private var sound15 = 0
     private var sound16 = 0
+    private var sound17 = 0
 
     private var paste = 0
 
@@ -271,6 +271,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var noteCount = 0
 
     private var sequencerCount = 0
+
+    private var firstPlay = 0
 
     val handler = Handler(Looper.getMainLooper())
     
@@ -358,19 +360,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+        soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
     }
     private var se2 by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound4, 1.0f, 1.0f, 1, 0, 1.0f)
+        soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
     }
     private var se3 by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound7, 1.0f, 1.0f, 1, 0, 1.0f)
+        soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
     }
     private var se4 by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound10, 1.0f, 1.0f, 1, 0, 1.0f)
+        soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
     }
     private var se5 by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound13, 1.0f, 1.0f, 1, 0, 1.0f)
+        soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
     }
 
     private val runnable = object: Runnable{
@@ -485,6 +487,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
+        if (firstPlay == 0) {
+            runBlocking {
+                val job1 = launch {
+                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
+                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
+                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
+                    firstPlay = 1
+                    delay(100)
+                }
+                job1.join()
+            }
+        }
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 115) {
             sequencerCount++
@@ -659,6 +673,207 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerCount = 0
         timer?.cancel()
         timer = null
+    }
+    
+    private fun resetSequence() {
+        a1 = 0
+        a2 = 0
+        a3 = 0
+        a4 = 0
+        a5 = 0
+        a6 = 0
+        a7 = 0
+        a8 = 0
+        a9 = 0
+        a10 = 0
+        a11 = 0
+        a12 = 0
+        a13 = 0
+        a14 = 0
+        a15 = 0
+        a16 = 0
+        b1 = 0
+        b2 = 0
+        b3 = 0
+        b4 = 0
+        b5 = 0
+        b6 = 0
+        b7 = 0
+        b8 = 0
+        b9 = 0
+        b10 = 0
+        b11 = 0
+        b12 = 0
+        b13 = 0
+        b14 = 0
+        b15 = 0
+        b16 = 0
+        c1 = 0
+        c2 = 0
+        c3 = 0
+        c4 = 0
+        c5 = 0
+        c6 = 0
+        c7 = 0
+        c8 = 0
+        c9 = 0
+        c10 = 0
+        c11 = 0
+        c12 = 0
+        c13 = 0
+        c14 = 0
+        c15 = 0
+        c16 = 0
+        d1 = 0
+        d2 = 0
+        d3 = 0
+        d4 = 0
+        d5 = 0
+        d6 = 0
+        d7 = 0
+        d8 = 0
+        d9 = 0
+        d10 = 0
+        d11 = 0
+        d12 = 0
+        d13 = 0
+        d14 = 0
+        d15 = 0
+        d16 = 0
+        e1 = 0
+        e2 = 0
+        e3 = 0
+        e4 = 0
+        e5 = 0
+        e6 = 0
+        e7 = 0
+        e8 = 0
+        e9 = 0
+        e10 = 0
+        e11 = 0
+        e12 = 0
+        e13 = 0
+        e14 = 0
+        e15 = 0
+        e16 = 0
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+    }
+
+    private fun houseSequence() {
+        resetSequence()
+        a1 = 1
+        a5 = 1
+        a9 = 1
+        a13 = 1
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933"))
+        b3 = 1
+        b7 = 1
+        b11 = 1
+        b15 = 1
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f"))
+        c4 = 1
+        c7 = 1
+        c10 = 1
+        c15 = 1
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441"))
+        d1 = 1
+        d5 = 1
+        d9 = 1
+        d13 = 1
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e9e8e7"))
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7"))
+        e5 = 1
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff"))
     }
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
@@ -859,7 +1074,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         val tuning = arrayOf(
-            "test",
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -896,8 +1110,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
-                "test" -> {
-                }
                 "Change Pad Sounds" -> {
                     sequencerCount = 0
                     timer?.cancel()
@@ -1417,9 +1629,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "HOUSE 1 BPM130" -> {
-                    lmp.stop()
-                    menuSwitch = true
-                    invalidateOptionsMenu()
                     switch1 = 2
                     padText1 = "tr_909_clsd_hi_hat_02"
                     padText4 = "tr_909_open_hi_hat_01"
@@ -1442,15 +1651,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
                     beatCheck = "house_1_bpm130"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "HOUSE 1 BPM130"
+                    houseSequence()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -3042,6 +3249,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
             }
         }
+        sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
 
