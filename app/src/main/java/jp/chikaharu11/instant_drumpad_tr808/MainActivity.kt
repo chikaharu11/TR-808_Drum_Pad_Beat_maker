@@ -276,7 +276,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var sequencerMaxSize = 0
 
-    private var firstPlay = 0
+    private var sequencerBpm: Long = 120
 
     val handler = Handler(Looper.getMainLooper())
     
@@ -491,20 +491,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
-        if (firstPlay == 0) {
             runBlocking {
                 val job1 = launch {
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                    firstPlay = 1
                     delay(100)
                 }
                 job1.join()
             }
-        }
+        sequencerSize = 0
         timer = Timer()
-        timer!!.scheduleAtFixedRate(0, 115) {
+        timer!!.scheduleAtFixedRate(0, 15000/sequencerBpm) {
             sequencerCount++
             when (sequencerCount) {
                 1 -> {
@@ -682,7 +680,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
         sequencerCount = 0
-        sequencerSize = 0
         timer?.cancel()
         timer = null
     }
@@ -942,70 +939,45 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerStop()
         resetSequence()
         sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 130
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
         a13[0] = 1
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933"))
         b3[0] = 1
         b7[0] = 1
         b11[0] = 1
         b15[0] = 1
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f"))
         c4[0] = 1
         c7[0] = 1
         c10[0] = 1
         c15[0] = 1
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441"))
         d1[0] = 1
         d5[0] = 1
         d9[0] = 1
         d13[0] = 1
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7"))
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7"))
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e9e8e7"))
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7"))
         e5[0] = 1
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff"))
     }
 
     private fun reggaetonSequence() {
         sequencerStop()
         resetSequence()
         sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 90
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
         a13[0] = 1
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933"))
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933"))
         b4[0] = 1
         b7[0] = 1
         b12[0] = 1
         b15[0] = 1
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e98e2f"))
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f"))
         c4[0] = 1
         c7[0] = 1
         c12[0] = 1
         c15[0] = 1
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#dfd441"))
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441"))
 
         a1[1] = 1
         a5[1] = 1
@@ -1649,6 +1621,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     reggaetonSequence()
+                    changeSequence()
                     beatCheck = "reggaeton_1_bpm90"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1791,6 +1764,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     supportActionBar?.title = "HOUSE 1 BPM130"
                     houseSequence()
+                    changeSequence()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
