@@ -935,29 +935,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
 
-    private fun houseSequence() {
+    private fun hiphopSequence() {
         sequencerStop()
         resetSequence()
         sequencerMaxSize = 0
         sequencerSize = 0
-        sequencerBpm = 130
+        sequencerBpm = 80
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
         a13[0] = 1
-        b3[0] = 1
-        b7[0] = 1
-        b11[0] = 1
-        b15[0] = 1
-        c4[0] = 1
-        c7[0] = 1
-        c10[0] = 1
-        c15[0] = 1
-        d1[0] = 1
-        d5[0] = 1
-        d9[0] = 1
-        d13[0] = 1
-        e5[0] = 1
+        b5[0] = 1
+        b13[0] = 1
+        c1[0] = 1
+        c3[0] = 1
+        c11[0] = 1
     }
 
     private fun reggaetonSequence() {
@@ -993,6 +985,227 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c10[1] = 1
         c12[1] = 1
         c15[1] = 1
+    }
+
+    private fun electronicaSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 90
+        a1[0] = 1
+        a2[0] = 1
+        a3[0] = 1
+        a4[0] = 1
+        a5[0] = 1
+        a6[0] = 1
+        a7[0] = 1
+        a8[0] = 1
+        a9[0] = 1
+        a10[0] = 1
+        a11[0] = 1
+        a12[0] = 1
+        a13[0] = 1
+        a14[0] = 1
+        a15[0] = 1
+        a16[0] = 1
+        b13[0] = 1
+        c1[0] = 1
+        c7[0] = 1
+        c12[0] = 1
+        d4[0] = 1
+    }
+
+    private fun dubstepSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 140
+        a1[0] = 1
+        a3[0] = 1
+        a4[0] = 1
+        a7[0] = 1
+        a11[0] = 1
+        a14[0] = 1
+        b9[0] = 1
+        b16[0] = 1
+        c1[0] = 1
+        c4[0] = 1
+        c7[0] = 1
+        c15[0] = 1
+        d1[0] = 1
+    }
+
+    private fun houseSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 130
+        a1[0] = 1
+        a5[0] = 1
+        a9[0] = 1
+        a13[0] = 1
+        b3[0] = 1
+        b7[0] = 1
+        b11[0] = 1
+        b15[0] = 1
+        c4[0] = 1
+        c7[0] = 1
+        c10[0] = 1
+        c15[0] = 1
+        d1[0] = 1
+        d5[0] = 1
+        d9[0] = 1
+        d13[0] = 1
+        e5[0] = 1
+    }
+
+    private fun discoSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 110
+        a1[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a13[0] = 1
+        b3[0] = 1
+        b11[0] = 1
+        b15[0] = 1
+        c5[0] = 1
+        c8[0] = 1
+        c16[0] = 1
+        d1[0] = 1
+        d7[0] = 1
+        d13[0] = 1
+        e5[0] = 1
+        e11[0] = 1
+        e13[0] = 1
+    }
+
+    private fun technoSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 110
+        a1[0] = 1
+        a2[0] = 1
+        a5[0] = 1
+        a6[0] = 1
+        a9[0] = 1
+        a10[0] = 1
+        a13[0] = 1
+        a14[0] = 1
+        b3[0] = 1
+        b7[0] = 1
+        b11[0] = 1
+        b15[0] = 1
+        c5[0] = 1
+        c13[0] = 1
+        c16[0] = 1
+        d1[0] = 1
+        d5[0] = 1
+        d9[0] = 1
+        d13[0] = 1
+        e5[0] = 1
+    }
+
+    private fun eurobeatSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 130
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a11[0] = 1
+        a13[0] = 1
+        a15[0] = 1
+        b2[0] = 1
+        b3[0] = 1
+        b7[0] = 1
+        b8[0] = 1
+        b10[0] = 1
+        b11[0] = 1
+        b14[0] = 1
+        b15[0] = 1
+        b16[0] = 1
+        c5[0] = 1
+        c13[0] = 1
+        d1[0] = 1
+        d5[0] = 1
+        d9[0] = 1
+        d13[0] = 1
+    }
+
+    private fun twostepSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 100
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a10[0] = 1
+        a11[0] = 1
+        a13[0] = 1
+        b15[0] = 1
+        c5[0] = 1
+        c13[0] = 1
+        d1[0] = 1
+        d7[0] = 1
+        d11[0] = 1
+        d16[0] = 1
+        e1[0] = 1
+        e3[0] = 1
+        e5[0] = 1
+        e6[0] = 1
+        e7[0] = 1
+        e9[0] = 1
+        e11[0] = 1
+        e13[0] = 1
+        e14[0] = 1
+        e15[0] = 1
+    }
+
+    private fun drumnbassSequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 170
+        a1[0] = 1
+        a3[0] = 1
+        a6[0] = 1
+        a8[0] = 1
+        a15[0] = 1
+        b5[0] = 1
+        b9[0] = 1
+        b11[0] = 1
+        b12[0] = 1
+        b15[0] = 1
+        c7[0] = 1
+        c13[0] = 1
+        c15[0] = 1
+        c16[0] = 1
+        d1[0] = 1
+        d4[0] = 1
+        d5[0] = 1
+        d8[0] = 1
+        d10[0] = 1
+        d11[0] = 1
+        d14[0] = 1
     }
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
@@ -1552,8 +1765,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "BEAT 5 BPM90",
             "BEAT 6 BPM100",
             "BEAT 7 BPM120",
-            "BEAT 8 BPM100",
-            "EXTERNAL SOUNDS"
+            "BEAT 8 BPM100"
             )
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
@@ -1580,9 +1792,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    hiphopSequence()
+                    changeSequence()
                     beatCheck = "hiphop_1_bpm80"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1597,6 +1808,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1636,6 +1850,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
@@ -1665,9 +1880,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    electronicaSequence()
+                    changeSequence()
                     beatCheck = "electronica_1_bpm90"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1682,6 +1896,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1709,9 +1926,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    dubstepSequence()
+                    changeSequence()
                     beatCheck = "dubstep_1_bpm140"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1726,6 +1942,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1773,6 +1992,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
@@ -1806,9 +2026,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    discoSequence()
+                    changeSequence()
                     beatCheck = "disco_1_bpm110"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1823,6 +2042,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1854,9 +2076,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    technoSequence()
+                    changeSequence()
                     beatCheck = "techno_1_bpm110"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1871,6 +2092,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1898,9 +2122,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    eurobeatSequence()
+                    changeSequence()
                     beatCheck = "eurobeat_1_bpm130"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1915,6 +2138,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1946,9 +2172,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    twostepSequence()
+                    changeSequence()
                     beatCheck = "two_step_1_bpm100"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -1963,6 +2188,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -1990,9 +2218,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    drumnbassSequence()
+                    changeSequence()
                     beatCheck = "drum_n_bass_1_bpm170"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2007,6 +2234,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2049,6 +2279,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2095,6 +2328,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2149,6 +2385,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2189,6 +2428,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2229,6 +2471,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2269,6 +2514,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2313,6 +2561,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2355,24 +2606,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "EXTERNAL SOUNDS" -> {
-                    lmp.stop()
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    beatCheck = ""
-                    noteCount = 0
-                    switch1 = 2
-                    buttonA = 16
-                    buttonB = 1
-                    selectEX()
-                    soundListView.adapter = tCustomAdapter
-                    tCustomAdapter.notifyDataSetChanged()
-                    soundListView.visibility = View.VISIBLE
                     gridView2.visibility = View.INVISIBLE
                 }
             }
