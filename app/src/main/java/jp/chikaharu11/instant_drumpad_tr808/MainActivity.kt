@@ -1208,6 +1208,224 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d14[0] = 1
     }
 
+    private fun beat1Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 120
+        a1[0] = 1
+        a9[0] = 1
+        b5[0] = 1
+        b13[0] = 1
+        
+        a1[1] = 1
+        a7[1] = 1
+        a9[1] = 1
+        b5[1] = 1
+        b13[1] = 1
+    }
+
+    private fun beat2Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 120
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a8[0] = 1
+        a10[0] = 1
+        a12[0] = 1
+        a13[0] = 1
+        b5[0] = 1
+        b6[0] = 1
+        b8[0] = 1
+        b10[0] = 1
+        b12[0] = 1
+        b13[0] = 1
+        b15[0] = 1
+        c5[0] = 1
+        c8[0] = 1
+        c10[0] = 1
+        c13[0] = 1
+
+        a1[1] = 1
+        a3[1] = 1
+        a5[1] = 1
+        a8[1] = 1
+        a10[1] = 1
+        a12[1] = 1
+        a13[1] = 1
+        b5[1] = 1
+        b6[1] = 1
+        b8[1] = 1
+        b10[1] = 1
+        b12[1] = 1
+        b13[1] = 1
+        b15[1] = 1
+        c5[1] = 1
+        c6[1] = 1
+        c8[1] = 1
+        c10[1] = 1
+        c12[1] = 1
+        c13[1] = 1
+    }
+
+    private fun beat3Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 100
+        a1[0] = 1
+        a3[0] = 1
+        a7[0] = 1
+        a11[0] = 1
+        a14[0] = 1
+        b5[0] = 1
+        b8[0] = 1
+        b10[0] = 1
+        b13[0] = 1
+        d1[0] = 1
+        d5[0] = 1
+        d9[0] = 1
+        d13[0] = 1
+        e14[0] = 1
+
+        a1[1] = 1
+        a3[1] = 1
+        a7[1] = 1
+        a11[1] = 1
+        a14[1] = 1
+        b5[1] = 1
+        b8[1] = 1
+        b10[1] = 1
+        b12[1] = 1
+        b13[1] = 1
+        b15[1] = 1
+        c4[1] = 1
+        c9[1] = 1
+        c13[1] = 1
+        d1[1] = 1
+        d5[1] = 1
+        d9[1] = 1
+        d11[1] = 1
+        d13[1] = 1
+        e6[1] = 1
+        e10[1] = 1
+        e14[1] = 1
+    }
+
+    private fun beat5Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 110
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a11[0] = 1
+        a13[0] = 1
+        a15[0] = 1
+        b5[0] = 1
+        b8[0] = 1
+        b10[0] = 1
+        b13[0] = 1
+        c1[0] = 1
+        c11[0] = 1
+    }
+
+    private fun beat6Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 100
+        a1[0] = 1
+        a4[0] = 1
+        a11[0] = 1
+        a16[0] = 1
+        b5[0] = 1
+        b10[0] = 1
+        b13[0] = 1
+        c11[0] = 1
+        c13[0] = 1
+    }
+
+    private fun beat7Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 90
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a11[0] = 1
+        a13[0] = 1
+        a15[0] = 1
+        b5[0] = 1
+        b13[0] = 1
+        c1[0] = 1
+        c3[0] = 1
+        c11[0] = 1
+        c12[0] = 1
+        c16[0] = 1
+    }
+
+    private fun beat8Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 100
+        a1[0] = 1
+        a3[0] = 1
+        a5[0] = 1
+        a7[0] = 1
+        a9[0] = 1
+        a11[0] = 1
+        a13[0] = 1
+        a15[0] = 1
+        b5[0] = 1
+        b13[0] = 1
+        c1[0] = 1
+        c3[0] = 1
+        c4[0] = 1
+        c11[0] = 1
+        c16[0] = 1
+        d11[0] = 1
+    }
+
+    private fun beat9Sequence() {
+        sequencerStop()
+        resetSequence()
+        sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 120
+        a1[0] = 1
+        a7[0] = 1
+        a11[0] = 1
+        b5[0] = 1
+        b13[0] = 1
+
+        a1[1] = 1
+        a7[1] = 1
+        a9[1] = 1
+        a11[1] = 1
+        b5[1] = 1
+        b8[1] = 1
+        b10[1] = 1
+        b13[1] = 1
+    }
+
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
         "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -2256,15 +2474,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration / 2.toLong()
-                    noteDurationConst = getmpDuration.duration / 2.toLong()
-                    getmpDuration.release()
+                    beat1Sequence()
+                    changeSequence()
                     beatCheck = "beat_1"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2305,15 +2516,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration / 2.toLong()
-                    noteDurationConst = getmpDuration.duration / 2.toLong()
-                    getmpDuration.release()
+                    beat2Sequence()
+                    changeSequence()
                     beatCheck = "beat_2"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2362,15 +2566,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration / 2.toLong()
-                    noteDurationConst = getmpDuration.duration / 2.toLong()
-                    getmpDuration.release()
+                    beat3Sequence()
+                    changeSequence()
                     beatCheck = "beat_3"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2411,9 +2608,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    beat5Sequence()
+                    changeSequence()
                     beatCheck = "beat_5"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2454,9 +2650,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    beat6Sequence()
+                    changeSequence()
                     beatCheck = "beat_6"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2497,9 +2692,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    beat7Sequence()
+                    changeSequence()
                     beatCheck = "beat_7"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2544,9 +2738,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
+                    beat8Sequence()
+                    changeSequence()
                     beatCheck = "beat_8"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
@@ -2583,15 +2776,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration / 2.toLong()
-                    noteDurationConst = getmpDuration.duration / 2.toLong()
-                    getmpDuration.release()
+                    beat9Sequence()
+                    changeSequence()
                     beatCheck = "beat_9"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
