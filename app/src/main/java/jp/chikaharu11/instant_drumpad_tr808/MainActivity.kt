@@ -272,6 +272,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var sequencerCount = 0
 
+    private var sequencerSize = 1
+
     private var firstPlay = 0
 
     val handler = Handler(Looper.getMainLooper())
@@ -490,9 +492,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (firstPlay == 0) {
             runBlocking {
                 val job1 = launch {
-                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
-                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
-                    soundPool.play(sound17, 1.0F, 1.0F, 0, 0, 1.0F)
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     firstPlay = 1
                     delay(100)
                 }
@@ -874,6 +876,34 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7"))
         e5 = 1
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff"))
+    }
+
+    private fun reggaetonSequence() {
+        resetSequence()
+        a1 = 1
+        a5 = 1
+        a9 = 1
+        a13 = 1
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933"))
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933"))
+        b4 = 1
+        b7 = 1
+        b12 = 1
+        b15 = 1
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e98e2f"))
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f"))
+        c4 = 1
+        c7 = 1
+        c12 = 1
+        c15 = 1
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#dfd441"))
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441"))
     }
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range", "CutPasteId", "ShowToast",
@@ -1512,15 +1542,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    lmp.release()
-                    lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    lmp.stop()
-                    getmpDuration = MediaPlayer()
-                    getmpDuration.setDataSource(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
-                    getmpDuration.prepare()
-                    noteDuration = getmpDuration.duration / 2.toLong()
-                    noteDurationConst = getmpDuration.duration / 2.toLong()
-                    getmpDuration.release()
+                    reggaetonSequence()
                     beatCheck = "reggaeton_1_bpm90"
                     handler.removeCallbacks(runnable)
                     noteCount = 0
