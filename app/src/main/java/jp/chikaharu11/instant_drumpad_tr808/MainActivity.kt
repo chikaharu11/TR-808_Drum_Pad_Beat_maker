@@ -279,7 +279,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sequencerBpm: Long = 120
 
     val handler = Handler(Looper.getMainLooper())
-    
+
     private var a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var a2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var a3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
@@ -360,7 +360,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-    
+
     var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
@@ -418,62 +418,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 noteCount == 2 && beatCheck == "beat_3" -> {
                     binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat3_2, null))
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-                noteCount == 1 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/16"
-                }
-                noteCount == 2 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/16"
-                }
-                noteCount == 3 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   3/16"
-                }
-                noteCount == 4 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   4/16"
-                }
-                noteCount == 5 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   5/16"
-                }
-                noteCount == 6 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   6/16"
-                }
-                noteCount == 7 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_3, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   7/16"
-                }
-                noteCount == 8 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   8/16"
-                }
-                noteCount == 9 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_4, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   9/16"
-                }
-                noteCount == 10 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   10/16"
-                }
-                noteCount == 11 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_5, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   11/16"
-                }
-                noteCount == 12 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   12/16"
-                }
-                noteCount == 13 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_6, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   13/16"
-                }
-                noteCount == 14 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   14/16"
-                }
-                noteCount == 15 && beatCheck == "beat_4" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat4_7, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   15/16"
-                }
-                noteCount == 16 && beatCheck == "beat_4" -> {
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   16/16"
                     noteCount = 0
                 }
                 noteCount == 1 && beatCheck == "beat_9" -> {
@@ -683,7 +627,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         timer?.cancel()
         timer = null
     }
-    
+
     private fun resetSequence() {
         a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         a2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
@@ -1218,7 +1162,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         a9[0] = 1
         b5[0] = 1
         b13[0] = 1
-        
+
         a1[1] = 1
         a7[1] = 1
         a9[1] = 1
@@ -1662,8 +1606,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when(adapterView.getItemAtPosition(position)) {
                 "Change Pad Sounds" -> {
                     sequencerCount = 0
-                    timer?.cancel()
-                    timer = null
                     paste = 1
                     binding.toolbarMain.setBackgroundColor(Color.parseColor("#FFA630"))
                     Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
@@ -2059,7 +2001,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "REGGAETON 1 BPM90   1/2"
+                    supportActionBar?.title = "REGGAETON 1 BPM90"
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -2481,7 +2423,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
+                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -2523,7 +2465,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
+                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -2573,7 +2515,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
+                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
@@ -2783,7 +2725,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
+                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
                     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                         findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     }
