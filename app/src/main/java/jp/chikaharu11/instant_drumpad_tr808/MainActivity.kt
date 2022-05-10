@@ -361,6 +361,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
+    private var r1 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r2 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r3 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r4 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r5 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r6 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r7 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r8 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r9 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r10 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r11 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r12 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r13 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r14 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r15 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+    private var r16 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
+
     var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
@@ -377,6 +394,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
     private var se5 by Delegates.observable(0) { _, _, _ ->
         soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+    }
+    private var seR by Delegates.observable(0) { _, _, _ ->
+        soundPool.play(sound18, soundPoolVolume18, soundPoolVolume18, 1, 0, soundPoolTempo18)
     }
 
     private val runnable = object: Runnable{
@@ -3437,6 +3457,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
         sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+        sound18 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
 
