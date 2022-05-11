@@ -76,14 +76,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var noteDuration = 1000.toLong()
     private var noteDurationConst = 1000.toLong()
 
-    private var actionTitle = "METRONOME"
-    private var padText1 = "tr_8_cymbal_01"
+    private var actionTitle = "BEAT 3 BPM110"
+    private var padText1 = "clsd_hi_hat_01"
     private var padText2 = "open_hi_hat_01"
-    private var padText3 = "clsd_hi_hat_01"
-    private var padText4 = "cowbell_01b"
+    private var padText3 = "tr_8_cymbal_01"
+    private var padText4 = "snare_drum_05"
     private var padText5 = "low_tom_01"
     private var padText6 = "snare_drum_01"
-    private var padText7 = "tr_8_rimshot_03"
+    private var padText7 = "tr_909_bass_drum_02"
     private var padText8 = "mid_tom_01"
     private var padText9 = "bass_drum_short_01"
     private var padText10 = "claves_02"
@@ -126,8 +126,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var soundPoolTempo14 = 1.0f
     private var soundPoolVolume15 = 0.5f
     private var soundPoolTempo15 = 1.0f
-    private var soundPoolVolume18 = 0.5f
-    private var soundPoolTempo18 = 1.0f
 
     private var spvF = 5
     private var sptF = 10
@@ -159,8 +157,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sptF14 = 10
     private var spvF15 = 5
     private var sptF15 = 10
-    private var spvF18 = 5
-    private var sptF18 = 10
 
     companion object {
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
@@ -258,7 +254,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound15 = 0
     private var sound16 = 0
     private var sound17 = 0
-    private var sound18 = 0
 
     private var paste = 0
 
@@ -281,7 +276,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var sequencerMaxSize = 0
 
-    private var sequencerBpm: Long = 120
+    private var sequencerBpm: Long = 110
 
     val handler = Handler(Looper.getMainLooper())
 
@@ -366,11 +361,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
-    private var r1 = mutableListOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-    private var r5 = mutableListOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-    private var r9 = mutableListOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-    private var r13 = mutableListOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-
     var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
@@ -387,9 +377,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
     private var se5 by Delegates.observable(0) { _, _, _ ->
         soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
-    }
-    private var seR by Delegates.observable(0) { _, _, _ ->
-        soundPool.play(sound18, soundPoolVolume18, soundPoolVolume18, 1, 0, soundPoolTempo18)
     }
 
     private val runnable = object: Runnable{
@@ -468,7 +455,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     GlobalScope.launch { if (c1[sequencerSize] == 1) { se3++ } }
                     GlobalScope.launch { if (d1[sequencerSize] == 1) { se4++ } }
                     GlobalScope.launch { if (e1[sequencerSize] == 1) { se5++ } }
-                    GlobalScope.launch { if (r1[sequencerSize] == 1) { seR++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
@@ -506,7 +492,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     GlobalScope.launch { if (c5[sequencerSize] == 1) { se3++ } }
                     GlobalScope.launch { if (d5[sequencerSize] == 1) { se4++ } }
                     GlobalScope.launch { if (e5[sequencerSize] == 1) { se5++ } }
-                    GlobalScope.launch { if (r5[sequencerSize] == 1) { seR++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
@@ -543,7 +528,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     GlobalScope.launch { if (c9[sequencerSize] == 1) { se3++ } }
                     GlobalScope.launch { if (d9[sequencerSize] == 1) { se4++ } }
                     GlobalScope.launch { if (e9[sequencerSize] == 1) { se5++ } }
-                    GlobalScope.launch { if (r9[sequencerSize] == 1) { seR++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
@@ -580,7 +564,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     GlobalScope.launch { if (c13[sequencerSize] == 1) { se3++ } }
                     GlobalScope.launch { if (d13[sequencerSize] == 1) { se4++ } }
                     GlobalScope.launch { if (e13[sequencerSize] == 1) { se5++ } }
-                    GlobalScope.launch { if (r13[sequencerSize] == 1) { seR++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
@@ -726,10 +709,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-        r1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-        r5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-        r9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-        r13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         resetColor()
     }
 
@@ -899,18 +878,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff")) }
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
-
-    private fun metronomeSequence() {
-        sequencerStop()
-        resetSequence()
-        sequencerMaxSize = 0
-        sequencerSize = 0
-        sequencerBpm = 120
-        r1 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
-        r5 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
-        r9 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
-        r13 = mutableListOf(1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0)
-    }
 
     private fun hiphopSequence() {
         sequencerStop()
@@ -1958,8 +1925,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "BEAT 5 BPM90",
             "BEAT 6 BPM100",
             "BEAT 7 BPM120",
-            "BEAT 8 BPM100",
-            "METRONOME"
+            "BEAT 8 BPM100"
             )
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
@@ -2776,19 +2742,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView2.visibility = View.INVISIBLE
                 }
-                "METRONOME" -> {
-                    lmp.stop()
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    metronomeSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    supportActionBar?.title = "METRONOME"
-                    gridView2.visibility = View.INVISIBLE
-                }
             }
         }
 
@@ -3484,9 +3437,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
         sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-        sound18 = soundPool.load(assets.openFd("tr_909_bass_drum_03.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+        beat5Sequence()
+
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/bpm120_bass_drum"))
 
         lmp.stop()
 
@@ -9087,7 +9041,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
         try {
-            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/$actionTitle"))
+            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/bpm120_bass_drum"))
             lmp.stop()
             supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
         } catch (e: Exception) {
