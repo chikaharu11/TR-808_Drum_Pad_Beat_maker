@@ -5,21 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/bpmNumber"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:ems="4"
-        android:inputType="number"
-        android:maxLines="1"
-        android:textColor="#ffffff"
-        android:text="110"
-        android:autoSizeTextType="uniform"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="BPM:"
         android:background="#5A5A66"
+        android:textColor="#ffffff"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bpmNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,LabelFor,MissingConstraints" />
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/bpmNumber"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:background="#5A5A66"
+        android:ems="4"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLines="1"
+        android:text="110"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill,LabelFor,MissingConstraints"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
