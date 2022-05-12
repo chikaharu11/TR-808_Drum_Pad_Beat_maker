@@ -24,7 +24,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat.getDrawable
-import androidx.core.os.postDelayed
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
@@ -41,10 +40,8 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
-import java.lang.Runnable
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
-import kotlin.coroutines.CoroutineContext
 import kotlin.math.hypot
 import kotlin.properties.Delegates
 
