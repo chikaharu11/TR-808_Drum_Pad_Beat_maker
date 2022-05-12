@@ -1556,13 +1556,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         val orientation = resources.configuration.orientation
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            findViewById<TextView>(R.id.padText0).text =
-                actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-        }
-        else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            findViewById<TextView>(R.id.padText0).text = "loop"
-        }
 
         val tuning = arrayOf(
             "Change Pad Sounds",
@@ -1957,12 +1950,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "HIPHOP 1 BPM80"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -1999,12 +1986,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "REGGAETON 1 BPM90"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2045,12 +2026,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "ELECTRONICA 1 BPM90"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2091,12 +2066,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DUBSTEP 1 BPM140"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2141,12 +2110,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     supportActionBar?.title = "HOUSE 1 BPM130"
                     houseSequence()
                     changeSequence()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2191,12 +2154,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DISCO 1 BPM110"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2241,12 +2198,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "TECHNO 1 BPM110"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2287,12 +2238,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "EUROBEAT 1 BPM130"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2337,12 +2282,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "2 STEP 1 BPM100"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2383,12 +2322,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = "DRUM'N'BASS 1 BPM170"
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2421,12 +2354,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -2463,12 +2390,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2513,12 +2434,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2555,12 +2470,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2597,12 +2506,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2639,12 +2542,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2685,12 +2582,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2723,12 +2614,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
-                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
-                    else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                    }
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -5171,109 +5056,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 meSpinner.performClick()
             }
         }
-
-        findViewById<ImageButton>(R.id.volume_minus0).setOnTouchListener { _, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-            lmp.volumeMinus()
-            if (count > 1) {
-                count -= 1
-                findViewById<Button>(R.id.loop).text = ""
-                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                }
-            }
-                }
-            }
-            false
-        }
-        findViewById<ImageButton>(R.id.volume_plus0).setOnTouchListener { _, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-            lmp.volumePlus()
-            if (count < 10) {
-                count += 1
-                findViewById<Button>(R.id.loop).text = ""
-                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                }
-            }
-                }
-            }
-            false
-        }
-        findViewById<ImageButton>(R.id.tempo_minus0).setOnTouchListener { _, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-            lmp.speedDown()
-            if (bpm > 1) {
-                bpm -= 1
-                findViewById<Button>(R.id.loop).text = ""
-                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    noteDuration = (noteDurationConst / (bpm / 10.0)).toLong()
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                }
-                menuSwitch = false
-                invalidateOptionsMenu()
-                switch1 = 1
-            }
-                }
-            }
-            false
-        }
-        findViewById<ImageButton>(R.id.tempo_plus0).setOnTouchListener { _, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-            lmp.speedUp()
-            if (bpm < 60) {
-                bpm += 1
-                findViewById<Button>(R.id.loop).text = ""
-                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " " + (bpm/10.0f).toString().replace("f", "").uppercase()
-                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    noteDuration = (noteDurationConst / (bpm / 10.0)).toLong()
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + "\n\n" + "loop" + "\n\n" + (bpm/10.0f).toString().replace("f", "").uppercase()
-                }
-                menuSwitch = false
-                invalidateOptionsMenu()
-                switch1 = 1
-            }
-                }
-            }
-            false
-        }
-
-        findViewById<Button>(R.id.loop).setOnTouchListener { _, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    if (switch1 == 1) {
-                        lmp.stop()
-                        soundPool.autoPause()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                    } else {
-                        lmp.start()
-                        menuSwitch = false
-                        invalidateOptionsMenu()
-                        switch1 = 1
-                    }
-                }
-            }
-            false
-        }
+        
         findViewById<TextView>(R.id.textView18).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -7348,7 +7131,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     actionTitle = soundList.name
                     supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -7693,7 +7475,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     actionTitle = soundList.name.replace(".ogg","")
                     supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
-                    findViewById<TextView>(R.id.padText0).text = (count/10.0f).toString().replace("f", "") + " " + actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()+ " " + (bpm/10.0f).toString().replace("f", "").uppercase()
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -8042,12 +7823,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                findViewById<TextView>(R.id.padText0).text = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-            }
-            else if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                findViewById<TextView>(R.id.padText0).text = "loop"
-            }
             when (padCheck) {
                 53 -> {
                     x53()
@@ -8534,6 +8309,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putInt("DATA", adCheck)
         outState.putInt("padCheck", padCheck)
         outState.putInt("colorCheck", colorCheck)
+        outState.putString("beatCheck", beatCheck)
         outState.putString("pad1", padText1.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad2", padText2.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad3", padText3.replace(" ", "_").replace("-", "_").lowercase())
@@ -8618,6 +8394,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         adCheck = savedInstanceState.getInt("DATA")
         padCheck = savedInstanceState.getInt("padCheck")
         colorCheck = savedInstanceState.getInt("colorCheck")
+        beatCheck = savedInstanceState.getString("beatCheck").toString()
         padText1 = savedInstanceState.getString("pad1").toString()
         padText2 = savedInstanceState.getString("pad2").toString()
         padText3 = savedInstanceState.getString("pad3").toString()
@@ -8730,12 +8507,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-        if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            findViewById<TextView>(R.id.padText0).text = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-        }
-        else if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            findViewById<TextView>(R.id.padText0).text = "loop"
-        }
         when (padCheck) {
             53 -> {
                 x53()
@@ -8841,6 +8612,27 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
                 findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
             }
+        }
+        when(beatCheck) {
+            "hiphop_1_bpm80" -> { hiphopSequence() }
+            "reggaeton_1_bpm90" -> { reggaetonSequence() }
+            "electronica_1_bpm90" -> { electronicaSequence() }
+            "dubstep_1_bpm140" -> { dubstepSequence() }
+            "house_1_bpm130" -> { houseSequence() }
+            "disco_1_bpm110" -> { discoSequence() }
+            "techno_1_bpm110" -> { technoSequence() }
+            "eurobeat_1_bpm130" -> { eurobeatSequence() }
+            "two_step_1_bpm100" -> { twostepSequence() }
+            "drum_n_bass_1_bpm170" -> { drumnbassSequence() }
+            "beat_1" -> { beat1Sequence() }
+            "beat_2" -> { beat2Sequence() }
+            "beat_3" -> { beat3Sequence() }
+            "beat_5" -> { beat5Sequence() }
+            "beat_6" -> { beat6Sequence() }
+            "beat_7" -> { beat7Sequence() }
+            "beat_8" -> { beat8Sequence() }
+            "beat_9" -> { beat9Sequence() }
+
         }
         try {
             sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)

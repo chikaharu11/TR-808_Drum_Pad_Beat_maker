@@ -8,125 +8,30 @@
     tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck">
 
     <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView17o"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@id/tempo_plus0"
-        app:layout_constraintEnd_toEndOf="@+id/tempo_plus0"
-        app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView16o"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@id/volume_minus0"
-        app:layout_constraintEnd_toEndOf="@+id/volume_plus0"
-        app:layout_constraintStart_toStartOf="@+id/volume_minus0"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:background="#e2e3e3"
         android:clickable="true"
         android:text="@string/textView18o"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/loop"
-        app:layout_constraintEnd_toEndOf="@id/loop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
         android:background="#e2e3e3"
         android:clickable="true"
         android:text="@string/textView19o"
         android:textColor="#2b2b2b"
-        app:layout_constraintBottom_toTopOf="@+id/loop"
-        app:layout_constraintStart_toStartOf="@id/loop"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/volume_minus0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/volume_plus0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-        app:layout_constraintStart_toEndOf="@+id/volume_minus0"
-        app:layout_constraintTop_toTopOf="@+id/volume_minus0"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
-        app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2e3e3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/volume_minus0"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/loop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="#e2e3e3"
-        android:ellipsize="middle"
-        android:lines="1"
-        app:layout_constraintBottom_toBottomOf="@+id/volume_plus0"
-        app:layout_constraintEnd_toStartOf="@+id/tempo_minus0"
-        app:layout_constraintStart_toEndOf="@+id/volume_plus0"
-        app:layout_constraintTop_toTopOf="@+id/volume_minus0"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/padText0"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:ellipsize="middle"
-        android:gravity="center"
-        android:lines="1"
-        android:text="@string/s1"
-
-        android:textColor="#2b2b2b"
-        android:textStyle="bold"
-        android:translationZ="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/loop"
-        app:layout_constraintEnd_toEndOf="@+id/loop"
-        app:layout_constraintStart_toStartOf="@+id/loop"
-        app:layout_constraintTop_toTopOf="@+id/loop" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/include_view"
@@ -136,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="@+id/include_view4"
         app:layout_constraintEnd_toStartOf="@+id/include_view2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/textView19" />
 
     <include
         android:id="@+id/include_view2"
@@ -146,7 +51,7 @@
         app:layout_constraintBottom_toTopOf="@+id/include_view5"
         app:layout_constraintEnd_toStartOf="@+id/include_view3"
         app:layout_constraintStart_toEndOf="@+id/include_view"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/textView19" />
 
     <include
         android:id="@+id/include_view3"
@@ -156,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/include_view6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/include_view2"
-        app:layout_constraintTop_toBottomOf="@id/loop" />
+        app:layout_constraintTop_toBottomOf="@id/textView19" />
 
     <include
         android:id="@+id/include_view4"
