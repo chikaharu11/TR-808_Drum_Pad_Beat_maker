@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     android:background="#5A5A66">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/volume_minus"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="#e2e3e3"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/volume_plus"
@@ -20,7 +19,7 @@
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/volume_plus"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -34,7 +33,7 @@
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/tempo_minus"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -48,7 +47,7 @@
         app:srcCompat="@drawable/horizontal_rule_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/tempo_plus"
         android:layout_width="0dp"
         android:layout_height="0dp"
