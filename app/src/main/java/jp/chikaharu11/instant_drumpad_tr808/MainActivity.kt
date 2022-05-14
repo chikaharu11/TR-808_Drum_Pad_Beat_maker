@@ -381,7 +381,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var editBpm: Long by Delegates.observable(0) { _, _, _ ->
         when (editBpm) {
             in 30..300 -> sequencerBpm = editBpm
-            else -> Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+            else -> Toast.makeText(applicationContext, R.string.elsebpm, Toast.LENGTH_SHORT).show()
         }
     }
 

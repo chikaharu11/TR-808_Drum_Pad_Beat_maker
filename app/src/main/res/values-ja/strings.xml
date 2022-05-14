@@ -55,6 +55,9 @@
     <string name="Saved">Saving… Please wait.</string>
     <string name="Loaded">Loading… Please wait.</string>
     <string name="lock">Locked</string>
+    <string name="bpm">BPM :</string>
+    <string name="editbpm">110</string>
+    <string name="elsebpm">30~300で指定して下さい</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
