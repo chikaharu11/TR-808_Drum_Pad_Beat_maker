@@ -10,9 +10,11 @@
         android:id="@+id/accent"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/bpm"
+        android:text="@string/a"
         android:maxLines="1"
         android:background="#5A5A66"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
         android:textColor="#ffffff"
         android:gravity="center"
         android:autoSizeTextType="uniform"
@@ -20,20 +22,19 @@
         app:layout_constraintEnd_toStartOf="@+id/reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingStart="2dp"
-        tools:ignore="MissingConstraints,RtlSymmetry" />
+        tools:ignore="MissingConstraints" />
 
-    <EditText
+    <TextView
         android:id="@+id/reset"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:background="#5A5A66"
-        android:maxLength="3"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
         android:gravity="center"
-        android:inputType="number"
         android:maxLines="1"
-        android:text="@string/editbpm"
+        android:text="@string/r"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/accent"

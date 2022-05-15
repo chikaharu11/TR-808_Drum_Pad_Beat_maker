@@ -893,7 +893,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 80
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("80", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("80", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -911,7 +911,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -947,7 +947,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a2[0] = 1
         a3[0] = 1
@@ -977,7 +977,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 140
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("140", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("140", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a4[0] = 1
@@ -999,7 +999,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("130", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -1025,7 +1025,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a7[0] = 1
@@ -1051,7 +1051,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a2[0] = 1
         a5[0] = 1
@@ -1080,7 +1080,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("130", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1112,7 +1112,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1146,7 +1146,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 170
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("170", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("170", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a6[0] = 1
@@ -1176,7 +1176,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a9[0] = 1
         b5[0] = 1
@@ -1195,7 +1195,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1243,7 +1243,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a7[0] = 1
@@ -1289,7 +1289,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1312,7 +1312,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a4[0] = 1
         a11[0] = 1
@@ -1330,7 +1330,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1354,7 +1354,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1379,7 +1379,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a7[0] = 1
         a11[0] = 1
@@ -6737,7 +6737,163 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).addTextChangedListener(object: TextWatcher{
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    soundPoolVolume = 1.0f
+                    soundPoolVolume2 = 1.0f
+                    soundPoolVolume3 = 1.0f
+                    soundPoolVolume4 = 1.0f
+                    soundPoolVolume5 = 1.0f
+                    soundPoolVolume6 = 1.0f
+                    soundPoolVolume7 = 1.0f
+                    soundPoolVolume8 = 1.0f
+                    soundPoolVolume9 = 1.0f
+                    soundPoolVolume10 = 1.0f
+                    soundPoolVolume11 = 1.0f
+                    soundPoolVolume12 = 1.0f
+                    soundPoolVolume13 = 1.0f
+                    soundPoolVolume14 = 1.0f
+                    soundPoolVolume15 = 1.0f
+                    spvF = 10
+                    spvF2 = 10
+                    spvF3 = 10
+                    spvF4 = 10
+                    spvF5 = 10
+                    spvF6 = 10
+                    spvF7 = 10
+                    spvF8 = 10
+                    spvF9 = 10
+                    spvF10 = 10
+                    spvF11 = 10
+                    spvF12 = 10
+                    spvF13 = 10
+                    spvF14 = 10
+                    spvF15 = 10
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.reset).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    soundPoolVolume = 0.5f
+                    soundPoolTempo = 1.0f
+                    soundPoolVolume2 = 0.5f
+                    soundPoolTempo2 = 1.0f
+                    soundPoolVolume3 = 0.5f
+                    soundPoolTempo3 = 1.0f
+                    soundPoolVolume4 = 0.5f
+                    soundPoolTempo4 = 1.0f
+                    soundPoolVolume5 = 0.5f
+                    soundPoolTempo5 = 1.0f
+                    soundPoolVolume6 = 0.5f
+                    soundPoolTempo6 = 1.0f
+                    soundPoolVolume7 = 0.5f
+                    soundPoolTempo7 = 1.0f
+                    soundPoolVolume8 = 0.5f
+                    soundPoolTempo8 = 1.0f
+                    soundPoolVolume9 = 0.5f
+                    soundPoolTempo9 = 1.0f
+                    soundPoolVolume10 = 0.5f
+                    soundPoolTempo10 = 1.0f
+                    soundPoolVolume11 = 0.5f
+                    soundPoolTempo11 = 1.0f
+                    soundPoolVolume12 = 0.5f
+                    soundPoolTempo12 = 1.0f
+                    soundPoolVolume13 = 0.5f
+                    soundPoolTempo13 = 1.0f
+                    soundPoolVolume14 = 0.5f
+                    soundPoolTempo14 = 1.0f
+                    soundPoolVolume15 = 0.5f
+                    soundPoolTempo15 = 1.0f
+                    spvF = 5
+                    sptF = 10
+                    spvF2 = 5
+                    sptF2 = 10
+                    spvF3 = 5
+                    sptF3 = 10
+                    spvF4 = 5
+                    sptF4 = 10
+                    spvF5 = 5
+                    sptF5 = 10
+                    spvF6 = 5
+                    sptF6 = 10
+                    spvF7 = 5
+                    sptF7 = 10
+                    spvF8 = 5
+                    sptF8 = 10
+                    spvF9 = 5
+                    sptF9 = 10
+                    spvF10 = 5
+                    sptF10 = 10
+                    spvF11 = 5
+                    sptF11 = 10
+                    spvF12 = 5
+                    sptF12 = 10
+                    spvF13 = 5
+                    sptF13 = 10
+                    spvF14 = 5
+                    sptF14 = 10
+                    spvF15 = 5
+                    sptF15 = 10
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(p0: Editable?) {
                 if (p0?.isNotEmpty() == true) {
                     editBpm = p0.toString().toLong()
@@ -8668,14 +8824,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).isEnabled = true
+                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).isEnabled = true
                     } else {
                         sequencerPlay()
                         changeSequence()
                         menuSwitch = false
                         invalidateOptionsMenu()
                         switch1 = 1
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmNumber).isEnabled = false
+                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).isEnabled = false
                     }
                 }
                 return true
