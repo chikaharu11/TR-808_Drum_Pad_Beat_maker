@@ -188,8 +188,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var getmpDuration: MediaPlayer
 
-    private lateinit var lmp: LoopMediaPlayer
-
     private lateinit var aCustomAdapter: CustomAdapter
     private lateinit var bCustomAdapter: CustomAdapter
     private lateinit var cCustomAdapter: CustomAdapter
@@ -1954,7 +1952,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
                 "HIPHOP 1 BPM80" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -1990,7 +1987,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "REGGAETON 1 BPM90" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2026,7 +2022,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "ELECTRONICA 1 BPM90" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2066,7 +2061,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DUBSTEP 1 BPM140" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2106,7 +2100,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "HOUSE 1 BPM130" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2150,7 +2143,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DISCO 1 BPM110" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2194,7 +2186,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "TECHNO 1 BPM110" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2238,7 +2229,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "EUROBEAT 1 BPM130" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2278,7 +2268,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "2 STEP 1 BPM100" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2322,7 +2311,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "DRUM'N'BASS 1 BPM170" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2362,7 +2350,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 1 BPM120" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2394,7 +2381,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 7 BPM120" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2430,7 +2416,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 8 BPM100" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2474,7 +2459,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 3 BPM110" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2510,7 +2494,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 4 BPM100" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2546,7 +2529,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 5 BPM90" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2582,7 +2564,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 6 BPM100" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -2622,7 +2603,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView2.visibility = View.INVISIBLE
                 }
                 "BEAT 2 BPM120" -> {
-                    lmp.stop()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
@@ -3350,10 +3330,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
         beat5Sequence()
-
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/bpm120_bass_drum"))
-
-        lmp.stop()
 
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 
@@ -7755,9 +7731,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 && buttonB == 1 -> {
-                    lmp.release()
-                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
-                    lmp.stop()
                     handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
@@ -8099,9 +8072,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 -> {
-                    lmp.release()
-                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
-                    lmp.stop()
                     handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
@@ -8902,8 +8872,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun onDestroy() {
-        lmp.reset()
-        lmp.release()
         mp.reset()
         mp.release()
         soundPool.autoPause()
@@ -8933,7 +8901,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             invalidateOptionsMenu()
         }
 
-            lmp.stop()
             soundPool.autoPause()
 
         super.onPause()
@@ -9462,21 +9429,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                 binding.includeMainView15.textView.text = ""
                 findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
-            }
-        }
-        try {
-            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/bpm120_bass_drum"))
-            lmp.stop()
-            supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
-        } catch (e: Exception) {
-            try {
-                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(actionTitle))
-                lmp.stop()
-                supportActionBar?.title = actionTitle.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-            } catch (e: Exception) {
-                lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://$packageName/raw/soundless"))
-                lmp.stop()
-                supportActionBar?.title = ""
             }
         }
     }
