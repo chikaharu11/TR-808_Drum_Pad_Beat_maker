@@ -7,24 +7,24 @@
     <include
         android:id="@+id/accent_reset"
         layout="@layout/accent_reset"
-        app:layout_constraintHorizontal_weight="3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/bpm"
-        app:layout_constraintBottom_toTopOf="@id/sequencer_list"/>
+        app:layout_constraintBottom_toTopOf="@id/sequencer_list"
+        app:layout_constraintStart_toEndOf="@id/bpm"
+        app:layout_constraintEnd_toStartOf="@id/number_list"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/bpm"
         layout="@layout/bpm"
-        app:layout_constraintHorizontal_weight="5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/accent_reset"
-        app:layout_constraintEnd_toStartOf="@id/number_list"
-        app:layout_constraintBottom_toTopOf="@id/sequencer_list"/>
+        app:layout_constraintBottom_toTopOf="@id/sequencer_list"
+        app:layout_constraintEnd_toStartOf="@id/accent_reset"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/number_list"
@@ -33,7 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/bpm"
+        app:layout_constraintStart_toEndOf="@id/accent_reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/sequencer_list"/>
 
