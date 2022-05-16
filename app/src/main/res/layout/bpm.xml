@@ -7,7 +7,7 @@
     android:foreground="@drawable/grid_sequence">
 
     <TextView
-        android:id="@+id/accent"
+        android:id="@+id/bpmsequence"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/bpm"
@@ -17,14 +17,14 @@
         android:gravity="center"
         android:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reset"
+        app:layout_constraintEnd_toStartOf="@+id/bpmCount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:paddingStart="2dp"
         tools:ignore="MissingConstraints,RtlSymmetry" />
 
     <EditText
-        android:id="@+id/reset"
+        android:id="@+id/bpmCount"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
@@ -36,7 +36,7 @@
         android:text="@string/editbpm"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/accent"
+        app:layout_constraintStart_toEndOf="@id/bpmsequence"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,LabelFor,MissingConstraints"/>

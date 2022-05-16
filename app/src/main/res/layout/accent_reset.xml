@@ -6,69 +6,41 @@
     android:layout_height="match_parent"
     android:foreground="@drawable/grid_sequence">
 
-    <ImageView
-        android:id="@+id/minus"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?attr/selectableItemBackground"
-        android:backgroundTint="#e2e3e3"
-        android:clickable="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/plus"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageView
-        android:id="@+id/plus"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?attr/selectableItemBackground"
-        android:backgroundTint="#e2e3e3"
-        android:clickable="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/minus"
-        app:layout_constraintEnd_toStartOf="@id/accent"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/accent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/a"
-        android:maxLines="1"
         android:background="#5A5A66"
         android:foreground="?attr/selectableItemBackground"
         android:clickable="true"
         android:textColor="#ffffff"
         android:gravity="center"
         android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="1dp"
+        android:paddingStart="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reset"
-        app:layout_constraintStart_toEndOf="@id/plus"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,RtlSymmetry" />
 
     <TextView
         android:id="@+id/reset"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="1dp"
         android:background="#5A5A66"
         android:foreground="?attr/selectableItemBackground"
         android:clickable="true"
         android:gravity="center"
-        android:maxLines="1"
         android:text="@string/r"
         android:textColor="#ffffff"
+        android:paddingEnd="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,LabelFor,MissingConstraints"/>
+        tools:ignore="Autofill,LabelFor,MissingConstraints,RtlSymmetry"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

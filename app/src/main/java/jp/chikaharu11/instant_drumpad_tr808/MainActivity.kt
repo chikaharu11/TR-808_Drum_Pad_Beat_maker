@@ -891,7 +891,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 80
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("80", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("80", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -909,7 +909,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -945,7 +945,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a2[0] = 1
         a3[0] = 1
@@ -975,7 +975,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 140
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("140", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("140", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a4[0] = 1
@@ -997,7 +997,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("130", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -1023,7 +1023,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a5[0] = 1
         a7[0] = 1
@@ -1049,7 +1049,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a2[0] = 1
         a5[0] = 1
@@ -1078,7 +1078,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("130", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1110,7 +1110,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1144,7 +1144,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 170
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("170", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("170", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a6[0] = 1
@@ -1174,7 +1174,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a9[0] = 1
         b5[0] = 1
@@ -1193,7 +1193,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1241,7 +1241,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a7[0] = 1
@@ -1287,7 +1287,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1310,7 +1310,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a4[0] = 1
         a11[0] = 1
@@ -1328,7 +1328,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1352,7 +1352,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1377,7 +1377,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
         a1[0] = 1
         a7[0] = 1
         a11[0] = 1
@@ -6869,7 +6869,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).addTextChangedListener(object: TextWatcher{
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(p0: Editable?) {
                 if (p0?.isNotEmpty() == true) {
                     editBpm = p0.toString().toLong()
@@ -8794,14 +8794,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).isEnabled = true
+                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
                     } else {
                         sequencerPlay()
                         changeSequence()
                         menuSwitch = false
                         invalidateOptionsMenu()
                         switch1 = 1
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.reset).isEnabled = false
+                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                     }
                 }
                 return true
