@@ -9234,8 +9234,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "beat_7" -> { beat7Sequence() }
             "beat_8" -> { beat8Sequence() }
             "beat_9" -> { beat9Sequence() }
-
         }
+
+        supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+
         try {
             sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
         } catch (e: Exception) {

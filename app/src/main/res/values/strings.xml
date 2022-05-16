@@ -58,8 +58,8 @@
     <string name="bpm">BPM :</string>
     <string name="editbpm">110</string>
     <string name="elsebpm">Please specify in the range of 30 to 300.</string>
-    <string name="a">ACCENT</string>
-    <string name="r"> RESET</string>
+    <string name="a">ACC\nENT</string>
+    <string name="r">RES\nET</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
