@@ -885,6 +885,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
 
+    @SuppressLint("SetTextI18n")
     private fun hiphopSequence() {
         sequencerStop()
         resetSequence()
@@ -903,6 +904,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c11[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun reggaetonSequence() {
         sequencerStop()
         resetSequence()
@@ -939,6 +941,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c15[1] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun electronicaSequence() {
         sequencerStop()
         resetSequence()
@@ -969,6 +972,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d4[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun dubstepSequence() {
         sequencerStop()
         resetSequence()
@@ -991,6 +995,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d1[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun houseSequence() {
         sequencerStop()
         resetSequence()
@@ -1017,6 +1022,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e5[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun discoSequence() {
         sequencerStop()
         resetSequence()
@@ -1043,6 +1049,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e13[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun technoSequence() {
         sequencerStop()
         resetSequence()
@@ -1072,6 +1079,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e5[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun eurobeatSequence() {
         sequencerStop()
         resetSequence()
@@ -1104,6 +1112,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d13[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun twostepSequence() {
         sequencerStop()
         resetSequence()
@@ -1138,6 +1147,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e15[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun drumnbassSequence() {
         sequencerStop()
         resetSequence()
@@ -1168,6 +1178,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d14[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat1Sequence() {
         sequencerStop()
         resetSequence()
@@ -1187,6 +1198,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         b13[1] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat2Sequence() {
         sequencerStop()
         resetSequence()
@@ -1235,6 +1247,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c13[1] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat3Sequence() {
         sequencerStop()
         resetSequence()
@@ -1281,6 +1294,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e14[1] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat5Sequence() {
         sequencerStop()
         resetSequence()
@@ -1304,6 +1318,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c11[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat6Sequence() {
         sequencerStop()
         resetSequence()
@@ -1322,6 +1337,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c13[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat7Sequence() {
         sequencerStop()
         resetSequence()
@@ -1346,6 +1362,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c16[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat8Sequence() {
         sequencerStop()
         resetSequence()
