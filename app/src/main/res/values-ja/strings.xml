@@ -60,6 +60,9 @@
     <string name="elsebpm">30~300で指定して下さい</string>
     <string name="a">ACC\nENT</string>
     <string name="r">RES\nET</string>
+    <string name="line">5</string>
+    <string name="measure">1</string>
+    <string name="measureMax">1</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
