@@ -63,6 +63,9 @@
     <string name="line">5</string>
     <string name="measure">1</string>
     <string name="measureMax">1</string>
+    <string name="tracks">TRACKS</string>
+    <string name="pattern">PATTERN</string>
+    <string name="patternSize">PATTERN SIZE</string>
 
 
     <string-array name="spinnerItems">
