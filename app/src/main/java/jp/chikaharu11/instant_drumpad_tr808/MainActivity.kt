@@ -273,6 +273,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var sequencerMaxSize = 0
 
+    private var trackCount = 0
+
     private var sequencerBpm: Long = 110
 
     val handler = Handler(Looper.getMainLooper())
@@ -439,6 +441,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
             runBlocking {
@@ -600,11 +603,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
-                    if (sequencerSize == sequencerMaxSize) {
+                    if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
                         changeSequence()
                     } else {
                         sequencerSize++
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
                         changeSequence()
                     }
                 }
@@ -892,7 +897,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 80
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("80", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -904,14 +913,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c11[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun reggaetonSequence() {
         sequencerStop()
         resetSequence()
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 90
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -948,7 +961,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
+        trackCount = 4
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a2[0] = 1
         a3[0] = 1
@@ -979,7 +996,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 140
+        trackCount = 4
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("140", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a4[0] = 1
@@ -1002,7 +1023,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
+        trackCount = 5
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a5[0] = 1
         a9[0] = 1
@@ -1029,7 +1054,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
+        trackCount = 5
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a5[0] = 1
         a7[0] = 1
@@ -1056,7 +1085,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
+        trackCount = 5
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a2[0] = 1
         a5[0] = 1
@@ -1086,7 +1119,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
+        trackCount = 4
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("130", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1119,7 +1156,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
+        trackCount = 5
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1154,7 +1195,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 170
+        trackCount = 4
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("170", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a6[0] = 1
@@ -1185,7 +1230,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
+        trackCount = 2
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a9[0] = 1
         b5[0] = 1
@@ -1205,7 +1254,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1254,7 +1307,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 100
+        trackCount = 5
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a7[0] = 1
@@ -1301,7 +1358,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("110", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1325,7 +1386,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a4[0] = 1
         a11[0] = 1
@@ -1344,7 +1409,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
+        trackCount = 3
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("90", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1369,7 +1438,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
+        trackCount = 4
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a3[0] = 1
         a5[0] = 1
@@ -1388,13 +1461,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d11[0] = 1
     }
 
+    @SuppressLint("SetTextI18n")
     private fun beat9Sequence() {
         sequencerStop()
         resetSequence()
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
+        trackCount = 2
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
         a1[0] = 1
         a7[0] = 1
         a11[0] = 1
@@ -5287,6 +5365,150 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             false
         }
+
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.pattern_down).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sequencerSize != 0) {
+                        sequencerSize--
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                        changeSequence()
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.pattern_up).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sequencerSize <= 14) {
+                        sequencerSize++
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                        changeSequence()
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sequencerMaxSize != 0) {
+                        sequencerMaxSize--
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sequencerMaxSize <= 14) {
+                        sequencerMaxSize++
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (trackCount > 2) {
+                        trackCount--
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+                        when(trackCount) {
+                            2 -> {
+                                x21()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            3 -> {
+                                x31()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            4 -> {
+                                x41()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (trackCount < 5) {
+                        trackCount++
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+                        when(trackCount) {
+                            3 -> {
+                                x31()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            4 -> {
+                                x41()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            5 -> {
+                                x51()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+
+                }
+            }
+            false
+        }
+
         findViewById<View>(R.id.include_view).findViewById<ImageButton>(R.id.pad).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -8872,6 +9094,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = false
                         invalidateOptionsMenu()
                         switch1 = 1
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = "1"
                         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                     }
                 }

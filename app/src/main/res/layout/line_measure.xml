@@ -18,7 +18,7 @@
         android:padding="2dp"
         android:text="@string/pattern"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/pattern_up"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
         android:padding="2dp"
         android:text="@string/patternSize"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toTopOf="@+id/patternSize_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -53,14 +53,14 @@
         android:padding="4dp"
         android:text="@string/tracks"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/track_down"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/pattern_down"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/track_up"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -70,13 +70,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/line"
+        app:layout_constraintStart_toEndOf="@+id/track_count"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/ic_baseline_arrow_right_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/track_down"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -84,7 +84,7 @@
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/line"
+        app:layout_constraintEnd_toStartOf="@+id/track_count"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -92,7 +92,7 @@
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/line"
+        android:id="@+id/track_count"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeMinTextSize="1dp"
@@ -104,14 +104,14 @@
         android:text="@string/line"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/track_up"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/track_down"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:ignore="MissingConstraints,RtlSymmetry" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/patternSize_up"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -121,7 +121,7 @@
         app:layout_constraintBottom_toTopOf="@+id/measure_max"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/pattern_up"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/ic_baseline_arrow_drop_up_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -138,11 +138,11 @@
         android:maxLines="1"
         android:text="@string/measureMax"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toTopOf="@+id/patternSize_down"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/measure"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/patternSize_up"
         tools:ignore="Autofill,LabelFor,MissingConstraints" />
 
     <TextView
@@ -157,15 +157,15 @@
         android:maxLines="1"
         android:text="@string/measure"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/pattern_down"
         app:layout_constraintEnd_toStartOf="@+id/measure_max"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/pattern_up"
         tools:ignore="Autofill,LabelFor,MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/pattern_up"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -173,7 +173,7 @@
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/measure"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/patternSize_up"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -181,7 +181,7 @@
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/pattern_down"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -189,7 +189,7 @@
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/patternSize_down"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/measure"
@@ -197,7 +197,7 @@
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/patternSize_down"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/selectableItemBackground"
@@ -207,7 +207,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/pattern_down"
         app:layout_constraintTop_toBottomOf="@+id/measure_max"
         app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
