@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bpm"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer"
         app:layout_constraintEnd_toStartOf="@+id/number_list"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/bpm"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer"
         app:layout_constraintEnd_toStartOf="@+id/accent_reset"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sequencer_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="32"
+        app:layout_constraintHorizontal_weight="8"
         app:layout_constraintStart_toEndOf="@+id/accent_reset"
         app:layout_constraintTop_toTopOf="parent" />
 

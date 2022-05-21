@@ -1998,6 +1998,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2033,6 +2036,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2072,6 +2078,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2111,6 +2120,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2154,6 +2166,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2197,6 +2212,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2240,6 +2258,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2279,6 +2300,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2322,6 +2346,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2361,6 +2388,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2392,6 +2422,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2427,6 +2460,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2470,6 +2506,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2505,6 +2544,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2540,6 +2582,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2575,6 +2620,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2614,6 +2662,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
@@ -2645,6 +2696,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
                         binding.sequencerView.visibility = View.VISIBLE
                         binding.notes.visibility = View.VISIBLE
                     }
