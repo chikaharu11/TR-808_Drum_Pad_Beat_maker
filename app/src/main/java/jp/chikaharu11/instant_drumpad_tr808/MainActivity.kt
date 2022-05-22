@@ -461,18 +461,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 1 -> {
                     GlobalScope.launch { if (a1[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b1[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c1[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d1[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e1[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c1[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d1[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e1[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 2 -> {
                     GlobalScope.launch { if (a2[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b2[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c2[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d2[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e2[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c2[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d2[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e2[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
 
@@ -480,126 +480,126 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 3 -> {
                     GlobalScope.launch { if (a3[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b3[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c3[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d3[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e3[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c3[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d3[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e3[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 4 -> {
                     GlobalScope.launch { if (a4[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b4[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c4[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d4[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e4[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c4[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d4[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e4[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
                     GlobalScope.launch { if (a5[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b5[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c5[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d5[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e5[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c5[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d5[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e5[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 6 -> {
                     GlobalScope.launch { if (a6[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b6[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c6[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d6[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e6[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c6[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d6[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e6[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
                     GlobalScope.launch { if (a7[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b7[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c7[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d7[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e7[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c7[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d7[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e7[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 8 -> {
                     GlobalScope.launch { if (a8[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b8[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c8[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d8[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e8[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c8[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d8[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e8[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
                     GlobalScope.launch { if (a9[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b9[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c9[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d9[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e9[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c9[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d9[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e9[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 10 -> {
                     GlobalScope.launch { if (a10[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b10[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c10[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d10[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e10[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c10[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d10[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e10[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
                     GlobalScope.launch { if (a11[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b11[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c11[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d11[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e11[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c11[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d11[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e11[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 12 -> {
                     GlobalScope.launch { if (a12[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b12[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c12[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d12[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e12[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c12[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d12[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e12[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
                     GlobalScope.launch { if (a13[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b13[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c13[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d13[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e13[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c13[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d13[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e13[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 14 -> {
                     GlobalScope.launch { if (a14[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b14[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c14[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d14[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e14[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c14[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d14[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e14[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
                     GlobalScope.launch { if (a15[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b15[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c15[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d15[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e15[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c15[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d15[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e15[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 16 -> {
                     GlobalScope.launch { if (a16[sequencerSize] == 1) { se1++ } }
                     GlobalScope.launch { if (b16[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c16[sequencerSize] == 1) { se3++ } }
-                    GlobalScope.launch { if (d16[sequencerSize] == 1) { se4++ } }
-                    GlobalScope.launch { if (e16[sequencerSize] == 1) { se5++ } }
+                    GlobalScope.launch { if (c16[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
+                    GlobalScope.launch { if (d16[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
+                    GlobalScope.launch { if (e16[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
@@ -890,7 +890,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun hiphopSequence() {
         sequencerStop()
         resetSequence()
@@ -954,7 +954,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c15[1] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun electronicaSequence() {
         sequencerStop()
         resetSequence()
@@ -989,7 +989,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d4[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun dubstepSequence() {
         sequencerStop()
         resetSequence()
@@ -1016,7 +1016,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d1[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun houseSequence() {
         sequencerStop()
         resetSequence()
@@ -1047,7 +1047,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e5[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun discoSequence() {
         sequencerStop()
         resetSequence()
@@ -1078,7 +1078,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e13[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun technoSequence() {
         sequencerStop()
         resetSequence()
@@ -1112,7 +1112,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e5[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun eurobeatSequence() {
         sequencerStop()
         resetSequence()
@@ -1149,7 +1149,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d13[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun twostepSequence() {
         sequencerStop()
         resetSequence()
@@ -1188,7 +1188,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e15[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun drumnbassSequence() {
         sequencerStop()
         resetSequence()
@@ -1223,7 +1223,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d14[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat1Sequence() {
         sequencerStop()
         resetSequence()
@@ -1247,7 +1247,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         b13[1] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat2Sequence() {
         sequencerStop()
         resetSequence()
@@ -1300,7 +1300,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c13[1] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat3Sequence() {
         sequencerStop()
         resetSequence()
@@ -1351,7 +1351,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e14[1] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat5Sequence() {
         sequencerStop()
         resetSequence()
@@ -1379,7 +1379,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c11[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat6Sequence() {
         sequencerStop()
         resetSequence()
@@ -1402,7 +1402,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c13[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat7Sequence() {
         sequencerStop()
         resetSequence()
@@ -1431,7 +1431,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         c16[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat8Sequence() {
         sequencerStop()
         resetSequence()
@@ -1461,7 +1461,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         d11[0] = 1
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun beat9Sequence() {
         sequencerStop()
         resetSequence()
@@ -8609,7 +8609,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun read() {
         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
             padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
@@ -8719,6 +8719,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+            findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+            findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
             when (padCheck) {
                 53 -> {
                     x53()
@@ -9284,7 +9294,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putInt("sptF15", sptF15)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "CutPasteId")
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         adCheck = savedInstanceState.getInt("DATA")
@@ -9403,6 +9413,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
         when (padCheck) {
             53 -> {
                 x53()
