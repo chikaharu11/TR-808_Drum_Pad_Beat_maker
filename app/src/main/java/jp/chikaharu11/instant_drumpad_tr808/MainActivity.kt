@@ -360,6 +360,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
+    private var pitchArray = mutableListOf(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
+    private var volumeArray = mutableListOf(1,2,3,4,5,6,7,8,9,10)
+    private var sequenceArray = mutableListOf(1,0,0,0)
+
     var timer: Timer? = null
 
     private var se1 by Delegates.observable(0) { _, _, _ ->
@@ -889,6 +893,69 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff")) }
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
+
+    private fun soundRandom() {
+        padText1 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText2 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText3 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText4 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText5 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText6 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText7 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText8 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText9 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText10 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText11 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText12 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText13 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText14 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        padText15 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
+        binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
+        sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+    }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
     private fun hiphopSequence() {
@@ -1812,66 +1879,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.visibility = View.INVISIBLE
                 }
                 "Random Pad Sounds" -> {
-                    padText1 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText2 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText3 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText4 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText5 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText6 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText7 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText8 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText9 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText10 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText11 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText12 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText13 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText14 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    padText15 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView5.textView.text = padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView6.textView.text = padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView8.textView.text = padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView9.textView.text = padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView11.textView.text = padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView12.textView.text = padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound2 = soundPool.load(assets.openFd("$padText2.ogg"), 1)
-                    sound3 = soundPool.load(assets.openFd("$padText3.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound5 = soundPool.load(assets.openFd("$padText5.ogg"), 1)
-                    sound6 = soundPool.load(assets.openFd("$padText6.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound8 = soundPool.load(assets.openFd("$padText8.ogg"), 1)
-                    sound9 = soundPool.load(assets.openFd("$padText9.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound11 = soundPool.load(assets.openFd("$padText11.ogg"), 1)
-                    sound12 = soundPool.load(assets.openFd("$padText12.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
-                    sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+                    soundRandom()
                     gridView.visibility = View.INVISIBLE
                 }
                 "Save Pad Settings" -> {
@@ -7157,6 +7165,142 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    soundRandom()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    sptF = pitchArray.random()
+                    sptF4 = pitchArray.random()
+                    sptF7 = pitchArray.random()
+                    sptF10 = pitchArray.random()
+                    sptF13 = pitchArray.random()
+                    spvF = volumeArray.random()
+                    spvF4 = volumeArray.random()
+                    spvF7 = volumeArray.random()
+                    spvF10 = volumeArray.random()
+                    spvF13 = volumeArray.random()
+                    soundPoolVolume = spvF/10.0f
+                    soundPoolVolume4 = spvF4/10.0f
+                    soundPoolVolume7 = spvF7/10.0f
+                    soundPoolVolume10 = spvF10/10.0f
+                    soundPoolVolume13 = spvF13/10.0f
+                    soundPoolTempo = sptF/10.0f
+                    soundPoolTempo4 = sptF4/10.0f
+                    soundPoolTempo7 = sptF7/10.0f
+                    soundPoolTempo10 = sptF10/10.0f
+                    soundPoolTempo13 = sptF13/10.0f
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    a1[sequencerSize] = sequenceArray.random()
+                    a2[sequencerSize] = sequenceArray.random()
+                    a3[sequencerSize] = sequenceArray.random()
+                    a4[sequencerSize] = sequenceArray.random()
+                    a5[sequencerSize] = sequenceArray.random()
+                    a6[sequencerSize] = sequenceArray.random()
+                    a7[sequencerSize] = sequenceArray.random()
+                    a8[sequencerSize] = sequenceArray.random()
+                    a9[sequencerSize] = sequenceArray.random()
+                    a10[sequencerSize] = sequenceArray.random()
+                    a11[sequencerSize] = sequenceArray.random()
+                    a12[sequencerSize] = sequenceArray.random()
+                    a13[sequencerSize] = sequenceArray.random()
+                    a14[sequencerSize] = sequenceArray.random()
+                    a15[sequencerSize] = sequenceArray.random()
+                    a16[sequencerSize] = sequenceArray.random()
+                    b1[sequencerSize] = sequenceArray.random()
+                    b2[sequencerSize] = sequenceArray.random()
+                    b3[sequencerSize] = sequenceArray.random()
+                    b4[sequencerSize] = sequenceArray.random()
+                    b5[sequencerSize] = sequenceArray.random()
+                    b6[sequencerSize] = sequenceArray.random()
+                    b7[sequencerSize] = sequenceArray.random()
+                    b8[sequencerSize] = sequenceArray.random()
+                    b9[sequencerSize] = sequenceArray.random()
+                    b10[sequencerSize] = sequenceArray.random()
+                    b11[sequencerSize] = sequenceArray.random()
+                    b12[sequencerSize] = sequenceArray.random()
+                    b13[sequencerSize] = sequenceArray.random()
+                    b14[sequencerSize] = sequenceArray.random()
+                    b15[sequencerSize] = sequenceArray.random()
+                    b16[sequencerSize] = sequenceArray.random()
+                    c1[sequencerSize] = sequenceArray.random()
+                    c2[sequencerSize] = sequenceArray.random()
+                    c3[sequencerSize] = sequenceArray.random()
+                    c4[sequencerSize] = sequenceArray.random()
+                    c5[sequencerSize] = sequenceArray.random()
+                    c6[sequencerSize] = sequenceArray.random()
+                    c7[sequencerSize] = sequenceArray.random()
+                    c8[sequencerSize] = sequenceArray.random()
+                    c9[sequencerSize] = sequenceArray.random()
+                    c10[sequencerSize] = sequenceArray.random()
+                    c11[sequencerSize] = sequenceArray.random()
+                    c12[sequencerSize] = sequenceArray.random()
+                    c13[sequencerSize] = sequenceArray.random()
+                    c14[sequencerSize] = sequenceArray.random()
+                    c15[sequencerSize] = sequenceArray.random()
+                    c16[sequencerSize] = sequenceArray.random()
+                    d1[sequencerSize] = sequenceArray.random()
+                    d2[sequencerSize] = sequenceArray.random()
+                    d3[sequencerSize] = sequenceArray.random()
+                    d4[sequencerSize] = sequenceArray.random()
+                    d5[sequencerSize] = sequenceArray.random()
+                    d6[sequencerSize] = sequenceArray.random()
+                    d7[sequencerSize] = sequenceArray.random()
+                    d8[sequencerSize] = sequenceArray.random()
+                    d9[sequencerSize] = sequenceArray.random()
+                    d10[sequencerSize] = sequenceArray.random()
+                    d11[sequencerSize] = sequenceArray.random()
+                    d12[sequencerSize] = sequenceArray.random()
+                    d13[sequencerSize] = sequenceArray.random()
+                    d14[sequencerSize] = sequenceArray.random()
+                    d15[sequencerSize] = sequenceArray.random()
+                    d16[sequencerSize] = sequenceArray.random()
+                    e1[sequencerSize] = sequenceArray.random()
+                    e2[sequencerSize] = sequenceArray.random()
+                    e3[sequencerSize] = sequenceArray.random()
+                    e4[sequencerSize] = sequenceArray.random()
+                    e5[sequencerSize] = sequenceArray.random()
+                    e6[sequencerSize] = sequenceArray.random()
+                    e7[sequencerSize] = sequenceArray.random()
+                    e8[sequencerSize] = sequenceArray.random()
+                    e9[sequencerSize] = sequenceArray.random()
+                    e10[sequencerSize] = sequenceArray.random()
+                    e11[sequencerSize] = sequenceArray.random()
+                    e12[sequencerSize] = sequenceArray.random()
+                    e13[sequencerSize] = sequenceArray.random()
+                    e14[sequencerSize] = sequenceArray.random()
+                    e15[sequencerSize] = sequenceArray.random()
+                    e16[sequencerSize] = sequenceArray.random()
+                    changeSequence()
                 }
             }
             false
