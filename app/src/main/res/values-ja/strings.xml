@@ -58,8 +58,11 @@
     <string name="bpm">BPM :</string>
     <string name="editbpm">110</string>
     <string name="elsebpm">30~300で指定して下さい</string>
-    <string name="a">ACC\nENT</string>
-    <string name="r">RES\nET</string>
+    <string name="a">ACCENT</string>
+    <string name="r">RESET</string>
+    <string name="pitchRandom">RANDOM\nPITCH</string>
+    <string name="soundRandom">RANDOM\nSOUND</string>
+    <string name="sequenceRandom">RANDOM\nSEQUENCE</string>
     <string name="line">5</string>
     <string name="measure">1</string>
     <string name="measureMax">1</string>
