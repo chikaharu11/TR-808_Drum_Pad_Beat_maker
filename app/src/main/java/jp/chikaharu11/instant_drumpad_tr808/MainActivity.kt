@@ -894,6 +894,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
 
+    @SuppressLint("SetTextI18n")
     private fun soundRandom() {
         padText1 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
         padText2 = (aSoundList+bSoundList+cSoundList+dSoundList+eSoundList+fSoundList+gSoundList+hSoundList+iSoundList+jSoundList+kSoundList+lSoundList).random().name.replace(".ogg","")
@@ -8669,6 +8670,86 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.tF15 = sptF15
             ss.check = padCheck
             ss.c_check = colorCheck
+            ss.a1 = a1.joinToString(separator = "")
+            ss.a2 = a2.joinToString(separator = "")
+            ss.a3 = a3.joinToString(separator = "")
+            ss.a4 = a4.joinToString(separator = "")
+            ss.a5 = a5.joinToString(separator = "")
+            ss.a6 = a6.joinToString(separator = "")
+            ss.a7 = a7.joinToString(separator = "")
+            ss.a8 = a8.joinToString(separator = "")
+            ss.a9 = a9.joinToString(separator = "")
+            ss.a10 = a10.joinToString(separator = "")
+            ss.a11 = a11.joinToString(separator = "")
+            ss.a12 = a12.joinToString(separator = "")
+            ss.a13 = a13.joinToString(separator = "")
+            ss.a14 = a14.joinToString(separator = "")
+            ss.a15 = a15.joinToString(separator = "")
+            ss.a16 = a16.joinToString(separator = "")
+            ss.b1 = b1.joinToString(separator = "")
+            ss.b2 = b2.joinToString(separator = "")
+            ss.b3 = b3.joinToString(separator = "")
+            ss.b4 = b4.joinToString(separator = "")
+            ss.b5 = b5.joinToString(separator = "")
+            ss.b6 = b6.joinToString(separator = "")
+            ss.b7 = b7.joinToString(separator = "")
+            ss.b8 = b8.joinToString(separator = "")
+            ss.b9 = b9.joinToString(separator = "")
+            ss.b10 = b10.joinToString(separator = "")
+            ss.b11 = b11.joinToString(separator = "")
+            ss.b12 = b12.joinToString(separator = "")
+            ss.b13 = b13.joinToString(separator = "")
+            ss.b14 = b14.joinToString(separator = "")
+            ss.b15 = b15.joinToString(separator = "")
+            ss.b16 = b16.joinToString(separator = "")
+            ss.c1 = c1.joinToString(separator = "")
+            ss.c2 = c2.joinToString(separator = "")
+            ss.c3 = c3.joinToString(separator = "")
+            ss.c4 = c4.joinToString(separator = "")
+            ss.c5 = c5.joinToString(separator = "")
+            ss.c6 = c6.joinToString(separator = "")
+            ss.c7 = c7.joinToString(separator = "")
+            ss.c8 = c8.joinToString(separator = "")
+            ss.c9 = c9.joinToString(separator = "")
+            ss.c10 = c10.joinToString(separator = "")
+            ss.c11 = c11.joinToString(separator = "")
+            ss.c12 = c12.joinToString(separator = "")
+            ss.c13 = c13.joinToString(separator = "")
+            ss.c14 = c14.joinToString(separator = "")
+            ss.c15 = c15.joinToString(separator = "")
+            ss.c16 = c16.joinToString(separator = "")
+            ss.d1 = d1.joinToString(separator = "")
+            ss.d2 = d2.joinToString(separator = "")
+            ss.d3 = d3.joinToString(separator = "")
+            ss.d4 = d4.joinToString(separator = "")
+            ss.d5 = d5.joinToString(separator = "")
+            ss.d6 = d6.joinToString(separator = "")
+            ss.d7 = d7.joinToString(separator = "")
+            ss.d8 = d8.joinToString(separator = "")
+            ss.d9 = d9.joinToString(separator = "")
+            ss.d10 = d10.joinToString(separator = "")
+            ss.d11 = d11.joinToString(separator = "")
+            ss.d12 = d12.joinToString(separator = "")
+            ss.d13 = d13.joinToString(separator = "")
+            ss.d14 = d14.joinToString(separator = "")
+            ss.d15 = d15.joinToString(separator = "")
+            ss.d16 = d16.joinToString(separator = "")
+            ss.e1 = e1.joinToString(separator = "")
+            ss.e2 = e2.joinToString(separator = "")
+            ss.e3 = e3.joinToString(separator = "")
+            ss.e4 = e4.joinToString(separator = "")
+            ss.e5 = e5.joinToString(separator = "")
+            ss.e6 = e6.joinToString(separator = "")
+            ss.e7 = e7.joinToString(separator = "")
+            ss.e8 = e8.joinToString(separator = "")
+            ss.e9 = e9.joinToString(separator = "")
+            ss.e10 = e10.joinToString(separator = "")
+            ss.e11 = e11.joinToString(separator = "")
+            ss.e12 = e12.joinToString(separator = "")
+            ss.e13 = e13.joinToString(separator = "")
+            ss.e14 = e14.joinToString(separator = "")
+            ss.e15 = e15.joinToString(separator = "")
+            ss.e16 = e16.joinToString(separator = "")
             mRealm.copyToRealm(ss)
         }
 
@@ -8754,6 +8835,86 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tF15 = sptF15
             data?.check = padCheck
             data?.c_check = colorCheck
+            data?.a1 = a1.joinToString(separator = "")
+            data?.a2 = a2.joinToString(separator = "")
+            data?.a3 = a3.joinToString(separator = "")
+            data?.a4 = a4.joinToString(separator = "")
+            data?.a5 = a5.joinToString(separator = "")
+            data?.a6 = a6.joinToString(separator = "")
+            data?.a7 = a7.joinToString(separator = "")
+            data?.a8 = a8.joinToString(separator = "")
+            data?.a9 = a9.joinToString(separator = "")
+            data?.a10 = a10.joinToString(separator = "")
+            data?.a11 = a11.joinToString(separator = "")
+            data?.a12 = a12.joinToString(separator = "")
+            data?.a13 = a13.joinToString(separator = "")
+            data?.a14 = a14.joinToString(separator = "")
+            data?.a15 = a15.joinToString(separator = "")
+            data?.a16 = a16.joinToString(separator = "")
+            data?.b1 = b1.joinToString(separator = "")
+            data?.b2 = b2.joinToString(separator = "")
+            data?.b3 = b3.joinToString(separator = "")
+            data?.b4 = b4.joinToString(separator = "")
+            data?.b5 = b5.joinToString(separator = "")
+            data?.b6 = b6.joinToString(separator = "")
+            data?.b7 = b7.joinToString(separator = "")
+            data?.b8 = b8.joinToString(separator = "")
+            data?.b9 = b9.joinToString(separator = "")
+            data?.b10 = b10.joinToString(separator = "")
+            data?.b11 = b11.joinToString(separator = "")
+            data?.b12 = b12.joinToString(separator = "")
+            data?.b13 = b13.joinToString(separator = "")
+            data?.b14 = b14.joinToString(separator = "")
+            data?.b15 = b15.joinToString(separator = "")
+            data?.b16 = b16.joinToString(separator = "")
+            data?.c1 = c1.joinToString(separator = "")
+            data?.c2 = c2.joinToString(separator = "")
+            data?.c3 = c3.joinToString(separator = "")
+            data?.c4 = c4.joinToString(separator = "")
+            data?.c5 = c5.joinToString(separator = "")
+            data?.c6 = c6.joinToString(separator = "")
+            data?.c7 = c7.joinToString(separator = "")
+            data?.c8 = c8.joinToString(separator = "")
+            data?.c9 = c9.joinToString(separator = "")
+            data?.c10 = c10.joinToString(separator = "")
+            data?.c11 = c11.joinToString(separator = "")
+            data?.c12 = c12.joinToString(separator = "")
+            data?.c13 = c13.joinToString(separator = "")
+            data?.c14 = c14.joinToString(separator = "")
+            data?.c15 = c15.joinToString(separator = "")
+            data?.c16 = c16.joinToString(separator = "")
+            data?.d1 = d1.joinToString(separator = "")
+            data?.d2 = d2.joinToString(separator = "")
+            data?.d3 = d3.joinToString(separator = "")
+            data?.d4 = d4.joinToString(separator = "")
+            data?.d5 = d5.joinToString(separator = "")
+            data?.d6 = d6.joinToString(separator = "")
+            data?.d7 = d7.joinToString(separator = "")
+            data?.d8 = d8.joinToString(separator = "")
+            data?.d9 = d9.joinToString(separator = "")
+            data?.d10 = d10.joinToString(separator = "")
+            data?.d11 = d11.joinToString(separator = "")
+            data?.d12 = d12.joinToString(separator = "")
+            data?.d13 = d13.joinToString(separator = "")
+            data?.d14 = d14.joinToString(separator = "")
+            data?.d15 = d15.joinToString(separator = "")
+            data?.d16 = d16.joinToString(separator = "")
+            data?.e1 = e1.joinToString(separator = "")
+            data?.e2 = e2.joinToString(separator = "")
+            data?.e3 = e3.joinToString(separator = "")
+            data?.e4 = e4.joinToString(separator = "")
+            data?.e5 = e5.joinToString(separator = "")
+            data?.e6 = e6.joinToString(separator = "")
+            data?.e7 = e7.joinToString(separator = "")
+            data?.e8 = e8.joinToString(separator = "")
+            data?.e9 = e9.joinToString(separator = "")
+            data?.e10 = e10.joinToString(separator = "")
+            data?.e11 = e11.joinToString(separator = "")
+            data?.e12 = e12.joinToString(separator = "")
+            data?.e13 = e13.joinToString(separator = "")
+            data?.e14 = e14.joinToString(separator = "")
+            data?.e15 = e15.joinToString(separator = "")
+            data?.e16 = e16.joinToString(separator = "")
         }
 
     }
@@ -8838,6 +8999,168 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF15!!)
             padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
             colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.c_check!!)
+            for(i in 0..15) {
+                a1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a1!!)[i].code - 48
+                a2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a2!!)[i].code - 48
+                a3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a3!!)[i].code - 48
+                a4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a4!!)[i].code - 48
+                a5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a5!!)[i].code - 48
+                a6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a6!!)[i].code - 48
+                a7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a7!!)[i].code - 48
+                a8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a8!!)[i].code - 48
+                a9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a9!!)[i].code - 48
+                a10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a10!!)[i].code - 48
+                a11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a11!!)[i].code - 48
+                a12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a12!!)[i].code - 48
+                a13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a13!!)[i].code - 48
+                a14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a14!!)[i].code - 48
+                a15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a15!!)[i].code - 48
+                a16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.a16!!)[i].code - 48
+                b1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b1!!)[i].code - 48
+                b2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b2!!)[i].code - 48
+                b3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b3!!)[i].code - 48
+                b4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b4!!)[i].code - 48
+                b5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b5!!)[i].code - 48
+                b6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b6!!)[i].code - 48
+                b7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b7!!)[i].code - 48
+                b8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b8!!)[i].code - 48
+                b9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b9!!)[i].code - 48
+                b10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b10!!)[i].code - 48
+                b11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b11!!)[i].code - 48
+                b12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b12!!)[i].code - 48
+                b13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b13!!)[i].code - 48
+                b14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b14!!)[i].code - 48
+                b15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b15!!)[i].code - 48
+                b16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.b16!!)[i].code - 48
+                c1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c1!!)[i].code - 48
+                c2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c2!!)[i].code - 48
+                c3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c3!!)[i].code - 48
+                c4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c4!!)[i].code - 48
+                c5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c5!!)[i].code - 48
+                c6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c6!!)[i].code - 48
+                c7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c7!!)[i].code - 48
+                c8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c8!!)[i].code - 48
+                c9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c9!!)[i].code - 48
+                c10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c10!!)[i].code - 48
+                c11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c11!!)[i].code - 48
+                c12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c12!!)[i].code - 48
+                c13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c13!!)[i].code - 48
+                c14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c14!!)[i].code - 48
+                c15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c15!!)[i].code - 48
+                c16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.c16!!)[i].code - 48
+                d1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d1!!)[i].code - 48
+                d2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d2!!)[i].code - 48
+                d3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d3!!)[i].code - 48
+                d4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d4!!)[i].code - 48
+                d5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d5!!)[i].code - 48
+                d6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d6!!)[i].code - 48
+                d7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d7!!)[i].code - 48
+                d8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d8!!)[i].code - 48
+                d9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d9!!)[i].code - 48
+                d10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d10!!)[i].code - 48
+                d11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d11!!)[i].code - 48
+                d12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d12!!)[i].code - 48
+                d13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d13!!)[i].code - 48
+                d14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d14!!)[i].code - 48
+                d15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d15!!)[i].code - 48
+                d16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.d16!!)[i].code - 48
+                e1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e1!!)[i].code - 48
+                e2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e2!!)[i].code - 48
+                e3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e3!!)[i].code - 48
+                e4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e4!!)[i].code - 48
+                e5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e5!!)[i].code - 48
+                e6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e6!!)[i].code - 48
+                e7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e7!!)[i].code - 48
+                e8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e8!!)[i].code - 48
+                e9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e9!!)[i].code - 48
+                e10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e10!!)[i].code - 48
+                e11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e11!!)[i].code - 48
+                e12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e12!!)[i].code - 48
+                e13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e13!!)[i].code - 48
+                e14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e14!!)[i].code - 48
+                e15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e15!!)[i].code - 48
+                e16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                    .findFirst()?.e16!!)[i].code - 48
+            }
             binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView3.textView.text = padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -9179,7 +9502,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                 }
             }
-
+            if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                binding.sequencerView.visibility = View.VISIBLE
+                binding.notes.visibility = View.VISIBLE
+                changeSequence()
+            }
         } else {
             Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
         }
@@ -9678,7 +10005,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
             }
         }
-        when(beatCheck) {
+        when( beatCheck ) {
             "hiphop_1_bpm80" -> { hiphopSequence() }
             "reggaeton_1_bpm90" -> { reggaetonSequence() }
             "electronica_1_bpm90" -> { electronicaSequence() }
