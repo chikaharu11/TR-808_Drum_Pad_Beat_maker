@@ -360,6 +360,87 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
+    private var sia1 = ""
+    private var sia2 = ""
+    private var sia3 = ""
+    private var sia4 = ""
+    private var sia5 = ""
+    private var sia6 = ""
+    private var sia7 = ""
+    private var sia8 = ""
+    private var sia9 = ""
+    private var sia10 = ""
+    private var sia11 = ""
+    private var sia12 = ""
+    private var sia13 = ""
+    private var sia14 = ""
+    private var sia15 = ""
+    private var sia16 = ""
+    private var sib1 = ""
+    private var sib2 = ""
+    private var sib3 = ""
+    private var sib4 = ""
+    private var sib5 = ""
+    private var sib6 = ""
+    private var sib7 = ""
+    private var sib8 = ""
+    private var sib9 = ""
+    private var sib10 = ""
+    private var sib11 = ""
+    private var sib12 = ""
+    private var sib13 = ""
+    private var sib14 = ""
+    private var sib15 = ""
+    private var sib16 = ""
+    private var sic1 = ""
+    private var sic2 = ""
+    private var sic3 = ""
+    private var sic4 = ""
+    private var sic5 = ""
+    private var sic6 = ""
+    private var sic7 = ""
+    private var sic8 = ""
+    private var sic9 = ""
+    private var sic10 = ""
+    private var sic11 = ""
+    private var sic12 = ""
+    private var sic13 = ""
+    private var sic14 = ""
+    private var sic15 = ""
+    private var sic16 = ""
+    private var sid1 = ""
+    private var sid2 = ""
+    private var sid3 = ""
+    private var sid4 = ""
+    private var sid5 = ""
+    private var sid6 = ""
+    private var sid7 = ""
+    private var sid8 = ""
+    private var sid9 = ""
+    private var sid10 = ""
+    private var sid11 = ""
+    private var sid12 = ""
+    private var sid13 = ""
+    private var sid14 = ""
+    private var sid15 = ""
+    private var sid16 = ""
+    private var sie1 = ""
+    private var sie2 = ""
+    private var sie3 = ""
+    private var sie4 = ""
+    private var sie5 = ""
+    private var sie6 = ""
+    private var sie7 = ""
+    private var sie8 = ""
+    private var sie9 = ""
+    private var sie10 = ""
+    private var sie11 = ""
+    private var sie12 = ""
+    private var sie13 = ""
+    private var sie14 = ""
+    private var sie15 = ""
+    private var sie16 = ""
+
     private var pitchArray = mutableListOf(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
     private var volumeArray = mutableListOf(1,2,3,4,5,6,7,8,9,10)
     private var sequenceArray = mutableListOf(1,0,0,0)
@@ -9197,36 +9278,55 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (trackCount) {
                 2 -> {
                     x21()
-                    findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                    findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                    binding.sequencerView.visibility = View.VISIBLE
-                    binding.notes.visibility = View.VISIBLE
+                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                        binding.sequencerView.visibility = View.VISIBLE
+                        binding.notes.visibility = View.VISIBLE
+                    }
                 }
                 3 -> {
                     x31()
-                    findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                    findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                    binding.sequencerView.visibility = View.VISIBLE
-                    binding.notes.visibility = View.VISIBLE
+                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                        binding.sequencerView.visibility = View.VISIBLE
+                        binding.notes.visibility = View.VISIBLE
+                    }
                 }
                 4 -> {
                     x41()
-                    findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                    findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                    binding.sequencerView.visibility = View.VISIBLE
-                    binding.notes.visibility = View.VISIBLE
+                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                        binding.sequencerView.visibility = View.VISIBLE
+                        binding.notes.visibility = View.VISIBLE
+                    }
+                }
+                5 -> {
+                    x51()
+                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                        binding.sequencerView.visibility = View.VISIBLE
+                        binding.notes.visibility = View.VISIBLE
+                    }
                 }
             }
             if (colorCheck == 1) {
@@ -9761,6 +9861,89 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putInt("sptF13", sptF13)
         outState.putInt("sptF14", sptF14)
         outState.putInt("sptF15", sptF15)
+        outState.putInt("trackCount", trackCount)
+        outState.putLong("sequencerBpm", sequencerBpm)
+        outState.putInt("sequencerMaxSize", sequencerMaxSize)
+        outState.putString("a1", a1.joinToString(separator = ""))
+        outState.putString("a2", a2.joinToString(separator = ""))
+        outState.putString("a3", a3.joinToString(separator = ""))
+        outState.putString("a4", a4.joinToString(separator = ""))
+        outState.putString("a5", a5.joinToString(separator = ""))
+        outState.putString("a6", a6.joinToString(separator = ""))
+        outState.putString("a7", a7.joinToString(separator = ""))
+        outState.putString("a8", a8.joinToString(separator = ""))
+        outState.putString("a9", a9.joinToString(separator = ""))
+        outState.putString("a10", a10.joinToString(separator = ""))
+        outState.putString("a11", a11.joinToString(separator = ""))
+        outState.putString("a12", a12.joinToString(separator = ""))
+        outState.putString("a13", a13.joinToString(separator = ""))
+        outState.putString("a14", a14.joinToString(separator = ""))
+        outState.putString("a15", a15.joinToString(separator = ""))
+        outState.putString("a16", a16.joinToString(separator = ""))
+        outState.putString("b1", b1.joinToString(separator = ""))
+        outState.putString("b2", b2.joinToString(separator = ""))
+        outState.putString("b3", b3.joinToString(separator = ""))
+        outState.putString("b4", b4.joinToString(separator = ""))
+        outState.putString("b5", b5.joinToString(separator = ""))
+        outState.putString("b6", b6.joinToString(separator = ""))
+        outState.putString("b7", b7.joinToString(separator = ""))
+        outState.putString("b8", b8.joinToString(separator = ""))
+        outState.putString("b9", b9.joinToString(separator = ""))
+        outState.putString("b10", b10.joinToString(separator = ""))
+        outState.putString("b11", b11.joinToString(separator = ""))
+        outState.putString("b12", b12.joinToString(separator = ""))
+        outState.putString("b13", b13.joinToString(separator = ""))
+        outState.putString("b14", b14.joinToString(separator = ""))
+        outState.putString("b15", b15.joinToString(separator = ""))
+        outState.putString("b16", b16.joinToString(separator = ""))
+        outState.putString("c1", c1.joinToString(separator = ""))
+        outState.putString("c2", c2.joinToString(separator = ""))
+        outState.putString("c3", c3.joinToString(separator = ""))
+        outState.putString("c4", c4.joinToString(separator = ""))
+        outState.putString("c5", c5.joinToString(separator = ""))
+        outState.putString("c6", c6.joinToString(separator = ""))
+        outState.putString("c7", c7.joinToString(separator = ""))
+        outState.putString("c8", c8.joinToString(separator = ""))
+        outState.putString("c9", c9.joinToString(separator = ""))
+        outState.putString("c10", c10.joinToString(separator = ""))
+        outState.putString("c11", c11.joinToString(separator = ""))
+        outState.putString("c12", c12.joinToString(separator = ""))
+        outState.putString("c13", c13.joinToString(separator = ""))
+        outState.putString("c14", c14.joinToString(separator = ""))
+        outState.putString("c15", c15.joinToString(separator = ""))
+        outState.putString("c16", c16.joinToString(separator = ""))
+        outState.putString("d1", d1.joinToString(separator = ""))
+        outState.putString("d2", d2.joinToString(separator = ""))
+        outState.putString("d3", d3.joinToString(separator = ""))
+        outState.putString("d4", d4.joinToString(separator = ""))
+        outState.putString("d5", d5.joinToString(separator = ""))
+        outState.putString("d6", d6.joinToString(separator = ""))
+        outState.putString("d7", d7.joinToString(separator = ""))
+        outState.putString("d8", d8.joinToString(separator = ""))
+        outState.putString("d9", d9.joinToString(separator = ""))
+        outState.putString("d10", d10.joinToString(separator = ""))
+        outState.putString("d11", d11.joinToString(separator = ""))
+        outState.putString("d12", d12.joinToString(separator = ""))
+        outState.putString("d13", d13.joinToString(separator = ""))
+        outState.putString("d14", d14.joinToString(separator = ""))
+        outState.putString("d15", d15.joinToString(separator = ""))
+        outState.putString("d16", d16.joinToString(separator = ""))
+        outState.putString("e1", e1.joinToString(separator = ""))
+        outState.putString("e2", e2.joinToString(separator = ""))
+        outState.putString("e3", e3.joinToString(separator = ""))
+        outState.putString("e4", e4.joinToString(separator = ""))
+        outState.putString("e5", e5.joinToString(separator = ""))
+        outState.putString("e6", e6.joinToString(separator = ""))
+        outState.putString("e7", e7.joinToString(separator = ""))
+        outState.putString("e8", e8.joinToString(separator = ""))
+        outState.putString("e9", e9.joinToString(separator = ""))
+        outState.putString("e10", e10.joinToString(separator = ""))
+        outState.putString("e11", e11.joinToString(separator = ""))
+        outState.putString("e12", e12.joinToString(separator = ""))
+        outState.putString("e13", e13.joinToString(separator = ""))
+        outState.putString("e14", e14.joinToString(separator = ""))
+        outState.putString("e15", e15.joinToString(separator = ""))
+        outState.putString("e16", e16.joinToString(separator = ""))
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
@@ -9816,7 +9999,89 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         soundPoolTempo13 = savedInstanceState.getFloat("spt13")
         soundPoolTempo14 = savedInstanceState.getFloat("spt14")
         soundPoolTempo15 = savedInstanceState.getFloat("spt15")
-
+        trackCount = savedInstanceState.getInt("trackCount")
+        sequencerMaxSize = savedInstanceState.getInt("sequencerMaxSize")
+        sequencerBpm = savedInstanceState.getLong("sequencerBpm")
+        sia1 = savedInstanceState.getString("a1").toString()
+        sia2 = savedInstanceState.getString("a2").toString()
+        sia3 = savedInstanceState.getString("a3").toString()
+        sia4 = savedInstanceState.getString("a4").toString()
+        sia5 = savedInstanceState.getString("a5").toString()
+        sia6 = savedInstanceState.getString("a6").toString()
+        sia7 = savedInstanceState.getString("a7").toString()
+        sia8 = savedInstanceState.getString("a8").toString()
+        sia9 = savedInstanceState.getString("a9").toString()
+        sia10 = savedInstanceState.getString("a10").toString()
+        sia11 = savedInstanceState.getString("a11").toString()
+        sia12 = savedInstanceState.getString("a12").toString()
+        sia13 = savedInstanceState.getString("a13").toString()
+        sia14 = savedInstanceState.getString("a14").toString()
+        sia15 = savedInstanceState.getString("a15").toString()
+        sia16 = savedInstanceState.getString("a16").toString()
+        sib1 = savedInstanceState.getString("b1").toString()
+        sib2 = savedInstanceState.getString("b2").toString()
+        sib3 = savedInstanceState.getString("b3").toString()
+        sib4 = savedInstanceState.getString("b4").toString()
+        sib5 = savedInstanceState.getString("b5").toString()
+        sib6 = savedInstanceState.getString("b6").toString()
+        sib7 = savedInstanceState.getString("b7").toString()
+        sib8 = savedInstanceState.getString("b8").toString()
+        sib9 = savedInstanceState.getString("b9").toString()
+        sib10 = savedInstanceState.getString("b10").toString()
+        sib11 = savedInstanceState.getString("b11").toString()
+        sib12 = savedInstanceState.getString("b12").toString()
+        sib13 = savedInstanceState.getString("b13").toString()
+        sib14 = savedInstanceState.getString("b14").toString()
+        sib15 = savedInstanceState.getString("b15").toString()
+        sib16 = savedInstanceState.getString("b16").toString()
+        sic1 = savedInstanceState.getString("c1").toString()
+        sic2 = savedInstanceState.getString("c2").toString()
+        sic3 = savedInstanceState.getString("c3").toString()
+        sic4 = savedInstanceState.getString("c4").toString()
+        sic5 = savedInstanceState.getString("c5").toString()
+        sic6 = savedInstanceState.getString("c6").toString()
+        sic7 = savedInstanceState.getString("c7").toString()
+        sic8 = savedInstanceState.getString("c8").toString()
+        sic9 = savedInstanceState.getString("c9").toString()
+        sic10 = savedInstanceState.getString("c10").toString()
+        sic11 = savedInstanceState.getString("c11").toString()
+        sic12 = savedInstanceState.getString("c12").toString()
+        sic13 = savedInstanceState.getString("c13").toString()
+        sic14 = savedInstanceState.getString("c14").toString()
+        sic15 = savedInstanceState.getString("c15").toString()
+        sic16 = savedInstanceState.getString("c16").toString()
+        sid1 = savedInstanceState.getString("d1").toString()
+        sid2 = savedInstanceState.getString("d2").toString()
+        sid3 = savedInstanceState.getString("d3").toString()
+        sid4 = savedInstanceState.getString("d4").toString()
+        sid5 = savedInstanceState.getString("d5").toString()
+        sid6 = savedInstanceState.getString("d6").toString()
+        sid7 = savedInstanceState.getString("d7").toString()
+        sid8 = savedInstanceState.getString("d8").toString()
+        sid9 = savedInstanceState.getString("d9").toString()
+        sid10 = savedInstanceState.getString("d10").toString()
+        sid11 = savedInstanceState.getString("d11").toString()
+        sid12 = savedInstanceState.getString("d12").toString()
+        sid13 = savedInstanceState.getString("d13").toString()
+        sid14 = savedInstanceState.getString("d14").toString()
+        sid15 = savedInstanceState.getString("d15").toString()
+        sid16 = savedInstanceState.getString("d16").toString()
+        sie1 = savedInstanceState.getString("e1").toString()
+        sie2 = savedInstanceState.getString("e2").toString()
+        sie3 = savedInstanceState.getString("e3").toString()
+        sie4 = savedInstanceState.getString("e4").toString()
+        sie5 = savedInstanceState.getString("e5").toString()
+        sie6 = savedInstanceState.getString("e6").toString()
+        sie7 = savedInstanceState.getString("e7").toString()
+        sie8 = savedInstanceState.getString("e8").toString()
+        sie9 = savedInstanceState.getString("e9").toString()
+        sie10 = savedInstanceState.getString("e10").toString()
+        sie11 = savedInstanceState.getString("e11").toString()
+        sie12 = savedInstanceState.getString("e12").toString()
+        sie13 = savedInstanceState.getString("e13").toString()
+        sie14 = savedInstanceState.getString("e14").toString()
+        sie15 = savedInstanceState.getString("e15").toString()
+        sie16 = savedInstanceState.getString("e16").toString()
         spvF = savedInstanceState.getInt("spvF1")
         spvF2 = savedInstanceState.getInt("spvF2")
         spvF3 = savedInstanceState.getInt("spvF3")
@@ -9892,6 +10157,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
         findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
         findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
         when (padCheck) {
             53 -> {
                 x53()
@@ -9998,25 +10266,88 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
             }
         }
-        when( beatCheck ) {
-            "hiphop_1_bpm80" -> { hiphopSequence() }
-            "reggaeton_1_bpm90" -> { reggaetonSequence() }
-            "electronica_1_bpm90" -> { electronicaSequence() }
-            "dubstep_1_bpm140" -> { dubstepSequence() }
-            "house_1_bpm130" -> { houseSequence() }
-            "disco_1_bpm110" -> { discoSequence() }
-            "techno_1_bpm110" -> { technoSequence() }
-            "eurobeat_1_bpm130" -> { eurobeatSequence() }
-            "two_step_1_bpm100" -> { twostepSequence() }
-            "drum_n_bass_1_bpm170" -> { drumnbassSequence() }
-            "beat_1" -> { beat1Sequence() }
-            "beat_2" -> { beat2Sequence() }
-            "beat_3" -> { beat3Sequence() }
-            "beat_5" -> { beat5Sequence() }
-            "beat_6" -> { beat6Sequence() }
-            "beat_7" -> { beat7Sequence() }
-            "beat_8" -> { beat8Sequence() }
-            "beat_9" -> { beat9Sequence() }
+
+        for(i in 0..15) {
+            a1[i] = sia1[i].code -48
+            a2[i] = sia2[i].code -48
+            a3[i] = sia3[i].code -48
+            a4[i] = sia4[i].code -48
+            a5[i] = sia5[i].code -48
+            a6[i] = sia6[i].code -48
+            a7[i] = sia7[i].code -48
+            a8[i] = sia8[i].code -48
+            a9[i] = sia9[i].code -48
+            a10[i] = sia10[i].code -48
+            a11[i] = sia11[i].code -48
+            a12[i] = sia12[i].code -48
+            a13[i] = sia13[i].code -48
+            a14[i] = sia14[i].code -48
+            a15[i] = sia15[i].code -48
+            a16[i] = sia16[i].code -48
+            b1[i] = sib1[i].code -48
+            b2[i] = sib2[i].code -48
+            b3[i] = sib3[i].code -48
+            b4[i] = sib4[i].code -48
+            b5[i] = sib5[i].code -48
+            b6[i] = sib6[i].code -48
+            b7[i] = sib7[i].code -48
+            b8[i] = sib8[i].code -48
+            b9[i] = sib9[i].code -48
+            b10[i] = sib10[i].code -48
+            b11[i] = sib11[i].code -48
+            b12[i] = sib12[i].code -48
+            b13[i] = sib13[i].code -48
+            b14[i] = sib14[i].code -48
+            b15[i] = sib15[i].code -48
+            b16[i] = sib16[i].code -48
+            c1[i] = sic1[i].code -48
+            c2[i] = sic2[i].code -48
+            c3[i] = sic3[i].code -48
+            c4[i] = sic4[i].code -48
+            c5[i] = sic5[i].code -48
+            c6[i] = sic6[i].code -48
+            c7[i] = sic7[i].code -48
+            c8[i] = sic8[i].code -48
+            c9[i] = sic9[i].code -48
+            c10[i] = sic10[i].code -48
+            c11[i] = sic11[i].code -48
+            c12[i] = sic12[i].code -48
+            c13[i] = sic13[i].code -48
+            c14[i] = sic14[i].code -48
+            c15[i] = sic15[i].code -48
+            c16[i] = sic16[i].code -48
+            d1[i] = sid1[i].code -48
+            d2[i] = sid2[i].code -48
+            d3[i] = sid3[i].code -48
+            d4[i] = sid4[i].code -48
+            d5[i] = sid5[i].code -48
+            d6[i] = sid6[i].code -48
+            d7[i] = sid7[i].code -48
+            d8[i] = sid8[i].code -48
+            d9[i] = sid9[i].code -48
+            d10[i] = sid10[i].code -48
+            d11[i] = sid11[i].code -48
+            d12[i] = sid12[i].code -48
+            d13[i] = sid13[i].code -48
+            d14[i] = sid14[i].code -48
+            d15[i] = sid15[i].code -48
+            d16[i] = sid16[i].code -48
+            e1[i] = sie1[i].code -48
+            e2[i] = sie2[i].code -48
+            e3[i] = sie3[i].code -48
+            e4[i] = sie4[i].code -48
+            e5[i] = sie5[i].code -48
+            e6[i] = sie6[i].code -48
+            e7[i] = sie7[i].code -48
+            e8[i] = sie8[i].code -48
+            e9[i] = sie9[i].code -48
+            e10[i] = sie10[i].code -48
+            e11[i] = sie11[i].code -48
+            e12[i] = sie12[i].code -48
+            e13[i] = sie13[i].code -48
+            e14[i] = sie14[i].code -48
+            e15[i] = sie15[i].code -48
+            e16[i] = sie16[i].code -48
         }
 
         supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
