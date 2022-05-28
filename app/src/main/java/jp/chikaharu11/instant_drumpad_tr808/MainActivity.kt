@@ -1589,60 +1589,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             .build()
         mRealm = Realm.getInstance(realmConfig)
 
-        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
-            padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
-            padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad2.toString())
-            padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad3.toString())
-            padText4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad4.toString())
-            padText5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad5.toString())
-            padText6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad6.toString())
-            padText7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad7.toString())
-            padText8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad8.toString())
-            padText9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad9.toString())
-            padText10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad10.toString())
-            padText11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad11.toString())
-            padText12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad12.toString())
-            padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
-            padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
-            padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
-            padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
-            colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.c_check!!)
-            when (padCheck) {
-                53 -> {
-                    x53()
-                }
-                43 -> {
-                    x43()
-                }
-                33 -> {
-                    x33()
-                }
-                52 -> {
-                    x52()
-                }
-                42 -> {
-                    x42()
-                }
-                32 -> {
-                    x32()
-                }
-                22 -> {
-                    x22()
-                }
-                21 -> {
-                    x21()
-                }
-                51 -> {
-                    x51()
-                }
-                41 -> {
-                    x41()
-                }
-                31 -> {
-                    x31()
-                }
-            }
-        }
 
         binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -5429,7 +5375,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (trackCount > 2) {
                         trackCount--
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
-                        when(trackCount) {
+                        when (trackCount) {
                             2 -> {
                                 x21()
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -5476,7 +5422,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (trackCount < 5) {
                         trackCount++
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
-                        when(trackCount) {
+                        when (trackCount) {
                             3 -> {
                                 x31()
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -8670,6 +8616,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.tF15 = sptF15
             ss.check = padCheck
             ss.c_check = colorCheck
+            ss.sequencerMaxSizeR = sequencerMaxSize
+            ss.trackCountR = trackCount
+            ss.sequencerBpmR = sequencerBpm
             ss.a1 = a1.joinToString(separator = "")
             ss.a2 = a2.joinToString(separator = "")
             ss.a3 = a3.joinToString(separator = "")
@@ -8835,6 +8784,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tF15 = sptF15
             data?.check = padCheck
             data?.c_check = colorCheck
+            data?.sequencerMaxSizeR = sequencerMaxSize
+            data?.trackCountR = trackCount
+            data?.sequencerBpmR = sequencerBpm
             data?.a1 = a1.joinToString(separator = "")
             data?.a2 = a2.joinToString(separator = "")
             data?.a3 = a3.joinToString(separator = "")
@@ -8999,6 +8951,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF15!!)
             padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
             colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.c_check!!)
+            sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerMaxSizeR!!)
+            trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.trackCountR!!)
+            sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerBpmR!!)
             for(i in 0..15) {
                 a1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
                     .findFirst()?.a1!!)[i].code - 48
@@ -9201,6 +9156,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
             findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
             findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+            findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
             when (padCheck) {
                 53 -> {
                     x53()
@@ -9234,6 +9192,41 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 31 -> {
                     x31()
+                }
+            }
+            when (trackCount) {
+                2 -> {
+                    x21()
+                    findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                    findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                    binding.sequencerView.visibility = View.VISIBLE
+                    binding.notes.visibility = View.VISIBLE
+                }
+                3 -> {
+                    x31()
+                    findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                    findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                    binding.sequencerView.visibility = View.VISIBLE
+                    binding.notes.visibility = View.VISIBLE
+                }
+                4 -> {
+                    x41()
+                    findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                    findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                    findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                    findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                    findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                    findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                    binding.sequencerView.visibility = View.VISIBLE
+                    binding.notes.visibility = View.VISIBLE
                 }
             }
             if (colorCheck == 1) {
