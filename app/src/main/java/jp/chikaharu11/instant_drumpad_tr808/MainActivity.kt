@@ -277,6 +277,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var sequencerBpm: Long = 110
 
+    private var padSequence = 0
+
     val handler = Handler(Looper.getMainLooper())
 
     private var a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
@@ -1775,6 +1777,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
 
         val tuning = arrayOf(
+            "Change Pad/Sequence",
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -1790,6 +1793,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "2x2","2x1"
         )
         val tuning2 = arrayOf(
+            "Change Pad/Sequence",
             "Change to Play Mode",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -1811,6 +1815,72 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
+                "Change Pad/Sequence" -> {
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        when (padSequence) {
+                            0 -> {
+                                padSequence = 1
+                                when (trackCount) {
+                                    2 -> {
+                                        x21()
+                                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                        binding.sequencerView.visibility = View.VISIBLE
+                                        binding.notes.visibility = View.VISIBLE
+                                    }
+                                    3 -> {
+                                        x31()
+                                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                        binding.sequencerView.visibility = View.VISIBLE
+                                        binding.notes.visibility = View.VISIBLE
+                                    }
+                                    4 -> {
+                                        x41()
+                                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                        binding.sequencerView.visibility = View.VISIBLE
+                                        binding.notes.visibility = View.VISIBLE
+                                    }
+                                    5 -> {
+                                        x51()
+                                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                                        binding.sequencerView.visibility = View.VISIBLE
+                                        binding.notes.visibility = View.VISIBLE
+                                    }
+                                }
+                                changeSequence()
+                                gridView.visibility = View.INVISIBLE
+                            }
+                            1 -> {
+                                padSequence = 0
+                                binding.sequencerView.visibility = View.GONE
+                                binding.notes.visibility = View.GONE
+                                gridView.visibility = View.INVISIBLE
+                            }
+                        }
+                    } else {
+                        Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                        gridView.visibility = View.INVISIBLE
+                    }
+                }
                 "Change Pad Sounds" -> {
                     sequencerCount = 0
                     paste = 1
@@ -8955,6 +9025,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     @SuppressLint("SetTextI18n", "CutPasteId")
     private fun read() {
         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+            menuSwitch = true
+            invalidateOptionsMenu()
+            switch1 = 2
+            sequencerStop()
             padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
             padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad2.toString())
             padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad3.toString())
