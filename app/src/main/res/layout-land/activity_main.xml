@@ -48,7 +48,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bottomSpace"
-        app:titleTextAppearance="@style/Toolbar.TitleText" />
+        app:titleTextAppearance="@style/Toolbar.TitleText" >
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:inputType="text"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:textStyle="bold"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:text="@string/title"
+            android:textColor="#ffffff"
+            tools:ignore="Autofill,LabelFor"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/notes"

@@ -87,6 +87,7 @@ open class SaveSlot(
     var sequencerMaxSizeR: Int = 0,
     var trackCountR: Int = 0,
     var sequencerBpmR: Long = 0,
+    var actionTitleR: String = "0",
     var a1: String = "0",
     var a2: String = "0",
     var a3: String = "0",

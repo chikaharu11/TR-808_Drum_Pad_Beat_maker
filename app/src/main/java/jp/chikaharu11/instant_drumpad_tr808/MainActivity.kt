@@ -1877,7 +1877,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             }
                         }
                     } else {
-                        Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, R.string.landScape, Toast.LENGTH_LONG).show()
                         gridView.visibility = View.INVISIBLE
                     }
                 }
@@ -2176,7 +2176,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "HIPHOP 1 BPM80"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2214,7 +2214,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "REGGAETON 1 BPM90"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2256,7 +2256,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "ELECTRONICA 1 BPM90"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2298,7 +2298,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "DUBSTEP 1 BPM140"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2342,7 +2342,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "HOUSE 1 BPM130"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     houseSequence()
                     changeSequence()
                     x51()
@@ -2390,7 +2390,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "DISCO 1 BPM110"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2436,7 +2436,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "TECHNO 1 BPM110"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2478,7 +2478,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "EUROBEAT 1 BPM130"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2524,7 +2524,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "2 STEP 1 BPM100"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2566,7 +2566,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = "DRUM'N'BASS 1 BPM170"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2600,7 +2600,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -2638,7 +2638,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2684,7 +2684,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2722,7 +2722,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2760,7 +2760,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2798,7 +2798,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2840,7 +2840,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
@@ -2874,7 +2874,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     noteCount = 0
                     count = 5
                     bpm = 10
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x21()
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -3239,7 +3239,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -7454,6 +7455,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.VISIBLE
         findViewById<View>(R.id.include_view15).visibility = View.VISIBLE
         padCheck = 53
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7485,6 +7487,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 43
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7516,6 +7519,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 33
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7547,6 +7551,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view12).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 52
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7578,6 +7583,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 42
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7609,6 +7615,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 32
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7640,6 +7647,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 22
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7671,6 +7679,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 21
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7702,6 +7711,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 51
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7733,6 +7743,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 41
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -7764,6 +7775,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).visibility = View.GONE
         findViewById<View>(R.id.include_view15).visibility = View.GONE
         padCheck = 31
+        padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
     }
@@ -8617,7 +8629,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     actionTitle = soundList.name.replace(".ogg","")
-                    supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -8770,6 +8782,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.sequencerMaxSizeR = sequencerMaxSize
             ss.trackCountR = trackCount
             ss.sequencerBpmR = sequencerBpm
+            ss.actionTitleR = binding.editTitle.text.toString()
             ss.a1 = a1.joinToString(separator = "")
             ss.a2 = a2.joinToString(separator = "")
             ss.a3 = a3.joinToString(separator = "")
@@ -8938,6 +8951,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.sequencerMaxSizeR = sequencerMaxSize
             data?.trackCountR = trackCount
             data?.sequencerBpmR = sequencerBpm
+            data?.actionTitleR = binding.editTitle.text.toString()
             data?.a1 = a1.joinToString(separator = "")
             data?.a2 = a2.joinToString(separator = "")
             data?.a3 = a3.joinToString(separator = "")
@@ -9109,6 +9123,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerMaxSizeR!!)
             trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.trackCountR!!)
             sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerBpmR!!)
+            actionTitle = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR!!)
             for(i in 0..15) {
                 a1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
                     .findFirst()?.a1!!)[i].code - 48
@@ -9314,6 +9329,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
             findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
             findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
+            binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
             when (padCheck) {
                 53 -> {
                     x53()
@@ -9874,7 +9890,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putString("pad13", padText13.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad14", padText14.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad15", padText15.replace(" ", "_").replace("-", "_").lowercase())
-        outState.putString("loop", actionTitle)
+        outState.putString("loop", binding.editTitle.text.toString())
         outState.putFloat("spv1", soundPoolVolume)
         outState.putFloat("spv2", soundPoolVolume2)
         outState.putFloat("spv3", soundPoolVolume3)
@@ -10424,7 +10440,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             e16[i] = sie16[i].code -48
         }
 
-        supportActionBar?.title = actionTitle.replace("_", " ").uppercase()
+        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
 
         try {
             sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
