@@ -1756,8 +1756,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
-            "Save Pad Settings",
-            "Load Pad Settings",
+            "Save Pad/Sequence",
+            "Load Pad/Sequence",
             "Adjusting Sounds",
             "Lock Settings",
             "Hide banner Ads",
@@ -1772,8 +1772,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Change to Play Mode",
             "Random Pad Sounds",
             "Change Pad Colors",
-            "Save Pad Settings",
-            "Load Pad Settings",
+            "Save Pad/Sequence",
+            "Load Pad/Sequence",
             "Adjusting Sounds",
             "Lock Settings",
             "Hide banner Ads",
@@ -1955,7 +1955,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundRandom()
                     gridView.visibility = View.INVISIBLE
                 }
-                "Save Pad Settings" -> {
+                "Save Pad/Sequence" -> {
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                         create()
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -1995,7 +1995,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView.visibility = View.INVISIBLE
                 }
-                "Load Pad Settings" -> {
+                "Load Pad/Sequence" -> {
                     read()
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
                         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -7891,8 +7891,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
-            "Save Pad Settings",
-            "Load Pad Settings",
+            "Save Pad/Sequence",
+            "Load Pad/Sequence",
             "Adjusting Sounds",
             "Lock Settings",
             "Hide banner Ads",
