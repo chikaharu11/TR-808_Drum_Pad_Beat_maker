@@ -25,7 +25,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
@@ -263,8 +262,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var colorCheck = 1
 
-    private var beatCheck = ""
-
     private var noteCount = 0
 
     private var sequencerCount = 0
@@ -471,62 +468,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             else -> Toast.makeText(applicationContext, R.string.elsebpm, Toast.LENGTH_SHORT).show()
         }
     }
-
-
-
-    private val runnable = object: Runnable{
-        override fun run () {
-            handler.postDelayed(this, noteDuration)
-            noteCount++
-            when {
-                noteCount == 1 && beatCheck == "reggaeton_1_bpm90" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.reggaeton1_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
-                }
-                noteCount == 2 && beatCheck == "reggaeton_1_bpm90" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.reggaeton1_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-                noteCount == 1 && beatCheck == "beat_1" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat1_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
-                }
-                noteCount == 2 && beatCheck == "beat_1" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat1_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-                noteCount == 1 && beatCheck == "beat_2" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat2_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
-                }
-                noteCount == 2 && beatCheck == "beat_2" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat2_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-                noteCount == 1 && beatCheck == "beat_3" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat3_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
-                }
-                noteCount == 2 && beatCheck == "beat_3" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat3_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-                noteCount == 1 && beatCheck == "beat_9" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat9_1, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   1/2"
-                }
-                noteCount == 2 && beatCheck == "beat_9" -> {
-                    binding.notes.setImageDrawable(getDrawable(resources, R.drawable.beat9_2, null))
-                    supportActionBar?.title = actionTitle.replace("_"," ").uppercase() + "   2/2"
-                    noteCount = 0
-                }
-            }
-        }
-    }
+    
 
     @SuppressLint("SetTextI18n")
     @OptIn(DelicateCoroutinesApi::class)
@@ -1849,7 +1791,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
                 "Change Pad/Sequence" -> {
-                    println(padSequence)
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         when (padSequence) {
                             0 -> {
@@ -2191,7 +2132,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1 = 2
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2231,8 +2171,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     hiphopSequence()
                     changeSequence()
-                    beatCheck = "hiphop_1_bpm80"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2269,8 +2207,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     reggaetonSequence()
                     changeSequence()
-                    beatCheck = "reggaeton_1_bpm90"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2311,8 +2247,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     electronicaSequence()
                     changeSequence()
-                    beatCheck = "electronica_1_bpm90"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2353,8 +2287,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     dubstepSequence()
                     changeSequence()
-                    beatCheck = "dubstep_1_bpm140"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2397,8 +2329,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    beatCheck = "house_1_bpm130"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2445,8 +2375,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
                     discoSequence()
                     changeSequence()
-                    beatCheck = "disco_1_bpm110"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2491,8 +2419,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
                     technoSequence()
                     changeSequence()
-                    beatCheck = "techno_1_bpm110"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2533,8 +2459,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     eurobeatSequence()
                     changeSequence()
-                    beatCheck = "eurobeat_1_bpm130"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2579,8 +2503,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
                     twostepSequence()
                     changeSequence()
-                    beatCheck = "two_step_1_bpm100"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2621,8 +2543,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     drumnbassSequence()
                     changeSequence()
-                    beatCheck = "drum_n_bass_1_bpm170"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2655,8 +2575,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     beat1Sequence()
                     changeSequence()
-                    beatCheck = "beat_1"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2693,8 +2611,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     beat2Sequence()
                     changeSequence()
-                    beatCheck = "beat_2"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2739,8 +2655,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
                     beat3Sequence()
                     changeSequence()
-                    beatCheck = "beat_3"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2777,8 +2691,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     beat5Sequence()
                     changeSequence()
-                    beatCheck = "beat_5"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2815,8 +2727,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     beat6Sequence()
                     changeSequence()
-                    beatCheck = "beat_6"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2853,8 +2763,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
                     beat7Sequence()
                     changeSequence()
-                    beatCheck = "beat_7"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2895,8 +2803,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
                     beat8Sequence()
                     changeSequence()
-                    beatCheck = "beat_8"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -2929,8 +2835,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
                     beat9Sequence()
                     changeSequence()
-                    beatCheck = "beat_9"
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -8343,7 +8247,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 && buttonB == 1 -> {
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -8684,7 +8587,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 -> {
-                    handler.removeCallbacks(runnable)
                     noteCount = 0
                     count = 5
                     bpm = 10
@@ -9902,7 +9804,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerCount = 0
         timer?.cancel()
         timer = null
-        handler.removeCallbacks(runnable)
         noteCount = 0
         super.onDestroy()
         mRealm.close()
@@ -9912,7 +9813,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         menuSwitch = true
         invalidateOptionsMenu()
         switch1 = 2
-        handler.removeCallbacks(runnable)
         noteCount = 0
         sequencerStop()
         if (mp.isPlaying) {
@@ -9934,7 +9834,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         outState.putInt("DATA", adCheck)
         outState.putInt("padCheck", padCheck)
         outState.putInt("colorCheck", colorCheck)
-        outState.putString("beatCheck", beatCheck)
         outState.putString("pad1", padText1.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad2", padText2.replace(" ", "_").replace("-", "_").lowercase())
         outState.putString("pad3", padText3.replace(" ", "_").replace("-", "_").lowercase())
@@ -10102,7 +10001,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         adCheck = savedInstanceState.getInt("DATA")
         padCheck = savedInstanceState.getInt("padCheck")
         colorCheck = savedInstanceState.getInt("colorCheck")
-        beatCheck = savedInstanceState.getString("beatCheck").toString()
         padText1 = savedInstanceState.getString("pad1").toString()
         padText2 = savedInstanceState.getString("pad2").toString()
         padText3 = savedInstanceState.getString("pad3").toString()
