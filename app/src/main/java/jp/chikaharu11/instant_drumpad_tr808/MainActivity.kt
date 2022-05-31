@@ -1042,9 +1042,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
+    private fun createNew() {
+        sequencerStop()
+        resetSequence()
+        padSequence = 1
+        sequencerMaxSize = 0
+        sequencerSize = 0
+        sequencerBpm = 120
+        trackCount = 5
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+    }
+
+    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun hiphopSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 80
@@ -1068,6 +1084,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun reggaetonSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 90
@@ -1109,6 +1126,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun electronicaSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
@@ -1144,6 +1162,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun dubstepSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 140
@@ -1171,6 +1190,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun houseSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
@@ -1202,6 +1222,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun discoSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
@@ -1233,6 +1254,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun technoSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
@@ -1267,6 +1289,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun eurobeatSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 130
@@ -1304,6 +1327,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun twostepSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
@@ -1343,6 +1367,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun drumnbassSequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 170
@@ -1378,6 +1403,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat1Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
@@ -1402,6 +1428,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat2Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
@@ -1455,6 +1482,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat3Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 100
@@ -1506,6 +1534,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat5Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 110
@@ -1534,6 +1563,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat6Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
@@ -1557,6 +1587,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat7Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 90
@@ -1586,6 +1617,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat8Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 100
@@ -1616,6 +1648,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun beat9Sequence() {
         sequencerStop()
         resetSequence()
+        padSequence = 1
         sequencerMaxSize = 1
         sequencerSize = 0
         sequencerBpm = 120
@@ -1816,10 +1849,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
                 "Change Pad/Sequence" -> {
+                    println(padSequence)
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         when (padSequence) {
                             0 -> {
-                                padSequence = 1
                                 when (trackCount) {
                                     2 -> {
                                         x21()
@@ -1866,6 +1899,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         binding.notes.visibility = View.VISIBLE
                                     }
                                 }
+                                padSequence = 1
                                 changeSequence()
                                 gridView.visibility = View.INVISIBLE
                             }
@@ -2126,6 +2160,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         val choose = arrayOf(
+            "CREATE NEW PATTERN",
             "HIPHOP 1 BPM80",
             "REGGAETON 1 BPM90",
             "ELECTRONICA 1 BPM90",
@@ -2152,6 +2187,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
+                "CREATE NEW PATTERN" -> {
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    handler.removeCallbacks(runnable)
+                    noteCount = 0
+                    count = 5
+                    bpm = 10
+                    actionTitle = "NEW PATTERN"
+                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                    createNew()
+                    changeSequence()
+                    x51()
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                        binding.sequencerView.visibility = View.VISIBLE
+                        binding.notes.visibility = View.VISIBLE
+                    }
+                    gridView2.visibility = View.INVISIBLE
+                }
                 "HIPHOP 1 BPM80" -> {
                     menuSwitch = true
                     invalidateOptionsMenu()
