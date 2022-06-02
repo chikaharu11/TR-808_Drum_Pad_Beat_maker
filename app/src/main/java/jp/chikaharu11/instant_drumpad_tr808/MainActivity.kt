@@ -5,6 +5,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -1956,57 +1957,96 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.visibility = View.INVISIBLE
                 }
                 "Save Pad/Sequence" -> {
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
-                        create()
-                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
-                        val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
-                        snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                        snackBar.setDuration(2000).show()
-                        Handler().postDelayed({
-                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val manager = ReviewManagerFactory.create(this)
-                            val request = manager.requestReviewFlow()
-                            request.addOnCompleteListener { task: Task<ReviewInfo?> ->
-                                when {
-                                    task.isSuccessful -> {
-                                        val reviewInfo = task.result
-                                        val flow = manager.launchReviewFlow(this, reviewInfo)
-                                        flow.addOnCompleteListener {
+                    val builder = AlertDialog.Builder(this)
+                    val inflater = layoutInflater
+                    val dialogView = inflater.inflate(R.layout.save_load, null)
+
+                    builder.setView(dialogView)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
+                        .setTitle(R.string.save)
+                        .setNegativeButton("CANCEL") { _, _ ->
+                            stickyImmersiveMode()
+                        }
+                    val dialog = builder.create()
+                    dialog.show()
+
+                    dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
+                            create()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
                                             stickyImmersiveMode()
                                         }
                                     }
-                                    else -> {
-                                        stickyImmersiveMode()
-                                    }
                                 }
-                            }
-                        }, 2000)
-                    } else {
-                        update()
-                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
-                        val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
-                        snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                        snackBar.setDuration(2000).show()
-                        Handler().postDelayed({
-                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        }, 2000)
+                            }, 2000)
+                        } else {
+                            update()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
                     }
+
                     gridView.visibility = View.INVISIBLE
                 }
                 "Load Pad/Sequence" -> {
-                    read()
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
-                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        val snackBar2 = Snackbar.make(findViewById(R.id.snack_space) , R.string.Loaded, Snackbar.LENGTH_LONG)
-                        val snackTextView2: TextView = snackBar2.view.findViewById(R.id.snackbar_text)
-                        snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                        snackBar2.setDuration(2000).show()
-                        Handler().postDelayed({
-                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        }, 2000)
+                    val builder = AlertDialog.Builder(this)
+                    val inflater = layoutInflater
+                    val dialogView = inflater.inflate(R.layout.save_load, null)
+
+                    builder.setView(dialogView)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
+                        .setTitle(R.string.load)
+                        .setNegativeButton("CANCEL") { _, _ ->
+                            stickyImmersiveMode()
+                        }
+                    val dialog = builder.create()
+                    dialog.show()
+
+                    dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
+                        read()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
                     }
+
                     gridView.visibility = View.INVISIBLE
                 }
                 "Adjusting Sounds" -> {

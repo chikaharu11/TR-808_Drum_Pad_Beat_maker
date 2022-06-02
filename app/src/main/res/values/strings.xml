@@ -71,6 +71,8 @@
     <string name="patternSize">PATTERN SIZE</string>
     <string name="landScape">Switching can be done in landscape mode.</string>
     <string name="title">title</string>
+    <string name="save">Choose where to Save</string>
+    <string name="load">Choose where to Load</string>
 
 
     <string-array name="spinnerItems">

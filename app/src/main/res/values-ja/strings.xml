@@ -71,6 +71,8 @@
     <string name="patternSize">PATTERN SIZE</string>
     <string name="landScape">切り替えは横画面時にできます</string>
     <string name="title">title</string>
+    <string name="save">セーブ先を選んでください</string>
+    <string name="load">ロード先を選んでください</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
