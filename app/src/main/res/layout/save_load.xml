@@ -8,29 +8,29 @@
         android:id="@+id/slot1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/save1" />
 
     <Button
         android:id="@+id/slot2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button2" />
+        android:text="@string/save2" />
 
     <Button
         android:id="@+id/slot3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button3" />
+        android:text="@string/save3" />
 
     <Button
         android:id="@+id/slot4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button4" />
+        android:text="@string/save4" />
 
     <Button
         android:id="@+id/slot5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button5" />
+        android:text="@string/save5" />
 </LinearLayout>

@@ -73,6 +73,11 @@
     <string name="title">title</string>
     <string name="save">セーブ先を選んでください</string>
     <string name="load">ロード先を選んでください</string>
+    <string name="save1">SAVE1</string>
+    <string name="save2">SAVE2</string>
+    <string name="save3">SAVE3</string>
+    <string name="save4">SAVE4</string>
+    <string name="save5">SAVE5</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>

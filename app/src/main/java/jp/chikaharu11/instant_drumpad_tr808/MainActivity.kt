@@ -483,6 +483,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 job1.join()
             }
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 15000/ sequencerBpm) {
@@ -664,6 +665,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
         sequencerCount = 0
         timer?.cancel()
         timer = null
@@ -1961,6 +1963,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     val inflater = layoutInflater
                     val dialogView = inflater.inflate(R.layout.save_load, null)
 
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                    }
+
                     builder.setView(dialogView)
                         .setOnCancelListener {
                             stickyImmersiveMode()
@@ -1973,8 +1991,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     dialog.show()
 
                     dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
+                        dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
-                            create()
+                            create("1")
                             window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
@@ -2000,7 +2019,171 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                             }, 2000)
                         } else {
-                            update()
+                            update("1")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot2).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad == null) {
+                            create("2")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("2")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot3).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad == null) {
+                            create("3")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("3")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot4).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad == null) {
+                            create("4")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("4")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot5).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad == null) {
+                            create("5")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("5")
                             window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
@@ -2019,6 +2202,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     val inflater = layoutInflater
                     val dialogView = inflater.inflate(R.layout.save_load, null)
 
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<Button>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                    }
+
                     builder.setView(dialogView)
                         .setOnCancelListener {
                             stickyImmersiveMode()
@@ -2031,8 +2230,81 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     dialog.show()
 
                     dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
-                        read()
+                        read("1")
+                        dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot2).setOnClickListener {
+                        read("2")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad != null) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot3).setOnClickListener {
+                        read("3")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad != null) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot4).setOnClickListener {
+                        read("4")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad != null) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<Button>(R.id.slot5).setOnClickListener {
+                        read("5")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad != null) {
                             window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
                                 R.string.Loaded,
@@ -8701,9 +8973,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    private fun create () {
+    private fun create(slot: String) {
         mRealm.executeTransaction {
-            val ss = mRealm.createObject<SaveSlot>(primaryKeyValue = "1")
+            val ss = mRealm.createObject<SaveSlot>(primaryKeyValue = slot)
             ss.pad = padText1
             ss.pad2 = padText2
             ss.pad3 = padText3
@@ -8870,8 +9142,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     }
 
-    private fun update() {
-        val data = mRealm.where(SaveSlot::class.java).equalTo("id","1").findFirst()
+    private fun update(slot: String) {
+        val data = mRealm.where(SaveSlot::class.java).equalTo("id",slot).findFirst()
         mRealm.executeTransaction {
             data?.pad = padText1
             data?.pad2 = padText2
@@ -9039,253 +9311,253 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
-    private fun read() {
-        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+    private fun read(slot: String) {
+        if (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad != null) {
             menuSwitch = true
             invalidateOptionsMenu()
             switch1 = 2
             sequencerStop()
-            padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad.toString())
-            padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad2.toString())
-            padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad3.toString())
-            padText4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad4.toString())
-            padText5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad5.toString())
-            padText6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad6.toString())
-            padText7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad7.toString())
-            padText8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad8.toString())
-            padText9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad9.toString())
-            padText10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad10.toString())
-            padText11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad11.toString())
-            padText12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad12.toString())
-            padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad13.toString())
-            padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad14.toString())
-            padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad15.toString())
-            soundPoolVolume = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume!!)
-            soundPoolVolume2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume2!!)
-            soundPoolVolume3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume3!!)
-            soundPoolVolume4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume4!!)
-            soundPoolVolume5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume5!!)
-            soundPoolVolume6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume6!!)
-            soundPoolVolume7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume7!!)
-            soundPoolVolume8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume8!!)
-            soundPoolVolume9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume9!!)
-            soundPoolVolume10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume10!!)
-            soundPoolVolume11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume11!!)
-            soundPoolVolume12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume12!!)
-            soundPoolVolume13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume13!!)
-            soundPoolVolume14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume14!!)
-            soundPoolVolume15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.volume15!!)
-            soundPoolTempo = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo!!)
-            soundPoolTempo2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo2!!)
-            soundPoolTempo3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo3!!)
-            soundPoolTempo4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo4!!)
-            soundPoolTempo5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo5!!)
-            soundPoolTempo6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo6!!)
-            soundPoolTempo7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo7!!)
-            soundPoolTempo8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo8!!)
-            soundPoolTempo9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo9!!)
-            soundPoolTempo10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo10!!)
-            soundPoolTempo11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo11!!)
-            soundPoolTempo12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo12!!)
-            soundPoolTempo13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo13!!)
-            soundPoolTempo14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo14!!)
-            soundPoolTempo15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tempo15!!)
-            spvF = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF!!)
-            spvF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF2!!)
-            spvF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF3!!)
-            spvF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF4!!)
-            spvF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF5!!)
-            spvF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF6!!)
-            spvF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF7!!)
-            spvF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF8!!)
-            spvF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF9!!)
-            spvF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF10!!)
-            spvF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF11!!)
-            spvF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF12!!)
-            spvF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF13!!)
-            spvF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF14!!)
-            spvF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.vF15!!)
-            sptF = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF!!)
-            sptF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF2!!)
-            sptF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF3!!)
-            sptF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF4!!)
-            sptF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF5!!)
-            sptF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF6!!)
-            sptF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF7!!)
-            sptF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF8!!)
-            sptF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF9!!)
-            sptF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF10!!)
-            sptF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF11!!)
-            sptF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF12!!)
-            sptF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF13!!)
-            sptF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF14!!)
-            sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.tF15!!)
-            padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.check!!)
-            colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.c_check!!)
-            sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerMaxSizeR!!)
-            trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.trackCountR!!)
-            sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.sequencerBpmR!!)
-            actionTitle = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR!!)
+            padText1 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad.toString())
+            padText2 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad2.toString())
+            padText3 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad3.toString())
+            padText4 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad4.toString())
+            padText5 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad5.toString())
+            padText6 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad6.toString())
+            padText7 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad7.toString())
+            padText8 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad8.toString())
+            padText9 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad9.toString())
+            padText10 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad10.toString())
+            padText11 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad11.toString())
+            padText12 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad12.toString())
+            padText13 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad13.toString())
+            padText14 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad14.toString())
+            padText15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.pad15.toString())
+            soundPoolVolume = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume!!)
+            soundPoolVolume2 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume2!!)
+            soundPoolVolume3 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume3!!)
+            soundPoolVolume4 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume4!!)
+            soundPoolVolume5 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume5!!)
+            soundPoolVolume6 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume6!!)
+            soundPoolVolume7 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume7!!)
+            soundPoolVolume8 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume8!!)
+            soundPoolVolume9 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume9!!)
+            soundPoolVolume10 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume10!!)
+            soundPoolVolume11 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume11!!)
+            soundPoolVolume12 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume12!!)
+            soundPoolVolume13 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume13!!)
+            soundPoolVolume14 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume14!!)
+            soundPoolVolume15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.volume15!!)
+            soundPoolTempo = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo!!)
+            soundPoolTempo2 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo2!!)
+            soundPoolTempo3 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo3!!)
+            soundPoolTempo4 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo4!!)
+            soundPoolTempo5 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo5!!)
+            soundPoolTempo6 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo6!!)
+            soundPoolTempo7 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo7!!)
+            soundPoolTempo8 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo8!!)
+            soundPoolTempo9 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo9!!)
+            soundPoolTempo10 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo10!!)
+            soundPoolTempo11 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo11!!)
+            soundPoolTempo12 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo12!!)
+            soundPoolTempo13 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo13!!)
+            soundPoolTempo14 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo14!!)
+            soundPoolTempo15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tempo15!!)
+            spvF = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF!!)
+            spvF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF2!!)
+            spvF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF3!!)
+            spvF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF4!!)
+            spvF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF5!!)
+            spvF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF6!!)
+            spvF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF7!!)
+            spvF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF8!!)
+            spvF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF9!!)
+            spvF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF10!!)
+            spvF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF11!!)
+            spvF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF12!!)
+            spvF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF13!!)
+            spvF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF14!!)
+            spvF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.vF15!!)
+            sptF = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF!!)
+            sptF2 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF2!!)
+            sptF3 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF3!!)
+            sptF4 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF4!!)
+            sptF5 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF5!!)
+            sptF6 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF6!!)
+            sptF7 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF7!!)
+            sptF8 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF8!!)
+            sptF9 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF9!!)
+            sptF10 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF10!!)
+            sptF11 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF11!!)
+            sptF12 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF12!!)
+            sptF13 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF13!!)
+            sptF14 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF14!!)
+            sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF15!!)
+            padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.check!!)
+            colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.c_check!!)
+            sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerMaxSizeR!!)
+            trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.trackCountR!!)
+            sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerBpmR!!)
+            actionTitle = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.actionTitleR!!)
             for(i in 0..15) {
-                a1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a1!!)[i].code - 48
-                a2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a2!!)[i].code - 48
-                a3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a3!!)[i].code - 48
-                a4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a4!!)[i].code - 48
-                a5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a5!!)[i].code - 48
-                a6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a6!!)[i].code - 48
-                a7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a7!!)[i].code - 48
-                a8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a8!!)[i].code - 48
-                a9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a9!!)[i].code - 48
-                a10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a10!!)[i].code - 48
-                a11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a11!!)[i].code - 48
-                a12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a12!!)[i].code - 48
-                a13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a13!!)[i].code - 48
-                a14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a14!!)[i].code - 48
-                a15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a15!!)[i].code - 48
-                a16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                a16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.a16!!)[i].code - 48
-                b1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b1!!)[i].code - 48
-                b2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b2!!)[i].code - 48
-                b3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b3!!)[i].code - 48
-                b4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b4!!)[i].code - 48
-                b5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b5!!)[i].code - 48
-                b6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b6!!)[i].code - 48
-                b7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b7!!)[i].code - 48
-                b8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b8!!)[i].code - 48
-                b9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b9!!)[i].code - 48
-                b10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b10!!)[i].code - 48
-                b11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b11!!)[i].code - 48
-                b12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b12!!)[i].code - 48
-                b13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b13!!)[i].code - 48
-                b14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b14!!)[i].code - 48
-                b15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b15!!)[i].code - 48
-                b16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                b16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.b16!!)[i].code - 48
-                c1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c1!!)[i].code - 48
-                c2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c2!!)[i].code - 48
-                c3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c3!!)[i].code - 48
-                c4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c4!!)[i].code - 48
-                c5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c5!!)[i].code - 48
-                c6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c6!!)[i].code - 48
-                c7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c7!!)[i].code - 48
-                c8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c8!!)[i].code - 48
-                c9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c9!!)[i].code - 48
-                c10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c10!!)[i].code - 48
-                c11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c11!!)[i].code - 48
-                c12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c12!!)[i].code - 48
-                c13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c13!!)[i].code - 48
-                c14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c14!!)[i].code - 48
-                c15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c15!!)[i].code - 48
-                c16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                c16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.c16!!)[i].code - 48
-                d1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d1!!)[i].code - 48
-                d2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d2!!)[i].code - 48
-                d3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d3!!)[i].code - 48
-                d4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d4!!)[i].code - 48
-                d5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d5!!)[i].code - 48
-                d6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d6!!)[i].code - 48
-                d7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d7!!)[i].code - 48
-                d8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d8!!)[i].code - 48
-                d9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d9!!)[i].code - 48
-                d10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d10!!)[i].code - 48
-                d11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d11!!)[i].code - 48
-                d12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d12!!)[i].code - 48
-                d13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d13!!)[i].code - 48
-                d14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d14!!)[i].code - 48
-                d15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d15!!)[i].code - 48
-                d16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                d16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.d16!!)[i].code - 48
-                e1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e1[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e1!!)[i].code - 48
-                e2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e2[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e2!!)[i].code - 48
-                e3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e3[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e3!!)[i].code - 48
-                e4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e4[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e4!!)[i].code - 48
-                e5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e5[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e5!!)[i].code - 48
-                e6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e6[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e6!!)[i].code - 48
-                e7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e7[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e7!!)[i].code - 48
-                e8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e8[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e8!!)[i].code - 48
-                e9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e9[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e9!!)[i].code - 48
-                e10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e10[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e10!!)[i].code - 48
-                e11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e11[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e11!!)[i].code - 48
-                e12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e12[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e12!!)[i].code - 48
-                e13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e13[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e13!!)[i].code - 48
-                e14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e14[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e14!!)[i].code - 48
-                e15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e15[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e15!!)[i].code - 48
-                e16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", "1")
+                e16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e16!!)[i].code - 48
             }
             binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -9758,7 +10030,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
                     } else {
                         sequencerPlay()
                         changeSequence()
@@ -9766,7 +10037,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1 = 1
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = "1"
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                     }
                 }
                 return true
