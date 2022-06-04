@@ -78,6 +78,9 @@
     <string name="save3">SAVE3</string>
     <string name="save4">SAVE4</string>
     <string name="save5">SAVE5</string>
+    <string name="save6">SAVE6</string>
+    <string name="save7">SAVE7</string>
+    <string name="save8">SAVE8</string>
 
 
     <string-array name="spinnerItems">

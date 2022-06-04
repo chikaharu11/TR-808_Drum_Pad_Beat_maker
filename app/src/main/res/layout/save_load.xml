@@ -70,5 +70,41 @@
             android:textStyle="bold"
             android:text="@string/save5"
             android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/slot6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save6"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/slot7"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save7"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/slot8"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save8"
+            android:textColor="@color/white"/>
     </LinearLayout>
 </ScrollView>
