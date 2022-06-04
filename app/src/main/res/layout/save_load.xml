@@ -1,36 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#5A5A66">
 
-    <Button
-        android:id="@+id/slot1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save1" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/slot2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save2" />
+        <TextView
+            android:id="@+id/slot1"
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save1"
+            android:textColor="@color/white"/>
 
-    <Button
-        android:id="@+id/slot3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save3" />
+        <TextView
+            android:id="@+id/slot2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save2"
+            android:textColor="@color/white"/>
 
-    <Button
-        android:id="@+id/slot4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save4" />
+        <TextView
+            android:id="@+id/slot3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save3"
+            android:textColor="@color/white"/>
 
-    <Button
-        android:id="@+id/slot5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save5" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/slot4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save4"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/slot5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/save5"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</ScrollView>

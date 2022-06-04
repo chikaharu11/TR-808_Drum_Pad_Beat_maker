@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -1959,24 +1958,24 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.visibility = View.INVISIBLE
                 }
                 "Save Pad/Sequence" -> {
-                    val builder = AlertDialog.Builder(this)
+                    val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                     val inflater = layoutInflater
                     val dialogView = inflater.inflate(R.layout.save_load, null)
 
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
                     }
 
                     builder.setView(dialogView)
@@ -1990,7 +1989,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     val dialog = builder.create()
                     dialog.show()
 
-                    dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
                             create("1")
@@ -2031,7 +2030,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot2).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad == null) {
                             create("2")
@@ -2072,7 +2071,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot3).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad == null) {
                             create("3")
@@ -2113,7 +2112,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot4).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad == null) {
                             create("4")
@@ -2154,7 +2153,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot5).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad == null) {
                             create("5")
@@ -2198,24 +2197,24 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.visibility = View.INVISIBLE
                 }
                 "Load Pad/Sequence" -> {
-                    val builder = AlertDialog.Builder(this)
+                    val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                     val inflater = layoutInflater
                     val dialogView = inflater.inflate(R.layout.save_load, null)
 
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
                     }
                     if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<Button>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                        dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
                     }
 
                     builder.setView(dialogView)
@@ -2229,7 +2228,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     val dialog = builder.create()
                     dialog.show()
 
-                    dialogView.findViewById<Button>(R.id.slot1).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
                         read("1")
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
@@ -2247,7 +2246,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot2).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
                         read("2")
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad != null) {
@@ -2265,7 +2264,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot3).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
                         read("3")
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad != null) {
@@ -2283,7 +2282,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot4).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
                         read("4")
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad != null) {
@@ -2301,7 +2300,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
 
-                    dialogView.findViewById<Button>(R.id.slot5).setOnClickListener {
+                    dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
                         read("5")
                         dialog.cancel()
                         if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad != null) {

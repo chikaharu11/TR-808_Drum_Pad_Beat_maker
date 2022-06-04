@@ -34,6 +34,15 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#5A5A66</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+    </style>
+
     <color name="colorPrimary">#5A5A66</color>
     <color name="colorPrimaryDark">#e2e3e3</color>
     <color name="colorAccent">#FFA630</color>
