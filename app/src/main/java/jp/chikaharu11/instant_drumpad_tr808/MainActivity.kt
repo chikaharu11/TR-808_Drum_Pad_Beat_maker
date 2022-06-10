@@ -250,6 +250,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound15 = 0
     private var sound16 = 0
     private var sound17 = 0
+    private var sound18 = 0
 
     private var paste = 0
 
@@ -275,6 +276,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sequencerBpm: Long = 110
 
     private var padSequence = 0
+
+    private var justification = 0
 
     val handler = Handler(Looper.getMainLooper())
 
@@ -630,6 +633,168 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     GlobalScope.launch { if (c16[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
                     GlobalScope.launch { if (d16[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
                     GlobalScope.launch { if (e16[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    sequencerCount = 0
+                    if (sequencerSize >= sequencerMaxSize) {
+                        sequencerSize = 0
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                        changeSequence()
+                    } else {
+                        sequencerSize++
+                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                        changeSequence()
+                    }
+                }
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    @OptIn(DelicateCoroutinesApi::class)
+    private fun gamePlay() {
+        runBlocking {
+            val job2 = launch {
+                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                delay(100)
+            }
+            job2.join()
+        }
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
+        sequencerSize = 0
+        sequencerCount = 32
+        timer = Timer()
+        timer!!.scheduleAtFixedRate(0, 7500/ sequencerBpm) {
+            sequencerCount++
+            when (sequencerCount) {
+                33 -> {
+                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                }
+                41 -> {
+                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                }
+                49 -> {
+                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                }
+                57 -> {
+                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                }
+                64 -> {
+                    sequencerCount = 0
+                }
+                1 -> {
+                    justification = 1
+                }
+                2 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                }
+                3 -> {
+                    justification = 2
+                }
+                4 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                5 -> {
+                    justification = 3
+                }
+                6 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                7 -> {
+                    justification = 4
+                }
+                8 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                9 -> {
+                    justification = 5
+                }
+                10 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                11 -> {
+                    justification = 6
+                }
+                12 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                13 -> {
+                    justification = 7
+                }
+                14 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                15 -> {
+                    justification = 8
+                }
+                16 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                17 -> {
+                    justification = 9
+                }
+                18 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                }
+                19 -> {
+                    justification = 10
+                }
+                20 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                21 -> {
+                    justification = 11
+                }
+                22 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                23 -> {
+                    justification = 12
+                }
+                24 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                25 -> {
+                    justification = 13
+                }
+                26 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                27 -> {
+                    justification = 14
+                }
+                28 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                29 -> {
+                    justification = 15
+                }
+                30 -> {
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                }
+                31 -> {
+                    justification = 16
+                }
+                32 -> {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
@@ -1754,6 +1919,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
 
         val tuning = arrayOf(
+            "test",
             "Change Pad/Sequence",
             "Change Pad Sounds",
             "Random Pad Sounds",
@@ -1770,6 +1936,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "2x2","2x1"
         )
         val tuning2 = arrayOf(
+            "test",
             "Change Pad/Sequence",
             "Change to Play Mode",
             "Random Pad Sounds",
@@ -1792,6 +1959,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
+                "test" -> {
+                    gamePlay()
+                    gridView.visibility = View.INVISIBLE
+                }
                 "Change Pad/Sequence" -> {
                     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         when (padSequence) {
@@ -4015,6 +4186,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
         sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+        sound18 = soundPool.load(assets.openFd("rimshot_04.ogg"), 1)
 
         beat5Sequence()
 
@@ -8355,6 +8527,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private fun playMode() {
         val tuning = arrayOf(
+            "Change Pad/Sequence",
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
