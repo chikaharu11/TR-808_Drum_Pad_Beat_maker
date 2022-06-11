@@ -279,6 +279,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var justification = 0
 
+    private var score = 0
+
+    private var duplicate = 0
+    private var duplicate2 = 0
+    private var duplicate3 = 0
+    private var duplicate4 = 0
+    private var duplicate5 = 0
+
     val handler = Handler(Looper.getMainLooper())
 
     private var a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
@@ -665,6 +673,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
         sequencerCount = 32
+        duplicate = 0
+        duplicate2 = 0
+        duplicate3 = 0
+        duplicate4 = 0
+        duplicate5 = 0
+        score = 0
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 7500/ sequencerBpm) {
             sequencerCount++
@@ -681,10 +695,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 57 -> {
                     soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
                 }
-                64 -> {
+                63 -> {
                     sequencerCount = 0
                 }
                 1 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 1
                 }
                 2 -> {
@@ -693,6 +712,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 }
                 3 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 2
                 }
                 4 -> {
@@ -700,6 +724,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 3
                 }
                 6 -> {
@@ -707,6 +736,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 4
                 }
                 8 -> {
@@ -714,6 +748,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 5
                 }
                 10 -> {
@@ -721,6 +760,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 6
                 }
                 12 -> {
@@ -728,6 +772,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 7
                 }
                 14 -> {
@@ -735,6 +784,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 8
                 }
                 16 -> {
@@ -742,6 +796,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 17 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 9
                 }
                 18 -> {
@@ -750,6 +809,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 }
                 19 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 10
                 }
                 20 -> {
@@ -757,6 +821,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 21 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 11
                 }
                 22 -> {
@@ -764,6 +833,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 23 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 12
                 }
                 24 -> {
@@ -771,6 +845,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 25 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 13
                 }
                 26 -> {
@@ -778,6 +857,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 27 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 14
                 }
                 28 -> {
@@ -785,6 +869,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 29 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 15
                 }
                 30 -> {
@@ -792,6 +881,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 31 -> {
+                    duplicate = 0
+                    duplicate2 = 0
+                    duplicate3 = 0
+                    duplicate4 = 0
+                    duplicate5 = 0
                     justification = 16
                 }
                 32 -> {
@@ -5088,9 +5182,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                    when {
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                            score--
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                            score--
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                            score--
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                            score--
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                            score--
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                            score--
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                            score--
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                            score--
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                            score--
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                            score--
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                            score--
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                            score--
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                            score--
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                            score--
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                            score--
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                    when {
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                            score--
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                            score--
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                            score--
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                            score--
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                            score--
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                            score--
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                            score--
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                            score--
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                            score--
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                            score--
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                            score--
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                            score--
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                            score--
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                            score--
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                            score--
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
                 false
@@ -5151,9 +5475,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                    when {
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                    when {
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
                 false
@@ -5214,9 +5768,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                    when {
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                    when {
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
                 false
@@ -5278,9 +6062,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                    when {
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                    when {
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
                 false
@@ -5341,9 +6355,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                    when {
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                    when {
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
                 false
@@ -5511,9 +6755,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                    when {
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                            score--
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                            score--
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                            score--
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                            score--
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                            score--
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                            score--
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                            score--
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                            score--
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                            score--
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                            score--
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                            score--
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                            score--
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                            score--
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                            score--
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                            score--
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                    when {
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                            score++
+                            duplicate = 1
+                        }
+                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                            score--
+                        }
+                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                            score--
+                        }
+                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                            score--
+                        }
+                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                            score--
+                        }
+                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                            score--
+                        }
+                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                            score--
+                        }
+                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                            score--
+                        }
+                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                            score--
+                        }
+                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                            score--
+                        }
+                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                            score--
+                        }
+                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                            score--
+                        }
+                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                            score--
+                        }
+                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                            score--
+                        }
+                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                            score--
+                        }
+                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                            score--
+                        }
+                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
             false
@@ -5574,9 +7048,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                    when {
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                    when {
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
+                            score++
+                            duplicate2 = 1
+                        }
+                        b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
+                            score--
+                        }
+                        b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
             false
@@ -5637,9 +7341,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                    when {
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                    when {
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
+                            score++
+                            duplicate3 = 1
+                        }
+                        c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
+                            score--
+                        }
+                        c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
             false
@@ -5701,9 +7635,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                    when {
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                    when {
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
+                            score++
+                            duplicate4 = 1
+                        }
+                        d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
+                            score--
+                        }
+                        d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
             false
@@ -5764,9 +7928,239 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                    when {
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                    when {
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
+                            score++
+                            duplicate5 = 1
+                        }
+                        e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
+                            score--
+                        }
+                        e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
+                            score--
+                        }
+                    }
+                    println(score)
                 }
             }
             false
