@@ -279,7 +279,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var justification = 0
 
+    private var gameCount = 0
+
     private var score = 0
+    private var missScore = 0
+    private var maxScore = 0
 
     private var duplicate = 0
     private var duplicate2 = 0
@@ -679,6 +683,89 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         duplicate4 = 0
         duplicate5 = 0
         score = 0
+        missScore = 0
+        maxScore = ( a1.filter { it == 1 }.size
+        + a2.filter { it == 1 }.size
+        + a3.filter { it == 1 }.size
+        + a4.filter { it == 1 }.size
+        + a5.filter { it == 1 }.size
+        + a6.filter { it == 1 }.size
+        + a7.filter { it == 1 }.size
+        + a8.filter { it == 1 }.size
+        + a9.filter { it == 1 }.size
+        + a10.filter { it == 1 }.size
+        + a11.filter { it == 1 }.size
+        + a12.filter { it == 1 }.size
+        + a13.filter { it == 1 }.size
+        + a14.filter { it == 1 }.size
+        + a15.filter { it == 1 }.size
+        + a16.filter { it == 1 }.size
+        + b1.filter { it == 1 }.size
+        + b2.filter { it == 1 }.size
+        + b3.filter { it == 1 }.size
+        + b4.filter { it == 1 }.size
+        + b5.filter { it == 1 }.size
+        + b6.filter { it == 1 }.size
+        + b7.filter { it == 1 }.size
+        + b8.filter { it == 1 }.size
+        + b9.filter { it == 1 }.size
+        + b10.filter { it == 1 }.size
+        + b11.filter { it == 1 }.size
+        + b12.filter { it == 1 }.size
+        + b13.filter { it == 1 }.size
+        + b14.filter { it == 1 }.size
+        + b15.filter { it == 1 }.size
+        + b16.filter { it == 1 }.size
+        + c1.filter { it == 1 }.size
+        + c2.filter { it == 1 }.size
+        + c3.filter { it == 1 }.size
+        + c4.filter { it == 1 }.size
+        + c5.filter { it == 1 }.size
+        + c6.filter { it == 1 }.size
+        + c7.filter { it == 1 }.size
+        + c8.filter { it == 1 }.size
+        + c9.filter { it == 1 }.size
+        + c10.filter { it == 1 }.size
+        + c11.filter { it == 1 }.size
+        + c12.filter { it == 1 }.size
+        + c13.filter { it == 1 }.size
+        + c14.filter { it == 1 }.size
+        + c15.filter { it == 1 }.size
+        + c16.filter { it == 1 }.size
+        + d1.filter { it == 1 }.size
+        + d2.filter { it == 1 }.size
+        + d3.filter { it == 1 }.size
+        + d4.filter { it == 1 }.size
+        + d5.filter { it == 1 }.size
+        + d6.filter { it == 1 }.size
+        + d7.filter { it == 1 }.size
+        + d8.filter { it == 1 }.size
+        + d9.filter { it == 1 }.size
+        + d10.filter { it == 1 }.size
+        + d11.filter { it == 1 }.size
+        + d12.filter { it == 1 }.size
+        + d13.filter { it == 1 }.size
+        + d14.filter { it == 1 }.size
+        + d15.filter { it == 1 }.size
+        + d16.filter { it == 1 }.size
+        + e1.filter { it == 1 }.size
+        + e2.filter { it == 1 }.size
+        + e3.filter { it == 1 }.size
+        + e4.filter { it == 1 }.size
+        + e5.filter { it == 1 }.size
+        + e6.filter { it == 1 }.size
+        + e7.filter { it == 1 }.size
+        + e8.filter { it == 1 }.size
+        + e9.filter { it == 1 }.size
+        + e10.filter { it == 1 }.size
+        + e11.filter { it == 1 }.size
+        + e12.filter { it == 1 }.size
+        + e13.filter { it == 1 }.size
+        + e14.filter { it == 1 }.size
+        + e15.filter { it == 1 }.size
+        + e16.filter { it == 1 }.size ) * 8
+        println(maxScore)
+        gameCount = 0
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 7500/ sequencerBpm) {
             sequencerCount++
@@ -699,12 +786,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sequencerCount = 0
                 }
                 1 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 1
+                    if (gameCount == 8) {
+                        sequencerStop()
+                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Handler().postDelayed({
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        }, 2000)
+                    } else {
+                        duplicate = 0
+                        duplicate2 = 0
+                        duplicate3 = 0
+                        duplicate4 = 0
+                        duplicate5 = 0
+                        justification = 1
+                    }
                 }
                 2 -> {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -892,6 +987,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
+                    gameCount++
                     if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
@@ -5248,52 +5344,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -5366,52 +5462,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -5541,52 +5637,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -5659,52 +5755,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -5834,52 +5930,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -5952,52 +6048,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6128,52 +6224,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6246,52 +6342,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6421,52 +6517,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6539,52 +6635,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6821,52 +6917,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -6939,52 +7035,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7114,52 +7210,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7232,52 +7328,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7407,52 +7503,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7525,52 +7621,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7701,52 +7797,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7819,52 +7915,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -7994,52 +8090,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
@@ -8112,52 +8208,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 1 -> {
-                            score--
+                            missScore++
                         }
                     }
                     println(score)
