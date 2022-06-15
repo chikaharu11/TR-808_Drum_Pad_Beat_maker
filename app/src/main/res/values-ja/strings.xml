@@ -81,6 +81,10 @@
     <string name="save6">SAVE6</string>
     <string name="save7">SAVE7</string>
     <string name="save8">SAVE8</string>
+    <string name="maxscore">maxscore</string>
+    <string name="score">score</string>
+    <string name="missscore">missscore</string>
+    <string name="result">result</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>

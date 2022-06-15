@@ -5,6 +5,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -684,322 +685,374 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         duplicate5 = 0
         score = 0
         missScore = 0
-        maxScore = ( a1.filter { it == 1 }.size
-        + a2.filter { it == 1 }.size
-        + a3.filter { it == 1 }.size
-        + a4.filter { it == 1 }.size
-        + a5.filter { it == 1 }.size
-        + a6.filter { it == 1 }.size
-        + a7.filter { it == 1 }.size
-        + a8.filter { it == 1 }.size
-        + a9.filter { it == 1 }.size
-        + a10.filter { it == 1 }.size
-        + a11.filter { it == 1 }.size
-        + a12.filter { it == 1 }.size
-        + a13.filter { it == 1 }.size
-        + a14.filter { it == 1 }.size
-        + a15.filter { it == 1 }.size
-        + a16.filter { it == 1 }.size
-        + b1.filter { it == 1 }.size
-        + b2.filter { it == 1 }.size
-        + b3.filter { it == 1 }.size
-        + b4.filter { it == 1 }.size
-        + b5.filter { it == 1 }.size
-        + b6.filter { it == 1 }.size
-        + b7.filter { it == 1 }.size
-        + b8.filter { it == 1 }.size
-        + b9.filter { it == 1 }.size
-        + b10.filter { it == 1 }.size
-        + b11.filter { it == 1 }.size
-        + b12.filter { it == 1 }.size
-        + b13.filter { it == 1 }.size
-        + b14.filter { it == 1 }.size
-        + b15.filter { it == 1 }.size
-        + b16.filter { it == 1 }.size
-        + c1.filter { it == 1 }.size
-        + c2.filter { it == 1 }.size
-        + c3.filter { it == 1 }.size
-        + c4.filter { it == 1 }.size
-        + c5.filter { it == 1 }.size
-        + c6.filter { it == 1 }.size
-        + c7.filter { it == 1 }.size
-        + c8.filter { it == 1 }.size
-        + c9.filter { it == 1 }.size
-        + c10.filter { it == 1 }.size
-        + c11.filter { it == 1 }.size
-        + c12.filter { it == 1 }.size
-        + c13.filter { it == 1 }.size
-        + c14.filter { it == 1 }.size
-        + c15.filter { it == 1 }.size
-        + c16.filter { it == 1 }.size
-        + d1.filter { it == 1 }.size
-        + d2.filter { it == 1 }.size
-        + d3.filter { it == 1 }.size
-        + d4.filter { it == 1 }.size
-        + d5.filter { it == 1 }.size
-        + d6.filter { it == 1 }.size
-        + d7.filter { it == 1 }.size
-        + d8.filter { it == 1 }.size
-        + d9.filter { it == 1 }.size
-        + d10.filter { it == 1 }.size
-        + d11.filter { it == 1 }.size
-        + d12.filter { it == 1 }.size
-        + d13.filter { it == 1 }.size
-        + d14.filter { it == 1 }.size
-        + d15.filter { it == 1 }.size
-        + d16.filter { it == 1 }.size
-        + e1.filter { it == 1 }.size
-        + e2.filter { it == 1 }.size
-        + e3.filter { it == 1 }.size
-        + e4.filter { it == 1 }.size
-        + e5.filter { it == 1 }.size
-        + e6.filter { it == 1 }.size
-        + e7.filter { it == 1 }.size
-        + e8.filter { it == 1 }.size
-        + e9.filter { it == 1 }.size
-        + e10.filter { it == 1 }.size
-        + e11.filter { it == 1 }.size
-        + e12.filter { it == 1 }.size
-        + e13.filter { it == 1 }.size
-        + e14.filter { it == 1 }.size
-        + e15.filter { it == 1 }.size
-        + e16.filter { it == 1 }.size ) * 8
+        maxScore = (a1.filter { it == 1 }.size
+                + a2.filter { it == 1 }.size
+                + a3.filter { it == 1 }.size
+                + a4.filter { it == 1 }.size
+                + a5.filter { it == 1 }.size
+                + a6.filter { it == 1 }.size
+                + a7.filter { it == 1 }.size
+                + a8.filter { it == 1 }.size
+                + a9.filter { it == 1 }.size
+                + a10.filter { it == 1 }.size
+                + a11.filter { it == 1 }.size
+                + a12.filter { it == 1 }.size
+                + a13.filter { it == 1 }.size
+                + a14.filter { it == 1 }.size
+                + a15.filter { it == 1 }.size
+                + a16.filter { it == 1 }.size
+                + b1.filter { it == 1 }.size
+                + b2.filter { it == 1 }.size
+                + b3.filter { it == 1 }.size
+                + b4.filter { it == 1 }.size
+                + b5.filter { it == 1 }.size
+                + b6.filter { it == 1 }.size
+                + b7.filter { it == 1 }.size
+                + b8.filter { it == 1 }.size
+                + b9.filter { it == 1 }.size
+                + b10.filter { it == 1 }.size
+                + b11.filter { it == 1 }.size
+                + b12.filter { it == 1 }.size
+                + b13.filter { it == 1 }.size
+                + b14.filter { it == 1 }.size
+                + b15.filter { it == 1 }.size
+                + b16.filter { it == 1 }.size
+                + c1.filter { it == 1 }.size
+                + c2.filter { it == 1 }.size
+                + c3.filter { it == 1 }.size
+                + c4.filter { it == 1 }.size
+                + c5.filter { it == 1 }.size
+                + c6.filter { it == 1 }.size
+                + c7.filter { it == 1 }.size
+                + c8.filter { it == 1 }.size
+                + c9.filter { it == 1 }.size
+                + c10.filter { it == 1 }.size
+                + c11.filter { it == 1 }.size
+                + c12.filter { it == 1 }.size
+                + c13.filter { it == 1 }.size
+                + c14.filter { it == 1 }.size
+                + c15.filter { it == 1 }.size
+                + c16.filter { it == 1 }.size
+                + d1.filter { it == 1 }.size
+                + d2.filter { it == 1 }.size
+                + d3.filter { it == 1 }.size
+                + d4.filter { it == 1 }.size
+                + d5.filter { it == 1 }.size
+                + d6.filter { it == 1 }.size
+                + d7.filter { it == 1 }.size
+                + d8.filter { it == 1 }.size
+                + d9.filter { it == 1 }.size
+                + d10.filter { it == 1 }.size
+                + d11.filter { it == 1 }.size
+                + d12.filter { it == 1 }.size
+                + d13.filter { it == 1 }.size
+                + d14.filter { it == 1 }.size
+                + d15.filter { it == 1 }.size
+                + d16.filter { it == 1 }.size
+                + e1.filter { it == 1 }.size
+                + e2.filter { it == 1 }.size
+                + e3.filter { it == 1 }.size
+                + e4.filter { it == 1 }.size
+                + e5.filter { it == 1 }.size
+                + e6.filter { it == 1 }.size
+                + e7.filter { it == 1 }.size
+                + e8.filter { it == 1 }.size
+                + e9.filter { it == 1 }.size
+                + e10.filter { it == 1 }.size
+                + e11.filter { it == 1 }.size
+                + e12.filter { it == 1 }.size
+                + e13.filter { it == 1 }.size
+                + e14.filter { it == 1 }.size
+                + e15.filter { it == 1 }.size
+                + e16.filter { it == 1 }.size) * 8
         println(maxScore)
         gameCount = 0
         timer = Timer()
-        timer!!.scheduleAtFixedRate(0, 7500/ sequencerBpm) {
-            sequencerCount++
-            when (sequencerCount) {
-                33 -> {
-                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                }
-                41 -> {
-                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                }
-                49 -> {
-                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                }
-                57 -> {
-                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                }
-                63 -> {
-                    sequencerCount = 0
-                }
-                1 -> {
-                    if (gameCount == 8) {
-                        sequencerStop()
-                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Handler().postDelayed({
-                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        }, 2000)
-                    } else {
-                        duplicate = 0
-                        duplicate2 = 0
-                        duplicate3 = 0
-                        duplicate4 = 0
-                        duplicate5 = 0
-                        justification = 1
-                    }
-                }
-                2 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+        timer!!.scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                handler.post( Runnable {
+                    run {
+                        sequencerCount++
+                        when (sequencerCount) {
+                            33 -> {
+                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                            }
+                            41 -> {
+                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                            }
+                            49 -> {
+                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                            }
+                            57 -> {
+                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                            }
+                            63 -> {
+                                sequencerCount = 0
+                            }
+                            1 -> {
+                                if (gameCount == 8) {
+                                    sequencerStop()
+                                    window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                    Handler().postDelayed({
+                                        val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle)
+                                        val inflater = layoutInflater
+                                        val dialogView = inflater.inflate(R.layout.game_result, null)
 
-                }
-                3 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 2
-                }
-                4 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                5 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 3
-                }
-                6 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                7 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 4
-                }
-                8 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                9 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 5
-                }
-                10 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                11 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 6
-                }
-                12 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                13 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 7
-                }
-                14 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                15 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 8
-                }
-                16 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                17 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 9
-                }
-                18 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                        var result = ""
 
-                }
-                19 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 10
-                }
-                20 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                21 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 11
-                }
-                22 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                23 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 12
-                }
-                24 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                25 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 13
-                }
-                26 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                27 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 14
-                }
-                28 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                29 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 15
-                }
-                30 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                }
-                31 -> {
-                    duplicate = 0
-                    duplicate2 = 0
-                    duplicate3 = 0
-                    duplicate4 = 0
-                    duplicate5 = 0
-                    justification = 16
-                }
-                32 -> {
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                    sequencerCount = 0
-                    gameCount++
-                    if (sequencerSize >= sequencerMaxSize) {
-                        sequencerSize = 0
-                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                        changeSequence()
-                    } else {
-                        sequencerSize++
-                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                        changeSequence()
+                                        when  {
+                                            ((score - missScore) * 100 / maxScore) >= 90 -> {
+                                                result = "Amazing!"
+                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#d03933"))
+                                            }
+                                            ((score - missScore) * 100 / maxScore) >= 80 -> {
+                                                result = "Great!"
+                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e98e2f"))
+                                            }
+                                            ((score - missScore) * 100 / maxScore) >= 70 -> {
+                                                result = "Good!"
+                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#dfd441"))
+                                            }
+                                            ((score - missScore) * 100 / maxScore) >= 60 -> {
+                                                result = "Nice try!"
+                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e9e8e7"))
+                                            }
+                                            ((score - missScore) * 100 / maxScore) < 60 -> {
+                                                result = "Try again!"
+                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#ffffff"))
+                                            }
+                                        }
+
+
+                                        dialogView.findViewById<TextView>(R.id.maxscore).text =  "   ALL COUNTS : $maxScore"
+                                        dialogView.findViewById<TextView>(R.id.score).text =     "       COUNTS : $score"
+                                        dialogView.findViewById<TextView>(R.id.missscore).text = "DOUBLE COUNTS : $missScore"
+                                        dialogView.findViewById<TextView>(R.id.result).text =    "       RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                        builder.setView(dialogView)
+                                            .setOnCancelListener {
+                                                stickyImmersiveMode()
+                                            }
+                                            .setTitle(result)
+                                            .setNegativeButton("OK") { _, _ ->
+                                                stickyImmersiveMode()
+                                            }
+                                        val dialog = builder.create()
+                                        dialog.show()
+                                        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                    }, 1500)
+                                } else {
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 1
+                                }
+                            }
+                            2 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                            }
+                            3 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 2
+                            }
+                            4 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            5 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 3
+                            }
+                            6 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            7 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 4
+                            }
+                            8 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            9 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 5
+                            }
+                            10 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            11 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 6
+                            }
+                            12 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            13 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 7
+                            }
+                            14 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            15 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 8
+                            }
+                            16 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            17 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 9
+                            }
+                            18 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                            }
+                            19 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 10
+                            }
+                            20 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            21 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 11
+                            }
+                            22 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            23 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 12
+                            }
+                            24 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            25 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 13
+                            }
+                            26 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            27 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 14
+                            }
+                            28 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            29 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 15
+                            }
+                            30 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                            }
+                            31 -> {
+                                duplicate = 0
+                                duplicate2 = 0
+                                duplicate3 = 0
+                                duplicate4 = 0
+                                duplicate5 = 0
+                                justification = 16
+                            }
+                            32 -> {
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
+                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                sequencerCount = 0
+                                gameCount++
+                                if (sequencerSize >= sequencerMaxSize) {
+                                    sequencerSize = 0
+                                    findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                    changeSequence()
+                                } else {
+                                    sequencerSize++
+                                    findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                    changeSequence()
+                                }
+                            }
+                        }
                     }
-                }
+                })
             }
-        }
+        },0,7500/ sequencerBpm)
     }
 
     private fun sequencerStop() {
