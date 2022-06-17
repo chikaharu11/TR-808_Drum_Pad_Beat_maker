@@ -4297,6 +4297,123 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         meSpinner.isFocusable = false
 
 
+        val moSpinner = findViewById<Spinner>(R.id.mode_spinner)
+
+        val adapter4 = ArrayAdapter.createFromResource(this, R.array.spinnerItems2, android.R.layout.simple_spinner_item)
+
+        adapter4.setDropDownViewResource(R.layout.custom_spinner_dropdown)
+
+
+
+        moSpinner.adapter = adapter4
+
+
+        moSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long,
+            ) {
+                if (!moSpinner.isFocusable) {
+                    moSpinner.isFocusable = true
+                    return
+                }
+
+                when(position){
+                    0 -> {
+                        binding.sequencerView.visibility = View.GONE
+                        binding.notes.visibility = View.GONE
+                    }
+                    1 -> {
+                        when (trackCount) {
+                            2 -> {
+                                x21()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            3 -> {
+                                x31()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            4 -> {
+                                x41()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                            5 -> {
+                                x51()
+                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                                binding.sequencerView.visibility = View.VISIBLE
+                                binding.notes.visibility = View.VISIBLE
+                            }
+                        }
+                        changeSequence()
+                    }
+                    2 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_01"
+                        padText4 = "snare_drum_01"
+                        actionTitle = "beat_1_bpm120"
+                        binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                        binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        beat1Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                        x21()
+                        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+        meSpinner.isFocusable = false
+
+
         val audioAttributes = AudioAttributes.Builder()
 
                 .setUsage(AudioAttributes.USAGE_GAME)

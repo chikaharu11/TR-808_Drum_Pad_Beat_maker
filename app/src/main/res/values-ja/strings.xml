@@ -104,11 +104,9 @@
     </string-array>
 
     <string-array name="spinnerItems2">
-        <item>演奏モード⇔<h1><font color="#FFA630">パッド音の変更</font></h1></item>
-        <item>メトロノーム・ループ</item>
-        <item>サンプル・ループ</item>
-        <item>外部サウンド・ループ</item>
-        <item>ドラムパッドをリセット</item>
+        <item>DRUM PAD MODE</item>
+        <item>DRUM PAD + SEQUENCER MODE</item>
+        <item>DRUM PAD CHALLENGE MODE</item>
     </string-array>
 
 

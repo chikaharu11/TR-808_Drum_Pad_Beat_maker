@@ -66,6 +66,12 @@
             android:textColor="#ffffff"
             tools:ignore="Autofill,LabelFor"/>
 
+        <jp.chikaharu11.instant_drumpad_tr808.CSpinner
+            android:id="@+id/mode_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
