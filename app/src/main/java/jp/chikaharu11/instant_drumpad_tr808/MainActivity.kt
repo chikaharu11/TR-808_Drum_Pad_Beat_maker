@@ -794,53 +794,131 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                     sequencerStop()
                                     window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     Handler().postDelayed({
-                                        val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle)
-                                        val inflater = layoutInflater
-                                        val dialogView = inflater.inflate(R.layout.game_result, null)
 
-                                        var result = ""
+                                        val result: String
 
                                         when  {
                                             ((score - missScore) * 100 / maxScore) >= 90 -> {
                                                 result = "Amazing!"
+                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle1)
+                                                val inflater = layoutInflater
+                                                val dialogView = inflater.inflate(R.layout.game_result, null)
+                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
+                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                                builder.setView(dialogView)
+                                                    .setOnCancelListener {
+                                                        stickyImmersiveMode()
+                                                    }
+                                                    .setTitle(result)
+                                                    .setNegativeButton("OK") { _, _ ->
+                                                        stickyImmersiveMode()
+                                                    }
+                                                val dialog = builder.create()
+                                                dialog.show()
+                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#d03933"))
                                             }
                                             ((score - missScore) * 100 / maxScore) >= 80 -> {
                                                 result = "Great!"
+                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle2)
+                                                val inflater = layoutInflater
+                                                val dialogView = inflater.inflate(R.layout.game_result, null)
+                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
+                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                                builder.setView(dialogView)
+                                                    .setOnCancelListener {
+                                                        stickyImmersiveMode()
+                                                    }
+                                                    .setTitle(result)
+                                                    .setNegativeButton("OK") { _, _ ->
+                                                        stickyImmersiveMode()
+                                                    }
+                                                val dialog = builder.create()
+                                                dialog.show()
+                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e98e2f"))
                                             }
                                             ((score - missScore) * 100 / maxScore) >= 70 -> {
                                                 result = "Good!"
+                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle3)
+                                                val inflater = layoutInflater
+                                                val dialogView = inflater.inflate(R.layout.game_result, null)
+                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
+                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                                builder.setView(dialogView)
+                                                    .setOnCancelListener {
+                                                        stickyImmersiveMode()
+                                                    }
+                                                    .setTitle(result)
+                                                    .setNegativeButton("OK") { _, _ ->
+                                                        stickyImmersiveMode()
+                                                    }
+                                                val dialog = builder.create()
+                                                dialog.show()
+                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#dfd441"))
                                             }
                                             ((score - missScore) * 100 / maxScore) >= 60 -> {
                                                 result = "Nice try!"
+                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle4)
+                                                val inflater = layoutInflater
+                                                val dialogView = inflater.inflate(R.layout.game_result, null)
+                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
+                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                                builder.setView(dialogView)
+                                                    .setOnCancelListener {
+                                                        stickyImmersiveMode()
+                                                    }
+                                                    .setTitle(result)
+                                                    .setNegativeButton("OK") { _, _ ->
+                                                        stickyImmersiveMode()
+                                                    }
+                                                val dialog = builder.create()
+                                                dialog.show()
+                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e9e8e7"))
                                             }
                                             ((score - missScore) * 100 / maxScore) < 60 -> {
                                                 result = "Try again!"
+                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle5)
+                                                val inflater = layoutInflater
+                                                val dialogView = inflater.inflate(R.layout.game_result, null)
+                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
+                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
+
+
+                                                builder.setView(dialogView)
+                                                    .setOnCancelListener {
+                                                        stickyImmersiveMode()
+                                                    }
+                                                    .setTitle(result)
+                                                    .setNegativeButton("OK") { _, _ ->
+                                                        stickyImmersiveMode()
+                                                    }
+                                                val dialog = builder.create()
+                                                dialog.show()
+                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#ffffff"))
                                             }
                                         }
-
-
-                                        dialogView.findViewById<TextView>(R.id.maxscore).text =  "   ALL COUNTS : $maxScore"
-                                        dialogView.findViewById<TextView>(R.id.score).text =     "       COUNTS : $score"
-                                        dialogView.findViewById<TextView>(R.id.missscore).text = "DOUBLE COUNTS : $missScore"
-                                        dialogView.findViewById<TextView>(R.id.result).text =    "       RESULT : " + ((score - missScore) * 100 / maxScore) + " %"
-
-
-                                        builder.setView(dialogView)
-                                            .setOnCancelListener {
-                                                stickyImmersiveMode()
-                                            }
-                                            .setTitle(result)
-                                            .setNegativeButton("OK") { _, _ ->
-                                                stickyImmersiveMode()
-                                            }
-                                        val dialog = builder.create()
-                                        dialog.show()
-                                        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 1500)
                                 } else {
                                     duplicate = 0
@@ -4432,6 +4510,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sound18 = soundPool.load(assets.openFd("rimshot_04.ogg"), 1)
 
         beat5Sequence()
+        padSequence = 0
 
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
 

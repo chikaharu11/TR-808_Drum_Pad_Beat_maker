@@ -24,7 +24,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/maxscore"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/score"
@@ -35,7 +35,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/score"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/missscore"
@@ -46,7 +46,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/missscore"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/result"
@@ -57,7 +57,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/result"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
     </LinearLayout>
 
 </LinearLayout>
