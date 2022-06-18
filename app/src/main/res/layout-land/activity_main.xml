@@ -44,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
+        android:foreground="@drawable/grid_sequence"
         app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,16 +61,20 @@
             android:maxLines="1"
             android:minWidth="48dp"
             android:minHeight="48dp"
+            android:paddingEnd="16sp"
             android:textStyle="bold"
             android:textCursorDrawable="@color/colorPrimary"
             android:text="@string/title"
             android:textColor="#ffffff"
-            tools:ignore="Autofill,LabelFor"/>
+            tools:ignore="Autofill,LabelFor,RtlSymmetry"/>
 
         <jp.chikaharu11.instant_drumpad_tr808.CSpinner
             android:id="@+id/mode_spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:foreground="@drawable/grid_sequence"
+            android:gravity="center"
             android:minHeight="48dp"/>
 
     </androidx.appcompat.widget.Toolbar>

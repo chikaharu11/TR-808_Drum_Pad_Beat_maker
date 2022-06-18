@@ -280,7 +280,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var justification = 0
 
-    private var gameCount = 0
+    private var gameCount = 1
 
     private var score = 0
     private var missScore = 0
@@ -764,9 +764,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 + e13.filter { it == 1 }.size
                 + e14.filter { it == 1 }.size
                 + e15.filter { it == 1 }.size
-                + e16.filter { it == 1 }.size) * 8
+                + e16.filter { it == 1 }.size) * 8 / (sequencerMaxSize + 1)
         println(maxScore)
-        gameCount = 0
+        gameCount = 1
         timer = Timer()
         timer!!.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
@@ -775,22 +775,27 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         sequencerCount++
                         when (sequencerCount) {
                             33 -> {
+                                binding.editTitle.setText("....".padEnd(25,' '), TextView.BufferType.NORMAL)
                                 soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
                             }
                             41 -> {
+                                binding.editTitle.setText("...".padEnd(25,' '), TextView.BufferType.NORMAL)
                                 soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
                             }
                             49 -> {
+                                binding.editTitle.setText("..".padEnd(25,' '), TextView.BufferType.NORMAL)
                                 soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
                             }
                             57 -> {
+                                binding.editTitle.setText(".".padEnd(25,' '), TextView.BufferType.NORMAL)
                                 soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
                             }
                             63 -> {
+                                binding.editTitle.setText("PERIOD : 1/8 SCORE : 0", TextView.BufferType.NORMAL)
                                 sequencerCount = 0
                             }
                             1 -> {
-                                if (gameCount == 8) {
+                                if (gameCount == 9) {
                                     sequencerStop()
                                     window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     Handler().postDelayed({
@@ -799,7 +804,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                         when  {
                                             ((score - missScore) * 100 / maxScore) >= 90 -> {
-                                                result = "Amazing!"
+                                                result = "Excellent!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle1)
                                                 val inflater = layoutInflater
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
@@ -811,10 +816,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -835,10 +842,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -859,10 +868,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -883,10 +894,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -907,10 +920,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
+                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -921,6 +936,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         }
                                     }, 1500)
                                 } else {
+                                    binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                                     duplicate = 0
                                     duplicate2 = 0
                                     duplicate3 = 0
@@ -4299,14 +4315,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val moSpinner = findViewById<Spinner>(R.id.mode_spinner)
 
-        val adapter4 = ArrayAdapter.createFromResource(this, R.array.spinnerItems2, android.R.layout.simple_spinner_item)
+        val adapter4 = ArrayAdapter.createFromResource(this, R.array.spinnerItems2, R.layout.custom_spinner_dropdown)
 
         adapter4.setDropDownViewResource(R.layout.custom_spinner_dropdown)
 
-
-
         moSpinner.adapter = adapter4
 
+        moSpinner.avoidDropdownFocus()
 
         moSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
@@ -4411,7 +4426,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             }
         }
-        meSpinner.isFocusable = false
+        moSpinner.isFocusable = false
 
 
         val audioAttributes = AudioAttributes.Builder()
@@ -5530,66 +5545,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
@@ -5648,66 +5679,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
@@ -5823,66 +5870,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
@@ -5941,66 +6004,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
@@ -6116,66 +6195,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
@@ -6234,66 +6329,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
@@ -6410,66 +6521,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
@@ -6528,66 +6655,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
@@ -6703,66 +6846,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
@@ -6821,66 +6980,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
@@ -7103,66 +7278,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
@@ -7221,66 +7412,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate = 1
                         }
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
@@ -7396,66 +7603,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
@@ -7514,66 +7737,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b2[sequencerSize] == 1 && justification == 2 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b3[sequencerSize] == 1 && justification == 3 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b4[sequencerSize] == 1 && justification == 4 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b5[sequencerSize] == 1 && justification == 5 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b6[sequencerSize] == 1 && justification == 6 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b7[sequencerSize] == 1 && justification == 7 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b8[sequencerSize] == 1 && justification == 8 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b9[sequencerSize] == 1 && justification == 9 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b10[sequencerSize] == 1 && justification == 10 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b11[sequencerSize] == 1 && justification == 11 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b12[sequencerSize] == 1 && justification == 12 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b13[sequencerSize] == 1 && justification == 13 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b14[sequencerSize] == 1 && justification == 14 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b15[sequencerSize] == 1 && justification == 15 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b16[sequencerSize] == 1 && justification == 16 && duplicate2 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate2 = 1
                         }
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 1 -> {
@@ -7689,66 +7928,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
@@ -7807,66 +8062,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c2[sequencerSize] == 1 && justification == 2 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c3[sequencerSize] == 1 && justification == 3 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c4[sequencerSize] == 1 && justification == 4 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c5[sequencerSize] == 1 && justification == 5 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c6[sequencerSize] == 1 && justification == 6 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c7[sequencerSize] == 1 && justification == 7 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c8[sequencerSize] == 1 && justification == 8 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c9[sequencerSize] == 1 && justification == 9 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c10[sequencerSize] == 1 && justification == 10 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c11[sequencerSize] == 1 && justification == 11 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c12[sequencerSize] == 1 && justification == 12 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c13[sequencerSize] == 1 && justification == 13 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c14[sequencerSize] == 1 && justification == 14 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c15[sequencerSize] == 1 && justification == 15 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c16[sequencerSize] == 1 && justification == 16 && duplicate3 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate3 = 1
                         }
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 1 -> {
@@ -7983,66 +8254,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
@@ -8101,66 +8388,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d2[sequencerSize] == 1 && justification == 2 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d3[sequencerSize] == 1 && justification == 3 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d4[sequencerSize] == 1 && justification == 4 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d5[sequencerSize] == 1 && justification == 5 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d6[sequencerSize] == 1 && justification == 6 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d7[sequencerSize] == 1 && justification == 7 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d8[sequencerSize] == 1 && justification == 8 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d9[sequencerSize] == 1 && justification == 9 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d10[sequencerSize] == 1 && justification == 10 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d11[sequencerSize] == 1 && justification == 11 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d12[sequencerSize] == 1 && justification == 12 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d13[sequencerSize] == 1 && justification == 13 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d14[sequencerSize] == 1 && justification == 14 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d15[sequencerSize] == 1 && justification == 15 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d16[sequencerSize] == 1 && justification == 16 && duplicate4 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate4 = 1
                         }
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 1 -> {
@@ -8276,66 +8579,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {
@@ -8394,66 +8713,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e2[sequencerSize] == 1 && justification == 2 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e3[sequencerSize] == 1 && justification == 3 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e4[sequencerSize] == 1 && justification == 4 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e5[sequencerSize] == 1 && justification == 5 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e6[sequencerSize] == 1 && justification == 6 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e7[sequencerSize] == 1 && justification == 7 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e8[sequencerSize] == 1 && justification == 8 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e9[sequencerSize] == 1 && justification == 9 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e10[sequencerSize] == 1 && justification == 10 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e11[sequencerSize] == 1 && justification == 11 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e12[sequencerSize] == 1 && justification == 12 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e13[sequencerSize] == 1 && justification == 13 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e14[sequencerSize] == 1 && justification == 14 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e15[sequencerSize] == 1 && justification == 15 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e16[sequencerSize] == 1 && justification == 16 && duplicate5 == 0 -> {
                             score++
+                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                             duplicate5 = 1
                         }
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 1 -> {

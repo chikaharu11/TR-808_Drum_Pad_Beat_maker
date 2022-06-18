@@ -68,8 +68,11 @@
 
         <jp.chikaharu11.instant_drumpad_tr808.CSpinner
             android:id="@+id/mode_spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:foreground="@drawable/grid_sequence"
             android:minHeight="48dp"/>
 
     </androidx.appcompat.widget.Toolbar>
