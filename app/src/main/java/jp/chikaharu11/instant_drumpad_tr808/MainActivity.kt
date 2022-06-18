@@ -291,6 +291,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var duplicate3 = 0
     private var duplicate4 = 0
     private var duplicate5 = 0
+    
+    private var mode = 0
 
     val handler = Handler(Looper.getMainLooper())
 
@@ -2256,8 +2258,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
 
         val tuning = arrayOf(
-            "test",
-            "Change Pad/Sequence",
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -2273,8 +2273,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "2x2","2x1"
         )
         val tuning2 = arrayOf(
-            "test",
-            "Change Pad/Sequence",
             "Change to Play Mode",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -2289,8 +2287,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "3x3","3x2","3x1",
             "2x2","2x1"
         )
+
+        val padSequencer = arrayOf(
+            "Change Pad Sounds",
+            "Change Pad Colors",
+            "Save Pad/Sequence",
+            "Load Pad/Sequence",
+            "Adjusting Sounds",
+            "Lock Settings",
+            "Hide banner Ads",
+            "EXIT",
+        )
+        val padSequencer2 = arrayOf(
+            "Change to Play Mode",
+            "Change Pad Colors",
+            "Save Pad/Sequence",
+            "Load Pad/Sequence",
+            "Adjusting Sounds",
+            "Lock Settings",
+            "Hide banner Ads",
+            "EXIT",
+        )
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
         val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
+        val psAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer)
+        val psAdapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer2)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
 
@@ -2372,16 +2393,26 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.toolbarMain.setBackgroundColor(Color.parseColor("#FFA630"))
                     Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
                     gridView.visibility = View.INVISIBLE
-                    gridView.adapter = adapterA
-                    adapterA.notifyDataSetChanged()
+                    if (gridView.adapter == adapter) {
+                        gridView.adapter = adapterA
+                        adapterA.notifyDataSetChanged()
+                    } else {
+                        gridView.adapter = psAdapter
+                        psAdapter.notifyDataSetChanged()
+                    }
                 }
                 "Change to Play Mode" -> {
                     paste = 0
                     binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
                     Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
                     gridView.visibility = View.INVISIBLE
-                    gridView.adapter = adapter
-                    adapter.notifyDataSetChanged()
+                    if (gridView.adapter == adapterA) {
+                        gridView.adapter = adapter
+                        adapter.notifyDataSetChanged()
+                    } else {
+                        gridView.adapter = psAdapterA
+                        psAdapterA.notifyDataSetChanged()
+                    }
                 }
                 "Change Pad Colors" -> {
                     if (colorCheck == 0) {
@@ -3096,10 +3127,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "BEAT 7 BPM120",
             "BEAT 8 BPM100"
             )
+
+        val padMode = arrayOf(
+            "HIPHOP 1 BPM80",
+            "REGGAETON 1 BPM90",
+            "ELECTRONICA 1 BPM90",
+            "DUBSTEP 1 BPM140",
+            "HOUSE 1 BPM130",
+            "DISCO 1 BPM110",
+            "TECHNO 1 BPM110",
+            "EUROBEAT 1 BPM130",
+            "2 STEP 1 BPM100",
+            "DRUM'N'BASS 1 BPM170",
+            "BEAT 1 BPM120",
+            "BEAT 2 BPM120",
+            "BEAT 3 BPM110",
+            "BEAT 4 BPM100",
+            "BEAT 5 BPM90",
+            "BEAT 6 BPM100",
+            "BEAT 7 BPM120",
+            "BEAT 8 BPM100"
+        )
+
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
+        val padAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padMode)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
-        gridView2.adapter = adapter2
+        gridView2.adapter = padAdapter
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
@@ -3115,7 +3169,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     createNew()
                     changeSequence()
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3151,7 +3205,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3187,7 +3241,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3227,7 +3281,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3267,7 +3321,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3311,7 +3365,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     houseSequence()
                     changeSequence()
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3355,7 +3409,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3399,7 +3453,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3439,7 +3493,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3483,7 +3537,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3523,7 +3577,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3555,7 +3609,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x21()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3591,7 +3645,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3635,7 +3689,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x51()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -3671,7 +3725,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3707,7 +3761,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3743,7 +3797,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x31()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3783,7 +3837,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x41()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -3815,7 +3869,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     bpm = 10
                     binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                     x21()
-                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (mode == 1) {
                         findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                         findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -4336,10 +4390,28 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        mode = 0
+                        paste = 0
+                        binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+                        gridView.visibility = View.INVISIBLE
+                        gridView.adapter = adapter
+                        adapter.notifyDataSetChanged()
+                        gridView2.adapter = padAdapter
+                        gridView2.visibility = View.INVISIBLE
+                        padAdapter.notifyDataSetChanged()
                         binding.sequencerView.visibility = View.GONE
                         binding.notes.visibility = View.GONE
                     }
                     1 -> {
+                        mode = 1
+                        paste = 0
+                        binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
+                        gridView.visibility = View.INVISIBLE
+                        gridView.adapter = psAdapter
+                        psAdapter.notifyDataSetChanged()
+                        gridView2.adapter = adapter2
+                        gridView2.visibility = View.INVISIBLE
+                        adapter2.notifyDataSetChanged()
                         when (trackCount) {
                             2 -> {
                                 x21()
@@ -4389,6 +4461,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
+                        mode = 1
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
