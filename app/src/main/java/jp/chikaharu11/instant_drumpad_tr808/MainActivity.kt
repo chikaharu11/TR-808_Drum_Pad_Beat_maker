@@ -2397,8 +2397,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView.adapter = adapterA
                         adapterA.notifyDataSetChanged()
                     } else {
-                        gridView.adapter = psAdapter
-                        psAdapter.notifyDataSetChanged()
+                        gridView.adapter = psAdapterA
+                        psAdapterA.notifyDataSetChanged()
                     }
                 }
                 "Change to Play Mode" -> {
@@ -2410,8 +2410,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView.adapter = adapter
                         adapter.notifyDataSetChanged()
                     } else {
-                        gridView.adapter = psAdapterA
-                        psAdapterA.notifyDataSetChanged()
+                        gridView.adapter = psAdapter
+                        psAdapter.notifyDataSetChanged()
                     }
                 }
                 "Change Pad Colors" -> {
@@ -4390,6 +4390,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        gameSwitch = 0
+                        invalidateOptionsMenu()
                         mode = 0
                         paste = 0
                         binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -4403,6 +4405,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.notes.visibility = View.GONE
                     }
                     1 -> {
+                        gameSwitch = 0
+                        invalidateOptionsMenu()
                         mode = 1
                         paste = 0
                         binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -4461,6 +4465,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
+                        gameSwitch = 1
                         mode = 1
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -11674,7 +11679,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private fun playMode() {
         val tuning = arrayOf(
-            "Change Pad/Sequence",
             "Change Pad Sounds",
             "Random Pad Sounds",
             "Change Pad Colors",
@@ -13454,9 +13458,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val menuLamp2 = menu.findItem(R.id.menu10)
         val menuLampLock = menu.findItem(R.id.action_settings)
         if (menuSwitch) {
-            menuLamp.setIcon(R.drawable.ic_baseline_play_arrow_24)
+            if (gameSwitch == 1) {
+                menuLamp.setIcon(R.drawable.start)
+            } else {
+                menuLamp.setIcon(R.drawable.ic_baseline_play_arrow_24)
+            }
         } else {
-            menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
+            if (gameSwitch == 1) {
+                menuLamp.setIcon(R.drawable.stop)
+            } else {
+                menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
+            }
         }
 
         if (menuSwitchLock) {
@@ -13476,6 +13488,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var menuSwitch2 = true
     private var menuSwitchLock = true
     private var switch1 = 0
+    private var gameSwitch = 0
 
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

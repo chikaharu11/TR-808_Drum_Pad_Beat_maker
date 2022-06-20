@@ -85,6 +85,8 @@
     <string name="score">score</string>
     <string name="missscore">missscore</string>
     <string name="result">result</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>
