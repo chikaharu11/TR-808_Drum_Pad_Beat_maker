@@ -1169,6 +1169,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
+        justification = 0
         sequencerCount = 0
         timer?.cancel()
         timer = null
@@ -2305,6 +2306,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Load Pad/Sequence",
             "Adjusting Sounds",
             "Lock Settings",
+            "Hide banner Ads",
+            "EXIT",
+        )
+
+        val drumPadChallenge = arrayOf(
             "Hide banner Ads",
             "EXIT",
         )
@@ -4403,6 +4409,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         padAdapter.notifyDataSetChanged()
                         binding.sequencerView.visibility = View.GONE
                         binding.notes.visibility = View.GONE
+                        binding.view.visibility = View.INVISIBLE
                     }
                     1 -> {
                         gameSwitch = 0
@@ -4416,6 +4423,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.adapter = adapter2
                         gridView2.visibility = View.INVISIBLE
                         adapter2.notifyDataSetChanged()
+                        binding.view.visibility = View.INVISIBLE
                         when (trackCount) {
                             2 -> {
                                 x21()
@@ -4469,6 +4477,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         mode = 1
                         menuSwitch = true
                         invalidateOptionsMenu()
+                        binding.view.visibility = View.INVISIBLE
                         switch1 = 2
                         padText1 = "bass_drum_short_01"
                         padText4 = "snare_drum_01"
@@ -13514,12 +13523,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     if (switch1 == 1) {
+                        if (gameSwitch == 1) {
+                            binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                        }
                         sequencerStop()
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
                     } else {
-                        sequencerPlay()
+                        if (gameSwitch == 1) {
+                            gamePlay()
+                        } else {
+                            sequencerPlay()
+                        }
                         changeSequence()
                         menuSwitch = false
                         invalidateOptionsMenu()
