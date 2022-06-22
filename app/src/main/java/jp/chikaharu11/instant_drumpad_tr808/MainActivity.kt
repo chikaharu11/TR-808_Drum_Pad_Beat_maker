@@ -2318,6 +2318,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
         val psAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer)
         val psAdapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer2)
+        val dpAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, drumPadChallenge)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
 
@@ -3155,8 +3156,30 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "BEAT 8 BPM100"
         )
 
+        val dpMode = arrayOf(
+            "HIPHOP 1 BPM80",
+            "REGGAETON 1 BPM90",
+            "ELECTRONICA 1 BPM90",
+            "DUBSTEP 1 BPM140",
+            "HOUSE 1 BPM130",
+            "DISCO 1 BPM110",
+            "TECHNO 1 BPM110",
+            "EUROBEAT 1 BPM130",
+            "2 STEP 1 BPM100",
+            "DRUM'N'BASS 1 BPM170",
+            "BEAT 1 BPM120",
+            "BEAT 2 BPM120",
+            "BEAT 3 BPM110",
+            "BEAT 4 BPM100",
+            "BEAT 5 BPM90",
+            "BEAT 6 BPM100",
+            "BEAT 7 BPM120",
+            "BEAT 8 BPM100"
+        )
+
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
         val padAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padMode)
+        val dpAdapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, dpMode)
         val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
         gridView2.adapter = padAdapter
@@ -4477,6 +4500,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         mode = 1
                         menuSwitch = true
                         invalidateOptionsMenu()
+                        gridView.visibility = View.INVISIBLE
+                        gridView.adapter = dpAdapter
+                        dpAdapter.notifyDataSetChanged()
+                        gridView2.adapter = dpAdapter2
+                        gridView2.visibility = View.INVISIBLE
+                        dpAdapter2.notifyDataSetChanged()
                         binding.view.visibility = View.INVISIBLE
                         switch1 = 2
                         padText1 = "bass_drum_short_01"
