@@ -24,6 +24,7 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
@@ -677,7 +678,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             job2.join()
         }
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
         sequencerCount = 32
         duplicate = 0
@@ -685,6 +685,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         duplicate3 = 0
         duplicate4 = 0
         duplicate5 = 0
+        justification = 0
         score = 0
         missScore = 0
         maxScore = (a1.filter { it == 1 }.size
@@ -798,6 +799,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             }
                             1 -> {
                                 if (gameCount == 9) {
+                                    justification = 0
                                     sequencerStop()
                                     window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     Handler().postDelayed({
@@ -4534,6 +4536,118 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             binding.sequencerView.visibility = View.VISIBLE
                             binding.notes.visibility = View.VISIBLE
                         }
+                        binding.editTitle.isEnabled = false
+                        binding.sequencerView.isFocusableInTouchMode = false
+                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
+                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = false
+                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).isEnabled = false
+                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).isEnabled = false
+                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).isEnabled = false
+                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.reset).isEnabled = false
+                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).isEnabled = false
+                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).isEnabled = false
+                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).isEnabled = false
+                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
+                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).isEnabled = false
+                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).isEnabled = false
                     }
                 }
             }
