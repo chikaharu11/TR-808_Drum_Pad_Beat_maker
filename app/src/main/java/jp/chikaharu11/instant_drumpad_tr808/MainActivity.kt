@@ -678,6 +678,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             job2.join()
         }
+        findViewById<Spinner>(R.id.mode_spinner).isEnabled = false
         sequencerSize = 0
         sequencerCount = 32
         duplicate = 0
@@ -800,6 +801,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             1 -> {
                                 if (gameCount == 9) {
                                     justification = 0
+                                    menuSwitch = true
+                                    invalidateOptionsMenu()
+                                    switch1 = 2
                                     sequencerStop()
                                     window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     Handler().postDelayed({
@@ -814,18 +818,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
                                                 dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
                                                 dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
                                                 dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
 
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -840,18 +846,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
                                                 dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
                                                 dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
                                                 dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
 
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -866,18 +874,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
                                                 dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
                                                 dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
                                                 dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
 
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -892,18 +902,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
                                                 dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
                                                 dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
                                                 dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
 
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -918,18 +930,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 val dialogView = inflater.inflate(R.layout.game_result, null)
                                                 dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
                                                 dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "OVERLAP COUNTS : $missScore"
+                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
                                                 dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
 
 
                                                 builder.setView(dialogView)
                                                     .setOnCancelListener {
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                     .setTitle(result)
                                                     .setNegativeButton("OK") { _, _ ->
                                                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
                                                         stickyImmersiveMode()
                                                     }
                                                 val dialog = builder.create()
@@ -1171,6 +1185,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
+        findViewById<Spinner>(R.id.mode_spinner).isEnabled = true
         justification = 0
         sequencerCount = 0
         timer?.cancel()
@@ -1490,6 +1505,121 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
         sound14 = soundPool.load(assets.openFd("$padText14.ogg"), 1)
         sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
+    }
+
+    @SuppressLint("SetTextI18n", "CutPasteId")
+    private fun changeChallenge(switching: Boolean) {
+        binding.editTitle.isEnabled = switching
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.reset).isEnabled = switching
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).isEnabled = switching
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).isEnabled = switching
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).isEnabled = switching
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
+        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
@@ -2313,6 +2443,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         )
 
         val drumPadChallenge = arrayOf(
+            "Adjusting Sounds",
             "Hide banner Ads",
             "EXIT",
         )
@@ -3159,24 +3290,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         )
 
         val dpMode = arrayOf(
+            "BEAT 1 BPM120",
+            "BEAT 2 BPM120",
             "HIPHOP 1 BPM80",
             "REGGAETON 1 BPM90",
+            "BEAT 3 BPM110",
+            "BEAT 4 BPM100",
+            "BEAT 5 BPM90",
             "ELECTRONICA 1 BPM90",
+            "BEAT 6 BPM100",
             "DUBSTEP 1 BPM140",
             "HOUSE 1 BPM130",
             "DISCO 1 BPM110",
             "TECHNO 1 BPM110",
             "EUROBEAT 1 BPM130",
             "2 STEP 1 BPM100",
-            "DRUM'N'BASS 1 BPM170",
-            "BEAT 1 BPM120",
-            "BEAT 2 BPM120",
-            "BEAT 3 BPM110",
-            "BEAT 4 BPM100",
-            "BEAT 5 BPM90",
-            "BEAT 6 BPM100",
-            "BEAT 7 BPM120",
-            "BEAT 8 BPM100"
+            "DRUM'N'BASS 1 BPM170"
         )
 
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
@@ -4421,6 +4550,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        changeChallenge(true)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 0
@@ -4437,6 +4567,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.view.visibility = View.INVISIBLE
                     }
                     1 -> {
+                        changeChallenge(true)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 1
@@ -4536,118 +4667,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             binding.sequencerView.visibility = View.VISIBLE
                             binding.notes.visibility = View.VISIBLE
                         }
-                        binding.editTitle.isEnabled = false
-                        binding.sequencerView.isFocusableInTouchMode = false
-                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = false
-                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).isEnabled = false
-                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).isEnabled = false
-                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).isEnabled = false
-                        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.reset).isEnabled = false
-                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).isEnabled = false
-                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).isEnabled = false
-                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).isEnabled = false
-                        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_minus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_plus).isEnabled = false
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_minus).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).isEnabled = false
-                        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).isEnabled = false
+                        changeChallenge(false)
                     }
                 }
             }
@@ -5933,82 +5953,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a1[sequencerSize] == 1 && justification != 1 -> {
+                        a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a2[sequencerSize] == 1 && justification != 2 -> {
+                        a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a3[sequencerSize] == 1 && justification != 3 -> {
+                        a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a4[sequencerSize] == 1 && justification != 4 -> {
+                        a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a5[sequencerSize] == 1 && justification != 5 -> {
+                        a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a6[sequencerSize] == 1 && justification != 6 -> {
+                        a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a7[sequencerSize] == 1 && justification != 7 -> {
+                        a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a8[sequencerSize] == 1 && justification != 8 -> {
+                        a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a9[sequencerSize] == 1 && justification != 9 -> {
+                        a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a10[sequencerSize] == 1 && justification != 10 -> {
+                        a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a11[sequencerSize] == 1 && justification != 11 -> {
+                        a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a12[sequencerSize] == 1 && justification != 12 -> {
+                        a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a13[sequencerSize] == 1 && justification != 13 -> {
+                        a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a14[sequencerSize] == 1 && justification != 14 -> {
+                        a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a15[sequencerSize] == 1 && justification != 15 -> {
+                        a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a16[sequencerSize] == 1 && justification != 16 -> {
+                        a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -6179,82 +6199,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a1[sequencerSize] == 1 && justification != 1 -> {
+                        a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a2[sequencerSize] == 1 && justification != 2 -> {
+                        a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a3[sequencerSize] == 1 && justification != 3 -> {
+                        a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a4[sequencerSize] == 1 && justification != 4 -> {
+                        a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a5[sequencerSize] == 1 && justification != 5 -> {
+                        a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a6[sequencerSize] == 1 && justification != 6 -> {
+                        a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a7[sequencerSize] == 1 && justification != 7 -> {
+                        a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a8[sequencerSize] == 1 && justification != 8 -> {
+                        a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a9[sequencerSize] == 1 && justification != 9 -> {
+                        a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a10[sequencerSize] == 1 && justification != 10 -> {
+                        a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a11[sequencerSize] == 1 && justification != 11 -> {
+                        a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a12[sequencerSize] == 1 && justification != 12 -> {
+                        a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a13[sequencerSize] == 1 && justification != 13 -> {
+                        a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a14[sequencerSize] == 1 && justification != 14 -> {
+                        a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a15[sequencerSize] == 1 && justification != 15 -> {
+                        a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        a16[sequencerSize] == 1 && justification != 16 -> {
+                        a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -6482,82 +6502,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b1[sequencerSize] == 1 && justification != 1 -> {
+                        b1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b2[sequencerSize] == 1 && justification != 2 -> {
+                        b2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b3[sequencerSize] == 1 && justification != 3 -> {
+                        b3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b4[sequencerSize] == 1 && justification != 4 -> {
+                        b4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b5[sequencerSize] == 1 && justification != 5 -> {
+                        b5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b6[sequencerSize] == 1 && justification != 6 -> {
+                        b6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b7[sequencerSize] == 1 && justification != 7 -> {
+                        b7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b8[sequencerSize] == 1 && justification != 8 -> {
+                        b8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b9[sequencerSize] == 1 && justification != 9 -> {
+                        b9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b10[sequencerSize] == 1 && justification != 10 -> {
+                        b10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b11[sequencerSize] == 1 && justification != 11 -> {
+                        b11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b12[sequencerSize] == 1 && justification != 12 -> {
+                        b12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b13[sequencerSize] == 1 && justification != 13 -> {
+                        b13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b14[sequencerSize] == 1 && justification != 14 -> {
+                        b14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b15[sequencerSize] == 1 && justification != 15 -> {
+                        b15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b16[sequencerSize] == 1 && justification != 16 -> {
+                        b16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -6728,82 +6748,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b1[sequencerSize] == 1 && justification != 1 -> {
+                        b1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b2[sequencerSize] == 1 && justification != 2 -> {
+                        b2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b3[sequencerSize] == 1 && justification != 3 -> {
+                        b3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b4[sequencerSize] == 1 && justification != 4 -> {
+                        b4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b5[sequencerSize] == 1 && justification != 5 -> {
+                        b5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b6[sequencerSize] == 1 && justification != 6 -> {
+                        b6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b7[sequencerSize] == 1 && justification != 7 -> {
+                        b7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b8[sequencerSize] == 1 && justification != 8 -> {
+                        b8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b9[sequencerSize] == 1 && justification != 9 -> {
+                        b9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b10[sequencerSize] == 1 && justification != 10 -> {
+                        b10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b11[sequencerSize] == 1 && justification != 11 -> {
+                        b11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b12[sequencerSize] == 1 && justification != 12 -> {
+                        b12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b13[sequencerSize] == 1 && justification != 13 -> {
+                        b13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b14[sequencerSize] == 1 && justification != 14 -> {
+                        b14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b15[sequencerSize] == 1 && justification != 15 -> {
+                        b15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        b16[sequencerSize] == 1 && justification != 16 -> {
+                        b16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -7031,82 +7051,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c1[sequencerSize] == 1 && justification != 1 -> {
+                        c1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c2[sequencerSize] == 1 && justification != 2 -> {
+                        c2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c3[sequencerSize] == 1 && justification != 3 -> {
+                        c3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c4[sequencerSize] == 1 && justification != 4 -> {
+                        c4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c5[sequencerSize] == 1 && justification != 5 -> {
+                        c5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c6[sequencerSize] == 1 && justification != 6 -> {
+                        c6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c7[sequencerSize] == 1 && justification != 7 -> {
+                        c7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c8[sequencerSize] == 1 && justification != 8 -> {
+                        c8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c9[sequencerSize] == 1 && justification != 9 -> {
+                        c9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c10[sequencerSize] == 1 && justification != 10 -> {
+                        c10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c11[sequencerSize] == 1 && justification != 11 -> {
+                        c11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c12[sequencerSize] == 1 && justification != 12 -> {
+                        c12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c13[sequencerSize] == 1 && justification != 13 -> {
+                        c13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c14[sequencerSize] == 1 && justification != 14 -> {
+                        c14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c15[sequencerSize] == 1 && justification != 15 -> {
+                        c15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c16[sequencerSize] == 1 && justification != 16 -> {
+                        c16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -7277,82 +7297,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c1[sequencerSize] == 1 && justification != 1 -> {
+                        c1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c2[sequencerSize] == 1 && justification != 2 -> {
+                        c2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c3[sequencerSize] == 1 && justification != 3 -> {
+                        c3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c4[sequencerSize] == 1 && justification != 4 -> {
+                        c4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c5[sequencerSize] == 1 && justification != 5 -> {
+                        c5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c6[sequencerSize] == 1 && justification != 6 -> {
+                        c6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c7[sequencerSize] == 1 && justification != 7 -> {
+                        c7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c8[sequencerSize] == 1 && justification != 8 -> {
+                        c8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c9[sequencerSize] == 1 && justification != 9 -> {
+                        c9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c10[sequencerSize] == 1 && justification != 10 -> {
+                        c10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c11[sequencerSize] == 1 && justification != 11 -> {
+                        c11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c12[sequencerSize] == 1 && justification != 12 -> {
+                        c12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c13[sequencerSize] == 1 && justification != 13 -> {
+                        c13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c14[sequencerSize] == 1 && justification != 14 -> {
+                        c14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c15[sequencerSize] == 1 && justification != 15 -> {
+                        c15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        c16[sequencerSize] == 1 && justification != 16 -> {
+                        c16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -7581,82 +7601,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d1[sequencerSize] == 1 && justification != 1 -> {
+                        d1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d2[sequencerSize] == 1 && justification != 2 -> {
+                        d2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d3[sequencerSize] == 1 && justification != 3 -> {
+                        d3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d4[sequencerSize] == 1 && justification != 4 -> {
+                        d4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d5[sequencerSize] == 1 && justification != 5 -> {
+                        d5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d6[sequencerSize] == 1 && justification != 6 -> {
+                        d6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d7[sequencerSize] == 1 && justification != 7 -> {
+                        d7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d8[sequencerSize] == 1 && justification != 8 -> {
+                        d8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d9[sequencerSize] == 1 && justification != 9 -> {
+                        d9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d10[sequencerSize] == 1 && justification != 10 -> {
+                        d10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d11[sequencerSize] == 1 && justification != 11 -> {
+                        d11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d12[sequencerSize] == 1 && justification != 12 -> {
+                        d12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d13[sequencerSize] == 1 && justification != 13 -> {
+                        d13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d14[sequencerSize] == 1 && justification != 14 -> {
+                        d14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d15[sequencerSize] == 1 && justification != 15 -> {
+                        d15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d16[sequencerSize] == 1 && justification != 16 -> {
+                        d16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -7827,82 +7847,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d1[sequencerSize] == 1 && justification != 1 -> {
+                        d1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d2[sequencerSize] == 1 && justification != 2 -> {
+                        d2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d3[sequencerSize] == 1 && justification != 3 -> {
+                        d3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d4[sequencerSize] == 1 && justification != 4 -> {
+                        d4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d5[sequencerSize] == 1 && justification != 5 -> {
+                        d5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d6[sequencerSize] == 1 && justification != 6 -> {
+                        d6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d7[sequencerSize] == 1 && justification != 7 -> {
+                        d7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d8[sequencerSize] == 1 && justification != 8 -> {
+                        d8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d9[sequencerSize] == 1 && justification != 9 -> {
+                        d9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d10[sequencerSize] == 1 && justification != 10 -> {
+                        d10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d11[sequencerSize] == 1 && justification != 11 -> {
+                        d11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d12[sequencerSize] == 1 && justification != 12 -> {
+                        d12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d13[sequencerSize] == 1 && justification != 13 -> {
+                        d13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d14[sequencerSize] == 1 && justification != 14 -> {
+                        d14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d15[sequencerSize] == 1 && justification != 15 -> {
+                        d15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        d16[sequencerSize] == 1 && justification != 16 -> {
+                        d16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -8130,82 +8150,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e1[sequencerSize] == 1 && justification != 1 -> {
+                        e1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e2[sequencerSize] == 1 && justification != 2 -> {
+                        e2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e3[sequencerSize] == 1 && justification != 3 -> {
+                        e3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e4[sequencerSize] == 1 && justification != 4 -> {
+                        e4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e5[sequencerSize] == 1 && justification != 5 -> {
+                        e5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e6[sequencerSize] == 1 && justification != 6 -> {
+                        e6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e7[sequencerSize] == 1 && justification != 7 -> {
+                        e7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e8[sequencerSize] == 1 && justification != 8 -> {
+                        e8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e9[sequencerSize] == 1 && justification != 9 -> {
+                        e9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e10[sequencerSize] == 1 && justification != 10 -> {
+                        e10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e11[sequencerSize] == 1 && justification != 11 -> {
+                        e11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e12[sequencerSize] == 1 && justification != 12 -> {
+                        e12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e13[sequencerSize] == 1 && justification != 13 -> {
+                        e13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e14[sequencerSize] == 1 && justification != 14 -> {
+                        e14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e15[sequencerSize] == 1 && justification != 15 -> {
+                        e15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e16[sequencerSize] == 1 && justification != 16 -> {
+                        e16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -8376,82 +8396,82 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e1[sequencerSize] == 1 && justification != 1 -> {
+                        e1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e2[sequencerSize] == 1 && justification != 2 -> {
+                        e2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e3[sequencerSize] == 1 && justification != 3 -> {
+                        e3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e4[sequencerSize] == 1 && justification != 4 -> {
+                        e4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e5[sequencerSize] == 1 && justification != 5 -> {
+                        e5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e6[sequencerSize] == 1 && justification != 6 -> {
+                        e6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e7[sequencerSize] == 1 && justification != 7 -> {
+                        e7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e8[sequencerSize] == 1 && justification != 8 -> {
+                        e8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e9[sequencerSize] == 1 && justification != 9 -> {
+                        e9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e10[sequencerSize] == 1 && justification != 10 -> {
+                        e10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e11[sequencerSize] == 1 && justification != 11 -> {
+                        e11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e12[sequencerSize] == 1 && justification != 12 -> {
+                        e12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e13[sequencerSize] == 1 && justification != 13 -> {
+                        e13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e14[sequencerSize] == 1 && justification != 14 -> {
+                        e14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e15[sequencerSize] == 1 && justification != 15 -> {
+                        e15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                         }
-                        e16[sequencerSize] == 1 && justification != 16 -> {
+                        e16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
                             missScore++
                             score--
                             binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
@@ -10495,6 +10515,49 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                }
+            }
+            false
+        }
+
+        findViewById<TextView>(R.id.textView20).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    sptF = pitchArray.random()
+                    sptF4 = pitchArray.random()
+                    sptF7 = pitchArray.random()
+                    sptF10 = pitchArray.random()
+                    sptF13 = pitchArray.random()
+                    spvF = volumeArray.random()
+                    spvF4 = volumeArray.random()
+                    spvF7 = volumeArray.random()
+                    spvF10 = volumeArray.random()
+                    spvF13 = volumeArray.random()
+                    soundPoolVolume = spvF/10.0f
+                    soundPoolVolume4 = spvF4/10.0f
+                    soundPoolVolume7 = spvF7/10.0f
+                    soundPoolVolume10 = spvF10/10.0f
+                    soundPoolVolume13 = spvF13/10.0f
+                    soundPoolTempo = sptF/10.0f
+                    soundPoolTempo4 = sptF4/10.0f
+                    soundPoolTempo7 = sptF7/10.0f
+                    soundPoolTempo10 = sptF10/10.0f
+                    soundPoolTempo13 = sptF13/10.0f
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                 }
             }
             false
@@ -14786,15 +14849,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     if (switch1 == 1) {
-                        if (gameSwitch == 1) {
-                            binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                        }
                         sequencerStop()
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
+                        if (gameSwitch == 1) {
+                            binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
+                            findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
+                        }
+
                     } else {
                         if (gameSwitch == 1) {
+                            tuningView.visibility = View.INVISIBLE
                             gamePlay()
                         } else {
                             sequencerPlay()

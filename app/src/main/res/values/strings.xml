@@ -50,6 +50,7 @@
     <string name="textView18o">RESET</string>
     <string name="textView19">A\nC</string>
     <string name="textView19o">ACCENT</string>
+    <string name="textView20o">RANDOM</string>
 
     <string name="empty">empty</string>
     <string name="Saved">Saving… Please wait.</string>
