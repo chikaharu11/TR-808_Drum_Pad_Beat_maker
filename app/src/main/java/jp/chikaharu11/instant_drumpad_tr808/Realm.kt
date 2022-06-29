@@ -169,3 +169,9 @@ open class SaveSlot(
     var e15: String = "0",
     var e16: String = "0"
 ) : RealmObject()
+
+open class ResultSlot(
+    @PrimaryKey var id: String = "",
+    @Required
+    var game1: String = ""
+) : RealmObject()

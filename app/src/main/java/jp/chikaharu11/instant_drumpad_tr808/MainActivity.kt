@@ -134,6 +134,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var stage16s = SpannableStringBuilder(stage16)
     private var stageExs = SpannableStringBuilder(stageEx)
 
+    private var gameCheck = "0"
+    private var game1Result = "0"
+
     private var gridCheck = 0
 
     private var count = 5
@@ -855,6 +858,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                         when  {
                                             (score * 100 / maxScore) >= 90 -> {
+                                                game1Result = "3"
+                                                resultCreate(gameCheck)
                                                 result = "Excellent!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle1)
                                                 val inflater = layoutInflater
@@ -883,6 +888,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#d03933"))
                                             }
                                             (score * 100 / maxScore) >= 80 -> {
+                                                game1Result = "2"
+                                                resultCreate(gameCheck)
                                                 result = "Great!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle2)
                                                 val inflater = layoutInflater
@@ -911,6 +918,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e98e2f"))
                                             }
                                             (score * 100 / maxScore) >= 70 -> {
+                                                game1Result = "1"
+                                                resultCreate(gameCheck)
                                                 result = "Good!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle3)
                                                 val inflater = layoutInflater
@@ -4511,6 +4520,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             } else {
                 when (position) {
                     0 -> {
+                        gameCheck = "1"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5501,6 +5511,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     16 -> {
+                        gameCheck = "1"
                         val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                         val inflater = layoutInflater
                         val dialogView = inflater.inflate(R.layout.save_load, null)
@@ -6303,12 +6314,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     2 -> {
                         gridCheck = 1
-                        stage1s.setSpan(
-                            ForegroundColorSpan(Color.RED),
-                            0, // start
-                            7, // end
-                            Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-                        )
+                        resultRead("1")
+                        if (game1Result == "1") {
+                            stage1s.setSpan(
+                                ForegroundColorSpan(Color.RED),
+                                0, // start
+                                stage1.length, // end
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if (game1Result == "2") {
+                            stage1s.setSpan(
+                                ForegroundColorSpan(Color.GREEN),
+                                0, // start
+                                stage1.length, // end
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if (game1Result == "3") {
+                            stage1s.setSpan(
+                                ForegroundColorSpan(Color.BLUE),
+                                0, // start
+                                stage1.length, // end
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
                         gameSwitch = 1
                         mode = 1
                         menuSwitch = true
@@ -15464,6 +15494,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         Toast.LENGTH_LONG
                 ).show()
             }
+        }
+    }
+
+    private fun resultCreate(slot: String) {
+        mRealm.executeTransaction {
+            val rs = mRealm.createObject<ResultSlot>(primaryKeyValue = slot)
+            rs.game1 = game1Result.toString()
+            mRealm.copyToRealm(rs)
+        }
+
+    }
+
+    private fun resultRead(slot: String) {
+        if (mRealm.where(ResultSlot::class.java).equalTo("id", slot).findFirst()?.game1 != null) {
+            game1Result = (mRealm.where(ResultSlot::class.java).equalTo("id", slot).findFirst()?.game1!!.toString())
         }
     }
 
