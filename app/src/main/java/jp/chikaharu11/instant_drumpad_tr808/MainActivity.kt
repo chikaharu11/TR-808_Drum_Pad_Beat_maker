@@ -18,7 +18,11 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.MediaStore
 import android.text.Editable
+import android.text.Spannable
+import android.text.SpannableStringBuilder
 import android.text.TextWatcher
+import android.text.style.BackgroundColorSpan
+import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
@@ -27,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.toColorInt
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
@@ -92,6 +97,44 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText13 = "tr_909_cymbal_01"
     private var padText14 = "tr_909_cymbal_02"
     private var padText15 = "clap_01"
+
+    private var stage1 = "BEAT 1 BPM120"
+    private var stage2 = "BEAT 2 BPM120"
+    private var stage3 = "HIPHOP 1 BPM80"
+    private var stage4 = "REGGAETON 1 BPM90"
+    private var stage5 = "BEAT 3 BPM110"
+    private var stage6 = "BEAT 4 BPM100"
+    private var stage7 = "BEAT 5 BPM90"
+    private var stage8 = "ELECTRONICA 1 BPM90"
+    private var stage9 = "BEAT 6 BPM100"
+    private var stage10 = "DUBSTEP 1 BPM140"
+    private var stage11 = "HOUSE 1 BPM130"
+    private var stage12 = "DISCO 1 BPM110"
+    private var stage13 = "TECHNO 1 BPM110"
+    private var stage14 = "EUROBEAT 1 BPM130"
+    private var stage15 = "2 STEP 1 BPM100"
+    private var stage16 = "DRUM'N'BASS 1 BPM170"
+    private var stageEx = "BEATS YOU CREATED"
+    
+    private var stage1s = SpannableStringBuilder(stage1)
+    private var stage2s = SpannableStringBuilder(stage2)
+    private var stage3s = SpannableStringBuilder(stage3)
+    private var stage4s = SpannableStringBuilder(stage4)
+    private var stage5s = SpannableStringBuilder(stage5)
+    private var stage6s = SpannableStringBuilder(stage6)
+    private var stage7s = SpannableStringBuilder(stage7)
+    private var stage8s = SpannableStringBuilder(stage8)
+    private var stage9s = SpannableStringBuilder(stage9)
+    private var stage10s = SpannableStringBuilder(stage10)
+    private var stage11s = SpannableStringBuilder(stage11)
+    private var stage12s = SpannableStringBuilder(stage12)
+    private var stage13s = SpannableStringBuilder(stage13)
+    private var stage14s = SpannableStringBuilder(stage14)
+    private var stage15s = SpannableStringBuilder(stage15)
+    private var stage16s = SpannableStringBuilder(stage16)
+    private var stageExs = SpannableStringBuilder(stageEx)
+
+    private var gridCheck = 0
 
     private var count = 5
     private var bpm = 10
@@ -3290,7 +3333,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         )
 
         val dpMode = arrayOf(
-            "BEAT 1 BPM120",
+            stage1s,
             "BEAT 2 BPM120",
             "HIPHOP 1 BPM80",
             "REGGAETON 1 BPM90",
@@ -3317,941 +3360,2357 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView2.adapter = padAdapter
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
-            when (adapterView.getItemAtPosition(position)) {
-                "CREATE NEW PATTERN" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    actionTitle = "NEW PATTERN"
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    createNew()
-                    changeSequence()
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "HIPHOP 1 BPM80" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "tr_8_clsd_hi_hat_02"
-                    padText4 = "snare_drum_11"
-                    padText7 = "tr_909_bass_drum_02"
-                    actionTitle = "hiphop_1_bpm80"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    hiphopSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "REGGAETON 1 BPM90" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "bass_drum_short_08"
-                    padText4 = "snare_drum_05"
-                    padText7 = "clap_08"
-                    actionTitle = "reggaeton_1_bpm90"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    reggaetonSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "ELECTRONICA 1 BPM90" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_01"
-                    padText4 = "snare_drum_14"
-                    padText7 = "bass_drum_short_01"
-                    padText10 = "clap_01"
-                    actionTitle = "electronica_1_bpm90"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    electronicaSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x41()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "DUBSTEP 1 BPM140" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_03"
-                    padText4 = "tr_8_snare_drum_03"
-                    padText7 = "tr_909_bass_drum_01"
-                    padText10 = "clap_05"
-                    actionTitle = "dubstep_1_bpm140"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    dubstepSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x41()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "HOUSE 1 BPM130" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "tr_909_clsd_hi_hat_02"
-                    padText4 = "tr_909_open_hi_hat_01"
-                    padText7 = "snare_drum_14"
-                    padText10 = "bass_drum_short_08"
-                    padText13 = "clap_01"
-                    actionTitle = "house_1_bpm130"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    houseSequence()
-                    changeSequence()
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "DISCO 1 BPM110" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_03"
-                    padText4 = "open_hi_hat_11"
-                    padText7 = "snare_drum_11"
-                    padText10 = "bass_drum_long_08"
-                    padText13 = "clap_08"
-                    actionTitle = "disco_1_bpm110"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    discoSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "TECHNO 1 BPM110" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_03"
-                    padText4 = "open_hi_hat_04"
-                    padText7 = "tr_8_snare_drum_03"
-                    padText10 = "tr_909_bass_drum_01"
-                    padText13 = "clap_01"
-                    actionTitle = "techno_1_bpm110"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    technoSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "EUROBEAT 1 BPM130" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_09"
-                    padText4 = "maracas_03"
-                    padText7 = "snare_drum_11"
-                    padText10 = "bass_drum_long_08"
-                    actionTitle = "eurobeat_1_bpm130"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    eurobeatSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x41()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "2 STEP 1 BPM100" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "tr_909_clsd_hi_hat_02"
-                    padText4 = "tr_909_open_hi_hat_01"
-                    padText7 = "snare_drum_02"
-                    padText10 = "tr_909_bass_drum_02"
-                    padText13 = "tr_909_clap"
-                    actionTitle = "two_step_1_bpm100"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    twostepSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "DRUM'N'BASS 1 BPM170" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_01"
-                    padText4 = "tr_909_open_hi_hat_01"
-                    padText7 = "tr_8_snare_drum_04"
-                    padText10 = "bass_drum_short_08"
-                    actionTitle = "drum_n_bass_1_bpm170"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    drumnbassSequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x41()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 1 BPM120" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "bass_drum_short_01"
-                    padText4 = "snare_drum_01"
-                    actionTitle = "beat_1_bpm120"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    beat1Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x21()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 7 BPM120" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "bass_drum_short_08"
-                    padText4 = "low_tom_06"
-                    padText7 = "maracas_03"
-                    actionTitle = "beat_7_bpm120"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    beat2Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 8 BPM100" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clap_01"
-                    padText4 = "mid_tom_01"
-                    padText7 = "claves_05"
-                    padText10 = "clsd_hi_hat_09"
-                    padText13 = "high_conga_08"
-                    actionTitle = "beat_8_bpm100"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
-                    beat3Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x51()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 3 BPM110" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_01"
-                    padText4 = "snare_drum_05"
-                    padText7 = "tr_909_bass_drum_02"
-                    actionTitle = "beat_3_bpm110"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    beat5Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 4 BPM100" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "tr_909_bass_drum_02"
-                    padText4 = "tr_8_snare_drum_03"
-                    padText7 = "open_hi_hat_08"
-                    actionTitle = "beat_4_bpm100"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    beat6Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 5 BPM90" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "clsd_hi_hat_03"
-                    padText4 = "snare_drum_02"
-                    padText7 = "bass_drum_short_01"
-                    actionTitle = "beat_5_bpm90"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    beat7Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x31()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 6 BPM100" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "tr_909_clsd_hi_hat_01"
-                    padText4 = "snare_drum_15"
-                    padText7 = "tr_909_bass_drum_03"
-                    padText10 = "tr_8_open_hi_hat_03"
-                    actionTitle = "beat_6_bpm100"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView7.textView.text = padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView10.textView.text = padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
-                    sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
-                    beat8Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x41()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEAT 2 BPM120" -> {
-                    menuSwitch = true
-                    invalidateOptionsMenu()
-                    switch1 = 2
-                    padText1 = "bass_drum_short_01"
-                    padText4 = "snare_drum_01"
-                    actionTitle = "beat_2_bpm120"
-                    binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                    sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                    sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                    beat9Sequence()
-                    changeSequence()
-                    noteCount = 0
-                    count = 5
-                    bpm = 10
-                    binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                    x21()
-                    if (mode == 1) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
-                    gridView2.visibility = View.INVISIBLE
-                }
-                "BEATS YOU CREATED" -> {
-                    val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
-                    val inflater = layoutInflater
-                    val dialogView = inflater.inflate(R.layout.save_load, null)
-
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot6).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot7).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR.toString())
-                    }
-                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR != null) {
-                        dialogView.findViewById<TextView>(R.id.slot8).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR.toString())
-                    }
-
-                    builder.setView(dialogView)
-                        .setOnCancelListener {
-                            stickyImmersiveMode()
+            if (gridCheck == 0) {
+                when (adapterView.getItemAtPosition(position)) {
+                    "CREATE NEW PATTERN" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        actionTitle = "NEW PATTERN"
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        createNew()
+                        changeSequence()
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
-                        .setTitle(R.string.load)
-                        .setNegativeButton("CANCEL") { _, _ ->
-                            stickyImmersiveMode()
-                        }
-                    val dialog = builder.create()
-                    dialog.show()
-
-                    dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
-                        read("1")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
-                        }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
-                        read("2")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "HIPHOP 1 BPM80" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_8_clsd_hi_hat_02"
+                        padText4 = "snare_drum_11"
+                        padText7 = "tr_909_bass_drum_02"
+                        actionTitle = "hiphop_1_bpm80"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        hiphopSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
-                        read("3")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "REGGAETON 1 BPM90" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_08"
+                        padText4 = "snare_drum_05"
+                        padText7 = "clap_08"
+                        actionTitle = "reggaeton_1_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        reggaetonSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
-                        read("4")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "ELECTRONICA 1 BPM90" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "snare_drum_14"
+                        padText7 = "bass_drum_short_01"
+                        padText10 = "clap_01"
+                        actionTitle = "electronica_1_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        electronicaSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
-                        read("5")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "DUBSTEP 1 BPM140" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "tr_8_snare_drum_03"
+                        padText7 = "tr_909_bass_drum_01"
+                        padText10 = "clap_05"
+                        actionTitle = "dubstep_1_bpm140"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        dubstepSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot6).setOnClickListener {
-                        read("6")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "HOUSE 1 BPM130" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_02"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "snare_drum_14"
+                        padText10 = "bass_drum_short_08"
+                        padText13 = "clap_01"
+                        actionTitle = "house_1_bpm130"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        houseSequence()
+                        changeSequence()
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot7).setOnClickListener {
-                        read("7")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "DISCO 1 BPM110" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "open_hi_hat_11"
+                        padText7 = "snare_drum_11"
+                        padText10 = "bass_drum_long_08"
+                        padText13 = "clap_08"
+                        actionTitle = "disco_1_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        discoSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
-
-                    dialogView.findViewById<TextView>(R.id.slot8).setOnClickListener {
-                        read("8")
-                        dialog.cancel()
-                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.pad != null) {
-                            sequencerSize = 0
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                            changeSequence()
-                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
-                                R.string.Loaded,
-                                Snackbar.LENGTH_LONG)
-                            val snackTextView2: TextView =
-                                snackBar2.view.findViewById(R.id.snackbar_text)
-                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                            snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
-                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            }, 2000)
+                    "TECHNO 1 BPM110" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "open_hi_hat_04"
+                        padText7 = "tr_8_snare_drum_03"
+                        padText10 = "tr_909_bass_drum_01"
+                        padText13 = "clap_01"
+                        actionTitle = "techno_1_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        technoSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
                         }
+                        gridView2.visibility = View.INVISIBLE
                     }
+                    "EUROBEAT 1 BPM130" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_09"
+                        padText4 = "maracas_03"
+                        padText7 = "snare_drum_11"
+                        padText10 = "bass_drum_long_08"
+                        actionTitle = "eurobeat_1_bpm130"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        eurobeatSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "2 STEP 1 BPM100" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_02"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "snare_drum_02"
+                        padText10 = "tr_909_bass_drum_02"
+                        padText13 = "tr_909_clap"
+                        actionTitle = "two_step_1_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        twostepSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "DRUM'N'BASS 1 BPM170" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "tr_8_snare_drum_04"
+                        padText10 = "bass_drum_short_08"
+                        actionTitle = "drum_n_bass_1_bpm170"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        drumnbassSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 1 BPM120" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_01"
+                        padText4 = "snare_drum_01"
+                        actionTitle = "beat_1_bpm120"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        beat1Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x21()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 7 BPM120" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_08"
+                        padText4 = "low_tom_06"
+                        padText7 = "maracas_03"
+                        actionTitle = "beat_7_bpm120"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat2Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 8 BPM100" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clap_01"
+                        padText4 = "mid_tom_01"
+                        padText7 = "claves_05"
+                        padText10 = "clsd_hi_hat_09"
+                        padText13 = "high_conga_08"
+                        actionTitle = "beat_8_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        beat3Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 3 BPM110" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "snare_drum_05"
+                        padText7 = "tr_909_bass_drum_02"
+                        actionTitle = "beat_3_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat5Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 4 BPM100" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_bass_drum_02"
+                        padText4 = "tr_8_snare_drum_03"
+                        padText7 = "open_hi_hat_08"
+                        actionTitle = "beat_4_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat6Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 5 BPM90" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "snare_drum_02"
+                        padText7 = "bass_drum_short_01"
+                        actionTitle = "beat_5_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat7Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 6 BPM100" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_01"
+                        padText4 = "snare_drum_15"
+                        padText7 = "tr_909_bass_drum_03"
+                        padText10 = "tr_8_open_hi_hat_03"
+                        actionTitle = "beat_6_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        beat8Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    "BEAT 2 BPM120" -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_01"
+                        padText4 = "snare_drum_01"
+                        actionTitle = "beat_2_bpm120"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        beat9Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x21()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                }
+            } else {
+                when (position) {
+                    0 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_01"
+                        padText4 = "snare_drum_01"
+                        actionTitle = "beat_1_bpm120"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        beat1Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x21()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    1 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_01"
+                        padText4 = "snare_drum_01"
+                        actionTitle = "beat_2_bpm120"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        beat9Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x21()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    2 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_8_clsd_hi_hat_02"
+                        padText4 = "snare_drum_11"
+                        padText7 = "tr_909_bass_drum_02"
+                        actionTitle = "hiphop_1_bpm80"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        hiphopSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    3 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "bass_drum_short_08"
+                        padText4 = "snare_drum_05"
+                        padText7 = "clap_08"
+                        actionTitle = "reggaeton_1_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        reggaetonSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    4 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "snare_drum_05"
+                        padText7 = "tr_909_bass_drum_02"
+                        actionTitle = "beat_3_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat5Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    5 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_bass_drum_02"
+                        padText4 = "tr_8_snare_drum_03"
+                        padText7 = "open_hi_hat_08"
+                        actionTitle = "beat_4_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat6Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    6 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "snare_drum_02"
+                        padText7 = "bass_drum_short_01"
+                        actionTitle = "beat_5_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        beat7Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x31()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    7 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "snare_drum_14"
+                        padText7 = "bass_drum_short_01"
+                        padText10 = "clap_01"
+                        actionTitle = "electronica_1_bpm90"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        electronicaSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    8 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_01"
+                        padText4 = "snare_drum_15"
+                        padText7 = "tr_909_bass_drum_03"
+                        padText10 = "tr_8_open_hi_hat_03"
+                        actionTitle = "beat_6_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        beat8Sequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    9 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "tr_8_snare_drum_03"
+                        padText7 = "tr_909_bass_drum_01"
+                        padText10 = "clap_05"
+                        actionTitle = "dubstep_1_bpm140"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        dubstepSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    10 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_02"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "snare_drum_14"
+                        padText10 = "bass_drum_short_08"
+                        padText13 = "clap_01"
+                        actionTitle = "house_1_bpm130"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        houseSequence()
+                        changeSequence()
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    11 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "open_hi_hat_11"
+                        padText7 = "snare_drum_11"
+                        padText10 = "bass_drum_long_08"
+                        padText13 = "clap_08"
+                        actionTitle = "disco_1_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        discoSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    12 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_03"
+                        padText4 = "open_hi_hat_04"
+                        padText7 = "tr_8_snare_drum_03"
+                        padText10 = "tr_909_bass_drum_01"
+                        padText13 = "clap_01"
+                        actionTitle = "techno_1_bpm110"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        technoSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    13 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_09"
+                        padText4 = "maracas_03"
+                        padText7 = "snare_drum_11"
+                        padText10 = "bass_drum_long_08"
+                        actionTitle = "eurobeat_1_bpm130"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        eurobeatSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    14 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "tr_909_clsd_hi_hat_02"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "snare_drum_02"
+                        padText10 = "tr_909_bass_drum_02"
+                        padText13 = "tr_909_clap"
+                        actionTitle = "two_step_1_bpm100"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView13.textView.text =
+                            padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume13.toString()
+                                .replace("f", "") + "            " + soundPoolTempo13.toString()
+                                .replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("$padText13.ogg"), 1)
+                        twostepSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x51()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    15 -> {
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                        padText1 = "clsd_hi_hat_01"
+                        padText4 = "tr_909_open_hi_hat_01"
+                        padText7 = "tr_8_snare_drum_04"
+                        padText10 = "bass_drum_short_08"
+                        actionTitle = "drum_n_bass_1_bpm170"
+                        binding.includeMainView.textView.text =
+                            padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView4.textView.text =
+                            padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView7.textView.text =
+                            padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        binding.includeMainView10.textView.text =
+                            padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                                .replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume.toString()
+                                .replace("f", "") + "            " + soundPoolTempo.toString()
+                                .replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume4.toString()
+                                .replace("f", "") + "            " + soundPoolTempo4.toString()
+                                .replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume7.toString()
+                                .replace("f", "") + "            " + soundPoolTempo7.toString()
+                                .replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
+                            soundPoolVolume10.toString()
+                                .replace("f", "") + "            " + soundPoolTempo10.toString()
+                                .replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8")
+                                .replace("tr_909", "TR-909").replace("_", " ").uppercase()
+                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("$padText7.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("$padText10.ogg"), 1)
+                        drumnbassSequence()
+                        changeSequence()
+                        noteCount = 0
+                        count = 5
+                        bpm = 10
+                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
+                            TextView.BufferType.NORMAL)
+                        x41()
+                        if (mode == 1) {
+                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
+                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
+                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
+                            binding.sequencerView.visibility = View.VISIBLE
+                            binding.notes.visibility = View.VISIBLE
+                        }
+                        gridView2.visibility = View.INVISIBLE
+                    }
+                    16 -> {
+                        val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
+                        val inflater = layoutInflater
+                        val dialogView = inflater.inflate(R.layout.save_load, null)
 
-                    gridView2.visibility = View.INVISIBLE
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot6).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot7).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR.toString())
+                        }
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR != null) {
+                            dialogView.findViewById<TextView>(R.id.slot8).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR.toString())
+                        }
+
+                        builder.setView(dialogView)
+                            .setOnCancelListener {
+                                stickyImmersiveMode()
+                            }
+                            .setTitle(R.string.load)
+                            .setNegativeButton("CANCEL") { _, _ ->
+                                stickyImmersiveMode()
+                            }
+                        val dialog = builder.create()
+                        dialog.show()
+
+                        dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
+                            read("1")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
+                            read("2")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
+                            read("3")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
+                            read("4")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
+                            read("5")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot6).setOnClickListener {
+                            read("6")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot7).setOnClickListener {
+                            read("7")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        dialogView.findViewById<TextView>(R.id.slot8).setOnClickListener {
+                            read("8")
+                            dialog.cancel()
+                            if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.pad != null) {
+                                sequencerSize = 0
+                                findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                                changeSequence()
+                                window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                    R.string.Loaded,
+                                    Snackbar.LENGTH_LONG)
+                                val snackTextView2: TextView =
+                                    snackBar2.view.findViewById(R.id.snackbar_text)
+                                snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                snackBar2.setDuration(2000).show()
+                                Handler().postDelayed({
+                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                }, 2000)
+                            }
+                        }
+
+                        gridView2.visibility = View.INVISIBLE
+                    }
                 }
             }
         }
@@ -4762,6 +6221,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        gridCheck = 0
                         changeChallenge(true)
                         gameSwitch = 0
                         invalidateOptionsMenu()
@@ -4779,6 +6239,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.view.visibility = View.INVISIBLE
                     }
                     1 -> {
+                        gridCheck = 0
                         changeChallenge(true)
                         gameSwitch = 0
                         invalidateOptionsMenu()
@@ -4841,6 +6302,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
+                        gridCheck = 1
+                        stage1s.setSpan(
+                            ForegroundColorSpan(Color.RED),
+                            0, // start
+                            7, // end
+                            Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                        )
                         gameSwitch = 1
                         mode = 1
                         menuSwitch = true
