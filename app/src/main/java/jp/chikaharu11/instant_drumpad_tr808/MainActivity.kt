@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var stageExs = SpannableStringBuilder(stageEx)
 
     private var gameCheck = "0"
-    private var game1Result = "0"
+    private var game1Result = R.color.white
 
     private var gridCheck = 0
 
@@ -858,8 +858,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                                         when  {
                                             (score * 100 / maxScore) >= 90 -> {
-                                                game1Result = "3"
-                                                resultCreate(gameCheck)
+                                                game1Result = R.color.excellent
+                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
+                                                    resultCreate(gameCheck)
+                                                } else {
+                                                    resultUpdate(gameCheck)
+                                                }
                                                 result = "Excellent!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle1)
                                                 val inflater = layoutInflater
@@ -888,8 +892,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#d03933"))
                                             }
                                             (score * 100 / maxScore) >= 80 -> {
-                                                game1Result = "2"
-                                                resultCreate(gameCheck)
+                                                game1Result = R.color.great
+                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
+                                                    resultCreate(gameCheck)
+                                                } else {
+                                                    resultUpdate(gameCheck)
+                                                }
                                                 result = "Great!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle2)
                                                 val inflater = layoutInflater
@@ -918,8 +926,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e98e2f"))
                                             }
                                             (score * 100 / maxScore) >= 70 -> {
-                                                game1Result = "1"
-                                                resultCreate(gameCheck)
+                                                game1Result = R.color.good
+                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
+                                                    resultCreate(gameCheck)
+                                                } else {
+                                                    resultUpdate(gameCheck)
+                                                }
                                                 result = "Good!"
                                                 val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle3)
                                                 val inflater = layoutInflater
@@ -3343,22 +3355,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val dpMode = arrayOf(
             stage1s,
-            "BEAT 2 BPM120",
-            "HIPHOP 1 BPM80",
-            "REGGAETON 1 BPM90",
-            "BEAT 3 BPM110",
-            "BEAT 4 BPM100",
-            "BEAT 5 BPM90",
-            "ELECTRONICA 1 BPM90",
-            "BEAT 6 BPM100",
-            "DUBSTEP 1 BPM140",
-            "HOUSE 1 BPM130",
-            "DISCO 1 BPM110",
-            "TECHNO 1 BPM110",
-            "EUROBEAT 1 BPM130",
-            "2 STEP 1 BPM100",
-            "DRUM'N'BASS 1 BPM170",
-            "BEATS YOU CREATED"
+            stage2s,
+            stage3s,
+            stage4s,
+            stage5s,
+            stage6s,
+            stage7s,
+            stage8s,
+            stage9s,
+            stage10s,
+            stage11s,
+            stage12s,
+            stage13s,
+            stage14s,
+            stage15s,
+            stage16s,
+            stageExs
         )
 
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
@@ -4566,6 +4578,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     1 -> {
+                        gameCheck = "2"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4611,6 +4624,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     2 -> {
+                        gameCheck = "3"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4666,6 +4680,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     3 -> {
+                        gameCheck = "4"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4721,6 +4736,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     4 -> {
+                        gameCheck = "5"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4776,6 +4792,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     5 -> {
+                        gameCheck = "6"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4831,6 +4848,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     6 -> {
+                        gameCheck = "7"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4886,6 +4904,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     7 -> {
+                        gameCheck = "8"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -4951,6 +4970,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     8 -> {
+                        gameCheck = "9"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5016,6 +5036,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     9 -> {
+                        gameCheck = "10"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5081,6 +5102,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     10 -> {
+                        gameCheck = "11"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5156,6 +5178,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     11 -> {
+                        gameCheck = "12"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5231,6 +5254,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     12 -> {
+                        gameCheck = "13"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5306,6 +5330,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     13 -> {
+                        gameCheck = "14"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5371,6 +5396,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     14 -> {
+                        gameCheck = "15"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5446,6 +5472,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     15 -> {
+                        gameCheck = "16"
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1 = 2
@@ -5511,7 +5538,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     16 -> {
-                        gameCheck = "1"
                         val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                         val inflater = layoutInflater
                         val dialogView = inflater.inflate(R.layout.save_load, null)
@@ -6314,28 +6340,131 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     2 -> {
                         gridCheck = 1
-                        resultRead("1")
-                        if (game1Result == "1") {
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "1").findFirst()?.game1 != null)) {
                             stage1s.setSpan(
-                                ForegroundColorSpan(Color.RED),
-                                0, // start
-                                stage1.length, // end
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "1").findFirst()?.game1!!)),
+                                0,
+                                stage1.length,
                                 Spannable.SPAN_EXCLUSIVE_INCLUSIVE
                             )
                         }
-                        if (game1Result == "2") {
-                            stage1s.setSpan(
-                                ForegroundColorSpan(Color.GREEN),
-                                0, // start
-                                stage1.length, // end
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "2").findFirst()?.game1 != null)) {
+                            stage2s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "2").findFirst()?.game1!!)),
+                                0,
+                                stage2.length,
                                 Spannable.SPAN_EXCLUSIVE_INCLUSIVE
                             )
                         }
-                        if (game1Result == "3") {
-                            stage1s.setSpan(
-                                ForegroundColorSpan(Color.BLUE),
-                                0, // start
-                                stage1.length, // end
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "3").findFirst()?.game1 != null)) {
+                            stage3s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "3").findFirst()?.game1!!)),
+                                0,
+                                stage3.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "4").findFirst()?.game1 != null)) {
+                            stage4s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "4").findFirst()?.game1!!)),
+                                0,
+                                stage4.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "5").findFirst()?.game1 != null)) {
+                            stage5s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "5").findFirst()?.game1!!)),
+                                0,
+                                stage5.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "6").findFirst()?.game1 != null)) {
+                            stage6s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "6").findFirst()?.game1!!)),
+                                0,
+                                stage6.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "7").findFirst()?.game1 != null)) {
+                            stage7s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "7").findFirst()?.game1!!)),
+                                0,
+                                stage7.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "8").findFirst()?.game1 != null)) {
+                            stage8s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "8").findFirst()?.game1!!)),
+                                0,
+                                stage8.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "9").findFirst()?.game1 != null)) {
+                            stage9s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "9").findFirst()?.game1!!)),
+                                0,
+                                stage9.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "10").findFirst()?.game1 != null)) {
+                            stage10s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "10").findFirst()?.game1!!)),
+                                0,
+                                stage10.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "11").findFirst()?.game1 != null)) {
+                            stage11s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "11").findFirst()?.game1!!)),
+                                0,
+                                stage11.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "12").findFirst()?.game1 != null)) {
+                            stage12s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "12").findFirst()?.game1!!)),
+                                0,
+                                stage12.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "13").findFirst()?.game1 != null)) {
+                            stage13s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "13").findFirst()?.game1!!)),
+                                0,
+                                stage13.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "14").findFirst()?.game1 != null)) {
+                            stage14s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "14").findFirst()?.game1!!)),
+                                0,
+                                stage14.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "15").findFirst()?.game1 != null)) {
+                            stage15s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "15").findFirst()?.game1!!)),
+                                0,
+                                stage15.length,
+                                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+                            )
+                        }
+                        if ((mRealm.where(ResultSlot::class.java).equalTo("id", "16").findFirst()?.game1 != null)) {
+                            stage16s.setSpan(
+                                ForegroundColorSpan((mRealm.where(ResultSlot::class.java).equalTo("id", "16").findFirst()?.game1!!)),
+                                0,
+                                stage16.length,
                                 Spannable.SPAN_EXCLUSIVE_INCLUSIVE
                             )
                         }
@@ -15500,15 +15629,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun resultCreate(slot: String) {
         mRealm.executeTransaction {
             val rs = mRealm.createObject<ResultSlot>(primaryKeyValue = slot)
-            rs.game1 = game1Result.toString()
+            rs.game1 = game1Result
             mRealm.copyToRealm(rs)
         }
+    }
 
+    private fun resultUpdate(slot: String) {
+        val resultData = mRealm.where(ResultSlot::class.java).equalTo("id",slot).findFirst()
+        mRealm.executeTransaction {
+            resultData?.game1 = game1Result
+        }
     }
 
     private fun resultRead(slot: String) {
         if (mRealm.where(ResultSlot::class.java).equalTo("id", slot).findFirst()?.game1 != null) {
-            game1Result = (mRealm.where(ResultSlot::class.java).equalTo("id", slot).findFirst()?.game1!!.toString())
+            game1Result = (mRealm.where(ResultSlot::class.java).equalTo("id", slot).findFirst()?.game1!!)
         }
     }
 

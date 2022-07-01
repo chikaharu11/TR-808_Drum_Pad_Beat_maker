@@ -172,6 +172,5 @@ open class SaveSlot(
 
 open class ResultSlot(
     @PrimaryKey var id: String = "",
-    @Required
-    var game1: String = ""
+    var game1: Int = R.color.white
 ) : RealmObject()
