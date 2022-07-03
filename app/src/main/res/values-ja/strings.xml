@@ -55,6 +55,7 @@
     <string name="empty">empty</string>
     <string name="Saved">Saving… Please wait.</string>
     <string name="Loaded">Loading… Please wait.</string>
+    <string name="Finish">Finished! Please wait…</string>
     <string name="lock">Locked</string>
     <string name="bpm">BPM :</string>
     <string name="editbpm">110</string>
@@ -88,7 +89,7 @@
     <string name="result">result</string>
     <string name="start">START</string>
     <string name="stop">STOP</string>
-    <string name="clearCount">16ステージ中12ステージをクリアすると、この機能が使えるようになります</string>
+    <string name="clearCount">16ステージ中12ステージをGood判定以上でクリアすると、この機能が使えるようになります。</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>

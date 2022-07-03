@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -21,20 +20,19 @@ import android.text.Editable
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.TextWatcher
-import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.toColorInt
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.gms.tasks.OnCompleteListener
@@ -62,6 +60,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
+
+    private var interstitial: InterstitialAd? = null
+    private val adInter = "ca-app-pub-3940256099942544/1033173712"
 
     private var mpDuration = 320
     private var mpDuration2 = 625
@@ -136,6 +137,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var gameCheck = "0"
     private var game1Result = R.color.white
+    
+    private var interCheck = true
 
     private var gridCheck = 0
 
@@ -854,6 +857,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                     switch1 = 2
                                     sequencerStop()
                                     window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                    val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Finish, Snackbar.LENGTH_LONG)
+                                    val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                                    snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                    snackBar.setDuration(1200).show()
+                                    if ((score * 100 / maxScore) >= 70) {
+                                        Handler().postDelayed({
+                                            showInterstitial()
+                                        }, 1500)
+                                    }
                                     Handler().postDelayed({
 
                                         val result: String
@@ -1018,7 +1030,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                 dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#ffffff"))
                                             }
                                         }
-                                    }, 1500)
+                                    }, 2000)
                                 } else {
                                     binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                                     duplicate = 0
@@ -5540,6 +5552,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                     }
                     16 -> {
+                        gameCheck = "17"
                         if (clearCount >= 12) {
                             val builder =
                                 AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
@@ -14743,6 +14756,35 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    private fun loadInterstitial(){
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this,adInter,adRequest,object : InterstitialAdLoadCallback(){
+            override fun onAdLoaded(p0: InterstitialAd) {
+                interstitial = p0
+                interstitial?.fullScreenContentCallback = object : FullScreenContentCallback(){
+                    override fun onAdDismissedFullScreenContent() {
+
+                    }
+                    override fun onAdShowedFullScreenContent() {
+                        interstitial = null
+                    }
+                }
+            }
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                interstitial = null
+            }
+        })
+    }
+
+    private fun showInterstitial() {
+        if (interstitial != null && interCheck) {
+            interstitial?.show(this)
+            interCheck = false
+        } else if (!interCheck) {
+            interCheck = true
+        }
+    }
+
     private fun loadAdMob() {
         val request = AdRequest.Builder().build()
         admobmAdView.adSize = adSize
@@ -16916,6 +16958,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         noteCount = 0
         super.onDestroy()
         mRealm.close()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        loadInterstitial()
     }
 
     override fun onPause() {
