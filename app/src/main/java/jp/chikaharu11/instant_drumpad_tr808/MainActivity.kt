@@ -1589,6 +1589,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun changeChallenge(switching: Boolean) {
         binding.editTitle.isEnabled = switching
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).isEnabled = switching
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).isEnabled = switching
@@ -6414,6 +6416,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
+                        gameCheck = "1"
                         gridCheck = 1
                         gameSwitch = 1
                         mode = 1
@@ -14192,6 +14195,532 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
+                    val inflater = layoutInflater
+                    val dialogView = inflater.inflate(R.layout.save_load, null)
+
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot6).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot7).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot8).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR.toString())
+                    }
+
+                    builder.setView(dialogView)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
+                        .setTitle(R.string.save)
+                        .setNegativeButton("CANCEL") { _, _ ->
+                            stickyImmersiveMode()
+                        }
+                    val dialog = builder.create()
+                    dialog.show()
+
+                    dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad == null) {
+                            create("1")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("1")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad == null) {
+                            create("2")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        } else {
+                            update("2")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad == null) {
+                            create("3")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("3")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad == null) {
+                            create("4")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        } else {
+                            update("4")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad == null) {
+                            create("5")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("5")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot6).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.pad == null) {
+                            create("6")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        } else {
+                            update("6")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot7).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.pad == null) {
+                            create("7")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        } else {
+                            update("7")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot8).setOnClickListener {
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.pad == null) {
+                            create("8")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                val manager = ReviewManagerFactory.create(this)
+                                val request = manager.requestReviewFlow()
+                                request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+                                    when {
+                                        task.isSuccessful -> {
+                                            val reviewInfo = task.result
+                                            val flow = manager.launchReviewFlow(this, reviewInfo)
+                                            flow.addOnCompleteListener {
+                                                stickyImmersiveMode()
+                                            }
+                                        }
+                                        else -> {
+                                            stickyImmersiveMode()
+                                        }
+                                    }
+                                }
+                            }, 2000)
+                        } else {
+                            update("8")
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Saved, Snackbar.LENGTH_LONG)
+                            val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
+                            snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    val builder = AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
+                    val inflater = layoutInflater
+                    val dialogView = inflater.inflate(R.layout.save_load, null)
+
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot1).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot2).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot3).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot4).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot5).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot6).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot7).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.actionTitleR.toString())
+                    }
+                    if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR != null) {
+                        dialogView.findViewById<TextView>(R.id.slot8).text = (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.actionTitleR.toString())
+                    }
+
+                    builder.setView(dialogView)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
+                        .setTitle(R.string.load)
+                        .setNegativeButton("CANCEL") { _, _ ->
+                            stickyImmersiveMode()
+                        }
+                    val dialog = builder.create()
+                    dialog.show()
+
+                    dialogView.findViewById<TextView>(R.id.slot1).setOnClickListener {
+                        read("1")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "1").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot2).setOnClickListener {
+                        read("2")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "2").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot3).setOnClickListener {
+                        read("3")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "3").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot4).setOnClickListener {
+                        read("4")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "4").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot5).setOnClickListener {
+                        read("5")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "5").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot6).setOnClickListener {
+                        read("6")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "6").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot7).setOnClickListener {
+                        read("7")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "7").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
+
+                    dialogView.findViewById<TextView>(R.id.slot8).setOnClickListener {
+                        read("8")
+                        dialog.cancel()
+                        if (mRealm.where(SaveSlot::class.java).equalTo("id", "8").findFirst()?.pad != null) {
+                            sequencerSize = 0
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                            window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            val snackBar2 = Snackbar.make(findViewById(R.id.snack_space),
+                                R.string.Loaded,
+                                Snackbar.LENGTH_LONG)
+                            val snackTextView2: TextView =
+                                snackBar2.view.findViewById(R.id.snackbar_text)
+                            snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                            snackBar2.setDuration(2000).show()
+                            Handler().postDelayed({
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }, 2000)
+                        }
+                    }
                 }
             }
             false

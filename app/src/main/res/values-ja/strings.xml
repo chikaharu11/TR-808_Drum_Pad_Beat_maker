@@ -90,6 +90,8 @@
     <string name="start">START</string>
     <string name="stop">STOP</string>
     <string name="clearCount">16ステージ中12ステージをGood判定以上でクリアすると、この機能が使えるようになります。</string>
+    <string name="savexml">SAVE</string>
+    <string name="loadxml">LOAD</string>
 
     <string-array name="spinnerItems">
         <item>BASS DRUM [BD]</item>

@@ -90,6 +90,8 @@
     <string name="start">START</string>
     <string name="stop">STOP</string>
     <string name="clearCount">This feature becomes available after completing 12 of the 16 stages with a rating of Good or better.</string>
+    <string name="savexml">SAVE</string>
+    <string name="loadxml">LOAD</string>
 
 
     <string-array name="spinnerItems">
