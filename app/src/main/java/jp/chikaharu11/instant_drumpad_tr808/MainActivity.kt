@@ -141,6 +141,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var interCheck = true
 
     private var gridCheck = 0
+    private var modeCheck = 0
 
     private var count = 5
     private var bpm = 10
@@ -705,12 +706,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sequencerCount = 0
                     if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
-                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                        changeSequence()
+                        if (modeCheck == 1) {
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                        }
                     } else {
                         sequencerSize++
-                        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                        changeSequence()
+                        if (modeCheck == 1) {
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            changeSequence()
+                        }
                     }
                 }
             }
@@ -6335,6 +6340,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        modeCheck = 0
                         gridCheck = 0
                         changeChallenge(true)
                         gameSwitch = 0
@@ -6353,6 +6359,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.view.visibility = View.INVISIBLE
                     }
                     1 -> {
+                        modeCheck = 1
                         gridCheck = 0
                         changeChallenge(true)
                         gameSwitch = 0
@@ -6416,12 +6423,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
+                        modeCheck = 1
                         gameCheck = "1"
                         gridCheck = 1
                         gameSwitch = 1
                         mode = 1
                         menuSwitch = true
                         invalidateOptionsMenu()
+                        paste = 0
+                        binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
                         gridView.visibility = View.INVISIBLE
                         gridView.adapter = dpAdapter
                         dpAdapter.notifyDataSetChanged()
