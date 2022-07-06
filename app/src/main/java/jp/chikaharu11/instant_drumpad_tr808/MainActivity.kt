@@ -1267,7 +1267,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
+        if (gameSwitch == 0) {
+            findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = true
+        }
         findViewById<Spinner>(R.id.mode_spinner).isEnabled = true
         justification = 0
         sequencerCount = 0
@@ -1591,40 +1593,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
-    private fun changeChallenge(switching: Boolean) {
+    private fun changeChallenge(switching: Boolean, color: Int) {
+        findViewById<View>(R.id.bpm).findViewById<TextView>(R.id.bpmsequence).setTextColor(color)
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).setTextColor(color)
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).setTextColor(color)
+        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).setTextColor(color)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView3).setTextColor(color)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView4).setTextColor(color)
         binding.editTitle.isEnabled = switching
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sound_random).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.pitch_random).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.reset).isEnabled = switching
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).isEnabled = switching
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).isEnabled = switching
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).isEnabled = switching
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.volume_minus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_plus).isEnabled = switching
-        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.tempo_minus).isEnabled = switching
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).isEnabled = switching
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
@@ -6342,7 +6326,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     0 -> {
                         modeCheck = 0
                         gridCheck = 0
-                        changeChallenge(true)
+                        changeChallenge(true, Color.WHITE)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 0
@@ -6361,7 +6345,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     1 -> {
                         modeCheck = 1
                         gridCheck = 0
-                        changeChallenge(true)
+                        changeChallenge(true, Color.WHITE)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 1
@@ -6466,7 +6450,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             binding.sequencerView.visibility = View.VISIBLE
                             binding.notes.visibility = View.VISIBLE
                         }
-                        changeChallenge(false)
+                        changeChallenge(false, Color.GRAY)
                     }
                 }
             }
@@ -13616,6 +13600,61 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 1
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer2).findViewById<ImageView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 4
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer3).findViewById<ImageView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 7
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer4).findViewById<ImageView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 10
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer5).findViewById<ImageView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 13
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
                 }
             }
             false
