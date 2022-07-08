@@ -10,4 +10,5 @@
     <color name="good">#dfd441</color>
     <color name="great">#e98e2f</color>
     <color name="excellent">#d03933</color>
+    <color name="challengeColor">#e2e3e3</color>
 </resources>

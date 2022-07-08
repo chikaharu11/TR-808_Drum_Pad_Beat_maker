@@ -38,7 +38,9 @@
         <entry key="app/src/main/res/drawable/grid_line.xml" value="0.208" />
         <entry key="app/src/main/res/drawable/grid_sequence.xml" value="0.208" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.208" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_drop_down_24g.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_left_24.xml" value="0.2955" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_24.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/ic_baseline_filter_1_24.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/ic_baseline_filter_2_24.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/ic_baseline_library_music_24.xml" value="0.261" />

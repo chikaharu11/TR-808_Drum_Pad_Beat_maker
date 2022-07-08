@@ -1593,13 +1593,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
-    private fun changeChallenge(switching: Boolean, color: Int) {
+    private fun changeChallenge(switching: Boolean, color: Int, drawable1: Int, drawable2: Int, drawable3: Int, drawable4: Int) {
         findViewById<View>(R.id.bpm).findViewById<TextView>(R.id.bpmsequence).setTextColor(color)
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setTextColor(color)
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).setTextColor(color)
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).setTextColor(color)
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).setTextColor(color)
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView3).setTextColor(color)
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView4).setTextColor(color)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).setTextColor(color)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).setTextColor(color)
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).setImageResource(drawable1)
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).setImageResource(drawable2)
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).setImageResource(drawable3)
+        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).setImageResource(drawable4)
         binding.editTitle.isEnabled = switching
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = switching
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).isEnabled = switching
@@ -2491,28 +2498,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         )
 
         val padSequencer = arrayOf(
-            "Change Pad Sounds",
             "Change Pad Colors",
-            "Save Pad/Sequence",
-            "Load Pad/Sequence",
-            "Adjusting Sounds",
             "Lock Settings",
             "Hide banner Ads",
             "EXIT",
         )
         val padSequencer2 = arrayOf(
-            "Change to Play Mode",
             "Change Pad Colors",
-            "Save Pad/Sequence",
-            "Load Pad/Sequence",
-            "Adjusting Sounds",
             "Lock Settings",
             "Hide banner Ads",
             "EXIT",
         )
 
         val drumPadChallenge = arrayOf(
-            "Adjusting Sounds",
+            "Change Pad Colors",
             "Hide banner Ads",
             "EXIT",
         )
@@ -6326,7 +6325,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     0 -> {
                         modeCheck = 0
                         gridCheck = 0
-                        changeChallenge(true, Color.WHITE)
+                        changeChallenge(true, Color.WHITE, R.drawable.ic_baseline_arrow_drop_up_24, R.drawable.ic_baseline_arrow_drop_down_24, R.drawable.ic_baseline_arrow_right_24, R.drawable.ic_baseline_arrow_left_24)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 0
@@ -6345,7 +6344,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     1 -> {
                         modeCheck = 1
                         gridCheck = 0
-                        changeChallenge(true, Color.WHITE)
+                        changeChallenge(true, Color.WHITE, R.drawable.ic_baseline_arrow_drop_up_24, R.drawable.ic_baseline_arrow_drop_down_24, R.drawable.ic_baseline_arrow_right_24, R.drawable.ic_baseline_arrow_left_24)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 1
@@ -6450,7 +6449,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             binding.sequencerView.visibility = View.VISIBLE
                             binding.notes.visibility = View.VISIBLE
                         }
-                        changeChallenge(false, Color.GRAY)
+                        changeChallenge(false, Color.GRAY, R.drawable.ic_baseline_arrow_drop_up_24g, R.drawable.ic_baseline_arrow_drop_down_24g, R.drawable.ic_baseline_arrow_right_24g, R.drawable.ic_baseline_arrow_left_24g)
                     }
                 }
             }
