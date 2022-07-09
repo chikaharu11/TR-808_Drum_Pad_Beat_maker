@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tuning_sequencer"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintVertical_bias="0.5"
         app:layout_constraintVertical_weight="4"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer2"
         app:layout_constraintEnd_toStartOf="@+id/sequencer_list"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="5"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toBottomOf="@+id/accent_reset" />
 
@@ -76,7 +76,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer3"
         app:layout_constraintEnd_toStartOf="@+id/sequencer_list2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="5"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toBottomOf="@+id/tuning_sequencer" />
 
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer4"
         app:layout_constraintEnd_toStartOf="@+id/sequencer_list3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="5"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toBottomOf="@+id/tuning_sequencer2" />
 
@@ -100,7 +100,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tuning_sequencer5"
         app:layout_constraintEnd_toStartOf="@+id/sequencer_list4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="5"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toBottomOf="@+id/tuning_sequencer3" />
 
@@ -112,7 +112,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sequencer_list5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="5"
         app:layout_constraintStart_toEndOf="@+id/line_measure"
         app:layout_constraintTop_toBottomOf="@+id/tuning_sequencer4" />
 
@@ -124,7 +124,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sequencer_list2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintHorizontal_weight="14"
         app:layout_constraintStart_toEndOf="@+id/tuning_sequencer"
         app:layout_constraintTop_toBottomOf="@+id/number_list" />
 
@@ -136,7 +136,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sequencer_list3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintHorizontal_weight="14"
         app:layout_constraintStart_toEndOf="@+id/tuning_sequencer2"
         app:layout_constraintTop_toBottomOf="@+id/sequencer_list" />
 
@@ -148,7 +148,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sequencer_list4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintHorizontal_weight="14"
         app:layout_constraintStart_toEndOf="@+id/tuning_sequencer3"
         app:layout_constraintTop_toBottomOf="@+id/sequencer_list2" />
 
@@ -160,7 +160,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sequencer_list5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintHorizontal_weight="14"
         app:layout_constraintStart_toEndOf="@+id/tuning_sequencer4"
         app:layout_constraintTop_toBottomOf="@+id/sequencer_list3" />
 
@@ -172,7 +172,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintHorizontal_weight="14"
         app:layout_constraintStart_toEndOf="@+id/tuning_sequencer5"
         app:layout_constraintTop_toBottomOf="@+id/sequencer_list4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

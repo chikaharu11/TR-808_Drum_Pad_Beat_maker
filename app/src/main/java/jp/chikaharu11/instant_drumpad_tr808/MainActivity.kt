@@ -6340,6 +6340,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.sequencerView.visibility = View.GONE
                         binding.notes.visibility = View.GONE
                         binding.view.visibility = View.INVISIBLE
+                        stickyImmersiveMode()
                     }
                     1 -> {
                         modeCheck = 1
@@ -6357,6 +6358,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.visibility = View.INVISIBLE
                         adapter2.notifyDataSetChanged()
                         binding.view.visibility = View.INVISIBLE
+                        stickyImmersiveMode()
                         when (trackCount) {
                             2 -> {
                                 x21()
@@ -6439,6 +6441,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         bpm = 10
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
                         x21()
+                        stickyImmersiveMode()
                         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                             findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                             findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
@@ -6455,7 +6458,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                stickyImmersiveMode()
             }
         }
         moSpinner.isFocusable = false
