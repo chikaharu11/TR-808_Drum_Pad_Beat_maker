@@ -24,6 +24,8 @@ import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -539,168 +541,261 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             else -> Toast.makeText(applicationContext, R.string.elsebpm, Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun startScaling(imageView: ImageView) {
+        val scaleAnimation = ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        scaleAnimation.duration = 15000/ sequencerBpm
+        scaleAnimation.repeatCount = 0
+        scaleAnimation.fillAfter = false
+        imageView.startAnimation(scaleAnimation)
+    }
     
 
     @SuppressLint("SetTextI18n")
     @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
+        sequencerSize = 0
             runBlocking {
                 val job1 = launch {
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                    delay(100)
+                    if (a1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
+                    delay(15000/ sequencerBpm)
                 }
                 job1.join()
             }
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-        sequencerSize = 0
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 15000/ sequencerBpm) {
             sequencerCount++
             when (sequencerCount) {
                 1 -> {
-                    GlobalScope.launch { if (a1[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b1[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c1[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d1[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e1[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a1[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b1[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a2[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b2[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c2[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d2[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e2[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 2 -> {
-                    GlobalScope.launch { if (a2[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b2[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c2[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d2[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e2[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a2[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b2[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c2[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d2[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e2[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a3[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b3[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c3[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d3[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e3[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
 
                 }
                 3 -> {
-                    GlobalScope.launch { if (a3[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b3[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c3[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d3[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e3[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a3[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b3[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c3[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d3[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e3[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a4[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b4[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 4 -> {
-                    GlobalScope.launch { if (a4[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b4[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c4[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d4[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e4[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a4[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b4[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a5[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b5[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
-                    GlobalScope.launch { if (a5[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b5[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c5[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d5[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e5[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a5[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b5[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a6[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b6[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 6 -> {
-                    GlobalScope.launch { if (a6[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b6[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c6[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d6[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e6[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a6[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b6[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a7[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b7[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
-                    GlobalScope.launch { if (a7[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b7[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c7[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d7[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e7[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a7[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b7[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a8[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b8[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 8 -> {
-                    GlobalScope.launch { if (a8[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b8[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c8[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d8[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e8[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a8[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b8[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a9[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b9[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
-                    GlobalScope.launch { if (a9[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b9[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c9[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d9[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e9[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a9[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b9[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a10[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b10[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 10 -> {
-                    GlobalScope.launch { if (a10[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b10[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c10[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d10[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e10[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a10[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b10[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a11[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b11[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
-                    GlobalScope.launch { if (a11[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b11[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c11[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d11[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e11[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a11[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b11[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a12[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b12[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 12 -> {
-                    GlobalScope.launch { if (a12[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b12[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c12[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d12[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e12[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a12[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b12[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a13[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b13[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
-                    GlobalScope.launch { if (a13[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b13[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c13[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d13[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e13[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a13[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b13[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a14[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b14[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 14 -> {
-                    GlobalScope.launch { if (a14[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b14[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c14[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d14[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e14[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a14[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b14[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a15[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b15[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
-                    GlobalScope.launch { if (a15[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b15[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c15[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d15[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e15[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a15[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b15[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a16[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b16[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 16 -> {
-                    GlobalScope.launch { if (a16[sequencerSize] == 1) { se1++ } }
-                    GlobalScope.launch { if (b16[sequencerSize] == 1) { se2++ } }
-                    GlobalScope.launch { if (c16[sequencerSize] == 1 && trackCount >= 3) { se3++ } }
-                    GlobalScope.launch { if (d16[sequencerSize] == 1 && trackCount >= 4) { se4++ } }
-                    GlobalScope.launch { if (e16[sequencerSize] == 1 && trackCount >= 5) { se5++ } }
+                    if (a16[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
+                    if (b16[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
+                    if (a1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
+                    if (b1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
