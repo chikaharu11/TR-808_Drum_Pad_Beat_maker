@@ -32,6 +32,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -552,7 +553,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     
 
     @SuppressLint("SetTextI18n")
-    @OptIn(DelicateCoroutinesApi::class)
     private fun sequencerPlay() {
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
@@ -561,11 +561,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
                     soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                    if (a1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
+                    if (a1[sequencerSize] == 1) { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) }
+                    if (b1[sequencerSize] == 1) { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) }
                     delay(15000/ sequencerBpm)
                 }
                 job1.join()
@@ -573,252 +573,608 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         timer = Timer()
         timer!!.scheduleAtFixedRate(0, 15000/ sequencerBpm) {
             sequencerCount++
+            lifecycleScope.launch {
             when (sequencerCount) {
-                1 -> {
-                    if (a1[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b1[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a2[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b2[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c2[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d2[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e2[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                    1 -> {
+                    if (a1[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b1[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a2[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b2[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c2[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d2[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e2[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                2 -> {
-                    if (a2[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b2[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c2[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d2[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e2[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a3[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b3[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c3[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d3[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e3[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    2 -> {
+                    if (a2[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b2[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c2[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d2[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e2[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a3[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b3[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c3[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d3[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e3[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
 
                 }
-                3 -> {
-                    if (a3[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b3[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c3[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d3[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e3[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a4[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b4[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    3 -> {
+                    if (a3[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b3[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c3[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d3[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e3[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a4[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b4[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                4 -> {
-                    if (a4[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b4[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a5[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b5[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    4 -> {
+                    if (a4[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b4[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a5[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b5[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                5 -> {
-                    if (a5[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b5[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a6[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b6[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    5 -> {
+                    if (a5[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b5[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a6[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b6[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                6 -> {
-                    if (a6[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b6[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a7[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b7[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    6 -> {
+                    if (a6[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b6[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a7[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b7[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                7 -> {
-                    if (a7[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b7[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a8[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b8[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    7 -> {
+                    if (a7[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b7[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a8[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b8[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                8 -> {
-                    if (a8[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b8[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a9[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b9[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    8 -> {
+                    if (a8[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b8[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a9[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b9[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                9 -> {
-                    if (a9[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b9[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a10[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b10[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    9 -> {
+                    if (a9[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b9[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a10[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b10[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                10 -> {
-                    if (a10[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b10[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a11[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b11[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    10 -> {
+                    if (a10[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b10[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a11[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b11[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                11 -> {
-                    if (a11[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b11[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a12[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b12[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    11 -> {
+                    if (a11[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b11[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a12[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b12[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                12 -> {
-                    if (a12[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b12[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a13[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b13[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    12 -> {
+                    if (a12[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b12[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a13[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b13[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                13 -> {
-                    if (a13[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b13[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a14[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b14[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    13 -> {
+                    if (a13[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b13[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a14[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b14[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                14 -> {
-                    if (a14[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b14[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a15[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b15[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    14 -> {
+                    if (a14[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b14[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a15[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b15[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                15 -> {
-                    if (a15[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b15[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a16[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b16[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    15 -> {
+                    if (a15[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b15[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a16[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b16[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
-                16 -> {
-                    if (a16[sequencerSize] == 1) { GlobalScope.launch { se1++ } }
-                    if (b16[sequencerSize] == 1) { GlobalScope.launch { se2++ } }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { se3++ } }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { se4++ } }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { se5++ } }
-                    if (a1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView)) } }
-                    if (b1[sequencerSize] == 1) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView)) } }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView)) } }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView)) } }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) { GlobalScope.launch { startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView)) } }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    16 -> {
+                    if (a16[sequencerSize] == 1) {
+                        launch { se1++ }
+                    }
+                    if (b16[sequencerSize] == 1) {
+                        launch { se2++ }
+                    }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) {
+                        launch { se3++ }
+                    }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) {
+                        launch { se4++ }
+                    }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) {
+                        launch { se5++ }
+                    }
+                    if (a1[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                    }
+                    if (b1[sequencerSize] == 1) {
+                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                    }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) {
+                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                    }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) {
+                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                    }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) {
+                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                    }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
+                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
+                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
                     if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
                         if (modeCheck == 1) {
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text =
+                                (sequencerSize + 1).toString()
                             changeSequence()
                         }
                     } else {
                         sequencerSize++
                         if (modeCheck == 1) {
-                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+                            findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text =
+                                (sequencerSize + 1).toString()
                             changeSequence()
                         }
                     }
+                }
                 }
             }
         }
     }
 
     @SuppressLint("SetTextI18n")
-    @OptIn(DelicateCoroutinesApi::class)
     private fun gamePlay() {
         runBlocking {
             val job2 = launch {
@@ -962,11 +1318,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                     snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar.setDuration(1200).show()
                                     if ((score * 100 / maxScore) >= 70) {
-                                        Handler().postDelayed({
+                                        handler.postDelayed({
                                             showInterstitial()
                                         }, 1500)
                                     }
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
 
                                         val result: String
 
@@ -2489,6 +2845,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
 
+        findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple3)
+        findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple3)
+        findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple3)
+        findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple4)
+        findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple4)
+        findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple4)
+        findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple5)
+        findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple5)
+        findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple5)
+        findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple6)
+        findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple6)
+        findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple6)
+        findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple7)
+        findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple7)
+        findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.background_view).setImageResource(R.drawable.my_ripple7)
+
         if (colorCheck == 1) {
             if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
                 findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
@@ -2849,7 +3221,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -2875,7 +3247,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -2890,7 +3262,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -2900,7 +3272,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -2915,7 +3287,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -2941,7 +3313,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -2956,7 +3328,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -2966,7 +3338,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -2981,7 +3353,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -3007,7 +3379,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3022,7 +3394,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -3032,7 +3404,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3047,7 +3419,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -3057,7 +3429,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3072,7 +3444,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -3098,7 +3470,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3162,7 +3534,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3183,7 +3555,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3204,7 +3576,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3225,7 +3597,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3246,7 +3618,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3267,7 +3639,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3288,7 +3660,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -3309,7 +3681,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -5730,7 +6102,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5754,7 +6126,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5778,7 +6150,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5802,7 +6174,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5826,7 +6198,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5850,7 +6222,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5874,7 +6246,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -5898,7 +6270,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         snackBar2.view.findViewById(R.id.snackbar_text)
                                     snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                                     snackBar2.setDuration(2000).show()
-                                    Handler().postDelayed({
+                                    handler.postDelayed({
                                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                     }, 2000)
                                 }
@@ -14448,7 +14820,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -14474,7 +14846,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14489,7 +14861,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -14499,7 +14871,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14514,7 +14886,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -14540,7 +14912,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14555,7 +14927,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -14565,7 +14937,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14580,7 +14952,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -14606,7 +14978,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14621,7 +14993,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -14631,7 +15003,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14646,7 +15018,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         } else {
@@ -14656,7 +15028,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14671,7 +15043,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 val manager = ReviewManagerFactory.create(this)
                                 val request = manager.requestReviewFlow()
@@ -14697,7 +15069,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
                             snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14765,7 +15137,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14786,7 +15158,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14807,7 +15179,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14828,7 +15200,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14849,7 +15221,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14870,7 +15242,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14891,7 +15263,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
@@ -14912,7 +15284,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 snackBar2.view.findViewById(R.id.snackbar_text)
                             snackTextView2.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                             snackBar2.setDuration(2000).show()
-                            Handler().postDelayed({
+                            handler.postDelayed({
                                 window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                             }, 2000)
                         }
