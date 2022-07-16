@@ -347,6 +347,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var duplicate3 = 0
     private var duplicate4 = 0
     private var duplicate5 = 0
+
+    private var tap1 = intArrayOf(0)
+    private var tap2 = intArrayOf(0)
+    private var tap3 = intArrayOf(0)
+    private var tap4 = intArrayOf(0)
+    private var tap5 = intArrayOf(0)
     
     private var mode = 0
 
@@ -545,10 +551,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private fun startScaling(imageView: ImageView) {
         val scaleAnimation = ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
-        scaleAnimation.duration = 15000/ sequencerBpm
+        scaleAnimation.duration = 60000/ sequencerBpm
         scaleAnimation.repeatCount = 0
         scaleAnimation.fillAfter = false
         imageView.startAnimation(scaleAnimation)
+    }
+
+    private fun tapChange(tap: IntArray, view: Int) {
+        when {
+            tap[0] == 0 -> {
+                startScaling(findViewById<View>(view).findViewById(R.id.imageView))
+                tap[0] = 1
+            }
+            tap[0] == 1  -> {
+                startScaling(findViewById<View>(view).findViewById(R.id.imageView2))
+                tap[0] = 2
+            }
+            tap[0] == 2  -> {
+                startScaling(findViewById<View>(view).findViewById(R.id.imageView3))
+                tap[0] = 3
+            }
+            tap[0] == 3  -> {
+                startScaling(findViewById<View>(view).findViewById(R.id.imageView4))
+                tap[0] = 0
+            }
+        }
     }
     
 
@@ -593,19 +620,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         launch { se5++ }
                     }
                     if (a2[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                        tapChange(tap1, R.id.include_main_view)
                     }
                     if (b2[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
+                        tapChange(tap2, R.id.include_main_view4)
                     }
                     if (c2[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
+                        tapChange(tap3, R.id.include_main_view7)
                     }
                     if (d2[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
+                        tapChange(tap4, R.id.include_main_view10)
                     }
                     if (e2[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
+                        tapChange(tap5, R.id.include_main_view13)
                     }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
@@ -628,21 +655,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e2[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a3[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b3[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c3[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d3[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e3[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a3[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b3[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c3[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d3[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e3[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
@@ -666,20 +693,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         launch { se5++ }
                     }
                     if (a4[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
+                        tapChange(tap1, R.id.include_main_view)
                     }
-                    if (b4[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a4[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b4[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c4[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d4[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e4[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
@@ -701,21 +731,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e4[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a5[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b5[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a5[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b5[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c5[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d5[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e5[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
@@ -737,21 +767,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e5[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a6[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b6[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a6[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b6[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c6[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d6[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e6[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
@@ -773,21 +803,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e6[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a7[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b7[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a7[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b7[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c7[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d7[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e7[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
@@ -809,21 +839,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e7[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a8[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b8[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a8[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b8[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c8[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d8[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e8[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
@@ -845,21 +875,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e8[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a9[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b9[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a9[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b9[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c9[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d9[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e9[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
@@ -881,21 +911,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e9[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a10[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b10[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a10[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b10[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c10[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d10[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e10[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
@@ -917,21 +947,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e10[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a11[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b11[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a11[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b11[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c11[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d11[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e11[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
@@ -953,21 +983,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e11[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a12[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b12[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a12[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b12[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c12[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d12[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e12[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
@@ -989,21 +1019,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e12[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a13[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b13[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a13[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b13[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c13[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d13[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e13[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
@@ -1025,21 +1055,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e13[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a14[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b14[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a14[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b14[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c14[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d14[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e14[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
@@ -1061,21 +1091,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e14[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a15[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b15[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a15[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b15[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c15[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d15[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e15[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
@@ -1097,21 +1127,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e15[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a16[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b16[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a16[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b16[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c16[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d16[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e16[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
@@ -1133,21 +1163,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (e16[sequencerSize] == 1 && trackCount >= 5) {
                         launch { se5++ }
                     }
-                    if (a1[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view).findViewById(R.id.imageView))
-                    }
-                    if (b1[sequencerSize] == 1) {
-                        startScaling(findViewById<View>(R.id.include_main_view4).findViewById(R.id.imageView))
-                    }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) {
-                        startScaling(findViewById<View>(R.id.include_main_view7).findViewById(R.id.imageView))
-                    }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) {
-                        startScaling(findViewById<View>(R.id.include_main_view10).findViewById(R.id.imageView))
-                    }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) {
-                        startScaling(findViewById<View>(R.id.include_main_view13).findViewById(R.id.imageView))
-                    }
+                        if (a1[sequencerSize] == 1) {
+                            tapChange(tap1, R.id.include_main_view)
+                        }
+                        if (b1[sequencerSize] == 1) {
+                            tapChange(tap2, R.id.include_main_view4)
+                        }
+                        if (c1[sequencerSize] == 1 && trackCount >= 3) {
+                            tapChange(tap3, R.id.include_main_view7)
+                        }
+                        if (d1[sequencerSize] == 1 && trackCount >= 4) {
+                            tapChange(tap4, R.id.include_main_view10)
+                        }
+                        if (e1[sequencerSize] == 1 && trackCount >= 5) {
+                            tapChange(tap5, R.id.include_main_view13)
+                        }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
                         .setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
