@@ -550,7 +550,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     private fun startScaling(imageView: ImageView) {
-        val scaleAnimation = ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        val scaleAnimation = ScaleAnimation(1.0f, 1.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 1.0f, Animation.RELATIVE_TO_SELF, 1.0f)
         scaleAnimation.duration = 60000/ sequencerBpm
         scaleAnimation.repeatCount = 0
         scaleAnimation.fillAfter = false
@@ -560,7 +560,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun tapChange(tap: IntArray, view: Int) {
         when {
             tap[0] == 0 -> {
-                startScaling(findViewById<View>(view).findViewById(R.id.imageView))
+                startScaling(findViewById<View>(view).findViewById(R.id.imageView1))
                 tap[0] = 1
             }
             tap[0] == 1  -> {
@@ -8065,6 +8065,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
@@ -8311,6 +8312,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
@@ -8555,6 +8557,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     println(score)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
                 }
             }
                 false
@@ -8572,10 +8577,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
                 }
             }
                 false
@@ -8593,10 +8603,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple3)
                 }
             }
                 false
@@ -8614,6 +8629,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
@@ -8860,6 +8876,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
@@ -9104,6 +9121,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     println(score)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view4).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
                 }
             }
                 false
@@ -9121,10 +9141,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
                 }
             }
                 false
@@ -9142,10 +9167,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple4)
                 }
             }
                 false
@@ -9163,6 +9193,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
@@ -9409,6 +9440,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
@@ -9653,6 +9685,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     println(score)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view7).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
                 }
             }
                 false
@@ -9670,10 +9705,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
                 }
             }
                 false
@@ -9691,10 +9731,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple5)
                 }
             }
                 false
@@ -9713,6 +9758,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
@@ -9959,6 +10005,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
@@ -10203,6 +10250,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     println(score)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view10).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
                 }
             }
                 false
@@ -10220,10 +10270,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
                 }
             }
                 false
@@ -10241,10 +10296,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple6)
                 }
             }
                 false
@@ -10262,6 +10322,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
@@ -10508,6 +10569,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
@@ -10752,6 +10814,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     println(score)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view13).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
                 }
             }
                 false
@@ -10769,10 +10834,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
                 }
             }
                 false
@@ -10790,10 +10860,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                }
+                event.actionMasked == MotionEvent.ACTION_UP -> {
+                    findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple7)
                 }
             }
                 false
@@ -10918,6 +10993,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
@@ -11052,6 +11128,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     when {
                         a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
@@ -11201,9 +11278,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
                 }
             }
@@ -11222,9 +11301,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
                 }
             }
@@ -11243,6 +11324,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
@@ -11377,6 +11459,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                     when {
                         b1[sequencerSize] == 1 && justification == 1 && duplicate2 == 0 -> {
@@ -11526,9 +11609,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
                 }
             }
@@ -11547,9 +11632,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
                 }
             }
@@ -11568,6 +11655,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
@@ -11702,6 +11790,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                     when {
                         c1[sequencerSize] == 1 && justification == 1 && duplicate3 == 0 -> {
@@ -11851,9 +11940,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
                 }
             }
@@ -11872,9 +11963,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
                 }
             }
@@ -11894,6 +11987,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
@@ -12028,6 +12122,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                     when {
                         d1[sequencerSize] == 1 && justification == 1 && duplicate4 == 0 -> {
@@ -12177,9 +12272,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
                 }
             }
@@ -12198,9 +12295,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
                 }
             }
@@ -12219,6 +12318,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
@@ -12353,6 +12453,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     println(score)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                     when {
                         e1[sequencerSize] == 1 && justification == 1 && duplicate5 == 0 -> {
@@ -12502,9 +12603,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
                 }
             }
@@ -12523,9 +12626,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                 }
                 event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                 }
             }
