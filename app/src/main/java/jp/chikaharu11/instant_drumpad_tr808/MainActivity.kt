@@ -1,8 +1,6 @@
 package jp.chikaharu11.instant_drumpad_tr808
 
 import android.Manifest
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.pm.PackageManager
@@ -24,8 +22,6 @@ import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
-import android.view.animation.Animation
-import android.view.animation.ScaleAnimation
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -51,7 +47,6 @@ import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
-import kotlin.math.hypot
 import kotlin.properties.Delegates
 
 
@@ -552,6 +547,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
             }
         }, 12000/ sequencerBpm)
+    }
+
+    private fun soundChangeEffect(view: Int, ripple: Int) {
+        findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+        handler.postDelayed({
+            if (colorCheck == 1) {
+                findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(ripple)
+            } else {
+                findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple)
+            }
+        }, 800)
     }
     
 
@@ -2615,12 +2621,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Hide banner Ads",
             "EXIT",
         )
-        val padSequencer2 = arrayOf(
-            "Change Pad Colors",
-            "Lock Settings",
-            "Hide banner Ads",
-            "EXIT",
-        )
 
         val drumPadChallenge = arrayOf(
             "Change Pad Colors",
@@ -2630,7 +2630,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
         val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
         val psAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer)
-        val psAdapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, padSequencer2)
         val dpAdapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, drumPadChallenge)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
@@ -2717,8 +2716,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView.adapter = adapterA
                         adapterA.notifyDataSetChanged()
                     } else {
-                        gridView.adapter = psAdapterA
-                        psAdapterA.notifyDataSetChanged()
+                        gridView.adapter = adapter
+                        adapter.notifyDataSetChanged()
                     }
                 }
                 "Change to Play Mode" -> {
@@ -2730,8 +2729,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView.adapter = adapter
                         adapter.notifyDataSetChanged()
                     } else {
-                        gridView.adapter = psAdapter
-                        psAdapter.notifyDataSetChanged()
+                        gridView.adapter = adapterA
+                        adapterA.notifyDataSetChanged()
                     }
                 }
                 "Change Pad Colors" -> {
@@ -13935,31 +13934,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         admobmAdView.loadAd(request)
     }
 
-    private fun effect(imageView: ImageView, mpDuration: Int) {
-        val cx = imageView.width / 2
-        val cy = imageView.height / 2
-
-        val initialRadius = hypot(cx.toDouble(), cy.toDouble()).toFloat()
-
-        val anim = ViewAnimationUtils.createCircularReveal(imageView, cx, cy, initialRadius, 0f)
-
-        anim.addListener(object : AnimatorListenerAdapter() {
-
-            override fun onAnimationStart(animation: Animator?) {
-                super.onAnimationStart(animation)
-                imageView.visibility = View.INVISIBLE
-            }
-
-            override fun onAnimationEnd(animation: Animator) {
-                super.onAnimationEnd(animation)
-                imageView.visibility = View.VISIBLE
-            }
-        })
-
-        anim.duration = mpDuration.toLong()
-        anim.start()
-    }
-
     override fun clicked(soundList: SoundList) {
         sound16 = if (buttonB == 1) {
             soundPool.load(soundList.name, 1)
@@ -14003,7 +13977,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when {
                 buttonA == 1 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView.imageView,800)
+                    soundChangeEffect(R.id.include_main_view, R.drawable.my_ripple3)
                     sound1 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14025,7 +13999,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 2 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView2.imageView,800)
+                    soundChangeEffect(R.id.include_main_view2, R.drawable.my_ripple3)
                     sound2 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14047,7 +14021,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 3 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView3.imageView,800)
+                    soundChangeEffect(R.id.include_main_view3, R.drawable.my_ripple3)
                     sound3 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14069,7 +14043,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 4 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView4.imageView,800)
+                    soundChangeEffect(R.id.include_main_view4, R.drawable.my_ripple4)
                     sound4 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14091,7 +14065,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 5 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView5.imageView,800)
+                    soundChangeEffect(R.id.include_main_view5, R.drawable.my_ripple4)
                     sound5 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14113,7 +14087,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 6 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView6.imageView,800)
+                    soundChangeEffect(R.id.include_main_view6, R.drawable.my_ripple4)
                     sound6 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14135,7 +14109,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 7 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView7.imageView,800)
+                    soundChangeEffect(R.id.include_main_view7, R.drawable.my_ripple5)
                     sound7 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14157,7 +14131,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 8 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView8.imageView,800)
+                    soundChangeEffect(R.id.include_main_view8, R.drawable.my_ripple5)
                     sound8 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14179,7 +14153,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 9 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView9.imageView,800)
+                    soundChangeEffect(R.id.include_main_view9, R.drawable.my_ripple5)
                     sound9 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14201,7 +14175,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 10 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView10.imageView,800)
+                    soundChangeEffect(R.id.include_main_view10, R.drawable.my_ripple6)
                     sound10 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14223,7 +14197,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 11 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView11.imageView,800)
+                    soundChangeEffect(R.id.include_main_view11, R.drawable.my_ripple6)
                     sound11 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14245,7 +14219,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 12 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView12.imageView,800)
+                    soundChangeEffect(R.id.include_main_view12, R.drawable.my_ripple6)
                     sound12 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14267,7 +14241,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 13 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView13.imageView,800)
+                    soundChangeEffect(R.id.include_main_view13, R.drawable.my_ripple7)
                     sound13 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14289,7 +14263,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 14 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView14.imageView,800)
+                    soundChangeEffect(R.id.include_main_view14, R.drawable.my_ripple7)
                     sound14 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14311,7 +14285,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 15 && buttonB == 1 -> {
                     playMode()
-                    effect(binding.includeMainView15.imageView,800)
+                    soundChangeEffect(R.id.include_main_view15, R.drawable.my_ripple7)
                     sound15 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -14343,7 +14317,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 1 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView.imageView,800)
+                    soundChangeEffect(R.id.include_main_view, R.drawable.my_ripple3)
                     sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14365,7 +14339,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 2 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView2.imageView,800)
+                    soundChangeEffect(R.id.include_main_view2, R.drawable.my_ripple3)
                     sound2 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14387,7 +14361,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 3 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView3.imageView,800)
+                    soundChangeEffect(R.id.include_main_view3, R.drawable.my_ripple3)
                     sound3 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14409,7 +14383,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 4 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView4.imageView,800)
+                    soundChangeEffect(R.id.include_main_view4, R.drawable.my_ripple4)
                     sound4 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14431,7 +14405,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 5 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView5.imageView,800)
+                    soundChangeEffect(R.id.include_main_view5, R.drawable.my_ripple4)
                     sound5 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14453,7 +14427,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 6 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView6.imageView,800)
+                    soundChangeEffect(R.id.include_main_view6, R.drawable.my_ripple4)
                     sound6 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14475,7 +14449,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 7 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView7.imageView,800)
+                    soundChangeEffect(R.id.include_main_view7, R.drawable.my_ripple5)
                     sound7 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14497,7 +14471,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 8 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView8.imageView,800)
+                    soundChangeEffect(R.id.include_main_view8, R.drawable.my_ripple5)
                     sound8 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14519,7 +14493,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 9 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView9.imageView,800)
+                    soundChangeEffect(R.id.include_main_view9, R.drawable.my_ripple5)
                     sound9 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14541,7 +14515,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 10 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView10.imageView,800)
+                    soundChangeEffect(R.id.include_main_view10, R.drawable.my_ripple6)
                     sound10 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14563,7 +14537,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 11 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView11.imageView,800)
+                    soundChangeEffect(R.id.include_main_view11, R.drawable.my_ripple6)
                     sound11 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14585,7 +14559,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 12 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView12.imageView,800)
+                    soundChangeEffect(R.id.include_main_view12, R.drawable.my_ripple6)
                     sound12 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14607,7 +14581,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 13 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView13.imageView,800)
+                    soundChangeEffect(R.id.include_main_view13, R.drawable.my_ripple7)
                     sound13 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14629,7 +14603,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 14 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView14.imageView,800)
+                    soundChangeEffect(R.id.include_main_view14, R.drawable.my_ripple7)
                     sound14 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -14651,7 +14625,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 buttonA == 15 && buttonB == 2 -> {
                     playMode()
-                    effect(binding.includeMainView15.imageView,800)
+                    soundChangeEffect(R.id.include_main_view15, R.drawable.my_ripple7)
                     sound15 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
