@@ -577,6 +577,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
     }
+
+    private fun tapTiming(view: Int, ripple: Int) {
+        findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+        handler.postDelayed({
+            findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(ripple)
+        }, 7500/ sequencerBpm)
+    }
     
 
     @SuppressLint("SetTextI18n")
@@ -597,583 +604,230 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sequencerCount++
             lifecycleScope.launch {
             when (sequencerCount) {
-
                     1 -> {
-                    if (a1[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b1[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                    if (a5[sequencerSize] == 1) {
-                        tapChange(tap1, R.id.include_main_view)
-                    }
-                    if (b5[sequencerSize] == 1) {
-                        tapChange(tap2, R.id.include_main_view4)
-                    }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) {
-                        tapChange(tap3, R.id.include_main_view7)
-                    }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) {
-                        tapChange(tap4, R.id.include_main_view10)
-                    }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) {
-                        tapChange(tap5, R.id.include_main_view13)
-                    }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a1[sequencerSize] == 1) { launch { se1++ } }
+                    if (b1[sequencerSize] == 1) { launch { se2++ } }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a1[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b1[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c1[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d1[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e1[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                     2 -> {
-                    if (a2[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b2[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c2[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d2[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e2[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a6[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b6[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c6[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d6[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e6[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                        if (a2[sequencerSize] == 1) { launch { se1++ } }
+                        if (b2[sequencerSize] == 1) { launch { se2++ } }
+                        if (c2[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                        if (d2[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                        if (e2[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                        if (a2[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                        if (b2[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                        if (c2[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                        if (d2[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                        if (e2[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
 
                 }
                     3 -> {
-                    if (a3[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b3[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c3[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d3[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e3[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a7[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b7[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c7[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d7[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e7[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                        if (a3[sequencerSize] == 1) { launch { se1++ } }
+                        if (b3[sequencerSize] == 1) { launch { se2++ } }
+                        if (c3[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                        if (d3[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                        if (e3[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                        if (a3[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                        if (b3[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                        if (c3[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                        if (d3[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                        if (e3[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 4 -> {
-                    if (a4[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b4[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a8[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b8[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c8[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d8[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e8[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a4[sequencerSize] == 1) { launch { se1++ } }
+                    if (b4[sequencerSize] == 1) { launch { se2++ } }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a4[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b4[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
-                    if (a5[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b5[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a9[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b9[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c9[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d9[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e9[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a5[sequencerSize] == 1) { launch { se1++ } }
+                    if (b5[sequencerSize] == 1) { launch { se2++ } }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a5[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b5[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 6 -> {
-                    if (a6[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b6[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a10[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b10[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c10[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d10[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e10[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a6[sequencerSize] == 1) { launch { se1++ } }
+                    if (b6[sequencerSize] == 1) { launch { se2++ } }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a6[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b6[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
-                    if (a7[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b7[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a11[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b11[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c11[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d11[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e11[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a7[sequencerSize] == 1) { launch { se1++ } }
+                    if (b7[sequencerSize] == 1) { launch { se2++ } }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a7[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b7[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 8 -> {
-                    if (a8[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b8[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a12[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b12[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c12[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d12[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e12[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a8[sequencerSize] == 1) { launch { se1++ } }
+                    if (b8[sequencerSize] == 1) { launch { se2++ } }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a8[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b8[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
-                    if (a9[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b9[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a13[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b13[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c13[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d13[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e13[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a9[sequencerSize] == 1) { launch { se1++ } }
+                    if (b9[sequencerSize] == 1) { launch { se2++ } }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a9[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b9[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 10 -> {
-                    if (a10[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b10[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a14[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b14[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c14[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d14[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e14[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a10[sequencerSize] == 1) { launch { se1++ } }
+                    if (b10[sequencerSize] == 1) { launch { se2++ } }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a10[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b10[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
-                    if (a11[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b11[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a15[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b15[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c15[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d15[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e15[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a11[sequencerSize] == 1) { launch { se1++ } }
+                    if (b11[sequencerSize] == 1) { launch { se2++ } }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a11[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b11[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 12 -> {
-                    if (a12[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b12[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a16[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b16[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c16[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d16[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e16[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a12[sequencerSize] == 1) { launch { se1++ } }
+                    if (b12[sequencerSize] == 1) { launch { se2++ } }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a12[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b12[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
-                    if (a13[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b13[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a1[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b1[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c1[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d1[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e1[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a13[sequencerSize] == 1) { launch { se1++ } }
+                    if (b13[sequencerSize] == 1) { launch { se2++ } }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a13[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b13[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 14 -> {
-                    if (a14[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b14[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a2[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b2[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c2[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d2[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e2[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a14[sequencerSize] == 1) { launch { se1++ } }
+                    if (b14[sequencerSize] == 1) { launch { se2++ } }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a14[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b14[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
-                    if (a15[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b15[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a3[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b3[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c3[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d3[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e3[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a15[sequencerSize] == 1) { launch { se1++ } }
+                    if (b15[sequencerSize] == 1) { launch { se2++ } }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a15[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b15[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 16 -> {
-                    if (a16[sequencerSize] == 1) {
-                        launch { se1++ }
-                    }
-                    if (b16[sequencerSize] == 1) {
-                        launch { se2++ }
-                    }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) {
-                        launch { se3++ }
-                    }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) {
-                        launch { se4++ }
-                    }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) {
-                        launch { se5++ }
-                    }
-                        if (a4[sequencerSize] == 1) {
-                            tapChange(tap1, R.id.include_main_view)
-                        }
-                        if (b4[sequencerSize] == 1) {
-                            tapChange(tap2, R.id.include_main_view4)
-                        }
-                        if (c4[sequencerSize] == 1 && trackCount >= 3) {
-                            tapChange(tap3, R.id.include_main_view7)
-                        }
-                        if (d4[sequencerSize] == 1 && trackCount >= 4) {
-                            tapChange(tap4, R.id.include_main_view10)
-                        }
-                        if (e4[sequencerSize] == 1 && trackCount >= 5) {
-                            tapChange(tap5, R.id.include_main_view13)
-                        }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
-                        .setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
-                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    if (a16[sequencerSize] == 1) { launch { se1++ } }
+                    if (b16[sequencerSize] == 1) { launch { se2++ } }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
+                    if (a16[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+                    if (b16[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
+                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
                     if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
