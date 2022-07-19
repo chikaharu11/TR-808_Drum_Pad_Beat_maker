@@ -6452,6 +6452,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.notes.visibility = View.GONE
                         binding.view.visibility = View.INVISIBLE
                         stickyImmersiveMode()
+                        switchPadSequencer(View.VISIBLE)
                     }
                     1 -> {
                         modeCheck = 1
@@ -6472,7 +6473,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         stickyImmersiveMode()
                         when (trackCount) {
                             2 -> {
-                                x21()
+                                switchPadSequencer(View.GONE)
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
                                 findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                                 findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -6483,7 +6484,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 binding.notes.visibility = View.VISIBLE
                             }
                             3 -> {
-                                x31()
+                                switchPadSequencer(View.GONE)
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                                 findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
                                 findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -6494,7 +6495,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 binding.notes.visibility = View.VISIBLE
                             }
                             4 -> {
-                                x41()
+                                switchPadSequencer(View.GONE)
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                                 findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                                 findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
@@ -6505,7 +6506,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 binding.notes.visibility = View.VISIBLE
                             }
                             5 -> {
-                                x51()
+                                switchPadSequencer(View.GONE)
                                 findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
                                 findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
                                 findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
@@ -6551,7 +6552,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         count = 5
                         bpm = 10
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                        x21()
+                        switchPadSequencer(View.GONE)
                         stickyImmersiveMode()
                         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                             findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
@@ -10959,6 +10960,40 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
+        fun sequencerVisibility(l3:Int, l4:Int, l5:Int, l6:Int, l7:Int, l8:Int, l9:Int, l10:Int, l11:Int, l12:Int, l13:Int, l14:Int, l15:Int, ) {
+            findViewById<View>(R.id.sequencer_list3).visibility = l3
+            findViewById<View>(R.id.sequencer_list4).visibility = l4
+            findViewById<View>(R.id.sequencer_list5).visibility = l5
+            findViewById<View>(R.id.sequencer_list6).visibility = l6
+            findViewById<View>(R.id.sequencer_list7).visibility = l7
+            findViewById<View>(R.id.sequencer_list8).visibility = l8
+            findViewById<View>(R.id.sequencer_list9).visibility = l9
+            findViewById<View>(R.id.sequencer_list10).visibility = l10
+            findViewById<View>(R.id.sequencer_list11).visibility = l11
+            findViewById<View>(R.id.sequencer_list12).visibility = l12
+            findViewById<View>(R.id.sequencer_list13).visibility = l13
+            findViewById<View>(R.id.sequencer_list14).visibility = l14
+            findViewById<View>(R.id.sequencer_list15).visibility = l15
+            findViewById<View>(R.id.tuning_sequencer3).visibility = l3
+            findViewById<View>(R.id.tuning_sequencer4).visibility = l4
+            findViewById<View>(R.id.tuning_sequencer5).visibility = l5
+            findViewById<View>(R.id.tuning_sequencer6).visibility = l6
+            findViewById<View>(R.id.tuning_sequencer7).visibility = l7
+            findViewById<View>(R.id.tuning_sequencer8).visibility = l8
+            findViewById<View>(R.id.tuning_sequencer9).visibility = l9
+            findViewById<View>(R.id.tuning_sequencer10).visibility = l10
+            findViewById<View>(R.id.tuning_sequencer11).visibility = l11
+            findViewById<View>(R.id.tuning_sequencer12).visibility = l12
+            findViewById<View>(R.id.tuning_sequencer13).visibility = l13
+            findViewById<View>(R.id.tuning_sequencer14).visibility = l14
+            findViewById<View>(R.id.tuning_sequencer15).visibility = l15
+            binding.sequencerView.visibility = View.VISIBLE
+            binding.notes.visibility = View.VISIBLE
+        }
+
+        val v = View.VISIBLE
+        val g = View.GONE
+
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -10967,37 +11002,43 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
                         when (trackCount) {
                             2 -> {
-                                x21()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(g,g,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             3 -> {
-                                x31()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,g,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             4 -> {
-                                x41()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,v,g,g,g,g,g,g,g,g,g,g,g)
+                            }
+                            5 -> {
+                                sequencerVisibility(v,v,v,g,g,g,g,g,g,g,g,g,g)
+                            }
+                            6 -> {
+                                sequencerVisibility(v,v,v,v,g,g,g,g,g,g,g,g,g)
+                            }
+                            7 -> {
+                                sequencerVisibility(v,v,v,v,v,g,g,g,g,g,g,g,g)
+                            }
+                            8 -> {
+                                sequencerVisibility(v,v,v,v,v,v,g,g,g,g,g,g,g)
+                            }
+                            9 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,g,g,g,g,g,g)
+                            }
+                            10 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,g,g,g,g,g)
+                            }
+                            11 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,g,g,g,g)
+                            }
+                            12 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,g,g,g)
+                            }
+                            13 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,g,g)
+                            }
+                            14 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,g)
                             }
                         }
                     }
@@ -11009,42 +11050,48 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    if (trackCount < 5) {
+                    if (trackCount < 15) {
                         trackCount++
                         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
                         when (trackCount) {
                             3 -> {
-                                x31()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,g,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             4 -> {
-                                x41()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,v,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             5 -> {
-                                x51()
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,v,v,g,g,g,g,g,g,g,g,g,g)
+                            }
+                            6 -> {
+                                sequencerVisibility(v,v,v,v,g,g,g,g,g,g,g,g,g)
+                            }
+                            7 -> {
+                                sequencerVisibility(v,v,v,v,v,g,g,g,g,g,g,g,g)
+                            }
+                            8 -> {
+                                sequencerVisibility(v,v,v,v,v,v,g,g,g,g,g,g,g)
+                            }
+                            9 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,g,g,g,g,g,g)
+                            }
+                            10 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,g,g,g,g,g)
+                            }
+                            11 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,g,g,g,g)
+                            }
+                            12 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,g,g,g)
+                            }
+                            13 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,g,g)
+                            }
+                            14 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,g)
+                            }
+                            15 -> {
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,v)
                             }
                         }
                     }
@@ -13444,6 +13491,24 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             }
         })
+    }
+
+    private fun switchPadSequencer(visible: Int) {
+        findViewById<View>(R.id.include_main_view).visibility = visible
+        findViewById<View>(R.id.include_main_view2).visibility = visible
+        findViewById<View>(R.id.include_main_view3).visibility = visible
+        findViewById<View>(R.id.include_main_view4).visibility = visible
+        findViewById<View>(R.id.include_main_view5).visibility = visible
+        findViewById<View>(R.id.include_main_view6).visibility = visible
+        findViewById<View>(R.id.include_main_view7).visibility = visible
+        findViewById<View>(R.id.include_main_view8).visibility = visible
+        findViewById<View>(R.id.include_main_view9).visibility = visible
+        findViewById<View>(R.id.include_main_view10).visibility = visible
+        findViewById<View>(R.id.include_main_view11).visibility = visible
+        findViewById<View>(R.id.include_main_view12).visibility = visible
+        findViewById<View>(R.id.include_main_view13).visibility = visible
+        findViewById<View>(R.id.include_main_view14).visibility = visible
+        findViewById<View>(R.id.include_main_view15).visibility = visible
     }
 
     private fun x53() {
