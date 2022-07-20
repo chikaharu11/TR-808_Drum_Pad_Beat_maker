@@ -7,7 +7,7 @@
     android:background="#5A5A66"
     android:foreground="@drawable/grid_sequence">
 
-    <ImageView
+    <TextView
         android:id="@+id/change_sound"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -15,13 +15,19 @@
         android:backgroundTint="#e2e3e3"
         android:foreground="@drawable/grid_sequence"
         android:clickable="true"
-        android:scaleType="fitCenter"
+        android:autoSizeMinTextSize="1dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="2dp"
+        android:text="name"
+        android:textColor="#ffffff"
+        app:layout_constraintHorizontal_weight="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/volume_minus"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_music_note_24"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
@@ -32,6 +38,7 @@
         android:backgroundTint="#e2e3e3"
         android:clickable="true"
         android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/volume_plus"
         app:layout_constraintHorizontal_bias="0.5"
@@ -48,6 +55,7 @@
         android:backgroundTint="#e2e3e3"
         android:clickable="true"
         android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/volume"
         app:layout_constraintHorizontal_bias="0.5"
@@ -64,6 +72,7 @@
         android:backgroundTint="#e2e3e3"
         android:clickable="true"
         android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tempo_plus"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,6 +89,7 @@
         android:backgroundTint="#e2e3e3"
         android:clickable="true"
         android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tempo"
         app:layout_constraintHorizontal_bias="0.5"
@@ -99,6 +109,7 @@
         android:text="0.5"
         android:textColor="#ffffff"
         android:paddingEnd="2dp"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus"
         app:layout_constraintHorizontal_bias="0.5"
@@ -117,6 +128,7 @@
         android:text="1.0"
         android:textColor="#ffffff"
         android:paddingEnd="2dp"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
