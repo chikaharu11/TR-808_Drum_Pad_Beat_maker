@@ -427,6 +427,166 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var e14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     private var e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var f16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var g16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var h16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var i16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var j16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var k16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var l16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var m16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var n16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    private var o16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
     private var sia1 = ""
     private var sia2 = ""
@@ -512,6 +672,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var pitchArray = mutableListOf(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
     private var volumeArray = mutableListOf(1,2,3,4,5,6,7,8,9,10)
     private var sequenceArray = mutableListOf(1,0,0,0)
+    private var sequenceArray5 = mutableListOf(1,0,0,0,0)
+    private var sequenceArray10 = mutableListOf(1,0,0,0,0,0)
+    private var sequenceArray15 = mutableListOf(1,0,0,0,0,0,0)
 
     var timer: Timer? = null
 
@@ -580,227 +743,547 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lifecycleScope.launch {
             when (sequencerCount) {
                     1 -> {
-                    if (a1[sequencerSize] == 1) { launch { se1++ } }
-                    if (b1[sequencerSize] == 1) { launch { se2++ } }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a1[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b1[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c1[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d1[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e1[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                        if (a1[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                            tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                        if (b1[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                            tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                        if (c1[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                            tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                        if (d1[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                            tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                        if (e1[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                            tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                        if (f1[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                            tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                        if (g1[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                            tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                        if (h1[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                            tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                        if (i1[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                            tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                        if (j1[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                            tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                        if (k1[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                            tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                        if (l1[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                            tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                        if (m1[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                            tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                        if (n1[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                            tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                        if (o1[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                            tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                     2 -> {
-                        if (a2[sequencerSize] == 1) { launch { se1++ } }
-                        if (b2[sequencerSize] == 1) { launch { se2++ } }
-                        if (c2[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                        if (d2[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                        if (e2[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                        if (a2[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                        if (b2[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                        if (c2[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                        if (d2[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                        if (e2[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                        if (a2[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                            tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                        if (b2[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                            tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                        if (c2[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                            tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                        if (d2[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                            tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                        if (e2[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                            tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                        if (f2[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                            tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                        if (g2[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                            tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                        if (h2[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                            tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                        if (i2[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                            tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                        if (j2[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                            tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                        if (k2[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                            tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                        if (l2[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                            tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                        if (m2[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                            tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                        if (n2[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                            tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                        if (o2[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                            tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
 
                 }
                     3 -> {
-                        if (a3[sequencerSize] == 1) { launch { se1++ } }
-                        if (b3[sequencerSize] == 1) { launch { se2++ } }
-                        if (c3[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                        if (d3[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                        if (e3[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                        if (a3[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                        if (b3[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                        if (c3[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                        if (d3[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                        if (e3[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                        if (a3[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                            tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                        if (b3[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                            tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                        if (c3[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                            tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                        if (d3[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                            tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                        if (e3[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                            tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                        if (f3[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                            tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                        if (g3[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                            tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                        if (h3[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                            tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                        if (i3[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                            tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                        if (j3[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                            tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                        if (k3[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                            tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                        if (l3[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                            tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                        if (m3[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                            tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                        if (n3[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                            tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                        if (o3[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                            tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 4 -> {
-                    if (a4[sequencerSize] == 1) { launch { se1++ } }
-                    if (b4[sequencerSize] == 1) { launch { se2++ } }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a4[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b4[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c4[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d4[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e4[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a4[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b4[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c4[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d4[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e4[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f4[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g4[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h4[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i4[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j4[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k4[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l4[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m4[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n4[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o4[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 5 -> {
-                    if (a5[sequencerSize] == 1) { launch { se1++ } }
-                    if (b5[sequencerSize] == 1) { launch { se2++ } }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a5[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b5[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c5[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d5[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e5[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a5[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b5[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c5[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d5[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e5[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f5[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g5[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h5[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i5[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j5[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k5[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l5[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m5[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n5[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o5[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 6 -> {
-                    if (a6[sequencerSize] == 1) { launch { se1++ } }
-                    if (b6[sequencerSize] == 1) { launch { se2++ } }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a6[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b6[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c6[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d6[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e6[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a6[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b6[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c6[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d6[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e6[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f6[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g6[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h6[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i6[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j6[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k6[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l6[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m6[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n6[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o6[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 7 -> {
-                    if (a7[sequencerSize] == 1) { launch { se1++ } }
-                    if (b7[sequencerSize] == 1) { launch { se2++ } }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a7[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b7[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c7[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d7[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e7[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a7[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b7[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c7[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d7[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e7[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f7[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g7[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h7[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i7[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j7[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k7[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l7[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m7[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n7[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o7[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 8 -> {
-                    if (a8[sequencerSize] == 1) { launch { se1++ } }
-                    if (b8[sequencerSize] == 1) { launch { se2++ } }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a8[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b8[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c8[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d8[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e8[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a8[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b8[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c8[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d8[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e8[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f8[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g8[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h8[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i8[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j8[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k8[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l8[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m8[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n8[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o8[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 9 -> {
-                    if (a9[sequencerSize] == 1) { launch { se1++ } }
-                    if (b9[sequencerSize] == 1) { launch { se2++ } }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a9[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b9[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c9[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d9[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e9[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a9[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b9[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c9[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d9[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e9[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f9[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g9[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h9[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i9[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j9[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k9[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l9[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m9[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n9[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o9[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 10 -> {
-                    if (a10[sequencerSize] == 1) { launch { se1++ } }
-                    if (b10[sequencerSize] == 1) { launch { se2++ } }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a10[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b10[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c10[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d10[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e10[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a10[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b10[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c10[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d10[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e10[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f10[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g10[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h10[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i10[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j10[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k10[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l10[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m10[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n10[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o10[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 11 -> {
-                    if (a11[sequencerSize] == 1) { launch { se1++ } }
-                    if (b11[sequencerSize] == 1) { launch { se2++ } }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a11[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b11[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c11[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d11[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e11[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a11[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b11[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c11[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d11[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e11[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f11[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g11[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h11[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i11[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j11[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k11[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l11[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m11[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n11[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o11[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 12 -> {
-                    if (a12[sequencerSize] == 1) { launch { se1++ } }
-                    if (b12[sequencerSize] == 1) { launch { se2++ } }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a12[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b12[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c12[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d12[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e12[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a12[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b12[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c12[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d12[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e12[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f12[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g12[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h12[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i12[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j12[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k12[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l12[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m12[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n12[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o12[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 13 -> {
-                    if (a13[sequencerSize] == 1) { launch { se1++ } }
-                    if (b13[sequencerSize] == 1) { launch { se2++ } }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a13[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b13[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c13[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d13[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e13[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a13[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b13[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c13[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d13[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e13[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f13[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g13[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h13[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i13[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j13[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k13[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l13[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m13[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n13[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o13[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 14 -> {
-                    if (a14[sequencerSize] == 1) { launch { se1++ } }
-                    if (b14[sequencerSize] == 1) { launch { se2++ } }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a14[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b14[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c14[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d14[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e14[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a14[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b14[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c14[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d14[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e14[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f14[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g14[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h14[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i14[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j14[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k14[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l14[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m14[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n14[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o14[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 15 -> {
-                    if (a15[sequencerSize] == 1) { launch { se1++ } }
-                    if (b15[sequencerSize] == 1) { launch { se2++ } }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a15[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b15[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c15[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d15[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e15[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a15[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b15[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c15[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d15[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e15[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f15[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g15[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h15[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i15[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j15[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k15[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l15[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m15[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n15[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o15[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
                 16 -> {
-                    if (a16[sequencerSize] == 1) { launch { se1++ } }
-                    if (b16[sequencerSize] == 1) { launch { se2++ } }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) { launch { se3++ } }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) { launch { se4++ } }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) { launch { se5++ } }
-                    if (a16[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
-                    if (b16[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
-                    if (c16[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
-                    if (d16[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
-                    if (e16[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+                    if (a16[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+                        tapTiming(R.id.include_main_view, R.drawable.my_ripple3) } }
+                    if (b16[sequencerSize] == 1) { launch { soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                        tapTiming(R.id.include_main_view4, R.drawable.my_ripple4)} }
+                    if (c16[sequencerSize] == 1 && trackCount >= 3) { launch { soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                        tapTiming(R.id.include_main_view7, R.drawable.my_ripple5)} }
+                    if (d16[sequencerSize] == 1 && trackCount >= 4) { launch { soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                        tapTiming(R.id.include_main_view10, R.drawable.my_ripple6)} }
+                    if (e16[sequencerSize] == 1 && trackCount >= 5) { launch { soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                        tapTiming(R.id.include_main_view13, R.drawable.my_ripple7)} }
+                    if (f16[sequencerSize] == 1 && trackCount >= 6) { launch { soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                        tapTiming(R.id.include_main_view2, R.drawable.my_ripple3)} }
+                    if (g16[sequencerSize] == 1 && trackCount >= 7) { launch { soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                        tapTiming(R.id.include_main_view5, R.drawable.my_ripple4)} }
+                    if (h16[sequencerSize] == 1 && trackCount >= 8) { launch { soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                        tapTiming(R.id.include_main_view8, R.drawable.my_ripple5)} }
+                    if (i16[sequencerSize] == 1 && trackCount >= 9) { launch { soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                        tapTiming(R.id.include_main_view11, R.drawable.my_ripple6)} }
+                    if (j16[sequencerSize] == 1 && trackCount >= 10) { launch { soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                        tapTiming(R.id.include_main_view14, R.drawable.my_ripple7)} }
+                    if (k16[sequencerSize] == 1 && trackCount >= 11) { launch { soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                        tapTiming(R.id.include_main_view3, R.drawable.my_ripple3)} }
+                    if (l16[sequencerSize] == 1 && trackCount >= 12) { launch { soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                        tapTiming(R.id.include_main_view6, R.drawable.my_ripple4)} }
+                    if (m16[sequencerSize] == 1 && trackCount >= 13) { launch { soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                        tapTiming(R.id.include_main_view9, R.drawable.my_ripple5)} }
+                    if (n16[sequencerSize] == 1 && trackCount >= 14) { launch { soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                        tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
+                    if (o16[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                        tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
                     sequencerCount = 0
@@ -1460,6 +1943,166 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         e14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         resetColor()
     }
 
@@ -1544,6 +2187,166 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
     }
 
     private fun changeSequence() {
@@ -1628,6 +2431,166 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if ( e14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#ffffff")) }
         if ( e15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff")) }
         if ( e16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( f1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( f16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( g1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( g16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( h1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( h16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( i1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( i16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( j1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( j16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( k1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( k16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#d03933")) }
+        if ( l1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( l16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e98e2f")) }
+        if ( m1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( m16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#dfd441")) }
+        if ( n1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( n16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e9e8e7")) }
+        if ( o1[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o2[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o3[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o4[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o5[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o6[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o7[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o8[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o9[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o10[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o11[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o12[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o13[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o14[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o15[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff")) }
+        if ( o16[sequencerSize] == 1 ) { findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff")) }
         }
 
     @SuppressLint("SetTextI18n")
@@ -13420,86 +14383,261 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    a1[sequencerSize] = sequenceArray.random()
-                    a2[sequencerSize] = sequenceArray.random()
-                    a3[sequencerSize] = sequenceArray.random()
-                    a4[sequencerSize] = sequenceArray.random()
-                    a5[sequencerSize] = sequenceArray.random()
-                    a6[sequencerSize] = sequenceArray.random()
-                    a7[sequencerSize] = sequenceArray.random()
-                    a8[sequencerSize] = sequenceArray.random()
-                    a9[sequencerSize] = sequenceArray.random()
-                    a10[sequencerSize] = sequenceArray.random()
-                    a11[sequencerSize] = sequenceArray.random()
-                    a12[sequencerSize] = sequenceArray.random()
-                    a13[sequencerSize] = sequenceArray.random()
-                    a14[sequencerSize] = sequenceArray.random()
-                    a15[sequencerSize] = sequenceArray.random()
-                    a16[sequencerSize] = sequenceArray.random()
-                    b1[sequencerSize] = sequenceArray.random()
-                    b2[sequencerSize] = sequenceArray.random()
-                    b3[sequencerSize] = sequenceArray.random()
-                    b4[sequencerSize] = sequenceArray.random()
-                    b5[sequencerSize] = sequenceArray.random()
-                    b6[sequencerSize] = sequenceArray.random()
-                    b7[sequencerSize] = sequenceArray.random()
-                    b8[sequencerSize] = sequenceArray.random()
-                    b9[sequencerSize] = sequenceArray.random()
-                    b10[sequencerSize] = sequenceArray.random()
-                    b11[sequencerSize] = sequenceArray.random()
-                    b12[sequencerSize] = sequenceArray.random()
-                    b13[sequencerSize] = sequenceArray.random()
-                    b14[sequencerSize] = sequenceArray.random()
-                    b15[sequencerSize] = sequenceArray.random()
-                    b16[sequencerSize] = sequenceArray.random()
-                    c1[sequencerSize] = sequenceArray.random()
-                    c2[sequencerSize] = sequenceArray.random()
-                    c3[sequencerSize] = sequenceArray.random()
-                    c4[sequencerSize] = sequenceArray.random()
-                    c5[sequencerSize] = sequenceArray.random()
-                    c6[sequencerSize] = sequenceArray.random()
-                    c7[sequencerSize] = sequenceArray.random()
-                    c8[sequencerSize] = sequenceArray.random()
-                    c9[sequencerSize] = sequenceArray.random()
-                    c10[sequencerSize] = sequenceArray.random()
-                    c11[sequencerSize] = sequenceArray.random()
-                    c12[sequencerSize] = sequenceArray.random()
-                    c13[sequencerSize] = sequenceArray.random()
-                    c14[sequencerSize] = sequenceArray.random()
-                    c15[sequencerSize] = sequenceArray.random()
-                    c16[sequencerSize] = sequenceArray.random()
-                    d1[sequencerSize] = sequenceArray.random()
-                    d2[sequencerSize] = sequenceArray.random()
-                    d3[sequencerSize] = sequenceArray.random()
-                    d4[sequencerSize] = sequenceArray.random()
-                    d5[sequencerSize] = sequenceArray.random()
-                    d6[sequencerSize] = sequenceArray.random()
-                    d7[sequencerSize] = sequenceArray.random()
-                    d8[sequencerSize] = sequenceArray.random()
-                    d9[sequencerSize] = sequenceArray.random()
-                    d10[sequencerSize] = sequenceArray.random()
-                    d11[sequencerSize] = sequenceArray.random()
-                    d12[sequencerSize] = sequenceArray.random()
-                    d13[sequencerSize] = sequenceArray.random()
-                    d14[sequencerSize] = sequenceArray.random()
-                    d15[sequencerSize] = sequenceArray.random()
-                    d16[sequencerSize] = sequenceArray.random()
-                    e1[sequencerSize] = sequenceArray.random()
-                    e2[sequencerSize] = sequenceArray.random()
-                    e3[sequencerSize] = sequenceArray.random()
-                    e4[sequencerSize] = sequenceArray.random()
-                    e5[sequencerSize] = sequenceArray.random()
-                    e6[sequencerSize] = sequenceArray.random()
-                    e7[sequencerSize] = sequenceArray.random()
-                    e8[sequencerSize] = sequenceArray.random()
-                    e9[sequencerSize] = sequenceArray.random()
-                    e10[sequencerSize] = sequenceArray.random()
-                    e11[sequencerSize] = sequenceArray.random()
-                    e12[sequencerSize] = sequenceArray.random()
-                    e13[sequencerSize] = sequenceArray.random()
-                    e14[sequencerSize] = sequenceArray.random()
-                    e15[sequencerSize] = sequenceArray.random()
-                    e16[sequencerSize] = sequenceArray.random()
+                    var sequencerRandom = sequenceArray
+                    when(trackCount) {
+                        in 2..4 -> {
+                            sequencerRandom = sequenceArray
+                        }
+                        in 5..8 -> {
+                            sequencerRandom = sequenceArray5
+                        }
+                        in 9..12 -> {
+                            sequencerRandom = sequenceArray10
+                        }
+                        in 13..15 -> {
+                            sequencerRandom = sequenceArray15
+                        }
+                    }
+                    a1[sequencerSize] = sequencerRandom.random()
+                    a2[sequencerSize] = sequencerRandom.random()
+                    a3[sequencerSize] = sequencerRandom.random()
+                    a4[sequencerSize] = sequencerRandom.random()
+                    a5[sequencerSize] = sequencerRandom.random()
+                    a6[sequencerSize] = sequencerRandom.random()
+                    a7[sequencerSize] = sequencerRandom.random()
+                    a8[sequencerSize] = sequencerRandom.random()
+                    a9[sequencerSize] = sequencerRandom.random()
+                    a10[sequencerSize] = sequencerRandom.random()
+                    a11[sequencerSize] = sequencerRandom.random()
+                    a12[sequencerSize] = sequencerRandom.random()
+                    a13[sequencerSize] = sequencerRandom.random()
+                    a14[sequencerSize] = sequencerRandom.random()
+                    a15[sequencerSize] = sequencerRandom.random()
+                    a16[sequencerSize] = sequencerRandom.random()
+                    b1[sequencerSize] = sequencerRandom.random()
+                    b2[sequencerSize] = sequencerRandom.random()
+                    b3[sequencerSize] = sequencerRandom.random()
+                    b4[sequencerSize] = sequencerRandom.random()
+                    b5[sequencerSize] = sequencerRandom.random()
+                    b6[sequencerSize] = sequencerRandom.random()
+                    b7[sequencerSize] = sequencerRandom.random()
+                    b8[sequencerSize] = sequencerRandom.random()
+                    b9[sequencerSize] = sequencerRandom.random()
+                    b10[sequencerSize] = sequencerRandom.random()
+                    b11[sequencerSize] = sequencerRandom.random()
+                    b12[sequencerSize] = sequencerRandom.random()
+                    b13[sequencerSize] = sequencerRandom.random()
+                    b14[sequencerSize] = sequencerRandom.random()
+                    b15[sequencerSize] = sequencerRandom.random()
+                    b16[sequencerSize] = sequencerRandom.random()
+                    c1[sequencerSize] = sequencerRandom.random()
+                    c2[sequencerSize] = sequencerRandom.random()
+                    c3[sequencerSize] = sequencerRandom.random()
+                    c4[sequencerSize] = sequencerRandom.random()
+                    c5[sequencerSize] = sequencerRandom.random()
+                    c6[sequencerSize] = sequencerRandom.random()
+                    c7[sequencerSize] = sequencerRandom.random()
+                    c8[sequencerSize] = sequencerRandom.random()
+                    c9[sequencerSize] = sequencerRandom.random()
+                    c10[sequencerSize] = sequencerRandom.random()
+                    c11[sequencerSize] = sequencerRandom.random()
+                    c12[sequencerSize] = sequencerRandom.random()
+                    c13[sequencerSize] = sequencerRandom.random()
+                    c14[sequencerSize] = sequencerRandom.random()
+                    c15[sequencerSize] = sequencerRandom.random()
+                    c16[sequencerSize] = sequencerRandom.random()
+                    d1[sequencerSize] = sequencerRandom.random()
+                    d2[sequencerSize] = sequencerRandom.random()
+                    d3[sequencerSize] = sequencerRandom.random()
+                    d4[sequencerSize] = sequencerRandom.random()
+                    d5[sequencerSize] = sequencerRandom.random()
+                    d6[sequencerSize] = sequencerRandom.random()
+                    d7[sequencerSize] = sequencerRandom.random()
+                    d8[sequencerSize] = sequencerRandom.random()
+                    d9[sequencerSize] = sequencerRandom.random()
+                    d10[sequencerSize] = sequencerRandom.random()
+                    d11[sequencerSize] = sequencerRandom.random()
+                    d12[sequencerSize] = sequencerRandom.random()
+                    d13[sequencerSize] = sequencerRandom.random()
+                    d14[sequencerSize] = sequencerRandom.random()
+                    d15[sequencerSize] = sequencerRandom.random()
+                    d16[sequencerSize] = sequencerRandom.random()
+                    e1[sequencerSize] = sequencerRandom.random()
+                    e2[sequencerSize] = sequencerRandom.random()
+                    e3[sequencerSize] = sequencerRandom.random()
+                    e4[sequencerSize] = sequencerRandom.random()
+                    e5[sequencerSize] = sequencerRandom.random()
+                    e6[sequencerSize] = sequencerRandom.random()
+                    e7[sequencerSize] = sequencerRandom.random()
+                    e8[sequencerSize] = sequencerRandom.random()
+                    e9[sequencerSize] = sequencerRandom.random()
+                    e10[sequencerSize] = sequencerRandom.random()
+                    e11[sequencerSize] = sequencerRandom.random()
+                    e12[sequencerSize] = sequencerRandom.random()
+                    e13[sequencerSize] = sequencerRandom.random()
+                    e14[sequencerSize] = sequencerRandom.random()
+                    e15[sequencerSize] = sequencerRandom.random()
+                    e16[sequencerSize] = sequencerRandom.random()
+                    f1[sequencerSize] = sequencerRandom.random()
+                    f2[sequencerSize] = sequencerRandom.random()
+                    f3[sequencerSize] = sequencerRandom.random()
+                    f4[sequencerSize] = sequencerRandom.random()
+                    f5[sequencerSize] = sequencerRandom.random()
+                    f6[sequencerSize] = sequencerRandom.random()
+                    f7[sequencerSize] = sequencerRandom.random()
+                    f8[sequencerSize] = sequencerRandom.random()
+                    f9[sequencerSize] = sequencerRandom.random()
+                    f10[sequencerSize] = sequencerRandom.random()
+                    f11[sequencerSize] = sequencerRandom.random()
+                    f12[sequencerSize] = sequencerRandom.random()
+                    f13[sequencerSize] = sequencerRandom.random()
+                    f14[sequencerSize] = sequencerRandom.random()
+                    f15[sequencerSize] = sequencerRandom.random()
+                    f16[sequencerSize] = sequencerRandom.random()
+                    g1[sequencerSize] = sequencerRandom.random()
+                    g2[sequencerSize] = sequencerRandom.random()
+                    g3[sequencerSize] = sequencerRandom.random()
+                    g4[sequencerSize] = sequencerRandom.random()
+                    g5[sequencerSize] = sequencerRandom.random()
+                    g6[sequencerSize] = sequencerRandom.random()
+                    g7[sequencerSize] = sequencerRandom.random()
+                    g8[sequencerSize] = sequencerRandom.random()
+                    g9[sequencerSize] = sequencerRandom.random()
+                    g10[sequencerSize] = sequencerRandom.random()
+                    g11[sequencerSize] = sequencerRandom.random()
+                    g12[sequencerSize] = sequencerRandom.random()
+                    g13[sequencerSize] = sequencerRandom.random()
+                    g14[sequencerSize] = sequencerRandom.random()
+                    g15[sequencerSize] = sequencerRandom.random()
+                    g16[sequencerSize] = sequencerRandom.random()
+                    h1[sequencerSize] = sequencerRandom.random()
+                    h2[sequencerSize] = sequencerRandom.random()
+                    h3[sequencerSize] = sequencerRandom.random()
+                    h4[sequencerSize] = sequencerRandom.random()
+                    h5[sequencerSize] = sequencerRandom.random()
+                    h6[sequencerSize] = sequencerRandom.random()
+                    h7[sequencerSize] = sequencerRandom.random()
+                    h8[sequencerSize] = sequencerRandom.random()
+                    h9[sequencerSize] = sequencerRandom.random()
+                    h10[sequencerSize] = sequencerRandom.random()
+                    h11[sequencerSize] = sequencerRandom.random()
+                    h12[sequencerSize] = sequencerRandom.random()
+                    h13[sequencerSize] = sequencerRandom.random()
+                    h14[sequencerSize] = sequencerRandom.random()
+                    h15[sequencerSize] = sequencerRandom.random()
+                    h16[sequencerSize] = sequencerRandom.random()
+                    i1[sequencerSize] = sequencerRandom.random()
+                    i2[sequencerSize] = sequencerRandom.random()
+                    i3[sequencerSize] = sequencerRandom.random()
+                    i4[sequencerSize] = sequencerRandom.random()
+                    i5[sequencerSize] = sequencerRandom.random()
+                    i6[sequencerSize] = sequencerRandom.random()
+                    i7[sequencerSize] = sequencerRandom.random()
+                    i8[sequencerSize] = sequencerRandom.random()
+                    i9[sequencerSize] = sequencerRandom.random()
+                    i10[sequencerSize] = sequencerRandom.random()
+                    i11[sequencerSize] = sequencerRandom.random()
+                    i12[sequencerSize] = sequencerRandom.random()
+                    i13[sequencerSize] = sequencerRandom.random()
+                    i14[sequencerSize] = sequencerRandom.random()
+                    i15[sequencerSize] = sequencerRandom.random()
+                    i16[sequencerSize] = sequencerRandom.random()
+                    j1[sequencerSize] = sequencerRandom.random()
+                    j2[sequencerSize] = sequencerRandom.random()
+                    j3[sequencerSize] = sequencerRandom.random()
+                    j4[sequencerSize] = sequencerRandom.random()
+                    j5[sequencerSize] = sequencerRandom.random()
+                    j6[sequencerSize] = sequencerRandom.random()
+                    j7[sequencerSize] = sequencerRandom.random()
+                    j8[sequencerSize] = sequencerRandom.random()
+                    j9[sequencerSize] = sequencerRandom.random()
+                    j10[sequencerSize] = sequencerRandom.random()
+                    j11[sequencerSize] = sequencerRandom.random()
+                    j12[sequencerSize] = sequencerRandom.random()
+                    j13[sequencerSize] = sequencerRandom.random()
+                    j14[sequencerSize] = sequencerRandom.random()
+                    j15[sequencerSize] = sequencerRandom.random()
+                    j16[sequencerSize] = sequencerRandom.random()
+                    k1[sequencerSize] = sequencerRandom.random()
+                    k2[sequencerSize] = sequencerRandom.random()
+                    k3[sequencerSize] = sequencerRandom.random()
+                    k4[sequencerSize] = sequencerRandom.random()
+                    k5[sequencerSize] = sequencerRandom.random()
+                    k6[sequencerSize] = sequencerRandom.random()
+                    k7[sequencerSize] = sequencerRandom.random()
+                    k8[sequencerSize] = sequencerRandom.random()
+                    k9[sequencerSize] = sequencerRandom.random()
+                    k10[sequencerSize] = sequencerRandom.random()
+                    k11[sequencerSize] = sequencerRandom.random()
+                    k12[sequencerSize] = sequencerRandom.random()
+                    k13[sequencerSize] = sequencerRandom.random()
+                    k14[sequencerSize] = sequencerRandom.random()
+                    k15[sequencerSize] = sequencerRandom.random()
+                    k16[sequencerSize] = sequencerRandom.random()
+                    l1[sequencerSize] = sequencerRandom.random()
+                    l2[sequencerSize] = sequencerRandom.random()
+                    l3[sequencerSize] = sequencerRandom.random()
+                    l4[sequencerSize] = sequencerRandom.random()
+                    l5[sequencerSize] = sequencerRandom.random()
+                    l6[sequencerSize] = sequencerRandom.random()
+                    l7[sequencerSize] = sequencerRandom.random()
+                    l8[sequencerSize] = sequencerRandom.random()
+                    l9[sequencerSize] = sequencerRandom.random()
+                    l10[sequencerSize] = sequencerRandom.random()
+                    l11[sequencerSize] = sequencerRandom.random()
+                    l12[sequencerSize] = sequencerRandom.random()
+                    l13[sequencerSize] = sequencerRandom.random()
+                    l14[sequencerSize] = sequencerRandom.random()
+                    l15[sequencerSize] = sequencerRandom.random()
+                    l16[sequencerSize] = sequencerRandom.random()
+                    m1[sequencerSize] = sequencerRandom.random()
+                    m2[sequencerSize] = sequencerRandom.random()
+                    m3[sequencerSize] = sequencerRandom.random()
+                    m4[sequencerSize] = sequencerRandom.random()
+                    m5[sequencerSize] = sequencerRandom.random()
+                    m6[sequencerSize] = sequencerRandom.random()
+                    m7[sequencerSize] = sequencerRandom.random()
+                    m8[sequencerSize] = sequencerRandom.random()
+                    m9[sequencerSize] = sequencerRandom.random()
+                    m10[sequencerSize] = sequencerRandom.random()
+                    m11[sequencerSize] = sequencerRandom.random()
+                    m12[sequencerSize] = sequencerRandom.random()
+                    m13[sequencerSize] = sequencerRandom.random()
+                    m14[sequencerSize] = sequencerRandom.random()
+                    m15[sequencerSize] = sequencerRandom.random()
+                    m16[sequencerSize] = sequencerRandom.random()
+                    n1[sequencerSize] = sequencerRandom.random()
+                    n2[sequencerSize] = sequencerRandom.random()
+                    n3[sequencerSize] = sequencerRandom.random()
+                    n4[sequencerSize] = sequencerRandom.random()
+                    n5[sequencerSize] = sequencerRandom.random()
+                    n6[sequencerSize] = sequencerRandom.random()
+                    n7[sequencerSize] = sequencerRandom.random()
+                    n8[sequencerSize] = sequencerRandom.random()
+                    n9[sequencerSize] = sequencerRandom.random()
+                    n10[sequencerSize] = sequencerRandom.random()
+                    n11[sequencerSize] = sequencerRandom.random()
+                    n12[sequencerSize] = sequencerRandom.random()
+                    n13[sequencerSize] = sequencerRandom.random()
+                    n14[sequencerSize] = sequencerRandom.random()
+                    n15[sequencerSize] = sequencerRandom.random()
+                    n16[sequencerSize] = sequencerRandom.random()
+                    o1[sequencerSize] = sequencerRandom.random()
+                    o2[sequencerSize] = sequencerRandom.random()
+                    o3[sequencerSize] = sequencerRandom.random()
+                    o4[sequencerSize] = sequencerRandom.random()
+                    o5[sequencerSize] = sequencerRandom.random()
+                    o6[sequencerSize] = sequencerRandom.random()
+                    o7[sequencerSize] = sequencerRandom.random()
+                    o8[sequencerSize] = sequencerRandom.random()
+                    o9[sequencerSize] = sequencerRandom.random()
+                    o10[sequencerSize] = sequencerRandom.random()
+                    o11[sequencerSize] = sequencerRandom.random()
+                    o12[sequencerSize] = sequencerRandom.random()
+                    o13[sequencerSize] = sequencerRandom.random()
+                    o14[sequencerSize] = sequencerRandom.random()
+                    o15[sequencerSize] = sequencerRandom.random()
+                    o16[sequencerSize] = sequencerRandom.random()
                     changeSequence()
                 }
             }
