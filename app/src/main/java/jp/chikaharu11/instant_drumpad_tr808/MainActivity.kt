@@ -7464,50 +7464,64 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         adapter2.notifyDataSetChanged()
                         binding.view.visibility = View.INVISIBLE
                         stickyImmersiveMode()
+                        val v = View.VISIBLE
+                        val g = View.GONE
                         when (trackCount) {
                             2 -> {
                                 switchPadSequencer(View.GONE)
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(g,g,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             3 -> {
                                 switchPadSequencer(View.GONE)
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,g,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             4 -> {
                                 switchPadSequencer(View.GONE)
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,v,g,g,g,g,g,g,g,g,g,g,g)
                             }
                             5 -> {
                                 switchPadSequencer(View.GONE)
-                                findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                                findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                                binding.sequencerView.visibility = View.VISIBLE
-                                binding.notes.visibility = View.VISIBLE
+                                sequencerVisibility(v,v,v,g,g,g,g,g,g,g,g,g,g)
+                            }
+                            6 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,g,g,g,g,g,g,g,g,g)
+                            }
+                            7 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,g,g,g,g,g,g,g,g)
+                            }
+                            8 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,g,g,g,g,g,g,g)
+                            }
+                            9 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,g,g,g,g,g,g)
+                            }
+                            10 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,g,g,g,g,g)
+                            }
+                            11 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,g,g,g,g)
+                            }
+                            12 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,g,g,g)
+                            }
+                            13 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,g,g)
+                            }
+                            14 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,g)
+                            }
+                            15 -> {
+                                switchPadSequencer(View.GONE)
+                                sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,v)
                             }
                         }
                         changeSequence()
@@ -11953,37 +11967,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
-        fun sequencerVisibility(l3:Int, l4:Int, l5:Int, l6:Int, l7:Int, l8:Int, l9:Int, l10:Int, l11:Int, l12:Int, l13:Int, l14:Int, l15:Int) {
-            findViewById<View>(R.id.sequencer_list3).visibility = l3
-            findViewById<View>(R.id.sequencer_list4).visibility = l4
-            findViewById<View>(R.id.sequencer_list5).visibility = l5
-            findViewById<View>(R.id.sequencer_list6).visibility = l6
-            findViewById<View>(R.id.sequencer_list7).visibility = l7
-            findViewById<View>(R.id.sequencer_list8).visibility = l8
-            findViewById<View>(R.id.sequencer_list9).visibility = l9
-            findViewById<View>(R.id.sequencer_list10).visibility = l10
-            findViewById<View>(R.id.sequencer_list11).visibility = l11
-            findViewById<View>(R.id.sequencer_list12).visibility = l12
-            findViewById<View>(R.id.sequencer_list13).visibility = l13
-            findViewById<View>(R.id.sequencer_list14).visibility = l14
-            findViewById<View>(R.id.sequencer_list15).visibility = l15
-            findViewById<View>(R.id.tuning_sequencer3).visibility = l3
-            findViewById<View>(R.id.tuning_sequencer4).visibility = l4
-            findViewById<View>(R.id.tuning_sequencer5).visibility = l5
-            findViewById<View>(R.id.tuning_sequencer6).visibility = l6
-            findViewById<View>(R.id.tuning_sequencer7).visibility = l7
-            findViewById<View>(R.id.tuning_sequencer8).visibility = l8
-            findViewById<View>(R.id.tuning_sequencer9).visibility = l9
-            findViewById<View>(R.id.tuning_sequencer10).visibility = l10
-            findViewById<View>(R.id.tuning_sequencer11).visibility = l11
-            findViewById<View>(R.id.tuning_sequencer12).visibility = l12
-            findViewById<View>(R.id.tuning_sequencer13).visibility = l13
-            findViewById<View>(R.id.tuning_sequencer14).visibility = l14
-            findViewById<View>(R.id.tuning_sequencer15).visibility = l15
-            binding.sequencerView.visibility = View.VISIBLE
-            binding.notes.visibility = View.VISIBLE
-        }
-
         val v = View.VISIBLE
         val g = View.GONE
 
@@ -13815,35 +13798,95 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     sptF = pitchArray.random()
+                    sptF2 = pitchArray.random()
+                    sptF3 = pitchArray.random()
                     sptF4 = pitchArray.random()
+                    sptF5 = pitchArray.random()
+                    sptF6 = pitchArray.random()
                     sptF7 = pitchArray.random()
+                    sptF8 = pitchArray.random()
+                    sptF9 = pitchArray.random()
                     sptF10 = pitchArray.random()
+                    sptF11 = pitchArray.random()
+                    sptF12 = pitchArray.random()
                     sptF13 = pitchArray.random()
+                    sptF14 = pitchArray.random()
+                    sptF15 = pitchArray.random()
                     spvF = volumeArray.random()
+                    spvF2 = volumeArray.random()
+                    spvF3 = volumeArray.random()
                     spvF4 = volumeArray.random()
+                    spvF5 = volumeArray.random()
+                    spvF6 = volumeArray.random()
                     spvF7 = volumeArray.random()
+                    spvF8 = volumeArray.random()
+                    spvF9 = volumeArray.random()
                     spvF10 = volumeArray.random()
+                    spvF11 = volumeArray.random()
+                    spvF12 = volumeArray.random()
                     spvF13 = volumeArray.random()
+                    spvF14 = volumeArray.random()
+                    spvF15 = volumeArray.random()
                     soundPoolVolume = spvF/10.0f
+                    soundPoolVolume2 = spvF2/10.0f
+                    soundPoolVolume3 = spvF3/10.0f
                     soundPoolVolume4 = spvF4/10.0f
+                    soundPoolVolume5 = spvF5/10.0f
+                    soundPoolVolume6 = spvF6/10.0f
                     soundPoolVolume7 = spvF7/10.0f
+                    soundPoolVolume8 = spvF8/10.0f
+                    soundPoolVolume9 = spvF9/10.0f
                     soundPoolVolume10 = spvF10/10.0f
+                    soundPoolVolume11 = spvF11/10.0f
+                    soundPoolVolume12 = spvF12/10.0f
                     soundPoolVolume13 = spvF13/10.0f
+                    soundPoolVolume14 = spvF14/10.0f
+                    soundPoolVolume15 = spvF15/10.0f
                     soundPoolTempo = sptF/10.0f
+                    soundPoolTempo2 = sptF2/10.0f
+                    soundPoolTempo3 = sptF3/10.0f
                     soundPoolTempo4 = sptF4/10.0f
+                    soundPoolTempo5 = sptF5/10.0f
+                    soundPoolTempo6 = sptF6/10.0f
                     soundPoolTempo7 = sptF7/10.0f
+                    soundPoolTempo8 = sptF8/10.0f
+                    soundPoolTempo9 = sptF9/10.0f
                     soundPoolTempo10 = sptF10/10.0f
+                    soundPoolTempo11 = sptF11/10.0f
+                    soundPoolTempo12 = sptF12/10.0f
                     soundPoolTempo13 = sptF13/10.0f
+                    soundPoolTempo14 = sptF14/10.0f
+                    soundPoolTempo15 = sptF15/10.0f
                     findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.volume).text = soundPoolVolume2.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.volume).text = soundPoolVolume5.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.volume).text = soundPoolVolume8.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.volume).text = soundPoolVolume11.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.volume).text = soundPoolVolume14.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.volume).text = soundPoolVolume3.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.volume).text = soundPoolVolume6.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.volume).text = soundPoolVolume9.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.volume).text = soundPoolVolume12.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.volume).text = soundPoolVolume15.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
                     findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.tempo).text = soundPoolTempo2.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.tempo).text = soundPoolTempo5.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.tempo).text = soundPoolTempo8.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.tempo).text = soundPoolTempo11.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.tempo).text = soundPoolTempo14.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.tempo).text = soundPoolTempo3.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.tempo).text = soundPoolTempo6.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.tempo).text = soundPoolTempo9.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.tempo).text = soundPoolTempo12.toString().replace("f", "")
+                    findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.tempo).text = soundPoolTempo15.toString().replace("f", "")
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
                     findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -14677,6 +14720,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_main_view13).visibility = visible
         findViewById<View>(R.id.include_main_view14).visibility = visible
         findViewById<View>(R.id.include_main_view15).visibility = visible
+    }
+
+    private fun sequencerVisibility(l3:Int, l4:Int, l5:Int, l6:Int, l7:Int, l8:Int, l9:Int, l10:Int, l11:Int, l12:Int, l13:Int, l14:Int, l15:Int) {
+        findViewById<View>(R.id.sequencer_list3).visibility = l3
+        findViewById<View>(R.id.sequencer_list4).visibility = l4
+        findViewById<View>(R.id.sequencer_list5).visibility = l5
+        findViewById<View>(R.id.sequencer_list6).visibility = l6
+        findViewById<View>(R.id.sequencer_list7).visibility = l7
+        findViewById<View>(R.id.sequencer_list8).visibility = l8
+        findViewById<View>(R.id.sequencer_list9).visibility = l9
+        findViewById<View>(R.id.sequencer_list10).visibility = l10
+        findViewById<View>(R.id.sequencer_list11).visibility = l11
+        findViewById<View>(R.id.sequencer_list12).visibility = l12
+        findViewById<View>(R.id.sequencer_list13).visibility = l13
+        findViewById<View>(R.id.sequencer_list14).visibility = l14
+        findViewById<View>(R.id.sequencer_list15).visibility = l15
+        findViewById<View>(R.id.tuning_sequencer3).visibility = l3
+        findViewById<View>(R.id.tuning_sequencer4).visibility = l4
+        findViewById<View>(R.id.tuning_sequencer5).visibility = l5
+        findViewById<View>(R.id.tuning_sequencer6).visibility = l6
+        findViewById<View>(R.id.tuning_sequencer7).visibility = l7
+        findViewById<View>(R.id.tuning_sequencer8).visibility = l8
+        findViewById<View>(R.id.tuning_sequencer9).visibility = l9
+        findViewById<View>(R.id.tuning_sequencer10).visibility = l10
+        findViewById<View>(R.id.tuning_sequencer11).visibility = l11
+        findViewById<View>(R.id.tuning_sequencer12).visibility = l12
+        findViewById<View>(R.id.tuning_sequencer13).visibility = l13
+        findViewById<View>(R.id.tuning_sequencer14).visibility = l14
+        findViewById<View>(R.id.tuning_sequencer15).visibility = l15
+        binding.sequencerView.visibility = View.VISIBLE
+        binding.notes.visibility = View.VISIBLE
     }
 
     private fun x53() {
