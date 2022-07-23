@@ -46,6 +46,7 @@ import io.realm.kotlin.createObject
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.properties.Delegates
 
@@ -7799,887 +7800,327 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
 
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
-
-            if (a1[sequencerSize] == 0) {
-                a1[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a1[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a1, R.id.sequencer_list, R.id.sequence, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
-
-            if (a2[sequencerSize] == 0) {
-                a2[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a2[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a2, R.id.sequencer_list, R.id.sequence2, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
-
-            if (a3[sequencerSize] == 0) {
-                a3[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a3[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a3, R.id.sequencer_list, R.id.sequence3, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
-
-            if (a4[sequencerSize] == 0) {
-                a4[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a4[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a4, R.id.sequencer_list, R.id.sequence4, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
-
-            if (a5[sequencerSize] == 0) {
-                a5[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a5[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a5, R.id.sequencer_list, R.id.sequence5, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
-
-            if (a6[sequencerSize] == 0) {
-                a6[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a6[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a6, R.id.sequencer_list, R.id.sequence6, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
-
-            if (a7[sequencerSize] == 0) {
-                a7[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a7[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a7, R.id.sequencer_list, R.id.sequence7, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
-
-            if (a8[sequencerSize] == 0) {
-                a8[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a8[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a8, R.id.sequencer_list, R.id.sequence8, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
-
-            if (a9[sequencerSize] == 0) {
-                a9[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a9[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a9, R.id.sequencer_list, R.id.sequence9, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
-
-            if (a10[sequencerSize] == 0) {
-                a10[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a10[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a10, R.id.sequencer_list, R.id.sequence10, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
-
-            if (a11[sequencerSize] == 0) {
-                a11[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a11[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a11, R.id.sequencer_list, R.id.sequence11, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
-
-            if (a12[sequencerSize] == 0) {
-                a12[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a12[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a12, R.id.sequencer_list, R.id.sequence12, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
-
-            if (a13[sequencerSize] == 0) {
-                a13[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a13[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a13, R.id.sequencer_list, R.id.sequence13, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
-
-            if (a14[sequencerSize] == 0) {
-                a14[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a14[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a14, R.id.sequencer_list, R.id.sequence14, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
-
-            if (a15[sequencerSize] == 0) {
-                a15[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a15[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a15, R.id.sequencer_list, R.id.sequence15, "#d03933")
             false
         }
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
-
-            if (a16[sequencerSize] == 0) {
-                a16[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#d03933"))
-            } else {
-                a16[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(a16, R.id.sequencer_list, R.id.sequence16, "#d03933")
             false
         }
 
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
-
-            if (b1[sequencerSize] == 0) {
-                b1[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b1[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b1, R.id.sequencer_list2, R.id.sequence, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
-
-            if (b2[sequencerSize] == 0) {
-                b2[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b2[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b2, R.id.sequencer_list2, R.id.sequence2, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
-
-            if (b3[sequencerSize] == 0) {
-                b3[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b3[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b3, R.id.sequencer_list2, R.id.sequence3, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
-
-            if (b4[sequencerSize] == 0) {
-                b4[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b4[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b4, R.id.sequencer_list2, R.id.sequence4, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
-
-            if (b5[sequencerSize] == 0) {
-                b5[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b5[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b5, R.id.sequencer_list2, R.id.sequence5, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
-
-            if (b6[sequencerSize] == 0) {
-                b6[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b6[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b6, R.id.sequencer_list2, R.id.sequence6, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
-
-            if (b7[sequencerSize] == 0) {
-                b7[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b7[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b7, R.id.sequencer_list2, R.id.sequence7, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
-
-            if (b8[sequencerSize] == 0) {
-                b8[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b8[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b8, R.id.sequencer_list2, R.id.sequence8, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
-
-            if (b9[sequencerSize] == 0) {
-                b9[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b9[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b9, R.id.sequencer_list2, R.id.sequence9, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
-
-            if (b10[sequencerSize] == 0) {
-                b10[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b10[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b10, R.id.sequencer_list2, R.id.sequence10, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
-
-            if (b11[sequencerSize] == 0) {
-                b11[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b11[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b11, R.id.sequencer_list2, R.id.sequence11, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
-
-            if (b12[sequencerSize] == 0) {
-                b12[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b12[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b12, R.id.sequencer_list2, R.id.sequence12, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
-
-            if (b13[sequencerSize] == 0) {
-                b13[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b13[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b13, R.id.sequencer_list2, R.id.sequence13, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
-
-            if (b14[sequencerSize] == 0) {
-                b14[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b14[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b14, R.id.sequencer_list2, R.id.sequence14, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
-
-            if (b15[sequencerSize] == 0) {
-                b15[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b15[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b15, R.id.sequencer_list2, R.id.sequence15, "#e98e2f")
             false
         }
         findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
-
-            if (b16[sequencerSize] == 0) {
-                b16[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e98e2f"))
-            } else {
-                b16[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(b16, R.id.sequencer_list2, R.id.sequence16, "#e98e2f")
             false
         }
 
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
-
-            if (c1[sequencerSize] == 0) {
-                c1[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c1[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c1, R.id.sequencer_list3, R.id.sequence, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
-
-            if (c2[sequencerSize] == 0) {
-                c2[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c2[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c2, R.id.sequencer_list3, R.id.sequence2, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
-
-            if (c3[sequencerSize] == 0) {
-                c3[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c3[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c3, R.id.sequencer_list3, R.id.sequence3, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
-
-            if (c4[sequencerSize] == 0) {
-                c4[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c4[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c4, R.id.sequencer_list3, R.id.sequence4, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
-
-            if (c5[sequencerSize] == 0) {
-                c5[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c5[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c5, R.id.sequencer_list3, R.id.sequence5, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
-
-            if (c6[sequencerSize] == 0) {
-                c6[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c6[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c6, R.id.sequencer_list3, R.id.sequence6, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
-
-            if (c7[sequencerSize] == 0) {
-                c7[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c7[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c7, R.id.sequencer_list3, R.id.sequence7, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
-
-            if (c8[sequencerSize] == 0) {
-                c8[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c8[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c8, R.id.sequencer_list3, R.id.sequence8, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
-
-            if (c9[sequencerSize] == 0) {
-                c9[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c9[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c9, R.id.sequencer_list3, R.id.sequence9, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
-
-            if (c10[sequencerSize] == 0) {
-                c10[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c10[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c10, R.id.sequencer_list3, R.id.sequence10, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
-
-            if (c11[sequencerSize] == 0) {
-                c11[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c11[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c11, R.id.sequencer_list3, R.id.sequence11, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
-
-            if (c12[sequencerSize] == 0) {
-                c12[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c12[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c12, R.id.sequencer_list3, R.id.sequence12, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
-
-            if (c13[sequencerSize] == 0) {
-                c13[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c13[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c13, R.id.sequencer_list3, R.id.sequence13, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
-
-            if (c14[sequencerSize] == 0) {
-                c14[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c14[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c14, R.id.sequencer_list3, R.id.sequence14, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
-
-            if (c15[sequencerSize] == 0) {
-                c15[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c15[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c15, R.id.sequencer_list3, R.id.sequence15, "#dfd441")
             false
         }
         findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
-
-            if (c16[sequencerSize] == 0) {
-                c16[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#dfd441"))
-            } else {
-                c16[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(c16, R.id.sequencer_list3, R.id.sequence16, "#dfd441")
             false
         }
 
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
-
-            if (d1[sequencerSize] == 0) {
-                d1[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d1[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d1, R.id.sequencer_list4, R.id.sequence, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
-
-            if (d2[sequencerSize] == 0) {
-                d2[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d2[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d2, R.id.sequencer_list4, R.id.sequence2, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
-
-            if (d3[sequencerSize] == 0) {
-                d3[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d3[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d3, R.id.sequencer_list4, R.id.sequence3, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
-
-            if (d4[sequencerSize] == 0) {
-                d4[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d4[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d4, R.id.sequencer_list4, R.id.sequence4, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
-
-            if (d5[sequencerSize] == 0) {
-                d5[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d5[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d5, R.id.sequencer_list4, R.id.sequence5, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
-
-            if (d6[sequencerSize] == 0) {
-                d6[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d6[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d6, R.id.sequencer_list4, R.id.sequence6, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
-
-            if (d7[sequencerSize] == 0) {
-                d7[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d7[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d7, R.id.sequencer_list4, R.id.sequence7, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
-
-            if (d8[sequencerSize] == 0) {
-                d8[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d8[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d8, R.id.sequencer_list4, R.id.sequence8, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
-
-            if (d9[sequencerSize] == 0) {
-                d9[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d9[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d9, R.id.sequencer_list4, R.id.sequence9, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
-
-            if (d10[sequencerSize] == 0) {
-                d10[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d10[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d10, R.id.sequencer_list4, R.id.sequence10, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
-
-            if (d11[sequencerSize] == 0) {
-                d11[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d11[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d11, R.id.sequencer_list4, R.id.sequence11, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
-
-            if (d12[sequencerSize] == 0) {
-                d12[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d12[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d12, R.id.sequencer_list4, R.id.sequence12, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
-
-            if (d13[sequencerSize] == 0) {
-                d13[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d13[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d13, R.id.sequencer_list4, R.id.sequence13, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
-
-            if (d14[sequencerSize] == 0) {
-                d14[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d14[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d14, R.id.sequencer_list4, R.id.sequence14, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
-
-            if (d15[sequencerSize] == 0) {
-                d15[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d15[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d15, R.id.sequencer_list4, R.id.sequence15, "#e9e8e7")
             false
         }
         findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
-
-            if (d16[sequencerSize] == 0) {
-                d16[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#e9e8e7"))
-            } else {
-                d16[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(d16, R.id.sequencer_list4, R.id.sequence16, "#e9e8e7")
             false
         }
 
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
-
-            if (e1[sequencerSize] == 0) {
-                e1[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e1[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e1, R.id.sequencer_list5, R.id.sequence, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
-
-            if (e2[sequencerSize] == 0) {
-                e2[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e2[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e2, R.id.sequencer_list5, R.id.sequence2, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
-
-            if (e3[sequencerSize] == 0) {
-                e3[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e3[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e3, R.id.sequencer_list5, R.id.sequence3, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
-
-            if (e4[sequencerSize] == 0) {
-                e4[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e4[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e4, R.id.sequencer_list5, R.id.sequence4, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
-
-            if (e5[sequencerSize] == 0) {
-                e5[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e5[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e5, R.id.sequencer_list5, R.id.sequence5, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
-
-            if (e6[sequencerSize] == 0) {
-                e6[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e6[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e6, R.id.sequencer_list5, R.id.sequence6, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
-
-            if (e7[sequencerSize] == 0) {
-                e7[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e7[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e7, R.id.sequencer_list5, R.id.sequence7, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
-
-            if (e8[sequencerSize] == 0) {
-                e8[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e8[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e8, R.id.sequencer_list5, R.id.sequence8, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
-
-            if (e9[sequencerSize] == 0) {
-                e9[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e9[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e9, R.id.sequencer_list5, R.id.sequence9, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
-
-            if (e10[sequencerSize] == 0) {
-                e10[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e10[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e10, R.id.sequencer_list5, R.id.sequence10, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
-
-            if (e11[sequencerSize] == 0) {
-                e11[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e11[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e11, R.id.sequencer_list5, R.id.sequence11, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
-
-            if (e12[sequencerSize] == 0) {
-                e12[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e12[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e12, R.id.sequencer_list5, R.id.sequence12, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
-
-            if (e13[sequencerSize] == 0) {
-                e13[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e13[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e13, R.id.sequencer_list5, R.id.sequence13, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
-
-            if (e14[sequencerSize] == 0) {
-                e14[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e14[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e14, R.id.sequencer_list5, R.id.sequence14, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
-
-            if (e15[sequencerSize] == 0) {
-                e15[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e15[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e15, R.id.sequencer_list5, R.id.sequence15, "#ffffff")
             false
         }
         findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
-
-            if (e16[sequencerSize] == 0) {
-                e16[sequencerSize] = 1
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#ffffff"))
-            } else {
-                e16[sequencerSize] = 0
-                findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).setBackgroundColor(Color.parseColor("#5A5A66"))
-            }
+            sequenceTap(e16, R.id.sequencer_list5, R.id.sequence16, "#ffffff")
             false
         }
 
@@ -14658,6 +14099,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     .replace("_"," ")
                     .replace(".ogg", "").uppercase()
             findViewById<View>(seq).findViewById<TextView>(voltem).text = voltem2.toString().replace("f", "")
+    }
+
+    private fun sequenceTap(number: MutableList<Int>, list: Int, sequence: Int, color: String) {
+        if (number[sequencerSize] == 0) {
+            number[sequencerSize] = 1
+            findViewById<View>(list).findViewById<ImageView>(sequence).setBackgroundColor(Color.parseColor(color))
+        } else {
+            number[sequencerSize] = 0
+            findViewById<View>(list).findViewById<ImageView>(sequence).setBackgroundColor(Color.parseColor("#5A5A66"))
+        }
     }
 
     private fun x53() {
