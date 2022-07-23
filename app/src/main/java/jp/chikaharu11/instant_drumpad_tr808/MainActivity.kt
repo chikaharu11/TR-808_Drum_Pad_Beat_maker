@@ -14598,7 +14598,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.sequencerView.visibility = View.VISIBLE
         binding.notes.visibility = View.VISIBLE
     }
-    
+
     private fun pasteText() {
         findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
         findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
@@ -15205,8 +15205,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText1 = soundList.name
-                    soundPoolVolume = 0.5f
-                    soundPoolTempo = 1.0f
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -15230,9 +15228,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText2 = soundList.name
-                    soundPoolVolume2 = 0.5f
-                    soundPoolTempo2 = 1.0f
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15252,9 +15251,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText3 = soundList.name
-                    soundPoolVolume3 = 0.5f
-                    soundPoolTempo3 = 1.0f
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15274,8 +15274,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText4 = soundList.name
-                    soundPoolVolume4 = 0.5f
-                    soundPoolTempo4 = 1.0f
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -15299,9 +15297,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText5 = soundList.name
-                    soundPoolVolume5 = 0.5f
-                    soundPoolTempo5 = 1.0f
                     findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15321,9 +15320,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText6 = soundList.name
-                    soundPoolVolume6 = 0.5f
-                    soundPoolTempo6 = 1.0f
                     findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15343,8 +15343,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText7 = soundList.name
-                    soundPoolVolume7 = 0.5f
-                    soundPoolTempo7 = 1.0f
                     findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -15368,9 +15366,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText8 = soundList.name
-                    soundPoolVolume8 = 0.5f
-                    soundPoolTempo8 = 1.0f
                     findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15390,9 +15389,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText9 = soundList.name
-                    soundPoolVolume9 = 0.5f
-                    soundPoolTempo9 = 1.0f
                     findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15412,8 +15412,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText10 = soundList.name
-                    soundPoolVolume10 = 0.5f
-                    soundPoolTempo10 = 1.0f
                     findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -15437,9 +15435,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText11 = soundList.name
-                    soundPoolVolume11 = 0.5f
-                    soundPoolTempo11 = 1.0f
                     findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15459,9 +15458,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText12 = soundList.name
-                    soundPoolVolume12 = 0.5f
-                    soundPoolTempo12 = 1.0f
                     findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15481,8 +15481,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText13 = soundList.name
-                    soundPoolVolume13 = 0.5f
-                    soundPoolTempo13 = 1.0f
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
@@ -15506,9 +15504,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText14 = soundList.name
-                    soundPoolVolume14 = 0.5f
-                    soundPoolTempo14 = 1.0f
                     findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15528,9 +15527,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText15 = soundList.name
-                    soundPoolVolume15 = 0.5f
-                    soundPoolTempo15 = 1.0f
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.change_sound).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
@@ -15561,8 +15561,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText1 = soundList.name.replace(".ogg","")
-                    soundPoolVolume = 0.5f
-                    soundPoolTempo = 1.0f
                     findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                     findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
@@ -15585,9 +15583,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView2.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText2 = soundList.name.replace(".ogg","")
-                    soundPoolVolume2 = 0.5f
-                    soundPoolTempo2 = 1.0f
                     findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 3 && buttonB == 2 -> {
@@ -15607,9 +15605,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView3.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText3 = soundList.name.replace(".ogg","")
-                    soundPoolVolume3 = 0.5f
-                    soundPoolTempo3 = 1.0f
                     findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 4 && buttonB == 2 -> {
@@ -15629,8 +15627,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView4.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText4 = soundList.name.replace(".ogg","")
-                    soundPoolVolume4 = 0.5f
-                    soundPoolTempo4 = 1.0f
                     findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                     findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
@@ -15653,9 +15649,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView5.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText5 = soundList.name.replace(".ogg","")
-                    soundPoolVolume5 = 0.5f
-                    soundPoolTempo5 = 1.0f
                     findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 6 && buttonB == 2 -> {
@@ -15675,9 +15671,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView6.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText6 = soundList.name.replace(".ogg","")
-                    soundPoolVolume6 = 0.5f
-                    soundPoolTempo6 = 1.0f
                     findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 7 && buttonB == 2 -> {
@@ -15697,8 +15693,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView7.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText7 = soundList.name.replace(".ogg","")
-                    soundPoolVolume7 = 0.5f
-                    soundPoolTempo7 = 1.0f
                     findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                     findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
@@ -15721,9 +15715,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView8.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText8 = soundList.name.replace(".ogg","")
-                    soundPoolVolume8 = 0.5f
-                    soundPoolTempo8 = 1.0f
                     findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 9 && buttonB == 2 -> {
@@ -15743,9 +15737,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView9.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText9 = soundList.name.replace(".ogg","")
-                    soundPoolVolume9 = 0.5f
-                    soundPoolTempo9 = 1.0f
                     findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 10 && buttonB == 2 -> {
@@ -15765,8 +15759,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView10.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText10 = soundList.name.replace(".ogg","")
-                    soundPoolVolume10 = 0.5f
-                    soundPoolTempo10 = 1.0f
                     findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                     findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
@@ -15789,9 +15781,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView11.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText11 = soundList.name.replace(".ogg","")
-                    soundPoolVolume11 = 0.5f
-                    soundPoolTempo11 = 1.0f
                     findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 12 && buttonB == 2 -> {
@@ -15811,9 +15803,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView12.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText12 = soundList.name.replace(".ogg","")
-                    soundPoolVolume12 = 0.5f
-                    soundPoolTempo12 = 1.0f
                     findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 13 && buttonB == 2 -> {
@@ -15833,8 +15825,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView13.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText13 = soundList.name.replace(".ogg","")
-                    soundPoolVolume13 = 0.5f
-                    soundPoolTempo13 = 1.0f
                     findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                     findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
@@ -15857,9 +15847,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView14.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText14 = soundList.name.replace(".ogg","")
-                    soundPoolVolume14 = 0.5f
-                    soundPoolTempo14 = 1.0f
                     findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 15 && buttonB == 2 -> {
@@ -15879,9 +15869,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView15.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
                     padText15 = soundList.name.replace(".ogg","")
-                    soundPoolVolume15 = 0.5f
-                    soundPoolTempo15 = 1.0f
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
+                    findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.change_sound).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".","").uppercase()
                 }
                 buttonA == 16 -> {
