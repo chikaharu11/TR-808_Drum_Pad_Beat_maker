@@ -8124,6 +8124,656 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(f1, R.id.sequencer_list6, R.id.sequence, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(f2, R.id.sequencer_list6, R.id.sequence2, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(f3, R.id.sequencer_list6, R.id.sequence3, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(f4, R.id.sequencer_list6, R.id.sequence4, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(f5, R.id.sequencer_list6, R.id.sequence5, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(f6, R.id.sequencer_list6, R.id.sequence6, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(f7, R.id.sequencer_list6, R.id.sequence7, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(f8, R.id.sequencer_list6, R.id.sequence8, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(f9, R.id.sequencer_list6, R.id.sequence9, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(f10, R.id.sequencer_list6, R.id.sequence10, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(f11, R.id.sequencer_list6, R.id.sequence11, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(f12, R.id.sequencer_list6, R.id.sequence12, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(f13, R.id.sequencer_list6, R.id.sequence13, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(f14, R.id.sequencer_list6, R.id.sequence14, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(f15, R.id.sequencer_list6, R.id.sequence15, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list6).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(f16, R.id.sequencer_list6, R.id.sequence16, "#d03933")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(g1, R.id.sequencer_list7, R.id.sequence, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(g2, R.id.sequencer_list7, R.id.sequence2, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(g3, R.id.sequencer_list7, R.id.sequence3, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(g4, R.id.sequencer_list7, R.id.sequence4, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(g5, R.id.sequencer_list7, R.id.sequence5, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(g6, R.id.sequencer_list7, R.id.sequence6, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(g7, R.id.sequencer_list7, R.id.sequence7, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(g8, R.id.sequencer_list7, R.id.sequence8, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(g9, R.id.sequencer_list7, R.id.sequence9, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(g10, R.id.sequencer_list7, R.id.sequence10, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(g11, R.id.sequencer_list7, R.id.sequence11, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(g12, R.id.sequencer_list7, R.id.sequence12, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(g13, R.id.sequencer_list7, R.id.sequence13, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(g14, R.id.sequencer_list7, R.id.sequence14, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(g15, R.id.sequencer_list7, R.id.sequence15, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list7).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(g16, R.id.sequencer_list7, R.id.sequence16, "#e98e2f")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(h1, R.id.sequencer_list8, R.id.sequence, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(h2, R.id.sequencer_list8, R.id.sequence2, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(h3, R.id.sequencer_list8, R.id.sequence3, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(h4, R.id.sequencer_list8, R.id.sequence4, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(h5, R.id.sequencer_list8, R.id.sequence5, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(h6, R.id.sequencer_list8, R.id.sequence6, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(h7, R.id.sequencer_list8, R.id.sequence7, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(h8, R.id.sequencer_list8, R.id.sequence8, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(h9, R.id.sequencer_list8, R.id.sequence9, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(h10, R.id.sequencer_list8, R.id.sequence10, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(h11, R.id.sequencer_list8, R.id.sequence11, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(h12, R.id.sequencer_list8, R.id.sequence12, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(h13, R.id.sequencer_list8, R.id.sequence13, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(h14, R.id.sequencer_list8, R.id.sequence14, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(h15, R.id.sequencer_list8, R.id.sequence15, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list8).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(h16, R.id.sequencer_list8, R.id.sequence16, "#dfd441")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(i1, R.id.sequencer_list9, R.id.sequence, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(i2, R.id.sequencer_list9, R.id.sequence2, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(i3, R.id.sequencer_list9, R.id.sequence3, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(i4, R.id.sequencer_list9, R.id.sequence4, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(i5, R.id.sequencer_list9, R.id.sequence5, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(i6, R.id.sequencer_list9, R.id.sequence6, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(i7, R.id.sequencer_list9, R.id.sequence7, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(i8, R.id.sequencer_list9, R.id.sequence8, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(i9, R.id.sequencer_list9, R.id.sequence9, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(i10, R.id.sequencer_list9, R.id.sequence10, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(i11, R.id.sequencer_list9, R.id.sequence11, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(i12, R.id.sequencer_list9, R.id.sequence12, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(i13, R.id.sequencer_list9, R.id.sequence13, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(i14, R.id.sequencer_list9, R.id.sequence14, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(i15, R.id.sequencer_list9, R.id.sequence15, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list9).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(i16, R.id.sequencer_list9, R.id.sequence16, "#e9e8e7")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(j1, R.id.sequencer_list10, R.id.sequence, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(j2, R.id.sequencer_list10, R.id.sequence2, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(j3, R.id.sequencer_list10, R.id.sequence3, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(j4, R.id.sequencer_list10, R.id.sequence4, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(j5, R.id.sequencer_list10, R.id.sequence5, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(j6, R.id.sequencer_list10, R.id.sequence6, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(j7, R.id.sequencer_list10, R.id.sequence7, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(j8, R.id.sequencer_list10, R.id.sequence8, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(j9, R.id.sequencer_list10, R.id.sequence9, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(j10, R.id.sequencer_list10, R.id.sequence10, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(j11, R.id.sequencer_list10, R.id.sequence11, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(j12, R.id.sequencer_list10, R.id.sequence12, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(j13, R.id.sequencer_list10, R.id.sequence13, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(j14, R.id.sequencer_list10, R.id.sequence14, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(j15, R.id.sequencer_list10, R.id.sequence15, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list10).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(j16, R.id.sequencer_list10, R.id.sequence16, "#ffffff")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(k1, R.id.sequencer_list11, R.id.sequence, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(k2, R.id.sequencer_list11, R.id.sequence2, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(k3, R.id.sequencer_list11, R.id.sequence3, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(k4, R.id.sequencer_list11, R.id.sequence4, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(k5, R.id.sequencer_list11, R.id.sequence5, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(k6, R.id.sequencer_list11, R.id.sequence6, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(k7, R.id.sequencer_list11, R.id.sequence7, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(k8, R.id.sequencer_list11, R.id.sequence8, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(k9, R.id.sequencer_list11, R.id.sequence9, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(k10, R.id.sequencer_list11, R.id.sequence10, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(k11, R.id.sequencer_list11, R.id.sequence11, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(k12, R.id.sequencer_list11, R.id.sequence12, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(k13, R.id.sequencer_list11, R.id.sequence13, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(k14, R.id.sequencer_list11, R.id.sequence14, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(k15, R.id.sequencer_list11, R.id.sequence15, "#d03933")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list11).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(k16, R.id.sequencer_list11, R.id.sequence16, "#d03933")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(l1, R.id.sequencer_list12, R.id.sequence, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(l2, R.id.sequencer_list12, R.id.sequence2, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(l3, R.id.sequencer_list12, R.id.sequence3, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(l4, R.id.sequencer_list12, R.id.sequence4, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(l5, R.id.sequencer_list12, R.id.sequence5, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(l6, R.id.sequencer_list12, R.id.sequence6, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(l7, R.id.sequencer_list12, R.id.sequence7, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(l8, R.id.sequencer_list12, R.id.sequence8, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(l9, R.id.sequencer_list12, R.id.sequence9, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(l10, R.id.sequencer_list12, R.id.sequence10, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(l11, R.id.sequencer_list12, R.id.sequence11, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(l12, R.id.sequencer_list12, R.id.sequence12, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(l13, R.id.sequencer_list12, R.id.sequence13, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(l14, R.id.sequencer_list12, R.id.sequence14, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(l15, R.id.sequencer_list12, R.id.sequence15, "#e98e2f")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list12).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(l16, R.id.sequencer_list12, R.id.sequence16, "#e98e2f")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(m1, R.id.sequencer_list13, R.id.sequence, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(m2, R.id.sequencer_list13, R.id.sequence2, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(m3, R.id.sequencer_list13, R.id.sequence3, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(m4, R.id.sequencer_list13, R.id.sequence4, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(m5, R.id.sequencer_list13, R.id.sequence5, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(m6, R.id.sequencer_list13, R.id.sequence6, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(m7, R.id.sequencer_list13, R.id.sequence7, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(m8, R.id.sequencer_list13, R.id.sequence8, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(m9, R.id.sequencer_list13, R.id.sequence9, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(m10, R.id.sequencer_list13, R.id.sequence10, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(m11, R.id.sequencer_list13, R.id.sequence11, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(m12, R.id.sequencer_list13, R.id.sequence12, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(m13, R.id.sequencer_list13, R.id.sequence13, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(m14, R.id.sequencer_list13, R.id.sequence14, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(m15, R.id.sequencer_list13, R.id.sequence15, "#dfd441")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list13).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(m16, R.id.sequencer_list13, R.id.sequence16, "#dfd441")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(n1, R.id.sequencer_list14, R.id.sequence, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(n2, R.id.sequencer_list14, R.id.sequence2, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(n3, R.id.sequencer_list14, R.id.sequence3, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(n4, R.id.sequencer_list14, R.id.sequence4, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(n5, R.id.sequencer_list14, R.id.sequence5, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(n6, R.id.sequencer_list14, R.id.sequence6, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(n7, R.id.sequencer_list14, R.id.sequence7, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(n8, R.id.sequencer_list14, R.id.sequence8, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(n9, R.id.sequencer_list14, R.id.sequence9, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(n10, R.id.sequencer_list14, R.id.sequence10, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(n11, R.id.sequencer_list14, R.id.sequence11, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(n12, R.id.sequencer_list14, R.id.sequence12, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(n13, R.id.sequencer_list14, R.id.sequence13, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(n14, R.id.sequencer_list14, R.id.sequence14, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(n15, R.id.sequencer_list14, R.id.sequence15, "#e9e8e7")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list14).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(n16, R.id.sequencer_list14, R.id.sequence16, "#e9e8e7")
+            false
+        }
+
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
+            sequenceTap(o1, R.id.sequencer_list15, R.id.sequence, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence2).setOnTouchListener { _, _ ->
+            sequenceTap(o2, R.id.sequencer_list15, R.id.sequence2, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence3).setOnTouchListener { _, _ ->
+            sequenceTap(o3, R.id.sequencer_list15, R.id.sequence3, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence4).setOnTouchListener { _, _ ->
+            sequenceTap(o4, R.id.sequencer_list15, R.id.sequence4, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence5).setOnTouchListener { _, _ ->
+            sequenceTap(o5, R.id.sequencer_list15, R.id.sequence5, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence6).setOnTouchListener { _, _ ->
+            sequenceTap(o6, R.id.sequencer_list15, R.id.sequence6, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence7).setOnTouchListener { _, _ ->
+            sequenceTap(o7, R.id.sequencer_list15, R.id.sequence7, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence8).setOnTouchListener { _, _ ->
+            sequenceTap(o8, R.id.sequencer_list15, R.id.sequence8, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence9).setOnTouchListener { _, _ ->
+            sequenceTap(o9, R.id.sequencer_list15, R.id.sequence9, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence10).setOnTouchListener { _, _ ->
+            sequenceTap(o10, R.id.sequencer_list15, R.id.sequence10, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence11).setOnTouchListener { _, _ ->
+            sequenceTap(o11, R.id.sequencer_list15, R.id.sequence11, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence12).setOnTouchListener { _, _ ->
+            sequenceTap(o12, R.id.sequencer_list15, R.id.sequence12, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence13).setOnTouchListener { _, _ ->
+            sequenceTap(o13, R.id.sequencer_list15, R.id.sequence13, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence14).setOnTouchListener { _, _ ->
+            sequenceTap(o14, R.id.sequencer_list15, R.id.sequence14, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence15).setOnTouchListener { _, _ ->
+            sequenceTap(o15, R.id.sequencer_list15, R.id.sequence15, "#ffffff")
+            false
+        }
+        findViewById<View>(R.id.sequencer_list15).findViewById<ImageView>(R.id.sequence16).setOnTouchListener { _, _ ->
+            sequenceTap(o16, R.id.sequencer_list15, R.id.sequence16, "#ffffff")
+            false
+        }
+
         binding.includeMainView.imageView.setOnTouchListener { _, event ->
             when {
                 gridView.isVisible -> {
