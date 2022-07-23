@@ -13176,20 +13176,123 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
+        findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 2
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 5
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 8
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 11
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 14
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 3
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 6
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 9
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 12
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    buttonA = 15
+                    meSpinner.avoidDropdownFocus()
+                    meSpinner.performClick()
+                }
+            }
+            false
+        }
+
         findViewById<View>(R.id.tuning_sequencer).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     if (spvF > 1) {
                         spvF -= 1
                         soundPoolVolume = spvF/10.0f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume.toString()
-                                .replace("f", "") + "            " + soundPoolTempo.toString()
-                                .replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.volume, soundPoolVolume)
                     }
                 }
             }
@@ -13201,14 +13304,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF < 10) {
                         spvF += 1
                         soundPoolVolume = spvF/10.0f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume.toString()
-                                .replace("f", "") + "            " + soundPoolTempo.toString()
-                                .replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.volume, soundPoolVolume)
                     }
                 }
             }
@@ -13220,14 +13316,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (sptF > 2) {
                         sptF -= 1
                         soundPoolTempo = sptF/10.0f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.tempo, soundPoolTempo)
                     } else if (soundPoolTempo == 0.2f) {
                         soundPoolTempo = 0.125f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.tempo, soundPoolTempo)
                     }
                 }
             }
@@ -13238,15 +13330,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 MotionEvent.ACTION_DOWN -> {
                     if (soundPoolTempo == 0.125f) {
                         soundPoolTempo = 0.2f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.tempo, soundPoolTempo)
                     } else if (sptF < 80) {
                         sptF += 1
                         soundPoolTempo = sptF/10.0f
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
+                        textChange(R.id.include_view, soundPoolVolume, soundPoolTempo, R.id.tuning_sequencer, padText1, R.id.tempo, soundPoolTempo)
                     }
                 }
             }
@@ -13258,14 +13346,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF4 > 1) {
                         spvF4 -= 1
                         soundPoolVolume4 = spvF4/10.0f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume4.toString()
-                                .replace("f", "") + "            " + soundPoolTempo4.toString()
-                                .replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.volume, soundPoolVolume4)
                     }
                 }
             }
@@ -13277,14 +13358,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF4 < 10) {
                         spvF4 += 1
                         soundPoolVolume4 = spvF4/10.0f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume4.toString()
-                                .replace("f", "") + "            " + soundPoolTempo4.toString()
-                                .replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.volume, soundPoolVolume4)
                     }
                 }
             }
@@ -13296,14 +13370,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (sptF4 > 2) {
                         sptF4 -= 1
                         soundPoolTempo4 = sptF4/10.0f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.tempo, soundPoolTempo4)
                     } else if (soundPoolTempo4 == 0.2f) {
                         soundPoolTempo4 = 0.125f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.tempo, soundPoolTempo4)
                     }
                 }
             }
@@ -13314,15 +13384,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 MotionEvent.ACTION_DOWN -> {
                     if (soundPoolTempo4 == 0.125f) {
                         soundPoolTempo4 = 0.2f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.tempo, soundPoolTempo4)
                     } else if (sptF4 < 80) {
                         sptF4 += 1
                         soundPoolTempo4 = sptF4/10.0f
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
+                        textChange(R.id.include_view4, soundPoolVolume4, soundPoolTempo4, R.id.tuning_sequencer2, padText4, R.id.tempo, soundPoolTempo4)
                     }
                 }
             }
@@ -13334,14 +13400,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF7 > 1) {
                         spvF7 -= 1
                         soundPoolVolume7 = spvF7/10.0f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume7.toString()
-                                .replace("f", "") + "            " + soundPoolTempo7.toString()
-                                .replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.volume, soundPoolVolume7)
                     }
                 }
             }
@@ -13353,14 +13412,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF7 < 10) {
                         spvF7 += 1
                         soundPoolVolume7 = spvF7/10.0f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume7.toString()
-                                .replace("f", "") + "            " + soundPoolTempo7.toString()
-                                .replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.volume, soundPoolVolume7)
                     }
                 }
             }
@@ -13372,14 +13424,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (sptF7 > 2) {
                         sptF7 -= 1
                         soundPoolTempo7 = sptF7/10.0f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.tempo, soundPoolTempo7)
                     } else if (soundPoolTempo7 == 0.2f) {
                         soundPoolTempo7 = 0.125f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.tempo, soundPoolTempo7)
                     }
                 }
             }
@@ -13390,15 +13438,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 MotionEvent.ACTION_DOWN -> {
                     if (soundPoolTempo7 == 0.125f) {
                         soundPoolTempo7 = 0.2f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.tempo, soundPoolTempo7)
                     } else if (sptF7 < 80) {
                         sptF7 += 1
                         soundPoolTempo7 = sptF7/10.0f
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
+                        textChange(R.id.include_view7, soundPoolVolume7, soundPoolTempo7, R.id.tuning_sequencer3, padText7, R.id.tempo, soundPoolTempo7)
                     }
                 }
             }
@@ -13410,14 +13454,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF10 > 1) {
                         spvF10 -= 1
                         soundPoolVolume10 = spvF10/10.0f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume10.toString()
-                                .replace("f", "") + "            " + soundPoolTempo10.toString()
-                                .replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.volume, soundPoolVolume10)
                     }
                 }
             }
@@ -13429,14 +13466,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF10 < 10) {
                         spvF10 += 1
                         soundPoolVolume10 = spvF10/10.0f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume10.toString()
-                                .replace("f", "") + "            " + soundPoolTempo10.toString()
-                                .replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.volume, soundPoolVolume10)
                     }
                 }
             }
@@ -13448,14 +13478,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (sptF10 > 2) {
                         sptF10 -= 1
                         soundPoolTempo10 = sptF10/10.0f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.tempo, soundPoolTempo10)
                     } else if (soundPoolTempo10 == 0.2f) {
                         soundPoolTempo10 = 0.125f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.tempo, soundPoolTempo10)
                     }
                 }
             }
@@ -13466,15 +13492,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 MotionEvent.ACTION_DOWN -> {
                     if (soundPoolTempo10 == 0.125f) {
                         soundPoolTempo10 = 0.2f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.tempo, soundPoolTempo10)
                     } else if (sptF10 < 80) {
                         sptF10 += 1
                         soundPoolTempo10 = sptF10/10.0f
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
+                        textChange(R.id.include_view10, soundPoolVolume10, soundPoolTempo10, R.id.tuning_sequencer4, padText10, R.id.tempo, soundPoolTempo10)
                     }
                 }
             }
@@ -13486,14 +13508,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF13 > 1) {
                         spvF13 -= 1
                         soundPoolVolume13 = spvF13/10.0f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume13.toString()
-                                .replace("f", "") + "            " + soundPoolTempo13.toString()
-                                .replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.volume, soundPoolVolume13)
                     }
                 }
             }
@@ -13505,14 +13520,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (spvF13 < 10) {
                         spvF13 += 1
                         soundPoolVolume13 = spvF13/10.0f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
-                            ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text =
-                            soundPoolVolume13.toString()
-                                .replace("f", "") + "            " + soundPoolTempo13.toString()
-                                .replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text =
-                            soundPoolVolume13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.volume, soundPoolVolume13)
                     }
                 }
             }
@@ -13524,14 +13532,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     if (sptF13 > 2) {
                         sptF13 -= 1
                         soundPoolTempo13 = sptF13/10.0f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.tempo, soundPoolTempo13)
                     } else if (soundPoolTempo13 == 0.2f) {
                         soundPoolTempo13 = 0.125f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.tempo, soundPoolTempo13)
                     }
                 }
             }
@@ -13542,15 +13546,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 MotionEvent.ACTION_DOWN -> {
                     if (soundPoolTempo13 == 0.125f) {
                         soundPoolTempo13 = 0.2f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.tempo, soundPoolTempo13)
                     } else if (sptF13 < 80) {
                         sptF13 += 1
                         soundPoolTempo13 = sptF13/10.0f
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = ""
-                        findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replaceBeforeLast("/", "").replace("/", "").replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").replace(".ogg", "").uppercase()
-                        findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+                        textChange(R.id.include_view13, soundPoolVolume13, soundPoolTempo13, R.id.tuning_sequencer5, padText13, R.id.tempo, soundPoolTempo13)
                     }
                 }
             }
@@ -14645,6 +14645,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
+    }
+
+    private fun textChange(view: Int, vol: Float, tem: Float, seq: Int, pad: String, voltem: Int, voltem2: Float) {
+            findViewById<View>(view).findViewById<TextView>(R.id.padText).text = ""
+            findViewById<View>(view).findViewById<TextView>(R.id.padText).text =
+                vol.toString()
+                    .replace("f", "") + "            " + tem.toString()
+                    .replace("f", "") + "\n" + pad.replaceBeforeLast("/", "")
+                    .replace("/", "").replace("tr_8", "TR-8")
+                    .replace("tr_909", "TR-909")
+                    .replace("_"," ")
+                    .replace(".ogg", "").uppercase()
+            findViewById<View>(seq).findViewById<TextView>(voltem).text = voltem2.toString().replace("f", "")
     }
 
     private fun x53() {
