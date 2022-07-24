@@ -774,8 +774,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                         if (o1[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                             tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                     2 -> {
                         if (a2[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -808,8 +808,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                         if (o2[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                             tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF")) }
 
                 }
                     3 -> {
@@ -843,8 +843,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                         if (o3[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                             tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 4 -> {
                     if (a4[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -877,8 +877,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o4[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 5 -> {
                     if (a5[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -911,8 +911,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o5[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 6 -> {
                     if (a6[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -945,8 +945,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o6[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 7 -> {
                     if (a7[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -979,8 +979,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o7[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 8 -> {
                     if (a8[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1013,8 +1013,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o8[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 9 -> {
                     if (a9[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1047,8 +1047,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o9[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 10 -> {
                     if (a10[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1081,8 +1081,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o10[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 11 -> {
                     if (a11[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1115,8 +1115,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o11[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 12 -> {
                     if (a12[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1149,8 +1149,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o12[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 13 -> {
                     if (a13[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1183,8 +1183,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o13[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 14 -> {
                     if (a14[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1217,8 +1217,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o14[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 15 -> {
                     if (a15[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1251,8 +1251,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o15[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                 }
                 16 -> {
                     if (a16[sequencerSize] == 1) { launch { soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1285,8 +1285,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tapTiming(R.id.include_main_view12, R.drawable.my_ripple6)} }
                     if (o16[sequencerSize] == 1 && trackCount >= 15) { launch { soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                         tapTiming(R.id.include_main_view15, R.drawable.my_ripple7)} }
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
-                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66")) }
+                    launch { findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF")) }
                     sequencerCount = 0
                     if (sequencerSize >= sequencerMaxSize) {
                         sequencerSize = 0
@@ -16074,6 +16074,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun create(slot: String) {
         mRealm.executeTransaction {
             val ss = mRealm.createObject<SaveSlot>(primaryKeyValue = slot)
+            val ss2 = mRealm.createObject<SaveSlot2>(primaryKeyValue = slot)
             ss.pad = padText1
             ss.pad2 = padText2
             ss.pad3 = padText3
@@ -16235,13 +16236,175 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.e14 = e14.joinToString(separator = "")
             ss.e15 = e15.joinToString(separator = "")
             ss.e16 = e16.joinToString(separator = "")
+            ss2.f1 = f1.joinToString(separator = "")
+            ss2.f2 = f2.joinToString(separator = "")
+            ss2.f3 = f3.joinToString(separator = "")
+            ss2.f4 = f4.joinToString(separator = "")
+            ss2.f5 = f5.joinToString(separator = "")
+            ss2.f6 = f6.joinToString(separator = "")
+            ss2.f7 = f7.joinToString(separator = "")
+            ss2.f8 = f8.joinToString(separator = "")
+            ss2.f9 = f9.joinToString(separator = "")
+            ss2.f10 = f10.joinToString(separator = "")
+            ss2.f11 = f11.joinToString(separator = "")
+            ss2.f12 = f12.joinToString(separator = "")
+            ss2.f13 = f13.joinToString(separator = "")
+            ss2.f14 = f14.joinToString(separator = "")
+            ss2.f15 = f15.joinToString(separator = "")
+            ss2.f16 = f16.joinToString(separator = "")
+            ss2.g1 = g1.joinToString(separator = "")
+            ss2.g2 = g2.joinToString(separator = "")
+            ss2.g3 = g3.joinToString(separator = "")
+            ss2.g4 = g4.joinToString(separator = "")
+            ss2.g5 = g5.joinToString(separator = "")
+            ss2.g6 = g6.joinToString(separator = "")
+            ss2.g7 = g7.joinToString(separator = "")
+            ss2.g8 = g8.joinToString(separator = "")
+            ss2.g9 = g9.joinToString(separator = "")
+            ss2.g10 = g10.joinToString(separator = "")
+            ss2.g11 = g11.joinToString(separator = "")
+            ss2.g12 = g12.joinToString(separator = "")
+            ss2.g13 = g13.joinToString(separator = "")
+            ss2.g14 = g14.joinToString(separator = "")
+            ss2.g15 = g15.joinToString(separator = "")
+            ss2.g16 = g16.joinToString(separator = "")
+            ss2.h1 = h1.joinToString(separator = "")
+            ss2.h2 = h2.joinToString(separator = "")
+            ss2.h3 = h3.joinToString(separator = "")
+            ss2.h4 = h4.joinToString(separator = "")
+            ss2.h5 = h5.joinToString(separator = "")
+            ss2.h6 = h6.joinToString(separator = "")
+            ss2.h7 = h7.joinToString(separator = "")
+            ss2.h8 = h8.joinToString(separator = "")
+            ss2.h9 = h9.joinToString(separator = "")
+            ss2.h10 = h10.joinToString(separator = "")
+            ss2.h11 = h11.joinToString(separator = "")
+            ss2.h12 = h12.joinToString(separator = "")
+            ss2.h13 = h13.joinToString(separator = "")
+            ss2.h14 = h14.joinToString(separator = "")
+            ss2.h15 = h15.joinToString(separator = "")
+            ss2.h16 = h16.joinToString(separator = "")
+            ss2.i1 = i1.joinToString(separator = "")
+            ss2.i2 = i2.joinToString(separator = "")
+            ss2.i3 = i3.joinToString(separator = "")
+            ss2.i4 = i4.joinToString(separator = "")
+            ss2.i5 = i5.joinToString(separator = "")
+            ss2.i6 = i6.joinToString(separator = "")
+            ss2.i7 = i7.joinToString(separator = "")
+            ss2.i8 = i8.joinToString(separator = "")
+            ss2.i9 = i9.joinToString(separator = "")
+            ss2.i10 = i10.joinToString(separator = "")
+            ss2.i11 = i11.joinToString(separator = "")
+            ss2.i12 = i12.joinToString(separator = "")
+            ss2.i13 = i13.joinToString(separator = "")
+            ss2.i14 = i14.joinToString(separator = "")
+            ss2.i15 = i15.joinToString(separator = "")
+            ss2.i16 = i16.joinToString(separator = "")
+            ss2.j1 = j1.joinToString(separator = "")
+            ss2.j2 = j2.joinToString(separator = "")
+            ss2.j3 = j3.joinToString(separator = "")
+            ss2.j4 = j4.joinToString(separator = "")
+            ss2.j5 = j5.joinToString(separator = "")
+            ss2.j6 = j6.joinToString(separator = "")
+            ss2.j7 = j7.joinToString(separator = "")
+            ss2.j8 = j8.joinToString(separator = "")
+            ss2.j9 = j9.joinToString(separator = "")
+            ss2.j10 = j10.joinToString(separator = "")
+            ss2.j11 = j11.joinToString(separator = "")
+            ss2.j12 = j12.joinToString(separator = "")
+            ss2.j13 = j13.joinToString(separator = "")
+            ss2.j14 = j14.joinToString(separator = "")
+            ss2.j15 = j15.joinToString(separator = "")
+            ss2.j16 = j16.joinToString(separator = "")
+            ss2.k1 = k1.joinToString(separator = "")
+            ss2.k2 = k2.joinToString(separator = "")
+            ss2.k3 = k3.joinToString(separator = "")
+            ss2.k4 = k4.joinToString(separator = "")
+            ss2.k5 = k5.joinToString(separator = "")
+            ss2.k6 = k6.joinToString(separator = "")
+            ss2.k7 = k7.joinToString(separator = "")
+            ss2.k8 = k8.joinToString(separator = "")
+            ss2.k9 = k9.joinToString(separator = "")
+            ss2.k10 = k10.joinToString(separator = "")
+            ss2.k11 = k11.joinToString(separator = "")
+            ss2.k12 = k12.joinToString(separator = "")
+            ss2.k13 = k13.joinToString(separator = "")
+            ss2.k14 = k14.joinToString(separator = "")
+            ss2.k15 = k15.joinToString(separator = "")
+            ss2.k16 = k16.joinToString(separator = "")
+            ss2.l1 = l1.joinToString(separator = "")
+            ss2.l2 = l2.joinToString(separator = "")
+            ss2.l3 = l3.joinToString(separator = "")
+            ss2.l4 = l4.joinToString(separator = "")
+            ss2.l5 = l5.joinToString(separator = "")
+            ss2.l6 = l6.joinToString(separator = "")
+            ss2.l7 = l7.joinToString(separator = "")
+            ss2.l8 = l8.joinToString(separator = "")
+            ss2.l9 = l9.joinToString(separator = "")
+            ss2.l10 = l10.joinToString(separator = "")
+            ss2.l11 = l11.joinToString(separator = "")
+            ss2.l12 = l12.joinToString(separator = "")
+            ss2.l13 = l13.joinToString(separator = "")
+            ss2.l14 = l14.joinToString(separator = "")
+            ss2.l15 = l15.joinToString(separator = "")
+            ss2.l16 = l16.joinToString(separator = "")
+            ss2.m1 = m1.joinToString(separator = "")
+            ss2.m2 = m2.joinToString(separator = "")
+            ss2.m3 = m3.joinToString(separator = "")
+            ss2.m4 = m4.joinToString(separator = "")
+            ss2.m5 = m5.joinToString(separator = "")
+            ss2.m6 = m6.joinToString(separator = "")
+            ss2.m7 = m7.joinToString(separator = "")
+            ss2.m8 = m8.joinToString(separator = "")
+            ss2.m9 = m9.joinToString(separator = "")
+            ss2.m10 = m10.joinToString(separator = "")
+            ss2.m11 = m11.joinToString(separator = "")
+            ss2.m12 = m12.joinToString(separator = "")
+            ss2.m13 = m13.joinToString(separator = "")
+            ss2.m14 = m14.joinToString(separator = "")
+            ss2.m15 = m15.joinToString(separator = "")
+            ss2.m16 = m16.joinToString(separator = "")
+            ss2.n1 = n1.joinToString(separator = "")
+            ss2.n2 = n2.joinToString(separator = "")
+            ss2.n3 = n3.joinToString(separator = "")
+            ss2.n4 = n4.joinToString(separator = "")
+            ss2.n5 = n5.joinToString(separator = "")
+            ss2.n6 = n6.joinToString(separator = "")
+            ss2.n7 = n7.joinToString(separator = "")
+            ss2.n8 = n8.joinToString(separator = "")
+            ss2.n9 = n9.joinToString(separator = "")
+            ss2.n10 = n10.joinToString(separator = "")
+            ss2.n11 = n11.joinToString(separator = "")
+            ss2.n12 = n12.joinToString(separator = "")
+            ss2.n13 = n13.joinToString(separator = "")
+            ss2.n14 = n14.joinToString(separator = "")
+            ss2.n15 = n15.joinToString(separator = "")
+            ss2.n16 = n16.joinToString(separator = "")
+            ss2.o1 = o1.joinToString(separator = "")
+            ss2.o2 = o2.joinToString(separator = "")
+            ss2.o3 = o3.joinToString(separator = "")
+            ss2.o4 = o4.joinToString(separator = "")
+            ss2.o5 = o5.joinToString(separator = "")
+            ss2.o6 = o6.joinToString(separator = "")
+            ss2.o7 = o7.joinToString(separator = "")
+            ss2.o8 = o8.joinToString(separator = "")
+            ss2.o9 = o9.joinToString(separator = "")
+            ss2.o10 = o10.joinToString(separator = "")
+            ss2.o11 = o11.joinToString(separator = "")
+            ss2.o12 = o12.joinToString(separator = "")
+            ss2.o13 = o13.joinToString(separator = "")
+            ss2.o14 = o14.joinToString(separator = "")
+            ss2.o15 = o15.joinToString(separator = "")
+            ss2.o16 = o16.joinToString(separator = "")
             mRealm.copyToRealm(ss)
+            mRealm.copyToRealm(ss2)
         }
 
     }
 
     private fun update(slot: String) {
         val data = mRealm.where(SaveSlot::class.java).equalTo("id",slot).findFirst()
+        val data2 = mRealm.where(SaveSlot2::class.java).equalTo("id",slot).findFirst()
         mRealm.executeTransaction {
             data?.pad = padText1
             data?.pad2 = padText2
@@ -16404,6 +16567,166 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.e14 = e14.joinToString(separator = "")
             data?.e15 = e15.joinToString(separator = "")
             data?.e16 = e16.joinToString(separator = "")
+            data2?.f1 = f1.joinToString(separator = "")
+            data2?.f2 = f2.joinToString(separator = "")
+            data2?.f3 = f3.joinToString(separator = "")
+            data2?.f4 = f4.joinToString(separator = "")
+            data2?.f5 = f5.joinToString(separator = "")
+            data2?.f6 = f6.joinToString(separator = "")
+            data2?.f7 = f7.joinToString(separator = "")
+            data2?.f8 = f8.joinToString(separator = "")
+            data2?.f9 = f9.joinToString(separator = "")
+            data2?.f10 = f10.joinToString(separator = "")
+            data2?.f11 = f11.joinToString(separator = "")
+            data2?.f12 = f12.joinToString(separator = "")
+            data2?.f13 = f13.joinToString(separator = "")
+            data2?.f14 = f14.joinToString(separator = "")
+            data2?.f15 = f15.joinToString(separator = "")
+            data2?.f16 = f16.joinToString(separator = "")
+            data2?.g1 = g1.joinToString(separator = "")
+            data2?.g2 = g2.joinToString(separator = "")
+            data2?.g3 = g3.joinToString(separator = "")
+            data2?.g4 = g4.joinToString(separator = "")
+            data2?.g5 = g5.joinToString(separator = "")
+            data2?.g6 = g6.joinToString(separator = "")
+            data2?.g7 = g7.joinToString(separator = "")
+            data2?.g8 = g8.joinToString(separator = "")
+            data2?.g9 = g9.joinToString(separator = "")
+            data2?.g10 = g10.joinToString(separator = "")
+            data2?.g11 = g11.joinToString(separator = "")
+            data2?.g12 = g12.joinToString(separator = "")
+            data2?.g13 = g13.joinToString(separator = "")
+            data2?.g14 = g14.joinToString(separator = "")
+            data2?.g15 = g15.joinToString(separator = "")
+            data2?.g16 = g16.joinToString(separator = "")
+            data2?.h1 = h1.joinToString(separator = "")
+            data2?.h2 = h2.joinToString(separator = "")
+            data2?.h3 = h3.joinToString(separator = "")
+            data2?.h4 = h4.joinToString(separator = "")
+            data2?.h5 = h5.joinToString(separator = "")
+            data2?.h6 = h6.joinToString(separator = "")
+            data2?.h7 = h7.joinToString(separator = "")
+            data2?.h8 = h8.joinToString(separator = "")
+            data2?.h9 = h9.joinToString(separator = "")
+            data2?.h10 = h10.joinToString(separator = "")
+            data2?.h11 = h11.joinToString(separator = "")
+            data2?.h12 = h12.joinToString(separator = "")
+            data2?.h13 = h13.joinToString(separator = "")
+            data2?.h14 = h14.joinToString(separator = "")
+            data2?.h15 = h15.joinToString(separator = "")
+            data2?.h16 = h16.joinToString(separator = "")
+            data2?.i1 = i1.joinToString(separator = "")
+            data2?.i2 = i2.joinToString(separator = "")
+            data2?.i3 = i3.joinToString(separator = "")
+            data2?.i4 = i4.joinToString(separator = "")
+            data2?.i5 = i5.joinToString(separator = "")
+            data2?.i6 = i6.joinToString(separator = "")
+            data2?.i7 = i7.joinToString(separator = "")
+            data2?.i8 = i8.joinToString(separator = "")
+            data2?.i9 = i9.joinToString(separator = "")
+            data2?.i10 = i10.joinToString(separator = "")
+            data2?.i11 = i11.joinToString(separator = "")
+            data2?.i12 = i12.joinToString(separator = "")
+            data2?.i13 = i13.joinToString(separator = "")
+            data2?.i14 = i14.joinToString(separator = "")
+            data2?.i15 = i15.joinToString(separator = "")
+            data2?.i16 = i16.joinToString(separator = "")
+            data2?.j1 = j1.joinToString(separator = "")
+            data2?.j2 = j2.joinToString(separator = "")
+            data2?.j3 = j3.joinToString(separator = "")
+            data2?.j4 = j4.joinToString(separator = "")
+            data2?.j5 = j5.joinToString(separator = "")
+            data2?.j6 = j6.joinToString(separator = "")
+            data2?.j7 = j7.joinToString(separator = "")
+            data2?.j8 = j8.joinToString(separator = "")
+            data2?.j9 = j9.joinToString(separator = "")
+            data2?.j10 = j10.joinToString(separator = "")
+            data2?.j11 = j11.joinToString(separator = "")
+            data2?.j12 = j12.joinToString(separator = "")
+            data2?.j13 = j13.joinToString(separator = "")
+            data2?.j14 = j14.joinToString(separator = "")
+            data2?.j15 = j15.joinToString(separator = "")
+            data2?.j16 = j16.joinToString(separator = "")
+            data2?.k1 = k1.joinToString(separator = "")
+            data2?.k2 = k2.joinToString(separator = "")
+            data2?.k3 = k3.joinToString(separator = "")
+            data2?.k4 = k4.joinToString(separator = "")
+            data2?.k5 = k5.joinToString(separator = "")
+            data2?.k6 = k6.joinToString(separator = "")
+            data2?.k7 = k7.joinToString(separator = "")
+            data2?.k8 = k8.joinToString(separator = "")
+            data2?.k9 = k9.joinToString(separator = "")
+            data2?.k10 = k10.joinToString(separator = "")
+            data2?.k11 = k11.joinToString(separator = "")
+            data2?.k12 = k12.joinToString(separator = "")
+            data2?.k13 = k13.joinToString(separator = "")
+            data2?.k14 = k14.joinToString(separator = "")
+            data2?.k15 = k15.joinToString(separator = "")
+            data2?.k16 = k16.joinToString(separator = "")
+            data2?.l1 = l1.joinToString(separator = "")
+            data2?.l2 = l2.joinToString(separator = "")
+            data2?.l3 = l3.joinToString(separator = "")
+            data2?.l4 = l4.joinToString(separator = "")
+            data2?.l5 = l5.joinToString(separator = "")
+            data2?.l6 = l6.joinToString(separator = "")
+            data2?.l7 = l7.joinToString(separator = "")
+            data2?.l8 = l8.joinToString(separator = "")
+            data2?.l9 = l9.joinToString(separator = "")
+            data2?.l10 = l10.joinToString(separator = "")
+            data2?.l11 = l11.joinToString(separator = "")
+            data2?.l12 = l12.joinToString(separator = "")
+            data2?.l13 = l13.joinToString(separator = "")
+            data2?.l14 = l14.joinToString(separator = "")
+            data2?.l15 = l15.joinToString(separator = "")
+            data2?.l16 = l16.joinToString(separator = "")
+            data2?.m1 = m1.joinToString(separator = "")
+            data2?.m2 = m2.joinToString(separator = "")
+            data2?.m3 = m3.joinToString(separator = "")
+            data2?.m4 = m4.joinToString(separator = "")
+            data2?.m5 = m5.joinToString(separator = "")
+            data2?.m6 = m6.joinToString(separator = "")
+            data2?.m7 = m7.joinToString(separator = "")
+            data2?.m8 = m8.joinToString(separator = "")
+            data2?.m9 = m9.joinToString(separator = "")
+            data2?.m10 = m10.joinToString(separator = "")
+            data2?.m11 = m11.joinToString(separator = "")
+            data2?.m12 = m12.joinToString(separator = "")
+            data2?.m13 = m13.joinToString(separator = "")
+            data2?.m14 = m14.joinToString(separator = "")
+            data2?.m15 = m15.joinToString(separator = "")
+            data2?.m16 = m16.joinToString(separator = "")
+            data2?.n1 = n1.joinToString(separator = "")
+            data2?.n2 = n2.joinToString(separator = "")
+            data2?.n3 = n3.joinToString(separator = "")
+            data2?.n4 = n4.joinToString(separator = "")
+            data2?.n5 = n5.joinToString(separator = "")
+            data2?.n6 = n6.joinToString(separator = "")
+            data2?.n7 = n7.joinToString(separator = "")
+            data2?.n8 = n8.joinToString(separator = "")
+            data2?.n9 = n9.joinToString(separator = "")
+            data2?.n10 = n10.joinToString(separator = "")
+            data2?.n11 = n11.joinToString(separator = "")
+            data2?.n12 = n12.joinToString(separator = "")
+            data2?.n13 = n13.joinToString(separator = "")
+            data2?.n14 = n14.joinToString(separator = "")
+            data2?.n15 = n15.joinToString(separator = "")
+            data2?.n16 = n16.joinToString(separator = "")
+            data2?.o1 = o1.joinToString(separator = "")
+            data2?.o2 = o2.joinToString(separator = "")
+            data2?.o3 = o3.joinToString(separator = "")
+            data2?.o4 = o4.joinToString(separator = "")
+            data2?.o5 = o5.joinToString(separator = "")
+            data2?.o6 = o6.joinToString(separator = "")
+            data2?.o7 = o7.joinToString(separator = "")
+            data2?.o8 = o8.joinToString(separator = "")
+            data2?.o9 = o9.joinToString(separator = "")
+            data2?.o10 = o10.joinToString(separator = "")
+            data2?.o11 = o11.joinToString(separator = "")
+            data2?.o12 = o12.joinToString(separator = "")
+            data2?.o13 = o13.joinToString(separator = "")
+            data2?.o14 = o14.joinToString(separator = "")
+            data2?.o15 = o15.joinToString(separator = "")
+            data2?.o16 = o16.joinToString(separator = "")
         }
 
     }
@@ -16657,6 +16980,326 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     .findFirst()?.e15!!)[i].code - 48
                 e16[i] = (mRealm.where(SaveSlot::class.java).equalTo("id", slot)
                     .findFirst()?.e16!!)[i].code - 48
+                f1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f1!!)[i].code - 48
+                f2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f2!!)[i].code - 48
+                f3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f3!!)[i].code - 48
+                f4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f4!!)[i].code - 48
+                f5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f5!!)[i].code - 48
+                f6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f6!!)[i].code - 48
+                f7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f7!!)[i].code - 48
+                f8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f8!!)[i].code - 48
+                f9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f9!!)[i].code - 48
+                f10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f10!!)[i].code - 48
+                f11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f11!!)[i].code - 48
+                f12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f12!!)[i].code - 48
+                f13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f13!!)[i].code - 48
+                f14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f14!!)[i].code - 48
+                f15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f15!!)[i].code - 48
+                f16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.f16!!)[i].code - 48
+                g1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g1!!)[i].code - 48
+                g2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g2!!)[i].code - 48
+                g3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g3!!)[i].code - 48
+                g4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g4!!)[i].code - 48
+                g5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g5!!)[i].code - 48
+                g6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g6!!)[i].code - 48
+                g7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g7!!)[i].code - 48
+                g8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g8!!)[i].code - 48
+                g9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g9!!)[i].code - 48
+                g10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g10!!)[i].code - 48
+                g11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g11!!)[i].code - 48
+                g12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g12!!)[i].code - 48
+                g13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g13!!)[i].code - 48
+                g14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g14!!)[i].code - 48
+                g15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g15!!)[i].code - 48
+                g16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.g16!!)[i].code - 48
+                h1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h1!!)[i].code - 48
+                h2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h2!!)[i].code - 48
+                h3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h3!!)[i].code - 48
+                h4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h4!!)[i].code - 48
+                h5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h5!!)[i].code - 48
+                h6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h6!!)[i].code - 48
+                h7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h7!!)[i].code - 48
+                h8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h8!!)[i].code - 48
+                h9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h9!!)[i].code - 48
+                h10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h10!!)[i].code - 48
+                h11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h11!!)[i].code - 48
+                h12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h12!!)[i].code - 48
+                h13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h13!!)[i].code - 48
+                h14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h14!!)[i].code - 48
+                h15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h15!!)[i].code - 48
+                h16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.h16!!)[i].code - 48
+                i1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i1!!)[i].code - 48
+                i2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i2!!)[i].code - 48
+                i3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i3!!)[i].code - 48
+                i4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i4!!)[i].code - 48
+                i5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i5!!)[i].code - 48
+                i6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i6!!)[i].code - 48
+                i7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i7!!)[i].code - 48
+                i8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i8!!)[i].code - 48
+                i9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i9!!)[i].code - 48
+                i10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i10!!)[i].code - 48
+                i11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i11!!)[i].code - 48
+                i12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i12!!)[i].code - 48
+                i13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i13!!)[i].code - 48
+                i14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i14!!)[i].code - 48
+                i15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i15!!)[i].code - 48
+                i16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.i16!!)[i].code - 48
+                j1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j1!!)[i].code - 48
+                j2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j2!!)[i].code - 48
+                j3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j3!!)[i].code - 48
+                j4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j4!!)[i].code - 48
+                j5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j5!!)[i].code - 48
+                j6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j6!!)[i].code - 48
+                j7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j7!!)[i].code - 48
+                j8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j8!!)[i].code - 48
+                j9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j9!!)[i].code - 48
+                j10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j10!!)[i].code - 48
+                j11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j11!!)[i].code - 48
+                j12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j12!!)[i].code - 48
+                j13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j13!!)[i].code - 48
+                j14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j14!!)[i].code - 48
+                j15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j15!!)[i].code - 48
+                j16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.j16!!)[i].code - 48
+                k1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k1!!)[i].code - 48
+                k2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k2!!)[i].code - 48
+                k3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k3!!)[i].code - 48
+                k4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k4!!)[i].code - 48
+                k5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k5!!)[i].code - 48
+                k6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k6!!)[i].code - 48
+                k7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k7!!)[i].code - 48
+                k8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k8!!)[i].code - 48
+                k9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k9!!)[i].code - 48
+                k10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k10!!)[i].code - 48
+                k11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k11!!)[i].code - 48
+                k12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k12!!)[i].code - 48
+                k13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k13!!)[i].code - 48
+                k14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k14!!)[i].code - 48
+                k15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k15!!)[i].code - 48
+                k16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.k16!!)[i].code - 48
+                l1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l1!!)[i].code - 48
+                l2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l2!!)[i].code - 48
+                l3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l3!!)[i].code - 48
+                l4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l4!!)[i].code - 48
+                l5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l5!!)[i].code - 48
+                l6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l6!!)[i].code - 48
+                l7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l7!!)[i].code - 48
+                l8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l8!!)[i].code - 48
+                l9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l9!!)[i].code - 48
+                l10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l10!!)[i].code - 48
+                l11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l11!!)[i].code - 48
+                l12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l12!!)[i].code - 48
+                l13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l13!!)[i].code - 48
+                l14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l14!!)[i].code - 48
+                l15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l15!!)[i].code - 48
+                l16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.l16!!)[i].code - 48
+                m1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m1!!)[i].code - 48
+                m2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m2!!)[i].code - 48
+                m3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m3!!)[i].code - 48
+                m4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m4!!)[i].code - 48
+                m5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m5!!)[i].code - 48
+                m6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m6!!)[i].code - 48
+                m7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m7!!)[i].code - 48
+                m8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m8!!)[i].code - 48
+                m9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m9!!)[i].code - 48
+                m10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m10!!)[i].code - 48
+                m11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m11!!)[i].code - 48
+                m12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m12!!)[i].code - 48
+                m13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m13!!)[i].code - 48
+                m14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m14!!)[i].code - 48
+                m15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m15!!)[i].code - 48
+                m16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.m16!!)[i].code - 48
+                n1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n1!!)[i].code - 48
+                n2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n2!!)[i].code - 48
+                n3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n3!!)[i].code - 48
+                n4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n4!!)[i].code - 48
+                n5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n5!!)[i].code - 48
+                n6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n6!!)[i].code - 48
+                n7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n7!!)[i].code - 48
+                n8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n8!!)[i].code - 48
+                n9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n9!!)[i].code - 48
+                n10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n10!!)[i].code - 48
+                n11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n11!!)[i].code - 48
+                n12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n12!!)[i].code - 48
+                n13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n13!!)[i].code - 48
+                n14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n14!!)[i].code - 48
+                n15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n15!!)[i].code - 48
+                n16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.n16!!)[i].code - 48
+                o1[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o1!!)[i].code - 48
+                o2[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o2!!)[i].code - 48
+                o3[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o3!!)[i].code - 48
+                o4[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o4!!)[i].code - 48
+                o5[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o5!!)[i].code - 48
+                o6[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o6!!)[i].code - 48
+                o7[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o7!!)[i].code - 48
+                o8[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o8!!)[i].code - 48
+                o9[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o9!!)[i].code - 48
+                o10[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o10!!)[i].code - 48
+                o11[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o11!!)[i].code - 48
+                o12[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o12!!)[i].code - 48
+                o13[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o13!!)[i].code - 48
+                o14[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o14!!)[i].code - 48
+                o15[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o15!!)[i].code - 48
+                o16[i] = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot)
+                    .findFirst()?.o16!!)[i].code - 48
             }
             binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView2.textView.text = padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
@@ -16673,31 +17316,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             binding.includeMainView13.textView.text = padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView14.textView.text = padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
             binding.includeMainView15.textView.text = padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view2).findViewById<TextView>(R.id.padText).text = soundPoolVolume2.toString().replace("f", "") + "            " + soundPoolTempo2.toString().replace("f", "") + "\n" + padText2.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view3).findViewById<TextView>(R.id.padText).text = soundPoolVolume3.toString().replace("f", "") + "            " + soundPoolTempo3.toString().replace("f", "") + "\n" + padText3.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view5).findViewById<TextView>(R.id.padText).text = soundPoolVolume5.toString().replace("f", "") + "            " + soundPoolTempo5.toString().replace("f", "") + "\n" + padText5.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view6).findViewById<TextView>(R.id.padText).text = soundPoolVolume6.toString().replace("f", "") + "            " + soundPoolTempo6.toString().replace("f", "") + "\n" + padText6.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view7).findViewById<TextView>(R.id.padText).text = soundPoolVolume7.toString().replace("f", "") + "            " + soundPoolTempo7.toString().replace("f", "") + "\n" + padText7.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view8).findViewById<TextView>(R.id.padText).text = soundPoolVolume8.toString().replace("f", "") + "            " + soundPoolTempo8.toString().replace("f", "") + "\n" + padText8.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view9).findViewById<TextView>(R.id.padText).text = soundPoolVolume9.toString().replace("f", "") + "            " + soundPoolTempo9.toString().replace("f", "") + "\n" + padText9.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view10).findViewById<TextView>(R.id.padText).text = soundPoolVolume10.toString().replace("f", "") + "            " + soundPoolTempo10.toString().replace("f", "") + "\n" + padText10.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view11).findViewById<TextView>(R.id.padText).text = soundPoolVolume11.toString().replace("f", "") + "            " + soundPoolTempo11.toString().replace("f", "") + "\n" + padText11.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view12).findViewById<TextView>(R.id.padText).text = soundPoolVolume12.toString().replace("f", "") + "            " + soundPoolTempo12.toString().replace("f", "") + "\n" + padText12.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view13).findViewById<TextView>(R.id.padText).text = soundPoolVolume13.toString().replace("f", "") + "            " + soundPoolTempo13.toString().replace("f", "") + "\n" + padText13.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view14).findViewById<TextView>(R.id.padText).text = soundPoolVolume14.toString().replace("f", "") + "            " + soundPoolTempo14.toString().replace("f", "") + "\n" + padText14.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-            findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.volume).text = soundPoolVolume7.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.volume).text = soundPoolVolume10.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.volume).text = soundPoolVolume13.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.tempo).text = soundPoolTempo.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.tempo).text = soundPoolTempo4.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.tempo).text = soundPoolTempo7.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.tempo).text = soundPoolTempo10.toString().replace("f", "")
-            findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.tempo).text = soundPoolTempo13.toString().replace("f", "")
+            pasteText()
             findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
             findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
             findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
