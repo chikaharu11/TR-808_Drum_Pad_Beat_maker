@@ -2787,7 +2787,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sequencerMaxSize = 0
         sequencerSize = 0
         sequencerBpm = 120
-        trackCount = 5
+        trackCount = 10
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
@@ -7528,7 +7528,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         changeSequence()
                     }
                     2 -> {
-                        modeCheck = 1
+                        modeCheck = 0
                         gameCheck = "1"
                         gridCheck = 1
                         gameSwitch = 1
@@ -14792,6 +14792,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x43() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14824,6 +14825,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x33() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14856,6 +14858,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x52() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14888,6 +14891,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x42() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14920,6 +14924,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x32() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14952,6 +14957,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x22() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14984,6 +14990,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x21() {
         findViewById<View>(R.id.include_main_view2).visibility = View.GONE
@@ -15016,6 +15023,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x51() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15048,6 +15056,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x41(){
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15080,6 +15089,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
     private fun x31() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15112,6 +15122,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
+        switchPadSequencer(View.VISIBLE)
     }
 
     private fun stickyImmersiveMode() {
@@ -16152,6 +16163,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.tF15 = sptF15
             ss.check = padCheck
             ss.c_check = colorCheck
+            ss.m_check = modeCheck
             ss.sequencerMaxSizeR = sequencerMaxSize
             ss.trackCountR = trackCount
             ss.sequencerBpmR = sequencerBpm
@@ -16483,6 +16495,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tF15 = sptF15
             data?.check = padCheck
             data?.c_check = colorCheck
+            data?.m_check = modeCheck
             data?.sequencerMaxSizeR = sequencerMaxSize
             data?.trackCountR = trackCount
             data?.sequencerBpmR = sequencerBpm
@@ -16815,6 +16828,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF15!!)
             padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.check!!)
             colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.c_check!!)
+            modeCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.m_check!!)
             sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerMaxSizeR!!)
             trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.trackCountR!!)
             sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerBpmR!!)
@@ -17321,92 +17335,106 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
             findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
             binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-            when (padCheck) {
-                53 -> {
-                    x53()
-                }
-                43 -> {
-                    x43()
-                }
-                33 -> {
-                    x33()
-                }
-                52 -> {
-                    x52()
-                }
-                42 -> {
-                    x42()
-                }
-                32 -> {
-                    x32()
-                }
-                22 -> {
-                    x22()
-                }
-                21 -> {
-                    x21()
-                }
-                51 -> {
-                    x51()
-                }
-                41 -> {
-                    x41()
-                }
-                31 -> {
-                    x31()
-                }
-            }
-            when (trackCount) {
-                2 -> {
-                    x21()
-                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
+            if (modeCheck == 0) {
+                when (padCheck) {
+                    53 -> {
+                        x53()
+                    }
+                    43 -> {
+                        x43()
+                    }
+                    33 -> {
+                        x33()
+                    }
+                    52 -> {
+                        x52()
+                    }
+                    42 -> {
+                        x42()
+                    }
+                    32 -> {
+                        x32()
+                    }
+                    22 -> {
+                        x22()
+                    }
+                    21 -> {
+                        x21()
+                    }
+                    51 -> {
+                        x51()
+                    }
+                    41 -> {
+                        x41()
+                    }
+                    31 -> {
+                        x31()
                     }
                 }
-                3 -> {
-                    x31()
-                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
-                    }
+            } else {
+                if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    binding.sequencerView.visibility = View.VISIBLE
+                    binding.notes.visibility = View.VISIBLE
+                    changeSequence()
                 }
-                4 -> {
-                    x41()
-                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
+                val v = View.VISIBLE
+                val g = View.GONE
+                when (trackCount) {
+                    2 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(g,g,g,g,g,g,g,g,g,g,g,g,g)
                     }
-                }
-                5 -> {
-                    x51()
-                    if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                        findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                        binding.sequencerView.visibility = View.VISIBLE
-                        binding.notes.visibility = View.VISIBLE
+                    3 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,g,g,g,g,g,g,g,g,g,g,g,g)
+                    }
+                    4 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,g,g,g,g,g,g,g,g,g,g,g)
+                    }
+                    5 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,g,g,g,g,g,g,g,g,g,g)
+                    }
+                    6 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,g,g,g,g,g,g,g,g,g)
+                    }
+                    7 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,g,g,g,g,g,g,g,g)
+                    }
+                    8 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,g,g,g,g,g,g,g)
+                    }
+                    9 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,g,g,g,g,g,g)
+                    }
+                    10 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,g,g,g,g,g)
+                    }
+                    11 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,v,g,g,g,g)
+                    }
+                    12 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,v,v,g,g,g)
+                    }
+                    13 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,g,g)
+                    }
+                    14 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,g)
+                    }
+                    15 -> {
+                        switchPadSequencer(View.GONE)
+                        sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,v)
                     }
                 }
             }
@@ -17675,11 +17703,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.includeMainView15.textView.text = ""
                     findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = ""
                 }
-            }
-            if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                binding.sequencerView.visibility = View.VISIBLE
-                binding.notes.visibility = View.VISIBLE
-                changeSequence()
             }
         } else {
             Toast.makeText(applicationContext, R.string.empty, Toast.LENGTH_SHORT).show()
