@@ -2674,112 +2674,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
-    private fun changeChallenge(switching: Boolean, color: Int, drawable1: Int, drawable2: Int, drawable3: Int, drawable4: Int) {
-        findViewById<View>(R.id.bpm).findViewById<TextView>(R.id.bpmsequence).setTextColor(color)
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setTextColor(color)
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).setTextColor(color)
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).setTextColor(color)
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).setTextColor(color)
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView3).setTextColor(color)
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.textView4).setTextColor(color)
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).setTextColor(color)
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).setTextColor(color)
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).setImageResource(drawable1)
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).setImageResource(drawable2)
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).setImageResource(drawable3)
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).setImageResource(drawable4)
-        binding.editTitle.isEnabled = switching
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.save).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.load).isEnabled = switching
-        findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.sequence_random).isEnabled = switching
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_up).isEnabled = switching
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.patternSize_down).isEnabled = switching
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_up).isEnabled = switching
-        findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list2).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list3).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list4).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence2).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence3).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence4).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence5).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence6).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence7).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence8).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence9).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence10).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence11).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence12).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence13).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence14).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence15).isEnabled = switching
-        findViewById<View>(R.id.sequencer_list5).findViewById<ImageView>(R.id.sequence16).isEnabled = switching
-    }
-
-    @SuppressLint("SetTextI18n", "CutPasteId")
     private fun createNew() {
         sequencerStop()
         resetSequence()
@@ -3618,6 +3512,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val drumPadChallenge = arrayOf(
             "Change Pad Colors",
+            "Adjusting Sounds",
             "Hide banner Ads",
             "EXIT",
         )
@@ -7430,7 +7325,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     0 -> {
                         modeCheck = 0
                         gridCheck = 0
-                        changeChallenge(true, Color.WHITE, R.drawable.ic_baseline_arrow_drop_up_24, R.drawable.ic_baseline_arrow_drop_down_24, R.drawable.ic_baseline_arrow_right_24, R.drawable.ic_baseline_arrow_left_24)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 0
@@ -7447,11 +7341,45 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.view.visibility = View.INVISIBLE
                         stickyImmersiveMode()
                         switchPadSequencer(View.VISIBLE)
+                        when (padCheck) {
+                            53 -> {
+                                x53()
+                            }
+                            43 -> {
+                                x43()
+                            }
+                            33 -> {
+                                x33()
+                            }
+                            52 -> {
+                                x52()
+                            }
+                            42 -> {
+                                x42()
+                            }
+                            32 -> {
+                                x32()
+                            }
+                            22 -> {
+                                x22()
+                            }
+                            21 -> {
+                                x21()
+                            }
+                            51 -> {
+                                x51()
+                            }
+                            41 -> {
+                                x41()
+                            }
+                            31 -> {
+                                x31()
+                            }
+                        }
                     }
                     1 -> {
                         modeCheck = 1
                         gridCheck = 0
-                        changeChallenge(true, Color.WHITE, R.drawable.ic_baseline_arrow_drop_up_24, R.drawable.ic_baseline_arrow_drop_down_24, R.drawable.ic_baseline_arrow_right_24, R.drawable.ic_baseline_arrow_left_24)
                         gameSwitch = 0
                         invalidateOptionsMenu()
                         mode = 1
@@ -7529,7 +7457,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     2 -> {
                         modeCheck = 0
-                        gameCheck = "1"
+                        gameCheck = "0"
                         gridCheck = 1
                         gameSwitch = 1
                         mode = 1
@@ -7543,36 +7471,48 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         gridView2.adapter = dpAdapter2
                         gridView2.visibility = View.INVISIBLE
                         dpAdapter2.notifyDataSetChanged()
+                        binding.sequencerView.visibility = View.GONE
+                        binding.notes.visibility = View.GONE
                         binding.view.visibility = View.INVISIBLE
-                        switch1 = 2
-                        padText1 = "bass_drum_short_01"
-                        padText4 = "snare_drum_01"
-                        actionTitle = "beat_1_bpm120"
-                        binding.includeMainView.textView.text = padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                        binding.includeMainView4.textView.text = padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                        findViewById<View>(R.id.include_view).findViewById<TextView>(R.id.padText).text = soundPoolVolume.toString().replace("f", "") + "            " + soundPoolTempo.toString().replace("f", "") + "\n" + padText1.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                        findViewById<View>(R.id.include_view4).findViewById<TextView>(R.id.padText).text = soundPoolVolume4.toString().replace("f", "") + "            " + soundPoolTempo4.toString().replace("f", "") + "\n" + padText4.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
-                        sound1 = soundPool.load(assets.openFd("$padText1.ogg"), 1)
-                        sound4 = soundPool.load(assets.openFd("$padText4.ogg"), 1)
-                        beat1Sequence()
-                        changeSequence()
-                        noteCount = 0
-                        count = 5
-                        bpm = 10
-                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                        switchPadSequencer(View.GONE)
                         stickyImmersiveMode()
-                        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
+                        sequencerStop()
+                        changeSequence()
+                        switchPadSequencer(View.VISIBLE)
+                        when (padCheck) {
+                            53 -> {
+                                x53()
+                            }
+                            43 -> {
+                                x43()
+                            }
+                            33 -> {
+                                x33()
+                            }
+                            52 -> {
+                                x52()
+                            }
+                            42 -> {
+                                x42()
+                            }
+                            32 -> {
+                                x32()
+                            }
+                            22 -> {
+                                x22()
+                            }
+                            21 -> {
+                                x21()
+                            }
+                            51 -> {
+                                x51()
+                            }
+                            41 -> {
+                                x41()
+                            }
+                            31 -> {
+                                x31()
+                            }
                         }
-                        changeChallenge(false, Color.GRAY, R.drawable.ic_baseline_arrow_drop_up_24g, R.drawable.ic_baseline_arrow_drop_down_24g, R.drawable.ic_baseline_arrow_right_24g, R.drawable.ic_baseline_arrow_left_24g)
                     }
                 }
             }
@@ -14792,7 +14732,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x43() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14825,7 +14764,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x33() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14858,7 +14796,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x52() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14891,7 +14828,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x42() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14924,7 +14860,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x32() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14957,7 +14892,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x22() {
         findViewById<View>(R.id.include_main_view2).visibility = View.VISIBLE
@@ -14990,7 +14924,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x21() {
         findViewById<View>(R.id.include_main_view2).visibility = View.GONE
@@ -15023,7 +14956,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x51() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15056,7 +14988,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x41(){
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15089,7 +15020,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
     private fun x31() {
         findViewById<View>(R.id.include_main_view7).visibility = View.VISIBLE
@@ -15122,7 +15052,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         padSequence = 0
         binding.gridView.visibility = View.INVISIBLE
         binding.notes.visibility = View.GONE
-        switchPadSequencer(View.VISIBLE)
     }
 
     private fun stickyImmersiveMode() {
@@ -17351,6 +17280,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(sequencerBpm.toString(), TextView.BufferType.NORMAL)
             binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
             if (modeCheck == 0) {
+                switchPadSequencer(View.VISIBLE)
                 when (padCheck) {
                     53 -> {
                         x53()
