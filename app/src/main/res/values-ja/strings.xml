@@ -112,7 +112,7 @@
 
     <string-array name="spinnerItems2">
         <item>DRUM PAD MODE</item>
-        <item>DRUM PAD + SEQUENCER MODE</item>
+        <item>SEQUENCER MODE</item>
         <item>DRUM PAD CHALLENGE MODE</item>
     </string-array>
 

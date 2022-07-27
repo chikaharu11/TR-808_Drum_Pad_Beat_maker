@@ -5569,16 +5569,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x21()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     1 -> {
@@ -5615,16 +5605,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x21()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     2 -> {
@@ -5671,16 +5651,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     3 -> {
@@ -5727,16 +5697,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     4 -> {
@@ -5783,16 +5743,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     5 -> {
@@ -5839,16 +5789,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     6 -> {
@@ -5895,16 +5835,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.GONE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     7 -> {
@@ -5961,16 +5891,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     8 -> {
@@ -6027,16 +5947,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     9 -> {
@@ -6093,16 +6003,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     10 -> {
@@ -6169,16 +6069,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         houseSequence()
                         changeSequence()
                         x51()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     11 -> {
@@ -6245,16 +6135,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     12 -> {
@@ -6321,16 +6201,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     13 -> {
@@ -6387,16 +6257,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     14 -> {
@@ -6463,16 +6323,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.VISIBLE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     15 -> {
@@ -6529,16 +6379,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        if (mode == 1) {
-                            findViewById<View>(R.id.sequencer_list3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.sequencer_list5).visibility = View.GONE
-                            findViewById<View>(R.id.tuning_sequencer3).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer4).visibility = View.VISIBLE
-                            findViewById<View>(R.id.tuning_sequencer5).visibility = View.GONE
-                            binding.sequencerView.visibility = View.VISIBLE
-                            binding.notes.visibility = View.VISIBLE
-                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     16 -> {
