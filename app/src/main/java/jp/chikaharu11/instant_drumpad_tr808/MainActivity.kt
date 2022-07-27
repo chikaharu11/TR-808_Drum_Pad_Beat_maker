@@ -16092,7 +16092,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss.tF15 = sptF15
             ss.check = padCheck
             ss.c_check = colorCheck
-            ss.m_check = modeCheck
             ss.sequencerMaxSizeR = sequencerMaxSize
             ss.trackCountR = trackCount
             ss.sequencerBpmR = sequencerBpm
@@ -16337,6 +16336,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             ss2.o14 = o14.joinToString(separator = "")
             ss2.o15 = o15.joinToString(separator = "")
             ss2.o16 = o16.joinToString(separator = "")
+            ss2.m_check = modeCheck
             mRealm.copyToRealm(ss)
             mRealm.copyToRealm(ss2)
         }
@@ -16424,7 +16424,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.tF15 = sptF15
             data?.check = padCheck
             data?.c_check = colorCheck
-            data?.m_check = modeCheck
             data?.sequencerMaxSizeR = sequencerMaxSize
             data?.trackCountR = trackCount
             data?.sequencerBpmR = sequencerBpm
@@ -16509,6 +16508,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             data?.e14 = e14.joinToString(separator = "")
             data?.e15 = e15.joinToString(separator = "")
             data?.e16 = e16.joinToString(separator = "")
+            data2?.m_check = modeCheck
             data2?.f1 = f1.joinToString(separator = "")
             data2?.f2 = f2.joinToString(separator = "")
             data2?.f3 = f3.joinToString(separator = "")
@@ -16757,7 +16757,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             sptF15 = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.tF15!!)
             padCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.check!!)
             colorCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.c_check!!)
-            modeCheck = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.m_check!!)
+            modeCheck = (mRealm.where(SaveSlot2::class.java).equalTo("id", slot).findFirst()?.m_check!!)
             sequencerMaxSize = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerMaxSizeR!!)
             trackCount = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.trackCountR!!)
             sequencerBpm = (mRealm.where(SaveSlot::class.java).equalTo("id", slot).findFirst()?.sequencerBpmR!!)

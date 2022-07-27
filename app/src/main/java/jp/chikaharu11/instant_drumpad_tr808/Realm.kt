@@ -84,7 +84,6 @@ open class SaveSlot(
     var tF15: Int = 0,
     var check: Int = 0,
     var c_check: Int = 0,
-    var m_check: Int = 0,
     var sequencerMaxSizeR: Int = 0,
     var trackCountR: Int = 0,
     var sequencerBpmR: Long = 0,
@@ -333,7 +332,8 @@ open class SaveSlot2(
     var o13: String = "0",
     var o14: String = "0",
     var o15: String = "0",
-    var o16: String = "0"
+    var o16: String = "0",
+    var m_check: Int = 0
 ) : RealmObject()
 
 open class ResultSlot(
