@@ -1310,529 +1310,686 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     @SuppressLint("SetTextI18n")
     private fun gamePlay() {
-        runBlocking {
-            val job2 = launch {
-                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
-                delay(100)
+            runBlocking {
+                val job2 = launch {
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                    soundPool.play(sound17, 1.0f, 1.0f, 0, 0, 1.0f)
+                    delay(100)
+                }
+                job2.join()
             }
-            job2.join()
-        }
-        findViewById<Spinner>(R.id.mode_spinner).isEnabled = false
-        sequencerSize = 0
-        sequencerCount = 32
-        duplicate = 0
-        duplicate2 = 0
-        duplicate3 = 0
-        duplicate4 = 0
-        duplicate5 = 0
-        justification = 0
-        score = 0
-        missScore = 0
-        maxScore = (a1.filter { it == 1 }.size
-                + a2.filter { it == 1 }.size
-                + a3.filter { it == 1 }.size
-                + a4.filter { it == 1 }.size
-                + a5.filter { it == 1 }.size
-                + a6.filter { it == 1 }.size
-                + a7.filter { it == 1 }.size
-                + a8.filter { it == 1 }.size
-                + a9.filter { it == 1 }.size
-                + a10.filter { it == 1 }.size
-                + a11.filter { it == 1 }.size
-                + a12.filter { it == 1 }.size
-                + a13.filter { it == 1 }.size
-                + a14.filter { it == 1 }.size
-                + a15.filter { it == 1 }.size
-                + a16.filter { it == 1 }.size
-                + b1.filter { it == 1 }.size
-                + b2.filter { it == 1 }.size
-                + b3.filter { it == 1 }.size
-                + b4.filter { it == 1 }.size
-                + b5.filter { it == 1 }.size
-                + b6.filter { it == 1 }.size
-                + b7.filter { it == 1 }.size
-                + b8.filter { it == 1 }.size
-                + b9.filter { it == 1 }.size
-                + b10.filter { it == 1 }.size
-                + b11.filter { it == 1 }.size
-                + b12.filter { it == 1 }.size
-                + b13.filter { it == 1 }.size
-                + b14.filter { it == 1 }.size
-                + b15.filter { it == 1 }.size
-                + b16.filter { it == 1 }.size
-                + c1.filter { it == 1 }.size
-                + c2.filter { it == 1 }.size
-                + c3.filter { it == 1 }.size
-                + c4.filter { it == 1 }.size
-                + c5.filter { it == 1 }.size
-                + c6.filter { it == 1 }.size
-                + c7.filter { it == 1 }.size
-                + c8.filter { it == 1 }.size
-                + c9.filter { it == 1 }.size
-                + c10.filter { it == 1 }.size
-                + c11.filter { it == 1 }.size
-                + c12.filter { it == 1 }.size
-                + c13.filter { it == 1 }.size
-                + c14.filter { it == 1 }.size
-                + c15.filter { it == 1 }.size
-                + c16.filter { it == 1 }.size
-                + d1.filter { it == 1 }.size
-                + d2.filter { it == 1 }.size
-                + d3.filter { it == 1 }.size
-                + d4.filter { it == 1 }.size
-                + d5.filter { it == 1 }.size
-                + d6.filter { it == 1 }.size
-                + d7.filter { it == 1 }.size
-                + d8.filter { it == 1 }.size
-                + d9.filter { it == 1 }.size
-                + d10.filter { it == 1 }.size
-                + d11.filter { it == 1 }.size
-                + d12.filter { it == 1 }.size
-                + d13.filter { it == 1 }.size
-                + d14.filter { it == 1 }.size
-                + d15.filter { it == 1 }.size
-                + d16.filter { it == 1 }.size
-                + e1.filter { it == 1 }.size
-                + e2.filter { it == 1 }.size
-                + e3.filter { it == 1 }.size
-                + e4.filter { it == 1 }.size
-                + e5.filter { it == 1 }.size
-                + e6.filter { it == 1 }.size
-                + e7.filter { it == 1 }.size
-                + e8.filter { it == 1 }.size
-                + e9.filter { it == 1 }.size
-                + e10.filter { it == 1 }.size
-                + e11.filter { it == 1 }.size
-                + e12.filter { it == 1 }.size
-                + e13.filter { it == 1 }.size
-                + e14.filter { it == 1 }.size
-                + e15.filter { it == 1 }.size
-                + e16.filter { it == 1 }.size) * 8 / (sequencerMaxSize + 1)
-        println(maxScore)
-        gameCount = 1
-        timer = Timer()
-        timer!!.scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                handler.post( Runnable {
-                    run {
-                        sequencerCount++
-                        when (sequencerCount) {
-                            33 -> {
-                                binding.editTitle.setText("....".padEnd(25,' '), TextView.BufferType.NORMAL)
-                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                            }
-                            41 -> {
-                                binding.editTitle.setText("...".padEnd(25,' '), TextView.BufferType.NORMAL)
-                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                            }
-                            49 -> {
-                                binding.editTitle.setText("..".padEnd(25,' '), TextView.BufferType.NORMAL)
-                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                            }
-                            57 -> {
-                                binding.editTitle.setText(".".padEnd(25,' '), TextView.BufferType.NORMAL)
-                                soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
-                            }
-                            63 -> {
-                                binding.editTitle.setText("PERIOD : 1/8 SCORE : 0", TextView.BufferType.NORMAL)
-                                sequencerCount = 0
-                            }
-                            1 -> {
-                                if (gameCount == 9) {
-                                    justification = 0
-                                    menuSwitch = true
-                                    invalidateOptionsMenu()
-                                    switch1 = 2
-                                    sequencerStop()
-                                    window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                    val snackBar = Snackbar.make(findViewById(R.id.snack_space) , R.string.Finish, Snackbar.LENGTH_LONG)
-                                    val snackTextView: TextView = snackBar.view.findViewById(R.id.snackbar_text)
-                                    snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                                    snackBar.setDuration(1200).show()
-                                    if ((score * 100 / maxScore) >= 70) {
-                                        handler.postDelayed({
-                                            showInterstitial()
-                                        }, 1500)
-                                    }
-                                    handler.postDelayed({
-
-                                        val result: String
-
-                                        when  {
-                                            (score * 100 / maxScore) >= 90 -> {
-                                                game1Result = R.color.excellent
-                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
-                                                    resultCreate(gameCheck)
-                                                } else {
-                                                    resultUpdate(gameCheck)
-                                                }
-                                                result = "Excellent!"
-                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle1)
-                                                val inflater = layoutInflater
-                                                val dialogView = inflater.inflate(R.layout.game_result, null)
-                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
-                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
-                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
-
-
-                                                builder.setView(dialogView)
-                                                    .setOnCancelListener {
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                    .setTitle(result)
-                                                    .setNegativeButton("OK") { _, _ ->
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#d03933"))
-                                            }
-                                            (score * 100 / maxScore) >= 80 -> {
-                                                game1Result = R.color.great
-                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
-                                                    resultCreate(gameCheck)
-                                                } else if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 != R.color.excellent) {
-                                                    resultUpdate(gameCheck)
-                                                }
-                                                result = "Great!"
-                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle2)
-                                                val inflater = layoutInflater
-                                                val dialogView = inflater.inflate(R.layout.game_result, null)
-                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
-                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
-                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
-
-
-                                                builder.setView(dialogView)
-                                                    .setOnCancelListener {
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                    .setTitle(result)
-                                                    .setNegativeButton("OK") { _, _ ->
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e98e2f"))
-                                            }
-                                            (score * 100 / maxScore) >= 70 -> {
-                                                game1Result = R.color.good
-                                                if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 == null) {
-                                                    resultCreate(gameCheck)
-                                                } else if (mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 != R.color.excellent && mRealm.where(ResultSlot::class.java).equalTo("id", gameCheck).findFirst()?.game1 != R.color.great) {
-                                                    resultUpdate(gameCheck)
-                                                }
-                                                result = "Good!"
-                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle3)
-                                                val inflater = layoutInflater
-                                                val dialogView = inflater.inflate(R.layout.game_result, null)
-                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
-                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
-                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
-
-
-                                                builder.setView(dialogView)
-                                                    .setOnCancelListener {
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                    .setTitle(result)
-                                                    .setNegativeButton("OK") { _, _ ->
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#dfd441"))
-                                            }
-                                            (score * 100 / maxScore) >= 60 -> {
-                                                result = "Nice try!"
-                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle4)
-                                                val inflater = layoutInflater
-                                                val dialogView = inflater.inflate(R.layout.game_result, null)
-                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
-                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
-                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
-
-
-                                                builder.setView(dialogView)
-                                                    .setOnCancelListener {
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                    .setTitle(result)
-                                                    .setNegativeButton("OK") { _, _ ->
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#e9e8e7"))
-                                            }
-                                            (score * 100 / maxScore) < 60 -> {
-                                                result = "Try again!"
-                                                val builder = AlertDialog.Builder(this@MainActivity, R.style.AppCompatAlertDialogStyle5)
-                                                val inflater = layoutInflater
-                                                val dialogView = inflater.inflate(R.layout.game_result, null)
-                                                dialogView.findViewById<TextView>(R.id.maxscore).text =  "    ALL COUNTS : $maxScore"
-                                                dialogView.findViewById<TextView>(R.id.score).text =     "   JUST COUNTS : $score"
-                                                dialogView.findViewById<TextView>(R.id.missscore).text = "   MISS COUNTS : $missScore"
-                                                dialogView.findViewById<TextView>(R.id.result).text =    "        RESULT : " + (score * 100 / maxScore) + " %"
-
-
-                                                builder.setView(dialogView)
-                                                    .setOnCancelListener {
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                    .setTitle(result)
-                                                    .setNegativeButton("OK") { _, _ ->
-                                                        binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(), TextView.BufferType.NORMAL)
-                                                        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
-                                                        stickyImmersiveMode()
-                                                    }
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                                dialogView.findViewById<View>(R.id.result_main).setBackgroundColor(Color.parseColor("#ffffff"))
-                                            }
+            findViewById<Spinner>(R.id.mode_spinner).isEnabled = false
+            sequencerSize = 0
+            sequencerCount = 32
+            duplicate = 0
+            duplicate2 = 0
+            duplicate3 = 0
+            duplicate4 = 0
+            duplicate5 = 0
+            justification = 0
+            score = 0
+            missScore = 0
+            maxScore = (a1.filter { it == 1 }.size
+                    + a2.filter { it == 1 }.size
+                    + a3.filter { it == 1 }.size
+                    + a4.filter { it == 1 }.size
+                    + a5.filter { it == 1 }.size
+                    + a6.filter { it == 1 }.size
+                    + a7.filter { it == 1 }.size
+                    + a8.filter { it == 1 }.size
+                    + a9.filter { it == 1 }.size
+                    + a10.filter { it == 1 }.size
+                    + a11.filter { it == 1 }.size
+                    + a12.filter { it == 1 }.size
+                    + a13.filter { it == 1 }.size
+                    + a14.filter { it == 1 }.size
+                    + a15.filter { it == 1 }.size
+                    + a16.filter { it == 1 }.size
+                    + b1.filter { it == 1 }.size
+                    + b2.filter { it == 1 }.size
+                    + b3.filter { it == 1 }.size
+                    + b4.filter { it == 1 }.size
+                    + b5.filter { it == 1 }.size
+                    + b6.filter { it == 1 }.size
+                    + b7.filter { it == 1 }.size
+                    + b8.filter { it == 1 }.size
+                    + b9.filter { it == 1 }.size
+                    + b10.filter { it == 1 }.size
+                    + b11.filter { it == 1 }.size
+                    + b12.filter { it == 1 }.size
+                    + b13.filter { it == 1 }.size
+                    + b14.filter { it == 1 }.size
+                    + b15.filter { it == 1 }.size
+                    + b16.filter { it == 1 }.size
+                    + c1.filter { it == 1 }.size
+                    + c2.filter { it == 1 }.size
+                    + c3.filter { it == 1 }.size
+                    + c4.filter { it == 1 }.size
+                    + c5.filter { it == 1 }.size
+                    + c6.filter { it == 1 }.size
+                    + c7.filter { it == 1 }.size
+                    + c8.filter { it == 1 }.size
+                    + c9.filter { it == 1 }.size
+                    + c10.filter { it == 1 }.size
+                    + c11.filter { it == 1 }.size
+                    + c12.filter { it == 1 }.size
+                    + c13.filter { it == 1 }.size
+                    + c14.filter { it == 1 }.size
+                    + c15.filter { it == 1 }.size
+                    + c16.filter { it == 1 }.size
+                    + d1.filter { it == 1 }.size
+                    + d2.filter { it == 1 }.size
+                    + d3.filter { it == 1 }.size
+                    + d4.filter { it == 1 }.size
+                    + d5.filter { it == 1 }.size
+                    + d6.filter { it == 1 }.size
+                    + d7.filter { it == 1 }.size
+                    + d8.filter { it == 1 }.size
+                    + d9.filter { it == 1 }.size
+                    + d10.filter { it == 1 }.size
+                    + d11.filter { it == 1 }.size
+                    + d12.filter { it == 1 }.size
+                    + d13.filter { it == 1 }.size
+                    + d14.filter { it == 1 }.size
+                    + d15.filter { it == 1 }.size
+                    + d16.filter { it == 1 }.size
+                    + e1.filter { it == 1 }.size
+                    + e2.filter { it == 1 }.size
+                    + e3.filter { it == 1 }.size
+                    + e4.filter { it == 1 }.size
+                    + e5.filter { it == 1 }.size
+                    + e6.filter { it == 1 }.size
+                    + e7.filter { it == 1 }.size
+                    + e8.filter { it == 1 }.size
+                    + e9.filter { it == 1 }.size
+                    + e10.filter { it == 1 }.size
+                    + e11.filter { it == 1 }.size
+                    + e12.filter { it == 1 }.size
+                    + e13.filter { it == 1 }.size
+                    + e14.filter { it == 1 }.size
+                    + e15.filter { it == 1 }.size
+                    + e16.filter { it == 1 }.size) * 8 / (sequencerMaxSize + 1)
+            println(maxScore)
+            gameCount = 1
+            timer = Timer()
+            timer!!.scheduleAtFixedRate(object : TimerTask() {
+                override fun run() {
+                    handler.post(Runnable {
+                        run {
+                            sequencerCount++
+                            when (sequencerCount) {
+                                33 -> {
+                                    binding.editTitle.setText("....".padEnd(25, ' '),
+                                        TextView.BufferType.NORMAL)
+                                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                                }
+                                41 -> {
+                                    binding.editTitle.setText("...".padEnd(25, ' '),
+                                        TextView.BufferType.NORMAL)
+                                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                                }
+                                49 -> {
+                                    binding.editTitle.setText("..".padEnd(25, ' '),
+                                        TextView.BufferType.NORMAL)
+                                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                                }
+                                57 -> {
+                                    binding.editTitle.setText(".".padEnd(25, ' '),
+                                        TextView.BufferType.NORMAL)
+                                    soundPool.play(sound18, 0.5f, 0.5f, 0, 0, 1.0f)
+                                }
+                                63 -> {
+                                    binding.editTitle.setText("PERIOD : 1/8 SCORE : 0",
+                                        TextView.BufferType.NORMAL)
+                                    sequencerCount = 0
+                                }
+                                1 -> {
+                                    if (gameCount == 9) {
+                                        justification = 0
+                                        menuSwitch = true
+                                        invalidateOptionsMenu()
+                                        switch1 = 2
+                                        sequencerStop()
+                                        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                        val snackBar = Snackbar.make(findViewById(R.id.snack_space),
+                                            R.string.Finish,
+                                            Snackbar.LENGTH_LONG)
+                                        val snackTextView: TextView =
+                                            snackBar.view.findViewById(R.id.snackbar_text)
+                                        snackTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                                        snackBar.setDuration(1200).show()
+                                        if ((score * 100 / maxScore) >= 70) {
+                                            handler.postDelayed({
+                                                showInterstitial()
+                                            }, 1500)
                                         }
-                                    }, 2000)
-                                } else {
-                                    binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                                        handler.postDelayed({
+
+                                            val result: String
+
+                                            when {
+                                                (score * 100 / maxScore) >= 90 -> {
+                                                    game1Result = R.color.excellent
+                                                    if (mRealm.where(ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 == null
+                                                    ) {
+                                                        resultCreate(gameCheck)
+                                                    } else {
+                                                        resultUpdate(gameCheck)
+                                                    }
+                                                    result = "Excellent!"
+                                                    val builder =
+                                                        AlertDialog.Builder(this@MainActivity,
+                                                            R.style.AppCompatAlertDialogStyle1)
+                                                    val inflater = layoutInflater
+                                                    val dialogView =
+                                                        inflater.inflate(R.layout.game_result, null)
+                                                    dialogView.findViewById<TextView>(R.id.maxscore).text =
+                                                        "    ALL COUNTS : $maxScore"
+                                                    dialogView.findViewById<TextView>(R.id.score).text =
+                                                        "   JUST COUNTS : $score"
+                                                    dialogView.findViewById<TextView>(R.id.missscore).text =
+                                                        "   MISS COUNTS : $missScore"
+                                                    dialogView.findViewById<TextView>(R.id.result).text =
+                                                        "        RESULT : " + (score * 100 / maxScore) + " %"
+
+
+                                                    builder.setView(dialogView)
+                                                        .setOnCancelListener {
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                        .setTitle(result)
+                                                        .setNegativeButton("OK") { _, _ ->
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                    val dialog = builder.create()
+                                                    dialog.show()
+                                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                                    dialogView.findViewById<View>(R.id.result_main)
+                                                        .setBackgroundColor(Color.parseColor("#d03933"))
+                                                }
+                                                (score * 100 / maxScore) >= 80 -> {
+                                                    game1Result = R.color.great
+                                                    if (mRealm.where(ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 == null
+                                                    ) {
+                                                        resultCreate(gameCheck)
+                                                    } else if (mRealm.where(ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 != R.color.excellent
+                                                    ) {
+                                                        resultUpdate(gameCheck)
+                                                    }
+                                                    result = "Great!"
+                                                    val builder =
+                                                        AlertDialog.Builder(this@MainActivity,
+                                                            R.style.AppCompatAlertDialogStyle2)
+                                                    val inflater = layoutInflater
+                                                    val dialogView =
+                                                        inflater.inflate(R.layout.game_result, null)
+                                                    dialogView.findViewById<TextView>(R.id.maxscore).text =
+                                                        "    ALL COUNTS : $maxScore"
+                                                    dialogView.findViewById<TextView>(R.id.score).text =
+                                                        "   JUST COUNTS : $score"
+                                                    dialogView.findViewById<TextView>(R.id.missscore).text =
+                                                        "   MISS COUNTS : $missScore"
+                                                    dialogView.findViewById<TextView>(R.id.result).text =
+                                                        "        RESULT : " + (score * 100 / maxScore) + " %"
+
+
+                                                    builder.setView(dialogView)
+                                                        .setOnCancelListener {
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                        .setTitle(result)
+                                                        .setNegativeButton("OK") { _, _ ->
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                    val dialog = builder.create()
+                                                    dialog.show()
+                                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                                    dialogView.findViewById<View>(R.id.result_main)
+                                                        .setBackgroundColor(Color.parseColor("#e98e2f"))
+                                                }
+                                                (score * 100 / maxScore) >= 70 -> {
+                                                    game1Result = R.color.good
+                                                    if (mRealm.where(ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 == null
+                                                    ) {
+                                                        resultCreate(gameCheck)
+                                                    } else if (mRealm.where(ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 != R.color.excellent && mRealm.where(
+                                                            ResultSlot::class.java)
+                                                            .equalTo("id", gameCheck)
+                                                            .findFirst()?.game1 != R.color.great
+                                                    ) {
+                                                        resultUpdate(gameCheck)
+                                                    }
+                                                    result = "Good!"
+                                                    val builder =
+                                                        AlertDialog.Builder(this@MainActivity,
+                                                            R.style.AppCompatAlertDialogStyle3)
+                                                    val inflater = layoutInflater
+                                                    val dialogView =
+                                                        inflater.inflate(R.layout.game_result, null)
+                                                    dialogView.findViewById<TextView>(R.id.maxscore).text =
+                                                        "    ALL COUNTS : $maxScore"
+                                                    dialogView.findViewById<TextView>(R.id.score).text =
+                                                        "   JUST COUNTS : $score"
+                                                    dialogView.findViewById<TextView>(R.id.missscore).text =
+                                                        "   MISS COUNTS : $missScore"
+                                                    dialogView.findViewById<TextView>(R.id.result).text =
+                                                        "        RESULT : " + (score * 100 / maxScore) + " %"
+
+
+                                                    builder.setView(dialogView)
+                                                        .setOnCancelListener {
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                        .setTitle(result)
+                                                        .setNegativeButton("OK") { _, _ ->
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                    val dialog = builder.create()
+                                                    dialog.show()
+                                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                                    dialogView.findViewById<View>(R.id.result_main)
+                                                        .setBackgroundColor(Color.parseColor("#dfd441"))
+                                                }
+                                                (score * 100 / maxScore) >= 60 -> {
+                                                    result = "Nice try!"
+                                                    val builder =
+                                                        AlertDialog.Builder(this@MainActivity,
+                                                            R.style.AppCompatAlertDialogStyle4)
+                                                    val inflater = layoutInflater
+                                                    val dialogView =
+                                                        inflater.inflate(R.layout.game_result, null)
+                                                    dialogView.findViewById<TextView>(R.id.maxscore).text =
+                                                        "    ALL COUNTS : $maxScore"
+                                                    dialogView.findViewById<TextView>(R.id.score).text =
+                                                        "   JUST COUNTS : $score"
+                                                    dialogView.findViewById<TextView>(R.id.missscore).text =
+                                                        "   MISS COUNTS : $missScore"
+                                                    dialogView.findViewById<TextView>(R.id.result).text =
+                                                        "        RESULT : " + (score * 100 / maxScore) + " %"
+
+
+                                                    builder.setView(dialogView)
+                                                        .setOnCancelListener {
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                        .setTitle(result)
+                                                        .setNegativeButton("OK") { _, _ ->
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                    val dialog = builder.create()
+                                                    dialog.show()
+                                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                                    dialogView.findViewById<View>(R.id.result_main)
+                                                        .setBackgroundColor(Color.parseColor("#e9e8e7"))
+                                                }
+                                                (score * 100 / maxScore) < 60 -> {
+                                                    result = "Try again!"
+                                                    val builder =
+                                                        AlertDialog.Builder(this@MainActivity,
+                                                            R.style.AppCompatAlertDialogStyle5)
+                                                    val inflater = layoutInflater
+                                                    val dialogView =
+                                                        inflater.inflate(R.layout.game_result, null)
+                                                    dialogView.findViewById<TextView>(R.id.maxscore).text =
+                                                        "    ALL COUNTS : $maxScore"
+                                                    dialogView.findViewById<TextView>(R.id.score).text =
+                                                        "   JUST COUNTS : $score"
+                                                    dialogView.findViewById<TextView>(R.id.missscore).text =
+                                                        "   MISS COUNTS : $missScore"
+                                                    dialogView.findViewById<TextView>(R.id.result).text =
+                                                        "        RESULT : " + (score * 100 / maxScore) + " %"
+
+
+                                                    builder.setView(dialogView)
+                                                        .setOnCancelListener {
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                        .setTitle(result)
+                                                        .setNegativeButton("OK") { _, _ ->
+                                                            binding.editTitle.setText(actionTitle.replace(
+                                                                "_",
+                                                                " ").uppercase(),
+                                                                TextView.BufferType.NORMAL)
+                                                            findViewById<View>(R.id.bpm).findViewById<EditText>(
+                                                                R.id.bpmCount).isEnabled = false
+                                                            stickyImmersiveMode()
+                                                        }
+                                                    val dialog = builder.create()
+                                                    dialog.show()
+                                                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                                    dialogView.findViewById<View>(R.id.result_main)
+                                                        .setBackgroundColor(Color.parseColor("#ffffff"))
+                                                }
+                                            }
+                                        }, 2000)
+                                    } else {
+                                        binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score",
+                                            TextView.BufferType.NORMAL)
+                                        playTapTiming(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1)
+                                        duplicate = 0
+                                        duplicate2 = 0
+                                        duplicate3 = 0
+                                        duplicate4 = 0
+                                        duplicate5 = 0
+                                        justification = 1
+                                    }
+                                }
+                                2 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+
+                                }
+                                3 -> {
+                                    playTapTiming(a2,b2,c2,d2,e2,f2,g2,h2,i2,j2,k2,l2,m2,n2,o2)
                                     duplicate = 0
                                     duplicate2 = 0
                                     duplicate3 = 0
                                     duplicate4 = 0
                                     duplicate5 = 0
-                                    justification = 1
+                                    justification = 2
                                 }
-                            }
-                            2 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                4 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                5 -> {
+                                    playTapTiming(a3,b3,c3,d3,e3,f3,g3,h3,i3,j3,k3,l3,m3,n3,o3)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 3
+                                }
+                                6 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                7 -> {
+                                    playTapTiming(a4,b4,c4,d4,e4,f4,g4,h4,i4,j4,k4,l4,m4,n4,o4)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 4
+                                }
+                                8 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                9 -> {
+                                    playTapTiming(a5,b5,c5,d5,e5,f5,g5,h5,i5,j5,k5,l5,m5,n5,o5)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 5
+                                }
+                                10 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                11 -> {
+                                    playTapTiming(a6,b6,c6,d6,e6,f6,g6,h6,i6,j6,k6,l6,m6,n6,o6)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 6
+                                }
+                                12 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                13 -> {
+                                    playTapTiming(a7,b7,c7,d7,e7,f7,g7,h7,i7,j7,k7,l7,m7,n7,o7)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 7
+                                }
+                                14 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                15 -> {
+                                    playTapTiming(a8,b8,c8,d8,e8,f8,g8,h8,i8,j8,k8,l8,m8,n8,o8)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 8
+                                }
+                                16 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                17 -> {
+                                    playTapTiming(a9,b9,c9,d9,e9,f9,g9,h9,i9,j9,k9,l9,m9,n9,o9)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 9
+                                }
+                                18 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
 
-                            }
-                            3 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 2
-                            }
-                            4 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            5 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 3
-                            }
-                            6 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            7 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 4
-                            }
-                            8 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            9 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 5
-                            }
-                            10 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            11 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 6
-                            }
-                            12 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            13 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 7
-                            }
-                            14 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            15 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 8
-                            }
-                            16 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            17 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 9
-                            }
-                            18 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#FFFFFF"))
-
-                            }
-                            19 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 10
-                            }
-                            20 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            21 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 11
-                            }
-                            22 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            23 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 12
-                            }
-                            24 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            25 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 13
-                            }
-                            26 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            27 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 14
-                            }
-                            28 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            29 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 15
-                            }
-                            30 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                            }
-                            31 -> {
-                                duplicate = 0
-                                duplicate2 = 0
-                                duplicate3 = 0
-                                duplicate4 = 0
-                                duplicate5 = 0
-                                justification = 16
-                            }
-                            32 -> {
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15).setBackgroundColor(Color.parseColor("#5A5A66"))
-                                findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16).setBackgroundColor(Color.parseColor("#FFFFFF"))
-                                sequencerCount = 0
-                                gameCount++
-                                if (sequencerSize >= sequencerMaxSize) {
-                                    sequencerSize = 0
-                                    findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                                    changeSequence()
-                                } else {
-                                    sequencerSize++
-                                    findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-                                    changeSequence()
+                                }
+                                19 -> {
+                                    playTapTiming(a10,b10,c10,d10,e10,f10,g10,h10,i10,j10,k10,l10,m10,n10,o10)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 10
+                                }
+                                20 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                21 -> {
+                                    playTapTiming(a11,b11,c11,d11,e11,f11,g11,h11,i11,j11,k11,l11,m11,n11,o11)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 11
+                                }
+                                22 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                23 -> {
+                                    playTapTiming(a12,b12,c12,d12,e12,f12,g12,h12,i12,j12,k12,l12,m12,n12,o12)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 12
+                                }
+                                24 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                25 -> {
+                                    playTapTiming(a13,b13,c13,d13,e13,f13,g13,h13,i13,j13,k13,l13,m13,n13,o13)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 13
+                                }
+                                26 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                27 -> {
+                                    playTapTiming(a14,b14,c14,d14,e14,f14,g14,h14,i14,j14,k14,l14,m14,n14,o14)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 14
+                                }
+                                28 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                29 -> {
+                                    playTapTiming(a15,b15,c15,d15,e15,f15,g15,h15,i15,j15,k15,l15,m15,n15,o15)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 15
+                                }
+                                30 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                }
+                                31 -> {
+                                    playTapTiming(a16,b16,c16,d16,e16,f16,g16,h16,i16,j16,k16,l16,m16,n16,o16)
+                                    duplicate = 0
+                                    duplicate2 = 0
+                                    duplicate3 = 0
+                                    duplicate4 = 0
+                                    duplicate5 = 0
+                                    justification = 16
+                                }
+                                32 -> {
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
+                                        .setBackgroundColor(Color.parseColor("#5A5A66"))
+                                    findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number16)
+                                        .setBackgroundColor(Color.parseColor("#FFFFFF"))
+                                    sequencerCount = 0
+                                    gameCount++
+                                    if (sequencerSize >= sequencerMaxSize) {
+                                        sequencerSize = 0
+                                        findViewById<View>(R.id.line_measure).findViewById<TextView>(
+                                            R.id.measure).text = (sequencerSize + 1).toString()
+                                        changeSequence()
+                                    } else {
+                                        sequencerSize++
+                                        findViewById<View>(R.id.line_measure).findViewById<TextView>(
+                                            R.id.measure).text = (sequencerSize + 1).toString()
+                                        changeSequence()
+                                    }
                                 }
                             }
                         }
-                    }
-                })
-            }
-        },0,7500/ sequencerBpm)
+                    })
+                }
+            }, 0, 7500 / sequencerBpm)
     }
 
     private fun sequencerStop() {
@@ -8263,254 +8420,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundListView.isVisible -> {
                     soundListView.visibility = View.INVISIBLE
                 }
-                event!!.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
-                    soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-                    when {
-                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                    }
-                    println(score)
-                }
-                event.actionMasked == MotionEvent.ACTION_DOWN -> {
+                event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
                     findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     when {
@@ -11464,9 +11374,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
-        val v = View.VISIBLE
-        val g = View.GONE
-
         findViewById<View>(R.id.line_measure).findViewById<ImageView>(R.id.track_down).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -14218,6 +14125,299 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             15 -> {
                 switchPadSequencer(view)
                 sequencerVisibility(v,v,v,v,v,v,v,v,v,v,v,v,v)
+            }
+        }
+    }
+    
+    private fun playTapTiming(a: MutableList<Int>,
+                              b: MutableList<Int>,
+                              c: MutableList<Int>,
+                              d: MutableList<Int>,
+                              e: MutableList<Int>,
+                              f: MutableList<Int>,
+                              g: MutableList<Int>,
+                              h: MutableList<Int>,
+                              i: MutableList<Int>,
+                              j: MutableList<Int>,
+                              k: MutableList<Int>,
+                              l: MutableList<Int>,
+                              m: MutableList<Int>,
+                              n: MutableList<Int>,
+                              o: MutableList<Int>) {
+        if (a[sequencerSize] == 1) { tapTiming(R.id.include_main_view, R.drawable.my_ripple3) }
+        if (b[sequencerSize] == 1) { tapTiming(R.id.include_main_view4, R.drawable.my_ripple4) }
+        if (c[sequencerSize] == 1 && trackCount >= 3) { tapTiming(R.id.include_main_view7, R.drawable.my_ripple5) }
+        if (d[sequencerSize] == 1 && trackCount >= 4) { tapTiming(R.id.include_main_view10, R.drawable.my_ripple6) }
+        if (e[sequencerSize] == 1 && trackCount >= 5) { tapTiming(R.id.include_main_view13, R.drawable.my_ripple7) }
+        if (f[sequencerSize] == 1 && trackCount >= 6) { tapTiming(R.id.include_main_view2, R.drawable.my_ripple3) }
+        if (g[sequencerSize] == 1 && trackCount >= 7) { tapTiming(R.id.include_main_view5, R.drawable.my_ripple4) }
+        if (h[sequencerSize] == 1 && trackCount >= 8) { tapTiming(R.id.include_main_view8, R.drawable.my_ripple5) }
+        if (i[sequencerSize] == 1 && trackCount >= 9) { tapTiming(R.id.include_main_view11, R.drawable.my_ripple6) }
+        if (j[sequencerSize] == 1 && trackCount >= 10) { tapTiming(R.id.include_main_view14, R.drawable.my_ripple7) }
+        if (k[sequencerSize] == 1 && trackCount >= 11) { tapTiming(R.id.include_main_view3, R.drawable.my_ripple3) }
+        if (l[sequencerSize] == 1 && trackCount >= 12) { tapTiming(R.id.include_main_view6, R.drawable.my_ripple4) }
+        if (m[sequencerSize] == 1 && trackCount >= 13) { tapTiming(R.id.include_main_view9, R.drawable.my_ripple5) }
+        if (n[sequencerSize] == 1 && trackCount >= 14) { tapTiming(R.id.include_main_view12, R.drawable.my_ripple6) }
+        if (o[sequencerSize] == 1 && trackCount >= 15) { tapTiming(R.id.include_main_view15, R.drawable.my_ripple7) }
+    }
+    
+    @SuppressLint("SetTextI18n")
+    private fun tapEvent(a1: MutableList<Int>,
+                         a2: MutableList<Int>,
+                         a3: MutableList<Int>,
+                         a4: MutableList<Int>,
+                         a5: MutableList<Int>,
+                         a6: MutableList<Int>,
+                         a7: MutableList<Int>,
+                         a8: MutableList<Int>,
+                         a9: MutableList<Int>,
+                         a10: MutableList<Int>,
+                         a11: MutableList<Int>,
+                         a12: MutableList<Int>,
+                         a13: MutableList<Int>,
+                         a14: MutableList<Int>,
+                         a15: MutableList<Int>,
+                         a16: MutableList<Int>, duplicate: Int) {
+        when {
+            a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                score++
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+                this@MainActivity.duplicate = 1
+            }
+            a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
+            }
+            a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
+                missScore++
+                score--
+                binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
         }
     }
