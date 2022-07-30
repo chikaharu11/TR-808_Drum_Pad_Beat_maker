@@ -335,6 +335,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var score = 0
     private var missScore = 0
+    private var hitScore = 0
     private var maxScore = 0
 
     private var duplicate = 0
@@ -342,6 +343,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var duplicate3 = 0
     private var duplicate4 = 0
     private var duplicate5 = 0
+    private var duplicate6 = 0
+    private var duplicate7 = 0
+    private var duplicate8 = 0
+    private var duplicate9 = 0
+    private var duplicate10 = 0
+    private var duplicate11 = 0
+    private var duplicate12 = 0
+    private var duplicate13 = 0
+    private var duplicate14 = 0
+    private var duplicate15 = 0
     
     private var mode = 0
 
@@ -1322,14 +1333,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             findViewById<Spinner>(R.id.mode_spinner).isEnabled = false
             sequencerSize = 0
             sequencerCount = 32
-            duplicate = 0
-            duplicate2 = 0
-            duplicate3 = 0
-            duplicate4 = 0
-            duplicate5 = 0
-            justification = 0
+            duplicateCheck(0)
             score = 0
             missScore = 0
+        hitScore = 0
             maxScore = (a1.filter { it == 1 }.size
                     + a2.filter { it == 1 }.size
                     + a3.filter { it == 1 }.size
@@ -1489,7 +1496,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     dialogView.findViewById<TextView>(R.id.maxscore).text =
                                                         "    ALL COUNTS : $maxScore"
                                                     dialogView.findViewById<TextView>(R.id.score).text =
-                                                        "   JUST COUNTS : $score"
+                                                        "   JUST COUNTS : $hitScore"
                                                     dialogView.findViewById<TextView>(R.id.missscore).text =
                                                         "   MISS COUNTS : $missScore"
                                                     dialogView.findViewById<TextView>(R.id.result).text =
@@ -1545,7 +1552,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     dialogView.findViewById<TextView>(R.id.maxscore).text =
                                                         "    ALL COUNTS : $maxScore"
                                                     dialogView.findViewById<TextView>(R.id.score).text =
-                                                        "   JUST COUNTS : $score"
+                                                        "   JUST COUNTS : $hitScore"
                                                     dialogView.findViewById<TextView>(R.id.missscore).text =
                                                         "   MISS COUNTS : $missScore"
                                                     dialogView.findViewById<TextView>(R.id.result).text =
@@ -1604,7 +1611,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     dialogView.findViewById<TextView>(R.id.maxscore).text =
                                                         "    ALL COUNTS : $maxScore"
                                                     dialogView.findViewById<TextView>(R.id.score).text =
-                                                        "   JUST COUNTS : $score"
+                                                        "   JUST COUNTS : $hitScore"
                                                     dialogView.findViewById<TextView>(R.id.missscore).text =
                                                         "   MISS COUNTS : $missScore"
                                                     dialogView.findViewById<TextView>(R.id.result).text =
@@ -1648,7 +1655,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     dialogView.findViewById<TextView>(R.id.maxscore).text =
                                                         "    ALL COUNTS : $maxScore"
                                                     dialogView.findViewById<TextView>(R.id.score).text =
-                                                        "   JUST COUNTS : $score"
+                                                        "   JUST COUNTS : $hitScore"
                                                     dialogView.findViewById<TextView>(R.id.missscore).text =
                                                         "   MISS COUNTS : $missScore"
                                                     dialogView.findViewById<TextView>(R.id.result).text =
@@ -1692,7 +1699,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     dialogView.findViewById<TextView>(R.id.maxscore).text =
                                                         "    ALL COUNTS : $maxScore"
                                                     dialogView.findViewById<TextView>(R.id.score).text =
-                                                        "   JUST COUNTS : $score"
+                                                        "   JUST COUNTS : $hitScore"
                                                     dialogView.findViewById<TextView>(R.id.missscore).text =
                                                         "   MISS COUNTS : $missScore"
                                                     dialogView.findViewById<TextView>(R.id.result).text =
@@ -1731,12 +1738,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                         binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score",
                                             TextView.BufferType.NORMAL)
                                         playTapTiming(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1)
-                                        duplicate = 0
-                                        duplicate2 = 0
-                                        duplicate3 = 0
-                                        duplicate4 = 0
-                                        duplicate5 = 0
-                                        justification = 1
+                                        duplicateCheck(1)
                                     }
                                 }
                                 2 -> {
@@ -1748,12 +1750,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 3 -> {
                                     playTapTiming(a2,b2,c2,d2,e2,f2,g2,h2,i2,j2,k2,l2,m2,n2,o2)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 2
+                                    duplicateCheck(2)
                                 }
                                 4 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number)
@@ -1763,12 +1760,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 5 -> {
                                     playTapTiming(a3,b3,c3,d3,e3,f3,g3,h3,i3,j3,k3,l3,m3,n3,o3)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 3
+                                    duplicateCheck(3)
                                 }
                                 6 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number2)
@@ -1778,12 +1770,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 7 -> {
                                     playTapTiming(a4,b4,c4,d4,e4,f4,g4,h4,i4,j4,k4,l4,m4,n4,o4)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 4
+                                    duplicateCheck(4)
                                 }
                                 8 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number3)
@@ -1793,12 +1780,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 9 -> {
                                     playTapTiming(a5,b5,c5,d5,e5,f5,g5,h5,i5,j5,k5,l5,m5,n5,o5)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 5
+                                    duplicateCheck(5)
                                 }
                                 10 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number4)
@@ -1808,12 +1790,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 11 -> {
                                     playTapTiming(a6,b6,c6,d6,e6,f6,g6,h6,i6,j6,k6,l6,m6,n6,o6)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 6
+                                    duplicateCheck(6)
                                 }
                                 12 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number5)
@@ -1823,12 +1800,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 13 -> {
                                     playTapTiming(a7,b7,c7,d7,e7,f7,g7,h7,i7,j7,k7,l7,m7,n7,o7)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 7
+                                    duplicateCheck(7)
                                 }
                                 14 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number6)
@@ -1838,12 +1810,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 15 -> {
                                     playTapTiming(a8,b8,c8,d8,e8,f8,g8,h8,i8,j8,k8,l8,m8,n8,o8)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 8
+                                    duplicateCheck(8)
                                 }
                                 16 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number7)
@@ -1853,12 +1820,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 17 -> {
                                     playTapTiming(a9,b9,c9,d9,e9,f9,g9,h9,i9,j9,k9,l9,m9,n9,o9)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 9
+                                    duplicateCheck(9)
                                 }
                                 18 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number8)
@@ -1869,12 +1831,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 19 -> {
                                     playTapTiming(a10,b10,c10,d10,e10,f10,g10,h10,i10,j10,k10,l10,m10,n10,o10)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 10
+                                    duplicateCheck(10)
                                 }
                                 20 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number9)
@@ -1884,12 +1841,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 21 -> {
                                     playTapTiming(a11,b11,c11,d11,e11,f11,g11,h11,i11,j11,k11,l11,m11,n11,o11)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 11
+                                    duplicateCheck(11)
                                 }
                                 22 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number10)
@@ -1899,12 +1851,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 23 -> {
                                     playTapTiming(a12,b12,c12,d12,e12,f12,g12,h12,i12,j12,k12,l12,m12,n12,o12)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 12
+                                    duplicateCheck(12)
                                 }
                                 24 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number11)
@@ -1914,12 +1861,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 25 -> {
                                     playTapTiming(a13,b13,c13,d13,e13,f13,g13,h13,i13,j13,k13,l13,m13,n13,o13)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 13
+                                    duplicateCheck(13)
                                 }
                                 26 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number12)
@@ -1929,12 +1871,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 27 -> {
                                     playTapTiming(a14,b14,c14,d14,e14,f14,g14,h14,i14,j14,k14,l14,m14,n14,o14)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 14
+                                    duplicateCheck(14)
                                 }
                                 28 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number13)
@@ -1944,12 +1881,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 29 -> {
                                     playTapTiming(a15,b15,c15,d15,e15,f15,g15,h15,i15,j15,k15,l15,m15,n15,o15)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 15
+                                    duplicateCheck(15)
                                 }
                                 30 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number14)
@@ -1959,12 +1891,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                                 31 -> {
                                     playTapTiming(a16,b16,c16,d16,e16,f16,g16,h16,i16,j16,k16,l16,m16,n16,o16)
-                                    duplicate = 0
-                                    duplicate2 = 0
-                                    duplicate3 = 0
-                                    duplicate4 = 0
-                                    duplicate5 = 0
-                                    justification = 16
+                                    duplicateCheck(16)
                                 }
                                 32 -> {
                                     findViewById<View>(R.id.sequencer_view).findViewById<TextView>(R.id.number15)
@@ -3660,8 +3587,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         )
 
         val padSequencer = arrayOf(
-            "Change Pad Colors",
-            "Lock Settings",
             "Hide banner Ads",
             "EXIT",
         )
@@ -3671,6 +3596,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             "Adjusting Sounds",
             "Hide banner Ads",
             "EXIT",
+            "5x3","5x2","5x1",
+            "4x3","4x2","4x1",
+            "3x3","3x2","3x1",
+            "2x2","2x1"
         )
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
         val adapterA = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning2)
@@ -4316,6 +4245,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     paste = 0
                     menuSwitchLock = false
                     binding.editTitle.isEnabled = false
+                    findViewById<Spinner>(R.id.mode_spinner).isEnabled = false
                     invalidateOptionsMenu()
                     binding.toolbarMain.setBackgroundColor(Color.parseColor("#5A5A66"))
                     Toast.makeText(applicationContext, R.string.lock, Toast.LENGTH_LONG).show()
@@ -8447,8 +8377,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view2).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                    tapEvent(f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,duplicate6,R.id.include_main_view2)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8473,8 +8403,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view3).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                    tapEvent(k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,duplicate11,R.id.include_main_view3)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8525,8 +8455,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view5).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                    tapEvent(g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16,duplicate7,R.id.include_main_view5)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8551,8 +8481,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view6).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                    tapEvent(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,duplicate12,R.id.include_main_view6)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8603,8 +8533,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view8).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                    tapEvent(h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13,h14,h15,h16,duplicate8,R.id.include_main_view8)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8629,8 +8559,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view9).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                    tapEvent(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,duplicate13,R.id.include_main_view9)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8682,8 +8612,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view11).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                    tapEvent(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,duplicate9,R.id.include_main_view11)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8708,8 +8638,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view12).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                    tapEvent(n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,duplicate14,R.id.include_main_view12)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8760,8 +8690,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view14).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                    tapEvent(j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12,j13,j14,j15,j16,duplicate10,R.id.include_main_view14)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -8786,8 +8716,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view15).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                    tapEvent(o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16,duplicate15,R.id.include_main_view15)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -11941,96 +11871,112 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
                 findViewById<View>(view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+                hitScore++
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
@@ -12228,6 +12174,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
         }
+    }
+
+    private fun duplicateCheck(just: Int) {
+        duplicate = 0
+        duplicate2 = 0
+        duplicate3 = 0
+        duplicate4 = 0
+        duplicate5 = 0
+        duplicate6 = 0
+        duplicate7 = 0
+        duplicate8 = 0
+        duplicate9 = 0
+        duplicate10 = 0
+        duplicate11 = 0
+        duplicate12 = 0
+        duplicate13 = 0
+        duplicate14 = 0
+        duplicate15 = 0
+        justification = just
     }
 
     private fun x53() {
@@ -15443,6 +15408,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 } else {
                     menuSwitchLock = true
                     binding.editTitle.isEnabled = true
+                    findViewById<Spinner>(R.id.mode_spinner).isEnabled = true
                     invalidateOptionsMenu()
                 }
                 return true

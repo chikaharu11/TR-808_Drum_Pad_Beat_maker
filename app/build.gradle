@@ -12,8 +12,8 @@ android {
         applicationId "jp.chikaharu11.instant_drumpad_tr808"
         minSdkVersion 26
         targetSdkVersion 31
-        versionCode 46
-        versionName "46"
+        versionCode 47
+        versionName "47"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
