@@ -8421,251 +8421,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.visibility = View.INVISIBLE
                 }
                 event!!.actionMasked == MotionEvent.ACTION_DOWN || event.actionMasked == MotionEvent.ACTION_POINTER_DOWN -> {
-                    findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-                    when {
-                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
-                            score++
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                            duplicate = 1
-                        }
-                        a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                        a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
-                            missScore++
-                            score--
-                            binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
-                        }
-                    }
-                    println(score)
+                    tapEvent(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,duplicate)
                 }
                 event.actionMasked == MotionEvent.ACTION_UP -> {
                     if (colorCheck == 1) {
@@ -14179,242 +13936,293 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                          a15: MutableList<Int>,
                          a16: MutableList<Int>, duplicate: Int) {
         when {
+            justification == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
+            }
             a1[sequencerSize] == 1 && justification == 1 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a2[sequencerSize] == 1 && justification == 2 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a3[sequencerSize] == 1 && justification == 3 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a4[sequencerSize] == 1 && justification == 4 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a5[sequencerSize] == 1 && justification == 5 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a6[sequencerSize] == 1 && justification == 6 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a7[sequencerSize] == 1 && justification == 7 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a8[sequencerSize] == 1 && justification == 8 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a9[sequencerSize] == 1 && justification == 9 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a10[sequencerSize] == 1 && justification == 10 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a11[sequencerSize] == 1 && justification == 11 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a12[sequencerSize] == 1 && justification == 12 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a13[sequencerSize] == 1 && justification == 13 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a14[sequencerSize] == 1 && justification == 14 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a15[sequencerSize] == 1 && justification == 15 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a16[sequencerSize] == 1 && justification == 16 && duplicate == 0 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple2)
                 score++
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
                 this@MainActivity.duplicate = 1
             }
             a1[sequencerSize] == 1 && justification == 1 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a2[sequencerSize] == 1 && justification == 2 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a3[sequencerSize] == 1 && justification == 3 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a4[sequencerSize] == 1 && justification == 4 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a5[sequencerSize] == 1 && justification == 5 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a6[sequencerSize] == 1 && justification == 6 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a7[sequencerSize] == 1 && justification == 7 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a8[sequencerSize] == 1 && justification == 8 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a9[sequencerSize] == 1 && justification == 9 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a10[sequencerSize] == 1 && justification == 10 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a11[sequencerSize] == 1 && justification == 11 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a12[sequencerSize] == 1 && justification == 12 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a13[sequencerSize] == 1 && justification == 13 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a14[sequencerSize] == 1 && justification == 14 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a15[sequencerSize] == 1 && justification == 15 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a16[sequencerSize] == 1 && justification == 16 && duplicate == 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a1[sequencerSize] == 1 && justification != 0 && justification != 1 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a2[sequencerSize] == 1 && justification != 0 && justification != 2 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a3[sequencerSize] == 1 && justification != 0 && justification != 3 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a4[sequencerSize] == 1 && justification != 0 && justification != 4 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a5[sequencerSize] == 1 && justification != 0 && justification != 5 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a6[sequencerSize] == 1 && justification != 0 && justification != 6 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a7[sequencerSize] == 1 && justification != 0 && justification != 7 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a8[sequencerSize] == 1 && justification != 0 && justification != 8 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a9[sequencerSize] == 1 && justification != 0 && justification != 9 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a10[sequencerSize] == 1 && justification != 0 && justification != 10 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a11[sequencerSize] == 1 && justification != 0 && justification != 11 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a12[sequencerSize] == 1 && justification != 0 && justification != 12 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a13[sequencerSize] == 1 && justification != 0 && justification != 13 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a14[sequencerSize] == 1 && justification != 0 && justification != 14 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a15[sequencerSize] == 1 && justification != 0 && justification != 15 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
             }
             a16[sequencerSize] == 1 && justification != 0 && justification != 16 -> {
+                findViewById<View>(R.id.include_main_view).findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.my_ripple8)
                 missScore++
                 score--
                 binding.editTitle.setText("PERIOD : $gameCount/8 SCORE : $score", TextView.BufferType.NORMAL)
