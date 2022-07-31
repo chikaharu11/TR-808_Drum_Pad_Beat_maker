@@ -4461,7 +4461,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "REGGAETON 1 BPM90" -> {
@@ -4507,7 +4513,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "ELECTRONICA 1 BPM90" -> {
@@ -4563,7 +4575,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "DUBSTEP 1 BPM140" -> {
@@ -4619,7 +4637,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "HOUSE 1 BPM130" -> {
@@ -4685,7 +4709,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         houseSequence()
                         changeSequence()
                         x51()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "DISCO 1 BPM110" -> {
@@ -4751,7 +4781,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "TECHNO 1 BPM110" -> {
@@ -4817,7 +4853,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "EUROBEAT 1 BPM130" -> {
@@ -4873,7 +4915,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "2 STEP 1 BPM100" -> {
@@ -4939,7 +4987,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "DRUM'N'BASS 1 BPM170" -> {
@@ -4995,7 +5049,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 1 BPM120" -> {
@@ -5031,7 +5091,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x21()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 7 BPM120" -> {
@@ -5077,7 +5143,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 8 BPM100" -> {
@@ -5143,7 +5215,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x51()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 3 BPM110" -> {
@@ -5189,7 +5267,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 4 BPM100" -> {
@@ -5235,7 +5319,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 5 BPM90" -> {
@@ -5281,7 +5371,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x31()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 6 BPM100" -> {
@@ -5337,7 +5433,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x41()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                     "BEAT 2 BPM120" -> {
@@ -5373,7 +5475,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.editTitle.setText(actionTitle.replace("_", " ").uppercase(),
                             TextView.BufferType.NORMAL)
                         x21()
-                        sequencerChange(View.GONE)
+                        if (mode == 0) {
+                            binding.sequencerView.visibility = View.GONE
+                            binding.notes.visibility = View.GONE
+                            binding.view.visibility = View.INVISIBLE
+                        } else {
+                            sequencerChange(View.GONE)
+                        }
                         gridView2.visibility = View.INVISIBLE
                     }
                 }
