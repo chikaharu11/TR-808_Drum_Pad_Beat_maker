@@ -337,6 +337,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var missScore = 0
     private var hitScore = 0
     private var maxScore = 0
+    private var maxScore2 = 0
+    private var maxScore3 = 0
+    private var maxScore4 = 0
+    private var maxScore5 = 0
+    private var maxScore6 = 0
+    private var maxScore7 = 0
+    private var maxScore8 = 0
+    private var maxScore9 = 0
+    private var maxScore10 = 0
+    private var maxScore11 = 0
+    private var maxScore12 = 0
+    private var maxScore13 = 0
+    private var maxScore14 = 0
+    private var maxScore15 = 0
 
     private var duplicate = 0
     private var duplicate2 = 0
@@ -1337,7 +1351,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             score = 0
             missScore = 0
         hitScore = 0
-            maxScore = (a1.filter { it == 1 }.size
+            maxScore2 = (a1.filter { it == 1 }.size
                     + a2.filter { it == 1 }.size
                     + a3.filter { it == 1 }.size
                     + a4.filter { it == 1 }.size
@@ -1368,8 +1382,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     + b13.filter { it == 1 }.size
                     + b14.filter { it == 1 }.size
                     + b15.filter { it == 1 }.size
-                    + b16.filter { it == 1 }.size
-                    + c1.filter { it == 1 }.size
+                    + b16.filter { it == 1 }.size)
+        maxScore3 = (c1.filter { it == 1 }.size
                     + c2.filter { it == 1 }.size
                     + c3.filter { it == 1 }.size
                     + c4.filter { it == 1 }.size
@@ -1384,8 +1398,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     + c13.filter { it == 1 }.size
                     + c14.filter { it == 1 }.size
                     + c15.filter { it == 1 }.size
-                    + c16.filter { it == 1 }.size
-                    + d1.filter { it == 1 }.size
+                    + c16.filter { it == 1 }.size)
+        maxScore4 = (d1.filter { it == 1 }.size
                     + d2.filter { it == 1 }.size
                     + d3.filter { it == 1 }.size
                     + d4.filter { it == 1 }.size
@@ -1400,8 +1414,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     + d13.filter { it == 1 }.size
                     + d14.filter { it == 1 }.size
                     + d15.filter { it == 1 }.size
-                    + d16.filter { it == 1 }.size
-                    + e1.filter { it == 1 }.size
+                    + d16.filter { it == 1 }.size)
+        maxScore5 = (e1.filter { it == 1 }.size
                     + e2.filter { it == 1 }.size
                     + e3.filter { it == 1 }.size
                     + e4.filter { it == 1 }.size
@@ -1416,7 +1430,327 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     + e13.filter { it == 1 }.size
                     + e14.filter { it == 1 }.size
                     + e15.filter { it == 1 }.size
-                    + e16.filter { it == 1 }.size) * 8 / (sequencerMaxSize + 1)
+                    + e16.filter { it == 1 }.size)
+        maxScore6 = (f1.filter { it == 1 }.size
+                    + f2.filter { it == 1 }.size
+                    + f3.filter { it == 1 }.size
+                    + f4.filter { it == 1 }.size
+                    + f5.filter { it == 1 }.size
+                    + f6.filter { it == 1 }.size
+                    + f7.filter { it == 1 }.size
+                    + f8.filter { it == 1 }.size
+                    + f9.filter { it == 1 }.size
+                    + f10.filter { it == 1 }.size
+                    + f11.filter { it == 1 }.size
+                    + f12.filter { it == 1 }.size
+                    + f13.filter { it == 1 }.size
+                    + f14.filter { it == 1 }.size
+                    + f15.filter { it == 1 }.size
+                    + f16.filter { it == 1 }.size)
+        maxScore7 = (g1.filter { it == 1 }.size
+                    + g2.filter { it == 1 }.size
+                    + g3.filter { it == 1 }.size
+                    + g4.filter { it == 1 }.size
+                    + g5.filter { it == 1 }.size
+                    + g6.filter { it == 1 }.size
+                    + g7.filter { it == 1 }.size
+                    + g8.filter { it == 1 }.size
+                    + g9.filter { it == 1 }.size
+                    + g10.filter { it == 1 }.size
+                    + g11.filter { it == 1 }.size
+                    + g12.filter { it == 1 }.size
+                    + g13.filter { it == 1 }.size
+                    + g14.filter { it == 1 }.size
+                    + g15.filter { it == 1 }.size
+                    + g16.filter { it == 1 }.size)
+        maxScore8 = (h1.filter { it == 1 }.size
+                    + h2.filter { it == 1 }.size
+                    + h3.filter { it == 1 }.size
+                    + h4.filter { it == 1 }.size
+                    + h5.filter { it == 1 }.size
+                    + h6.filter { it == 1 }.size
+                    + h7.filter { it == 1 }.size
+                    + h8.filter { it == 1 }.size
+                    + h9.filter { it == 1 }.size
+                    + h10.filter { it == 1 }.size
+                    + h11.filter { it == 1 }.size
+                    + h12.filter { it == 1 }.size
+                    + h13.filter { it == 1 }.size
+                    + h14.filter { it == 1 }.size
+                    + h15.filter { it == 1 }.size
+                    + h16.filter { it == 1 }.size)
+        maxScore9 = (i1.filter { it == 1 }.size
+                    + i2.filter { it == 1 }.size
+                    + i3.filter { it == 1 }.size
+                    + i4.filter { it == 1 }.size
+                    + i5.filter { it == 1 }.size
+                    + i6.filter { it == 1 }.size
+                    + i7.filter { it == 1 }.size
+                    + i8.filter { it == 1 }.size
+                    + i9.filter { it == 1 }.size
+                    + i10.filter { it == 1 }.size
+                    + i11.filter { it == 1 }.size
+                    + i12.filter { it == 1 }.size
+                    + i13.filter { it == 1 }.size
+                    + i14.filter { it == 1 }.size
+                    + i15.filter { it == 1 }.size
+                    + i16.filter { it == 1 }.size)
+        maxScore10 = (j1.filter { it == 1 }.size
+                    + j2.filter { it == 1 }.size
+                    + j3.filter { it == 1 }.size
+                    + j4.filter { it == 1 }.size
+                    + j5.filter { it == 1 }.size
+                    + j6.filter { it == 1 }.size
+                    + j7.filter { it == 1 }.size
+                    + j8.filter { it == 1 }.size
+                    + j9.filter { it == 1 }.size
+                    + j10.filter { it == 1 }.size
+                    + j11.filter { it == 1 }.size
+                    + j12.filter { it == 1 }.size
+                    + j13.filter { it == 1 }.size
+                    + j14.filter { it == 1 }.size
+                    + j15.filter { it == 1 }.size
+                    + j16.filter { it == 1 }.size)
+        maxScore11 = (k1.filter { it == 1 }.size
+                    + k2.filter { it == 1 }.size
+                    + k3.filter { it == 1 }.size
+                    + k4.filter { it == 1 }.size
+                    + k5.filter { it == 1 }.size
+                    + k6.filter { it == 1 }.size
+                    + k7.filter { it == 1 }.size
+                    + k8.filter { it == 1 }.size
+                    + k9.filter { it == 1 }.size
+                    + k10.filter { it == 1 }.size
+                    + k11.filter { it == 1 }.size
+                    + k12.filter { it == 1 }.size
+                    + k13.filter { it == 1 }.size
+                    + k14.filter { it == 1 }.size
+                    + k15.filter { it == 1 }.size
+                    + k16.filter { it == 1 }.size)
+        maxScore12 = (l1.filter { it == 1 }.size
+                    + l2.filter { it == 1 }.size
+                    + l3.filter { it == 1 }.size
+                    + l4.filter { it == 1 }.size
+                    + l5.filter { it == 1 }.size
+                    + l6.filter { it == 1 }.size
+                    + l7.filter { it == 1 }.size
+                    + l8.filter { it == 1 }.size
+                    + l9.filter { it == 1 }.size
+                    + l10.filter { it == 1 }.size
+                    + l11.filter { it == 1 }.size
+                    + l12.filter { it == 1 }.size
+                    + l13.filter { it == 1 }.size
+                    + l14.filter { it == 1 }.size
+                    + l15.filter { it == 1 }.size
+                    + l16.filter { it == 1 }.size)
+        maxScore13 = (m1.filter { it == 1 }.size
+                    + m2.filter { it == 1 }.size
+                    + m3.filter { it == 1 }.size
+                    + m4.filter { it == 1 }.size
+                    + m5.filter { it == 1 }.size
+                    + m6.filter { it == 1 }.size
+                    + m7.filter { it == 1 }.size
+                    + m8.filter { it == 1 }.size
+                    + m9.filter { it == 1 }.size
+                    + m10.filter { it == 1 }.size
+                    + m11.filter { it == 1 }.size
+                    + m12.filter { it == 1 }.size
+                    + m13.filter { it == 1 }.size
+                    + m14.filter { it == 1 }.size
+                    + m15.filter { it == 1 }.size
+                    + m16.filter { it == 1 }.size)
+        maxScore14 = (n1.filter { it == 1 }.size
+                    + n2.filter { it == 1 }.size
+                    + n3.filter { it == 1 }.size
+                    + n4.filter { it == 1 }.size
+                    + n5.filter { it == 1 }.size
+                    + n6.filter { it == 1 }.size
+                    + n7.filter { it == 1 }.size
+                    + n8.filter { it == 1 }.size
+                    + n9.filter { it == 1 }.size
+                    + n10.filter { it == 1 }.size
+                    + n11.filter { it == 1 }.size
+                    + n12.filter { it == 1 }.size
+                    + n13.filter { it == 1 }.size
+                    + n14.filter { it == 1 }.size
+                    + n15.filter { it == 1 }.size
+                    + n16.filter { it == 1 }.size)
+        maxScore15 = (o1.filter { it == 1 }.size
+                    + o2.filter { it == 1 }.size
+                    + o3.filter { it == 1 }.size
+                    + o4.filter { it == 1 }.size
+                    + o5.filter { it == 1 }.size
+                    + o6.filter { it == 1 }.size
+                    + o7.filter { it == 1 }.size
+                    + o8.filter { it == 1 }.size
+                    + o9.filter { it == 1 }.size
+                    + o10.filter { it == 1 }.size
+                    + o11.filter { it == 1 }.size
+                    + o12.filter { it == 1 }.size
+                    + o13.filter { it == 1 }.size
+                    + o14.filter { it == 1 }.size
+                    + o15.filter { it == 1 }.size
+                    + o16.filter { it == 1 }.size)
+        when(sequencerMaxSize) {
+            0 -> {
+                maxScore = (a1.filter { it == 1 }.size
+                        + b1.filter { it == 1 }.size
+                        + c1.filter { it == 1 }.size
+                        + d1.filter { it == 1 }.size
+                        + e1.filter { it == 1 }.size
+                        + f1.filter { it == 1 }.size
+                        + g1.filter { it == 1 }.size
+                        + h1.filter { it == 1 }.size
+                        + i1.filter { it == 1 }.size
+                        + j1.filter { it == 1 }.size
+                        + k1.filter { it == 1 }.size
+                        + l1.filter { it == 1 }.size
+                        + m1.filter { it == 1 }.size
+                        + n1.filter { it == 1 }.size
+                        + o1.filter { it == 1 }.size) * 8
+            }
+            1 -> {
+                maxScore = (a1.filter { it == 1 }.size
+                        + b1.filter { it == 1 }.size
+                        + c1.filter { it == 1 }.size
+                        + d1.filter { it == 1 }.size
+                        + e1.filter { it == 1 }.size
+                        + f1.filter { it == 1 }.size
+                        + g1.filter { it == 1 }.size
+                        + h1.filter { it == 1 }.size
+                        + i1.filter { it == 1 }.size
+                        + j1.filter { it == 1 }.size
+                        + k1.filter { it == 1 }.size
+                        + l1.filter { it == 1 }.size
+                        + m1.filter { it == 1 }.size
+                        + n1.filter { it == 1 }.size
+                        + o1.filter { it == 1 }.size
+                        + a2.filter { it == 1 }.size
+                        + b2.filter { it == 1 }.size
+                        + c2.filter { it == 1 }.size
+                        + d2.filter { it == 1 }.size
+                        + e2.filter { it == 1 }.size
+                        + f2.filter { it == 1 }.size
+                        + g2.filter { it == 1 }.size
+                        + h2.filter { it == 1 }.size
+                        + i2.filter { it == 1 }.size
+                        + j2.filter { it == 1 }.size
+                        + k2.filter { it == 1 }.size
+                        + l2.filter { it == 1 }.size
+                        + m2.filter { it == 1 }.size
+                        + n2.filter { it == 1 }.size
+                        + o2.filter { it == 1 }.size) * 4
+            }
+            2 -> {
+                maxScore = (a1.filter { it == 1 }.size
+                        + b1.filter { it == 1 }.size
+                        + c1.filter { it == 1 }.size
+                        + d1.filter { it == 1 }.size
+                        + e1.filter { it == 1 }.size
+                        + f1.filter { it == 1 }.size
+                        + g1.filter { it == 1 }.size
+                        + h1.filter { it == 1 }.size
+                        + i1.filter { it == 1 }.size
+                        + j1.filter { it == 1 }.size
+                        + k1.filter { it == 1 }.size
+                        + l1.filter { it == 1 }.size
+                        + m1.filter { it == 1 }.size
+                        + n1.filter { it == 1 }.size
+                        + o1.filter { it == 1 }.size
+                        + a2.filter { it == 1 }.size
+                        + b2.filter { it == 1 }.size
+                        + c2.filter { it == 1 }.size
+                        + d2.filter { it == 1 }.size
+                        + e2.filter { it == 1 }.size
+                        + f2.filter { it == 1 }.size
+                        + g2.filter { it == 1 }.size
+                        + h2.filter { it == 1 }.size
+                        + i2.filter { it == 1 }.size
+                        + j2.filter { it == 1 }.size
+                        + k2.filter { it == 1 }.size
+                        + l2.filter { it == 1 }.size
+                        + m2.filter { it == 1 }.size
+                        + n2.filter { it == 1 }.size
+                        + o2.filter { it == 1 }.size) * 3
+                        + (a3.filter { it == 1 }.size
+                        + b3.filter { it == 1 }.size
+                        + c3.filter { it == 1 }.size
+                        + d3.filter { it == 1 }.size
+                        + e3.filter { it == 1 }.size
+                        + f3.filter { it == 1 }.size
+                        + g3.filter { it == 1 }.size
+                        + h3.filter { it == 1 }.size
+                        + i3.filter { it == 1 }.size
+                        + j3.filter { it == 1 }.size
+                        + k3.filter { it == 1 }.size
+                        + l3.filter { it == 1 }.size
+                        + m3.filter { it == 1 }.size
+                        + n3.filter { it == 1 }.size
+                        + o3.filter { it == 1 }.size) * 2
+            }
+            3 -> {
+                maxScore = (a1.filter { it == 1 }.size
+                        + b1.filter { it == 1 }.size
+                        + c1.filter { it == 1 }.size
+                        + d1.filter { it == 1 }.size
+                        + e1.filter { it == 1 }.size
+                        + f1.filter { it == 1 }.size
+                        + g1.filter { it == 1 }.size
+                        + h1.filter { it == 1 }.size
+                        + i1.filter { it == 1 }.size
+                        + j1.filter { it == 1 }.size
+                        + k1.filter { it == 1 }.size
+                        + l1.filter { it == 1 }.size
+                        + m1.filter { it == 1 }.size
+                        + n1.filter { it == 1 }.size
+                        + o1.filter { it == 1 }.size
+                        + a2.filter { it == 1 }.size
+                        + b2.filter { it == 1 }.size
+                        + c2.filter { it == 1 }.size
+                        + d2.filter { it == 1 }.size
+                        + e2.filter { it == 1 }.size
+                        + f2.filter { it == 1 }.size
+                        + g2.filter { it == 1 }.size
+                        + h2.filter { it == 1 }.size
+                        + i2.filter { it == 1 }.size
+                        + j2.filter { it == 1 }.size
+                        + k2.filter { it == 1 }.size
+                        + l2.filter { it == 1 }.size
+                        + m2.filter { it == 1 }.size
+                        + n2.filter { it == 1 }.size
+                        + o2.filter { it == 1 }.size
+                        + a3.filter { it == 1 }.size
+                        + b3.filter { it == 1 }.size
+                        + c3.filter { it == 1 }.size
+                        + d3.filter { it == 1 }.size
+                        + e3.filter { it == 1 }.size
+                        + f3.filter { it == 1 }.size
+                        + g3.filter { it == 1 }.size
+                        + h3.filter { it == 1 }.size
+                        + i3.filter { it == 1 }.size
+                        + j3.filter { it == 1 }.size
+                        + k3.filter { it == 1 }.size
+                        + l3.filter { it == 1 }.size
+                        + m3.filter { it == 1 }.size
+                        + n3.filter { it == 1 }.size
+                        + o3.filter { it == 1 }.size
+                        + a4.filter { it == 1 }.size
+                        + b4.filter { it == 1 }.size
+                        + c4.filter { it == 1 }.size
+                        + d4.filter { it == 1 }.size
+                        + e4.filter { it == 1 }.size
+                        + f4.filter { it == 1 }.size
+                        + g4.filter { it == 1 }.size
+                        + h4.filter { it == 1 }.size
+                        + i4.filter { it == 1 }.size
+                        + j4.filter { it == 1 }.size
+                        + k4.filter { it == 1 }.size
+                        + l4.filter { it == 1 }.size
+                        + m4.filter { it == 1 }.size
+                        + n4.filter { it == 1 }.size
+                        + o4.filter { it == 1 }.size) * 2
+            }
+        }
             println(maxScore)
             gameCount = 1
             timer = Timer()
