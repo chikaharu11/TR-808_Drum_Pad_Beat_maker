@@ -1350,56 +1350,44 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             2 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                aCount(3) +
+                                bCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                aCount(2) +
+                                bCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                aCount(1) +
+                                bCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8)
                     }
                 }
             }
@@ -13016,6 +13004,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         duplicate14 = 0
         duplicate15 = 0
         justification = just
+    }
+
+    private fun aCount(s: Int): Int {
+        return a1.take(s).filter { it == 1 }.size+ a2.take(s).filter { it == 1 }.size+ a3.take(s).filter { it == 1 }.size+ a4.take(s).filter { it == 1 }.size+ a5.take(s).filter { it == 1 }.size+ a6.take(s).filter { it == 1 }.size+ a7.take(s).filter { it == 1 }.size+ a8.take(s).filter { it == 1 }.size+ a9.take(s).filter { it == 1 }.size+ a10.take(s).filter { it == 1 }.size+ a11.take(s).filter { it == 1 }.size+ a12.take(s).filter { it == 1 }.size+ a13.take(s).filter { it == 1 }.size+ a14.take(s).filter { it == 1 }.size+ a15.take(s).filter { it == 1 }.size+ a16.take(s).filter { it == 1 }.size
+    }
+    private fun bCount(s: Int): Int {
+        return b1.take(s).filter { it == 1 }.size+ b2.take(s).filter { it == 1 }.size+ b3.take(s).filter { it == 1 }.size+ b4.take(s).filter { it == 1 }.size+ b5.take(s).filter { it == 1 }.size+ b6.take(s).filter { it == 1 }.size+ b7.take(s).filter { it == 1 }.size+ b8.take(s).filter { it == 1 }.size+ b9.take(s).filter { it == 1 }.size+ b10.take(s).filter { it == 1 }.size+ b11.take(s).filter { it == 1 }.size+ b12.take(s).filter { it == 1 }.size+ b13.take(s).filter { it == 1 }.size+ b14.take(s).filter { it == 1 }.size+ b15.take(s).filter { it == 1 }.size+ b16.take(s).filter { it == 1 }.size
+    }
+    private fun cCount(s: Int): Int {
+        return c1.take(s).filter { it == 1 }.size+ c2.take(s).filter { it == 1 }.size+ c3.take(s).filter { it == 1 }.size+ c4.take(s).filter { it == 1 }.size+ c5.take(s).filter { it == 1 }.size+ c6.take(s).filter { it == 1 }.size+ c7.take(s).filter { it == 1 }.size+ c8.take(s).filter { it == 1 }.size+ c9.take(s).filter { it == 1 }.size+ c10.take(s).filter { it == 1 }.size+ c11.take(s).filter { it == 1 }.size+ c12.take(s).filter { it == 1 }.size+ c13.take(s).filter { it == 1 }.size+ c14.take(s).filter { it == 1 }.size+ c15.take(s).filter { it == 1 }.size+ c16.take(s).filter { it == 1 }.size
+    }
+    private fun dCount(s: Int): Int {
+        return d1.take(s).filter { it == 1 }.size+ d2.take(s).filter { it == 1 }.size+ d3.take(s).filter { it == 1 }.size+ d4.take(s).filter { it == 1 }.size+ d5.take(s).filter { it == 1 }.size+ d6.take(s).filter { it == 1 }.size+ d7.take(s).filter { it == 1 }.size+ d8.take(s).filter { it == 1 }.size+ d9.take(s).filter { it == 1 }.size+ d10.take(s).filter { it == 1 }.size+ d11.take(s).filter { it == 1 }.size+ d12.take(s).filter { it == 1 }.size+ d13.take(s).filter { it == 1 }.size+ d14.take(s).filter { it == 1 }.size+ d15.take(s).filter { it == 1 }.size+ d16.take(s).filter { it == 1 }.size
+    }
+    private fun eCount(s: Int): Int {
+        return e1.take(s).filter { it == 1 }.size+ e2.take(s).filter { it == 1 }.size+ e3.take(s).filter { it == 1 }.size+ e4.take(s).filter { it == 1 }.size+ e5.take(s).filter { it == 1 }.size+ e6.take(s).filter { it == 1 }.size+ e7.take(s).filter { it == 1 }.size+ e8.take(s).filter { it == 1 }.size+ e9.take(s).filter { it == 1 }.size+ e10.take(s).filter { it == 1 }.size+ e11.take(s).filter { it == 1 }.size+ e12.take(s).filter { it == 1 }.size+ e13.take(s).filter { it == 1 }.size+ e14.take(s).filter { it == 1 }.size+ e15.take(s).filter { it == 1 }.size+ e16.take(s).filter { it == 1 }.size
+    }
+    private fun fCount(s: Int): Int {
+        return f1.take(s).filter { it == 1 }.size+ f2.take(s).filter { it == 1 }.size+ f3.take(s).filter { it == 1 }.size+ f4.take(s).filter { it == 1 }.size+ f5.take(s).filter { it == 1 }.size+ f6.take(s).filter { it == 1 }.size+ f7.take(s).filter { it == 1 }.size+ f8.take(s).filter { it == 1 }.size+ f9.take(s).filter { it == 1 }.size+ f10.take(s).filter { it == 1 }.size+ f11.take(s).filter { it == 1 }.size+ f12.take(s).filter { it == 1 }.size+ f13.take(s).filter { it == 1 }.size+ f14.take(s).filter { it == 1 }.size+ f15.take(s).filter { it == 1 }.size+ f16.take(s).filter { it == 1 }.size
+    }
+    private fun gCount(s: Int): Int {
+        return g1.take(s).filter { it == 1 }.size+ g2.take(s).filter { it == 1 }.size+ g3.take(s).filter { it == 1 }.size+ g4.take(s).filter { it == 1 }.size+ g5.take(s).filter { it == 1 }.size+ g6.take(s).filter { it == 1 }.size+ g7.take(s).filter { it == 1 }.size+ g8.take(s).filter { it == 1 }.size+ g9.take(s).filter { it == 1 }.size+ g10.take(s).filter { it == 1 }.size+ g11.take(s).filter { it == 1 }.size+ g12.take(s).filter { it == 1 }.size+ g13.take(s).filter { it == 1 }.size+ g14.take(s).filter { it == 1 }.size+ g15.take(s).filter { it == 1 }.size+ g16.take(s).filter { it == 1 }.size
+    }
+    private fun hCount(s: Int): Int {
+        return h1.take(s).filter { it == 1 }.size+ h2.take(s).filter { it == 1 }.size+ h3.take(s).filter { it == 1 }.size+ h4.take(s).filter { it == 1 }.size+ h5.take(s).filter { it == 1 }.size+ h6.take(s).filter { it == 1 }.size+ h7.take(s).filter { it == 1 }.size+ h8.take(s).filter { it == 1 }.size+ h9.take(s).filter { it == 1 }.size+ h10.take(s).filter { it == 1 }.size+ h11.take(s).filter { it == 1 }.size+ h12.take(s).filter { it == 1 }.size+ h13.take(s).filter { it == 1 }.size+ h14.take(s).filter { it == 1 }.size+ h15.take(s).filter { it == 1 }.size+ h16.take(s).filter { it == 1 }.size
+    }
+    private fun iCount(s: Int): Int {
+        return i1.take(s).filter { it == 1 }.size+ i2.take(s).filter { it == 1 }.size+ i3.take(s).filter { it == 1 }.size+ i4.take(s).filter { it == 1 }.size+ i5.take(s).filter { it == 1 }.size+ i6.take(s).filter { it == 1 }.size+ i7.take(s).filter { it == 1 }.size+ i8.take(s).filter { it == 1 }.size+ i9.take(s).filter { it == 1 }.size+ i10.take(s).filter { it == 1 }.size+ i11.take(s).filter { it == 1 }.size+ i12.take(s).filter { it == 1 }.size+ i13.take(s).filter { it == 1 }.size+ i14.take(s).filter { it == 1 }.size+ i15.take(s).filter { it == 1 }.size+ i16.take(s).filter { it == 1 }.size
+    }
+    private fun jCount(s: Int): Int {
+        return j1.take(s).filter { it == 1 }.size+ j2.take(s).filter { it == 1 }.size+ j3.take(s).filter { it == 1 }.size+ j4.take(s).filter { it == 1 }.size+ j5.take(s).filter { it == 1 }.size+ j6.take(s).filter { it == 1 }.size+ j7.take(s).filter { it == 1 }.size+ j8.take(s).filter { it == 1 }.size+ j9.take(s).filter { it == 1 }.size+ j10.take(s).filter { it == 1 }.size+ j11.take(s).filter { it == 1 }.size+ j12.take(s).filter { it == 1 }.size+ j13.take(s).filter { it == 1 }.size+ j14.take(s).filter { it == 1 }.size+ j15.take(s).filter { it == 1 }.size+ j16.take(s).filter { it == 1 }.size
+    }
+    private fun kCount(s: Int): Int {
+        return k1.take(s).filter { it == 1 }.size+ k2.take(s).filter { it == 1 }.size+ k3.take(s).filter { it == 1 }.size+ k4.take(s).filter { it == 1 }.size+ k5.take(s).filter { it == 1 }.size+ k6.take(s).filter { it == 1 }.size+ k7.take(s).filter { it == 1 }.size+ k8.take(s).filter { it == 1 }.size+ k9.take(s).filter { it == 1 }.size+ k10.take(s).filter { it == 1 }.size+ k11.take(s).filter { it == 1 }.size+ k12.take(s).filter { it == 1 }.size+ k13.take(s).filter { it == 1 }.size+ k14.take(s).filter { it == 1 }.size+ k15.take(s).filter { it == 1 }.size+ k16.take(s).filter { it == 1 }.size
+    }
+    private fun lCount(s: Int): Int {
+        return l1.take(s).filter { it == 1 }.size+ l2.take(s).filter { it == 1 }.size+ l3.take(s).filter { it == 1 }.size+ l4.take(s).filter { it == 1 }.size+ l5.take(s).filter { it == 1 }.size+ l6.take(s).filter { it == 1 }.size+ l7.take(s).filter { it == 1 }.size+ l8.take(s).filter { it == 1 }.size+ l9.take(s).filter { it == 1 }.size+ l10.take(s).filter { it == 1 }.size+ l11.take(s).filter { it == 1 }.size+ l12.take(s).filter { it == 1 }.size+ l13.take(s).filter { it == 1 }.size+ l14.take(s).filter { it == 1 }.size+ l15.take(s).filter { it == 1 }.size+ l16.take(s).filter { it == 1 }.size
+    }
+    private fun mCount(s: Int): Int {
+        return m1.take(s).filter { it == 1 }.size+ m2.take(s).filter { it == 1 }.size+ m3.take(s).filter { it == 1 }.size+ m4.take(s).filter { it == 1 }.size+ m5.take(s).filter { it == 1 }.size+ m6.take(s).filter { it == 1 }.size+ m7.take(s).filter { it == 1 }.size+ m8.take(s).filter { it == 1 }.size+ m9.take(s).filter { it == 1 }.size+ m10.take(s).filter { it == 1 }.size+ m11.take(s).filter { it == 1 }.size+ m12.take(s).filter { it == 1 }.size+ m13.take(s).filter { it == 1 }.size+ m14.take(s).filter { it == 1 }.size+ m15.take(s).filter { it == 1 }.size+ m16.take(s).filter { it == 1 }.size
+    }
+    private fun nCount(s: Int): Int {
+        return n1.take(s).filter { it == 1 }.size+ n2.take(s).filter { it == 1 }.size+ n3.take(s).filter { it == 1 }.size+ n4.take(s).filter { it == 1 }.size+ n5.take(s).filter { it == 1 }.size+ n6.take(s).filter { it == 1 }.size+ n7.take(s).filter { it == 1 }.size+ n8.take(s).filter { it == 1 }.size+ n9.take(s).filter { it == 1 }.size+ n10.take(s).filter { it == 1 }.size+ n11.take(s).filter { it == 1 }.size+ n12.take(s).filter { it == 1 }.size+ n13.take(s).filter { it == 1 }.size+ n14.take(s).filter { it == 1 }.size+ n15.take(s).filter { it == 1 }.size+ n16.take(s).filter { it == 1 }.size
+    }
+    private fun oCount(s: Int): Int {
+        return o1.take(s).filter { it == 1 }.size+ o2.take(s).filter { it == 1 }.size+ o3.take(s).filter { it == 1 }.size+ o4.take(s).filter { it == 1 }.size+ o5.take(s).filter { it == 1 }.size+ o6.take(s).filter { it == 1 }.size+ o7.take(s).filter { it == 1 }.size+ o8.take(s).filter { it == 1 }.size+ o9.take(s).filter { it == 1 }.size+ o10.take(s).filter { it == 1 }.size+ o11.take(s).filter { it == 1 }.size+ o12.take(s).filter { it == 1 }.size+ o13.take(s).filter { it == 1 }.size+ o14.take(s).filter { it == 1 }.size+ o15.take(s).filter { it == 1 }.size+ o16.take(s).filter { it == 1 }.size
     }
 
     private fun scoreCount(a1: MutableList<Int>,
