@@ -1389,733 +1389,1820 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         maxScore = aCount(8) +
                                 bCount(8)
                     }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8)
+                    }
                 }
             }
             3 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8)
                     }
                 }
             }
             4 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8)
                     }
                 }
             }
             5 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                aCount(1) +
+                                bCount(1) + 
+                                dCount(1) +
+                                eCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8)
                     }
                 }
             }
             6 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, zero, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, zero, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8)
                     }
                 }
             }
             7 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, zero, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, zero, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, zero, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8)
                     }
                 }
             }
             8 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, zero, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, zero, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, zero, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8)
                     }
                 }
             }
             9 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, zero, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, zero, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, zero, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8)
                     }
                 }
             }
             10 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4
+
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, zero, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, zero, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, zero, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, zero, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, zero, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, zero, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, zero, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, zero, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, zero, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, zero, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, zero, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, zero, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8)
                     }
                 }
             }
             11 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8 +
+                                kCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4 +
+                                kCount(2) * 4
+
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                kCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, zero, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2 +
+                                kCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, zero, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                kCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3) +
+                                kCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, zero, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                kCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, zero, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                kCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1) +
+                                kCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, zero, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, zero, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, zero, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, zero, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, zero, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, zero, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, zero, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, zero, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8)
                     }
                 }
             }
             12 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8 +
+                                kCount(1) * 8 +
+                                lCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4 +
+                                kCount(2) * 4 +
+                                lCount(2) * 4
+
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                kCount(3) * 2 +
+                                lCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, zero, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2 +
+                                kCount(4) * 2 +
+                                lCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, zero, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                kCount(5) +
+                                lCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3) +
+                                kCount(3) +
+                                lCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, zero, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                kCount(6) +
+                                lCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, zero, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                kCount(7) +
+                                lCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1) +
+                                kCount(1) +
+                                lCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, zero, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, zero, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, zero, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, zero, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, zero, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, zero, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, zero, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, l8, zero, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8)
                     }
                 }
             }
             13 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8 +
+                                kCount(1) * 8 +
+                                lCount(1) * 8 +
+                                mCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4 +
+                                kCount(2) * 4 +
+                                lCount(2) * 4 +
+                                mCount(2) * 4
+
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                kCount(3) * 2 +
+                                lCount(3) * 2 +
+                                mCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, zero, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2 +
+                                kCount(4) * 2 +
+                                lCount(4) * 2 +
+                                mCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, zero, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                kCount(5) +
+                                lCount(5) +
+                                mCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3) +
+                                kCount(3) +
+                                lCount(3) +
+                                mCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, zero, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                kCount(6) +
+                                lCount(6) +
+                                mCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, zero, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                kCount(7) +
+                                lCount(7) +
+                                mCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1) +
+                                kCount(1) +
+                                lCount(1) +
+                                mCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, zero, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, zero, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, zero, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, zero, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, zero, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, zero, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, zero, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, l8, m8, zero, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8)
                     }
                 }
             }
             14 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8 +
+                                kCount(1) * 8 +
+                                lCount(1) * 8 +
+                                mCount(1) * 8 +
+                                nCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 4 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4 +
+                                kCount(2) * 4 +
+                                lCount(2) * 4 +
+                                mCount(2) * 4 +
+                                nCount(2) * 4
+
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 3 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) * 3 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                kCount(3) * 2 +
+                                lCount(3) * 2 +
+                                mCount(3) * 2 +
+                                nCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2) +
+                                nCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, zero) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2 +
+                                kCount(4) * 2 +
+                                lCount(4) * 2 +
+                                mCount(4) * 2 +
+                                nCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) * 2 +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, zero)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                kCount(5) +
+                                lCount(5) +
+                                mCount(5) +
+                                nCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3) +
+                                kCount(3) +
+                                lCount(3) +
+                                mCount(3) +
+                                nCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, zero)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                kCount(6) +
+                                lCount(6) +
+                                mCount(6) +
+                                nCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2) +
+                                nCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, n7, zero)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                kCount(7) +
+                                lCount(7) +
+                                mCount(7) +
+                                nCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1) +
+                                kCount(1) +
+                                lCount(1) +
+                                mCount(1) +
+                                nCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, zero) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, zero) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, zero) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, zero) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, zero) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, zero) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, n7, zero) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, l8, m8, n8, zero)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8) +
+                                nCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8) +
+                                nCount(8)
                     }
                 }
             }
             15 -> {
                 when (sequencerMaxSize) {
                     0 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 8
+                        maxScore = aCount(1) * 8 +
+                                bCount(1) * 8 +
+                                cCount(1) * 8 +
+                                dCount(1) * 8 +
+                                eCount(1) * 8 +
+                                fCount(1) * 8 +
+                                gCount(1) * 8 +
+                                hCount(1) * 8 +
+                                iCount(1) * 8 +
+                                jCount(1) * 8 +
+                                kCount(1) * 8 +
+                                lCount(1) * 8 +
+                                mCount(1) * 8 +
+                                nCount(1) * 8 +
+                                oCount(1) * 8
                     }
                     1 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 4 +
-                                    scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) * 4
+                        maxScore = aCount(2) * 4 +
+                                bCount(2) * 4 +
+                                cCount(2) * 4 +
+                                dCount(2) * 4 +
+                                eCount(2) * 4 +
+                                fCount(2) * 4 +
+                                gCount(2) * 4 +
+                                hCount(2) * 4 +
+                                iCount(2) * 4 +
+                                jCount(2) * 4 +
+                                kCount(2) * 4 +
+                                lCount(2) * 4 +
+                                mCount(2) * 4 +
+                                nCount(2) * 4 +
+                                oCount(2) * 4
+                                
                     }
                     2 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 3 +
-                                    scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) * 3 +
-                                    scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) * 2
+                        maxScore = aCount(3) * 2 +
+                                bCount(3) * 2 +
+                                cCount(3) * 2 +
+                                dCount(3) * 2 +
+                                eCount(3) * 2 +
+                                fCount(3) * 2 +
+                                gCount(3) * 2 +
+                                hCount(3) * 2 +
+                                iCount(3) * 2 +
+                                jCount(3) * 2 +
+                                kCount(3) * 2 +
+                                lCount(3) * 2 +
+                                mCount(3) * 2 +
+                                nCount(3) * 2 +
+                                oCount(3) * 2 +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2) +
+                                nCount(2) +
+                                oCount(2)
                     }
                     3 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 2 +
-                                    scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) * 2 +
-                                    scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) * 2 +
-                                    scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, o4) * 2
+                        maxScore = aCount(4) * 2 +
+                                bCount(4) * 2 +
+                                cCount(4) * 2 +
+                                dCount(4) * 2 +
+                                eCount(4) * 2 +
+                                fCount(4) * 2 +
+                                gCount(4) * 2 +
+                                hCount(4) * 2 +
+                                iCount(4) * 2 +
+                                jCount(4) * 2 +
+                                kCount(4) * 2 +
+                                lCount(4) * 2 +
+                                mCount(4) * 2 +
+                                nCount(4) * 2 +
+                                oCount(4) * 2
                     }
                     4 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 2 +
-                                    scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) * 2 +
-                                    scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) * 2 +
-                                    scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, o4) +
-                                    scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, o5)
+                        maxScore = aCount(5) +
+                                bCount(5) +
+                                cCount(5) +
+                                dCount(5) +
+                                eCount(5) +
+                                fCount(5) +
+                                gCount(5) +
+                                hCount(5) +
+                                iCount(5) +
+                                jCount(5) +
+                                kCount(5) +
+                                lCount(5) +
+                                mCount(5) +
+                                nCount(5) +
+                                oCount(5) +
+                                aCount(3) +
+                                bCount(3) +
+                                cCount(3) +
+                                dCount(3) +
+                                eCount(3) +
+                                fCount(3) +
+                                gCount(3) +
+                                hCount(3) +
+                                iCount(3) +
+                                jCount(3) +
+                                kCount(3) +
+                                lCount(3) +
+                                mCount(3) +
+                                nCount(3) +
+                                oCount(3)
                     }
                     5 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) * 2 +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, o4) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, o5) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, o6)
+                        maxScore = aCount(6) +
+                                bCount(6) +
+                                cCount(6) +
+                                dCount(6) +
+                                eCount(6) +
+                                fCount(6) +
+                                gCount(6) +
+                                hCount(6) +
+                                iCount(6) +
+                                jCount(6) +
+                                kCount(6) +
+                                lCount(6) +
+                                mCount(6) +
+                                nCount(6) +
+                                oCount(6) +
+                                aCount(2) +
+                                bCount(2) +
+                                cCount(2) +
+                                dCount(2) +
+                                eCount(2) +
+                                fCount(2) +
+                                gCount(2) +
+                                hCount(2) +
+                                iCount(2) +
+                                jCount(2) +
+                                kCount(2) +
+                                lCount(2) +
+                                mCount(2) +
+                                nCount(2) +
+                                oCount(2)
                     }
                     6 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) * 2 +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, o4) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, o5) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, o6) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, n7, o7)
+                        maxScore = aCount(7) +
+                                bCount(7) +
+                                cCount(7) +
+                                dCount(7) +
+                                eCount(7) +
+                                fCount(7) +
+                                gCount(7) +
+                                hCount(7) +
+                                iCount(7) +
+                                jCount(7) +
+                                kCount(7) +
+                                lCount(7) +
+                                mCount(7) +
+                                nCount(7) +
+                                oCount(7) +
+                                aCount(1) +
+                                bCount(1) +
+                                cCount(1) +
+                                dCount(1) +
+                                eCount(1) +
+                                fCount(1) +
+                                gCount(1) +
+                                hCount(1) +
+                                iCount(1) +
+                                jCount(1) +
+                                kCount(1) +
+                                lCount(1) +
+                                mCount(1) +
+                                nCount(1) +
+                                oCount(1)
                     }
                     7 -> {
-                        maxScore = scoreCount(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1) +
-                                scoreCount(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2) +
-                                scoreCount(a3, b3, c3, d3, e3, f3, g3, h3, i3, j3, k3, l3, m3, n3, o3) +
-                                scoreCount(a4, b4, c4, d4, e4, f4, g4, h4, i4, j4, k4, l4, m4, n4, o4) +
-                                scoreCount(a5, b5, c5, d5, e5, f5, g5, h5, i5, j5, k5, l5, m5, n5, o5) +
-                                scoreCount(a6, b6, c6, d6, e6, f6, g6, h6, i6, j6, k6, l6, m6, n6, o6) +
-                                scoreCount(a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, n7, o7) +
-                                scoreCount(a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, l8, m8, n8, o8)
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8) +
+                                nCount(8) +
+                                oCount(8)
+                    }
+                    else -> {
+                        maxScore = aCount(8) +
+                                bCount(8) +
+                                cCount(8) +
+                                dCount(8) +
+                                eCount(8) +
+                                fCount(8) +
+                                gCount(8) +
+                                hCount(8) +
+                                iCount(8) +
+                                jCount(8) +
+                                kCount(8) +
+                                lCount(8) +
+                                mCount(8) +
+                                nCount(8) +
+                                oCount(8)
                     }
                 }
             }
@@ -12493,6 +13580,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.notes.visibility = View.VISIBLE
     }
 
+    @SuppressLint("CutPasteId", "SetTextI18n")
     private fun pasteText() {
         findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.volume).text = soundPoolVolume.toString().replace("f", "")
         findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.volume).text = soundPoolVolume4.toString().replace("f", "")
@@ -12541,6 +13629,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.include_view15).findViewById<TextView>(R.id.padText).text = soundPoolVolume15.toString().replace("f", "") + "            " + soundPoolTempo15.toString().replace("f", "") + "\n" + padText15.replace("tr_8", "TR-8").replace("tr_909", "TR-909").replace("_"," ").uppercase()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun textChange(view: Int, vol: Float, tem: Float, seq: Int, pad: String, voltem: Int, voltem2: Float) {
             findViewById<View>(view).findViewById<TextView>(R.id.padText).text = ""
             findViewById<View>(view).findViewById<TextView>(R.id.padText).text =
@@ -13050,24 +14139,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
     private fun oCount(s: Int): Int {
         return o1.take(s).filter { it == 1 }.size+ o2.take(s).filter { it == 1 }.size+ o3.take(s).filter { it == 1 }.size+ o4.take(s).filter { it == 1 }.size+ o5.take(s).filter { it == 1 }.size+ o6.take(s).filter { it == 1 }.size+ o7.take(s).filter { it == 1 }.size+ o8.take(s).filter { it == 1 }.size+ o9.take(s).filter { it == 1 }.size+ o10.take(s).filter { it == 1 }.size+ o11.take(s).filter { it == 1 }.size+ o12.take(s).filter { it == 1 }.size+ o13.take(s).filter { it == 1 }.size+ o14.take(s).filter { it == 1 }.size+ o15.take(s).filter { it == 1 }.size+ o16.take(s).filter { it == 1 }.size
-    }
-
-    private fun scoreCount(a1: MutableList<Int>,
-                           b1: MutableList<Int>,
-                           c1: MutableList<Int>,
-                           d1: MutableList<Int>,
-                           e1: MutableList<Int>,
-                           f1: MutableList<Int>,
-                           g1: MutableList<Int>,
-                           h1: MutableList<Int>,
-                           i1: MutableList<Int>,
-                           j1: MutableList<Int>,
-                           k1: MutableList<Int>,
-                           l1: MutableList<Int>,
-                           m1: MutableList<Int>,
-                           n1: MutableList<Int>,
-                           o1: MutableList<Int>): Int {
-        return a1.filter { it == 1 }.size + b1.filter { it == 1 }.size + c1.filter { it == 1 }.size + d1.filter { it == 1 }.size + e1.filter { it == 1 }.size + f1.filter { it == 1 }.size + g1.filter { it == 1 }.size + h1.filter { it == 1 }.size + i1.filter { it == 1 }.size + j1.filter { it == 1 }.size + k1.filter { it == 1 }.size + l1.filter { it == 1 }.size + m1.filter { it == 1 }.size + n1.filter { it == 1 }.size + o1.filter { it == 1 }.size
     }
 
     private fun x53() {
