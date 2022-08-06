@@ -742,10 +742,61 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }, 800)
     }
-    
+
+    private fun patternExport(a1s: String,
+                              a2s: String,
+                              a3s: String,
+                              a4s: String,
+                              a5s: String,
+                              a6s: String,
+                              a7s: String,
+                              a8s: String,
+                              a9s: String,
+                              a10s: String,
+                              a11s: String,
+                              a12s: String,
+                              a13s: String,
+                              a14s: String,
+                              a15s: String,
+                              a16s: String,
+                              a1:MutableList<Int>,
+                              a2:MutableList<Int>,
+                              a3:MutableList<Int>,
+                              a4:MutableList<Int>,
+                              a5:MutableList<Int>,
+                              a6:MutableList<Int>,
+                              a7:MutableList<Int>,
+                              a8:MutableList<Int>,
+                              a9:MutableList<Int>,
+                              a10:MutableList<Int>,
+                              a11:MutableList<Int>,
+                              a12:MutableList<Int>,
+                              a13:MutableList<Int>,
+                              a14:MutableList<Int>,
+                              a15:MutableList<Int>,
+                              a16:MutableList<Int>) {
+        println("$a1s = mutableListOf" + a1.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a2s = mutableListOf" + a2.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a3s = mutableListOf" + a3.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a4s = mutableListOf" + a4.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a5s = mutableListOf" + a5.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a6s = mutableListOf" + a6.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a7s = mutableListOf" + a7.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a8s = mutableListOf" + a8.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a9s = mutableListOf" + a9.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a10s = mutableListOf" + a10.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a11s = mutableListOf" + a11.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a12s = mutableListOf" + a12.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a13s = mutableListOf" + a13.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a14s = mutableListOf" + a14.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a15s = mutableListOf" + a15.joinToString(separator = ",", prefix = "(", postfix = ")"))
+        println("$a16s = mutableListOf" + a16.joinToString(separator = ",", prefix = "(", postfix = ")"))
+    }
 
     @SuppressLint("SetTextI18n")
     private fun sequencerPlay() {
+        patternExport("a1","a2","a3","a4","a5","a6","a7","a8","a9","a10","a11","a12","a13","a14","a15","a16",a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16)
+        a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
             runBlocking {
