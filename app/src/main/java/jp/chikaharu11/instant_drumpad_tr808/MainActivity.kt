@@ -80,22 +80,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var noteDuration = 1000.toLong()
     private var noteDurationConst = 1000.toLong()
 
-    private var actionTitle = "BEAT 3 BPM110"
-    private var padText1 = "clsd_hi_hat_01"
-    private var padText2 = "open_hi_hat_01"
-    private var padText3 = "tr_8_cymbal_01"
-    private var padText4 = "snare_drum_05"
-    private var padText5 = "low_tom_01"
-    private var padText6 = "snare_drum_01"
-    private var padText7 = "tr_909_bass_drum_02"
-    private var padText8 = "mid_tom_01"
-    private var padText9 = "bass_drum_short_01"
-    private var padText10 = "claves_02"
-    private var padText11 = "high_tom_01"
-    private var padText12 = "high_conga_01"
-    private var padText13 = "tr_909_cymbal_01"
-    private var padText14 = "tr_909_cymbal_02"
-    private var padText15 = "clap_01"
+    private var actionTitle = "DEMO PLAY"
+    private var padText1 = "claves_10"
+    private var padText2 = "tr_909_snare_drum_03"
+    private var padText3 = "tr_8_snare_drum_03"
+    private var padText4 = "high_tom_10"
+    private var padText5 = "mid_tom_01"
+    private var padText6 = "snare_drum_20"
+    private var padText7 = "bass_drum_long_07"
+    private var padText8 = "high_tom_03"
+    private var padText9 = "clsd_hi_hat_09"
+    private var padText10 = "cowbell_01b"
+    private var padText11 = "low_conga_01"
+    private var padText12 = "claves_05"
+    private var padText13 = "bass_drum_short_09"
+    private var padText14 = "bass_drum_long_13"
+    private var padText15 = "clap_05"
 
     private var stage1 = "BEAT 1 BPM120"
     private var stage2 = "BEAT 2 BPM120"
@@ -691,10 +691,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var pitchArray = mutableListOf(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
     private var volumeArray = mutableListOf(1,2,3,4,5,6,7,8,9,10)
-    private var sequenceArray = mutableListOf(1,0,0,0)
-    private var sequenceArray5 = mutableListOf(1,0,0,0,0)
-    private var sequenceArray10 = mutableListOf(1,0,0,0,0,0)
-    private var sequenceArray15 = mutableListOf(1,0,0,0,0,0,0)
+    private var sequenceArray = mutableListOf(1,0,0,0,0,0,0)
+    private var sequenceArray5 = mutableListOf(1,0,0,0,0,0,0,0)
+    private var sequenceArray10 = mutableListOf(1,0,0,0,0,0,0,0,0)
+    private var sequenceArray15 = mutableListOf(1,0,0,0,0,0,0,0,0,0)
 
     var timer: Timer? = null
 
@@ -796,7 +796,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     @SuppressLint("SetTextI18n")
     private fun sequencerPlay() {
         patternExport("a1","a2","a3","a4","a5","a6","a7","a8","a9","a10","a11","a12","a13","a14","a15","a16",a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16)
-        a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        patternExport("b1","b2","b3","b4","b5","b6","b7","b8","b9","b10","b11","b12","b13","b14","b15","b16",b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16)
+        patternExport("c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16",c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16)
+        patternExport("d1","d2","d3","d4","d5","d6","d7","d8","d9","d10","d11","d12","d13","d14","d15","d16",d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16)
+        patternExport("e1","e2","e3","e4","e5","e6","e7","e8","e9","e10","e11","e12","e13","e14","e15","e16",e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16)
+        patternExport("f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11","f12","f13","f14","f15","f16",f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16)
+        patternExport("g1","g2","g3","g4","g5","g6","g7","g8","g9","g10","g11","g12","g13","g14","g15","g16",g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16)
+        patternExport("h1","h2","h3","h4","h5","h6","h7","h8","h9","h10","h11","h12","h13","h14","h15","h16",h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13,h14,h15,h16)
+        patternExport("i1","i2","i3","i4","i5","i6","i7","i8","i9","i10","i11","i12","i13","i14","i15","i16",i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16)
+        patternExport("j1","j2","j3","j4","j5","j6","j7","j8","j9","j10","j11","j12","j13","j14","j15","j16",j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12,j13,j14,j15,j16)
+        patternExport("k1","k2","k3","k4","k5","k6","k7","k8","k9","k10","k11","k12","k13","k14","k15","k16",k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16)
+        patternExport("l1","l2","l3","l4","l5","l6","l7","l8","l9","l10","l11","l12","l13","l14","l15","l16",l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16)
+        patternExport("m1","m2","m3","m4","m5","m6","m7","m8","m9","m10","m11","m12","m13","m14","m15","m16",m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16)
+        patternExport("n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16",n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16)
+        patternExport("o1","o2","o3","o4","o5","o6","o7","o8","o9","o10","o11","o12","o13","o14","o15","o16",o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16)
+        println("padText1 = $padText1")
+        println("padText2 = $padText2")
+        println("padText3 = $padText3")
+        println("padText4 = $padText4")
+        println("padText5 = $padText5")
+        println("padText6 = $padText6")
+        println("padText7 = $padText7")
+        println("padText8 = $padText8")
+        println("padText9 = $padText9")
+        println("padText10 = $padText10")
+        println("padText11 = $padText11")
+        println("padText12 = $padText12")
+        println("padText13 = $padText13")
+        println("padText14 = $padText14")
+        println("padText15 = $padText15")
+        println("actionTitle = $actionTitle")
         findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).isEnabled = false
         sequencerSize = 0
             runBlocking {
@@ -4610,6 +4639,276 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+    }
+
+    private fun demoPlay() {
+        sequencerStop()
+        resetSequence()
+        padSequence = 1
+        sequencerMaxSize = 1
+        sequencerSize = 0
+        sequencerBpm = 100
+        trackCount = 15
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
+        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+        a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a7 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a10 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        a16 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b10 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b12 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        b16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c1 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c6 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        c16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d1 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d2 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d3 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d5 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d7 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        d16 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e14 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        e16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f6 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f12 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        f16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g4 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g7 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g9 = mutableListOf(1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        g16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h15 = mutableListOf(1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        h16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i5 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i11 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        i16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j1 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j4 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j10 = mutableListOf(1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        j16 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k7 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        k16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l4 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l7 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        l16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m2 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m3 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m5 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        m16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n6 = mutableListOf(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n12 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n13 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n15 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        n16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o4 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o5 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o6 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o7 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o8 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o9 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o10 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o11 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o12 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o13 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o14 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o15 = mutableListOf(0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        o16 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        padText1 = "claves_10"
+        padText2 = "tr_909_snare_drum_03"
+        padText3 = "tr_8_snare_drum_03"
+        padText4 = "high_tom_10"
+        padText5 = "mid_tom_01"
+        padText6 = "snare_drum_20"
+        padText7 = "bass_drum_long_07"
+        padText8 = "high_tom_03"
+        padText9 = "clsd_hi_hat_09"
+        padText10 = "cowbell_01b"
+        padText11 = "low_conga_01"
+        padText12 = "claves_05"
+        padText13 = "bass_drum_short_09"
+        padText14 = "bass_drum_long_13"
+        padText15 = "clap_05"
+        actionTitle = "DEMO PLAY"
     }
 
     @SuppressLint("SetTextI18n", "CutPasteId")
@@ -9310,7 +9609,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sound17 = soundPool.load(assets.openFd("soundless.ogg"), 1)
         sound18 = soundPool.load(assets.openFd("rimshot_04.ogg"), 1)
 
-        beat5Sequence()
+        demoPlay()
         padSequence = 0
 
         findViewById<View>(R.id.sequencer_list).findViewById<ImageView>(R.id.sequence).setOnTouchListener { _, _ ->
