@@ -4626,33 +4626,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sound15 = soundPool.load(assets.openFd("$padText15.ogg"), 1)
     }
 
-    @SuppressLint("SetTextI18n", "CutPasteId")
-    private fun createNew() {
-        sequencerStop()
-        resetSequence()
-        padSequence = 1
-        sequencerMaxSize = 0
-        sequencerSize = 0
-        sequencerBpm = 120
-        trackCount = 10
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("120", TextView.BufferType.NORMAL)
+    @SuppressLint("CutPasteId", "SetTextI18n")
+    private fun sequencerSetting(padsequence: Int, sequencermaxsize: Int, sequencersize: Int, sequencerbpm:Long, trackcount: Int, bpmstring: String) {
+        padSequence = padsequence
+        sequencerMaxSize = sequencermaxsize
+        sequencerSize = sequencersize
+        sequencerBpm = sequencerbpm
+        trackCount = trackcount
+        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText(bpmstring, TextView.BufferType.NORMAL)
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
         findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
     }
 
+    @SuppressLint("SetTextI18n", "CutPasteId")
+    private fun createNew() {
+        sequencerStop()
+        resetSequence()
+        sequencerSetting(1,0,0,120,10,"120")
+    }
+
+    @SuppressLint("CutPasteId", "SetTextI18n")
     private fun demoPlay() {
         sequencerStop()
         resetSequence()
-        padSequence = 1
-        sequencerMaxSize = 1
-        sequencerSize = 0
-        sequencerBpm = 100
-        trackCount = 15
-        findViewById<View>(R.id.bpm).findViewById<EditText>(R.id.bpmCount).setText("100", TextView.BufferType.NORMAL)
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure).text = (sequencerSize + 1).toString()
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.measure_max).text = (sequencerMaxSize + 1).toString()
-        findViewById<View>(R.id.line_measure).findViewById<TextView>(R.id.track_count).text = trackCount.toString()
+        sequencerSetting(1,1,0,100,15,"100")
         a1 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         a2 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
         a3 = mutableListOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
