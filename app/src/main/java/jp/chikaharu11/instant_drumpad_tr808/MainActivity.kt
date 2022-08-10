@@ -12886,6 +12886,556 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             false
         }
 
+        findViewById<View>(R.id.tuning_sequencer6).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF2 > 1) {
+                        spvF2 -= 1
+                        soundPoolVolume2 = spvF2/10.0f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.volume, soundPoolVolume2)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer6).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF2 < 10) {
+                        spvF2 += 1
+                        soundPoolVolume2 = spvF2/10.0f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.volume, soundPoolVolume2)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer6).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF2 > 2) {
+                        sptF2 -= 1
+                        soundPoolTempo2 = sptF2/10.0f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.tempo, soundPoolTempo2)
+                    } else if (soundPoolTempo2 == 0.2f) {
+                        soundPoolTempo2 = 0.125f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.tempo, soundPoolTempo2)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer6).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo2 == 0.125f) {
+                        soundPoolTempo2 = 0.2f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.tempo, soundPoolTempo2)
+                    } else if (sptF < 80) {
+                        sptF2 += 1
+                        soundPoolTempo2 = sptF2/10.0f
+                        textChange(R.id.include_view2, soundPoolVolume2, soundPoolTempo2, R.id.tuning_sequencer6, padText2, R.id.tempo, soundPoolTempo2)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer7).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF5 > 1) {
+                        spvF5 -= 1
+                        soundPoolVolume5 = spvF5/10.0f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.volume, soundPoolVolume5)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer7).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF5 < 10) {
+                        spvF5 += 1
+                        soundPoolVolume5 = spvF5/10.0f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.volume, soundPoolVolume5)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer7).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF5 > 2) {
+                        sptF5 -= 1
+                        soundPoolTempo5 = sptF5/10.0f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.tempo, soundPoolTempo5)
+                    } else if (soundPoolTempo5 == 0.2f) {
+                        soundPoolTempo5 = 0.125f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.tempo, soundPoolTempo5)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer7).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo5 == 0.125f) {
+                        soundPoolTempo5 = 0.2f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.tempo, soundPoolTempo5)
+                    } else if (sptF5 < 80) {
+                        sptF5 += 1
+                        soundPoolTempo5 = sptF5/10.0f
+                        textChange(R.id.include_view5, soundPoolVolume5, soundPoolTempo5, R.id.tuning_sequencer7, padText5, R.id.tempo, soundPoolTempo5)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer8).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF8 > 1) {
+                        spvF8 -= 1
+                        soundPoolVolume8 = spvF8/10.0f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.volume, soundPoolVolume8)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer8).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF8 < 10) {
+                        spvF8 += 1
+                        soundPoolVolume8 = spvF8/10.0f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.volume, soundPoolVolume8)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer8).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF8 > 2) {
+                        sptF8 -= 1
+                        soundPoolTempo8 = sptF8/10.0f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.tempo, soundPoolTempo8)
+                    } else if (soundPoolTempo8 == 0.2f) {
+                        soundPoolTempo8 = 0.125f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.tempo, soundPoolTempo8)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer8).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo8 == 0.125f) {
+                        soundPoolTempo8 = 0.2f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.tempo, soundPoolTempo8)
+                    } else if (sptF8 < 80) {
+                        sptF8 += 1
+                        soundPoolTempo8 = sptF8/10.0f
+                        textChange(R.id.include_view8, soundPoolVolume8, soundPoolTempo8, R.id.tuning_sequencer8, padText8, R.id.tempo, soundPoolTempo8)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer9).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF11 > 1) {
+                        spvF11 -= 1
+                        soundPoolVolume11 = spvF11/10.0f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.volume, soundPoolVolume11)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer9).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF11 < 10) {
+                        spvF11 += 1
+                        soundPoolVolume11 = spvF11/10.0f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.volume, soundPoolVolume11)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer9).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF11 > 2) {
+                        sptF11 -= 1
+                        soundPoolTempo11 = sptF11/10.0f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.tempo, soundPoolTempo11)
+                    } else if (soundPoolTempo11 == 0.2f) {
+                        soundPoolTempo11 = 0.125f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.tempo, soundPoolTempo11)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer9).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo11 == 0.125f) {
+                        soundPoolTempo11 = 0.2f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.tempo, soundPoolTempo11)
+                    } else if (sptF11 < 80) {
+                        sptF11 += 1
+                        soundPoolTempo11 = sptF11/10.0f
+                        textChange(R.id.include_view11, soundPoolVolume11, soundPoolTempo11, R.id.tuning_sequencer9, padText11, R.id.tempo, soundPoolTempo11)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer10).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF14 > 1) {
+                        spvF14 -= 1
+                        soundPoolVolume14 = spvF14/10.0f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.volume, soundPoolVolume14)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer10).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF14 < 10) {
+                        spvF14 += 1
+                        soundPoolVolume14 = spvF14/10.0f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.volume, soundPoolVolume14)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer10).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF14 > 2) {
+                        sptF14 -= 1
+                        soundPoolTempo14 = sptF14/10.0f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.tempo, soundPoolTempo14)
+                    } else if (soundPoolTempo14 == 0.2f) {
+                        soundPoolTempo14 = 0.125f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.tempo, soundPoolTempo14)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer10).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo14 == 0.125f) {
+                        soundPoolTempo14 = 0.2f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.tempo, soundPoolTempo14)
+                    } else if (sptF14 < 80) {
+                        sptF14 += 1
+                        soundPoolTempo14 = sptF14/10.0f
+                        textChange(R.id.include_view14, soundPoolVolume14, soundPoolTempo14, R.id.tuning_sequencer10, padText14, R.id.tempo, soundPoolTempo14)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer11).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF3 > 1) {
+                        spvF3 -= 1
+                        soundPoolVolume3 = spvF3/10.0f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.volume, soundPoolVolume3)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer11).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF3 < 10) {
+                        spvF3 += 1
+                        soundPoolVolume3 = spvF3/10.0f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.volume, soundPoolVolume3)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer11).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF3 > 2) {
+                        sptF3 -= 1
+                        soundPoolTempo3 = sptF3/10.0f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.tempo, soundPoolTempo3)
+                    } else if (soundPoolTempo3 == 0.2f) {
+                        soundPoolTempo3 = 0.125f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.tempo, soundPoolTempo3)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer11).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo3 == 0.125f) {
+                        soundPoolTempo3 = 0.2f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.tempo, soundPoolTempo3)
+                    } else if (sptF3 < 80) {
+                        sptF3 += 1
+                        soundPoolTempo3 = sptF3/10.0f
+                        textChange(R.id.include_view3, soundPoolVolume3, soundPoolTempo3, R.id.tuning_sequencer11, padText3, R.id.tempo, soundPoolTempo3)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer12).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF6 > 1) {
+                        spvF6 -= 1
+                        soundPoolVolume6 = spvF6/10.0f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.volume, soundPoolVolume6)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer12).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF6 < 10) {
+                        spvF6 += 1
+                        soundPoolVolume6 = spvF6/10.0f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.volume, soundPoolVolume6)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer12).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF6 > 2) {
+                        sptF6 -= 1
+                        soundPoolTempo6 = sptF6/10.0f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.tempo, soundPoolTempo6)
+                    } else if (soundPoolTempo6 == 0.2f) {
+                        soundPoolTempo6 = 0.125f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.tempo, soundPoolTempo6)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer12).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo6 == 0.125f) {
+                        soundPoolTempo6 = 0.2f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.tempo, soundPoolTempo6)
+                    } else if (sptF6 < 80) {
+                        sptF6 += 1
+                        soundPoolTempo6 = sptF6/10.0f
+                        textChange(R.id.include_view6, soundPoolVolume6, soundPoolTempo6, R.id.tuning_sequencer12, padText6, R.id.tempo, soundPoolTempo6)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer13).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF9 > 1) {
+                        spvF9 -= 1
+                        soundPoolVolume9 = spvF9/10.0f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.volume, soundPoolVolume9)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer13).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF9 < 10) {
+                        spvF9 += 1
+                        soundPoolVolume9 = spvF9/10.0f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.volume, soundPoolVolume9)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer13).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF9 > 2) {
+                        sptF9 -= 1
+                        soundPoolTempo9 = sptF9/10.0f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.tempo, soundPoolTempo9)
+                    } else if (soundPoolTempo9 == 0.2f) {
+                        soundPoolTempo9 = 0.125f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.tempo, soundPoolTempo9)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer13).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo9 == 0.125f) {
+                        soundPoolTempo9 = 0.2f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.tempo, soundPoolTempo9)
+                    } else if (sptF9 < 80) {
+                        sptF9 += 1
+                        soundPoolTempo9 = sptF9/10.0f
+                        textChange(R.id.include_view9, soundPoolVolume9, soundPoolTempo9, R.id.tuning_sequencer13, padText9, R.id.tempo, soundPoolTempo9)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer14).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF12 > 1) {
+                        spvF12 -= 1
+                        soundPoolVolume12 = spvF12/10.0f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.volume, soundPoolVolume12)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer14).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF12 < 10) {
+                        spvF12 += 1
+                        soundPoolVolume12 = spvF12/10.0f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.volume, soundPoolVolume12)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer14).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF12 > 2) {
+                        sptF12 -= 1
+                        soundPoolTempo12 = sptF12/10.0f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.tempo, soundPoolTempo12)
+                    } else if (soundPoolTempo12 == 0.2f) {
+                        soundPoolTempo12 = 0.125f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.tempo, soundPoolTempo12)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer14).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo12 == 0.125f) {
+                        soundPoolTempo12 = 0.2f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.tempo, soundPoolTempo12)
+                    } else if (sptF12 < 80) {
+                        sptF12 += 1
+                        soundPoolTempo12 = sptF12/10.0f
+                        textChange(R.id.include_view12, soundPoolVolume12, soundPoolTempo12, R.id.tuning_sequencer14, padText12, R.id.tempo, soundPoolTempo12)
+                    }
+                }
+            }
+            false
+        }
+
+        findViewById<View>(R.id.tuning_sequencer15).findViewById<ImageView>(R.id.volume_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF15 > 1) {
+                        spvF15 -= 1
+                        soundPoolVolume15 = spvF15/10.0f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.volume, soundPoolVolume15)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer15).findViewById<ImageView>(R.id.volume_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (spvF15 < 10) {
+                        spvF15 += 1
+                        soundPoolVolume15 = spvF15/10.0f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.volume, soundPoolVolume15)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer15).findViewById<ImageView>(R.id.tempo_minus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (sptF15 > 2) {
+                        sptF15 -= 1
+                        soundPoolTempo15 = sptF15/10.0f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.tempo, soundPoolTempo15)
+                    } else if (soundPoolTempo15 == 0.2f) {
+                        soundPoolTempo15 = 0.125f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.tempo, soundPoolTempo15)
+                    }
+                }
+            }
+            false
+        }
+        findViewById<View>(R.id.tuning_sequencer15).findViewById<ImageView>(R.id.tempo_plus).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (soundPoolTempo15 == 0.125f) {
+                        soundPoolTempo15 = 0.2f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.tempo, soundPoolTempo15)
+                    } else if (sptF15 < 80) {
+                        sptF15 += 1
+                        soundPoolTempo15 = sptF15/10.0f
+                        textChange(R.id.include_view15, soundPoolVolume15, soundPoolTempo15, R.id.tuning_sequencer15, padText15, R.id.tempo, soundPoolTempo15)
+                    }
+                }
+            }
+            false
+        }
+
         findViewById<View>(R.id.accent_reset).findViewById<TextView>(R.id.accent).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
