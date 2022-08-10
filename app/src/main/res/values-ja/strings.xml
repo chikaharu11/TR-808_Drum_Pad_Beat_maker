@@ -61,8 +61,8 @@
     <string name="editbpm">110</string>
     <string name="elsebpm">30~240で指定して下さい</string>
     <string name="a">ACCENT</string>
-    <string name="r">RESET</string>
-    <string name="pitchRandom">RANDOM\nPITCH</string>
+    <string name="r">RESET\nTUNING</string>
+    <string name="pitchRandom">RANDOM\nTUNING</string>
     <string name="soundRandom">RANDOM\nSOUND</string>
     <string name="sequenceRandom">RANDOM\nSEQUENCE</string>
     <string name="line">5</string>

@@ -12453,6 +12453,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
                     buttonA = 1
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12464,6 +12465,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer2).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
                     buttonA = 4
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12475,6 +12477,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer3).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
                     buttonA = 7
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12486,6 +12489,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer4).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
                     buttonA = 10
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12497,6 +12501,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer5).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
                     buttonA = 13
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12508,6 +12513,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer6).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
                     buttonA = 2
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12519,6 +12525,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer7).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
                     buttonA = 5
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12530,6 +12537,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer8).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
                     buttonA = 8
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12541,6 +12549,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer9).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
                     buttonA = 11
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12552,6 +12561,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer10).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
                     buttonA = 14
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12563,6 +12573,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer11).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
                     buttonA = 3
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12574,6 +12585,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer12).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
                     buttonA = 6
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12585,6 +12597,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer13).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
                     buttonA = 9
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12596,6 +12609,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer14).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
                     buttonA = 12
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
@@ -12607,6 +12621,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<View>(R.id.tuning_sequencer15).findViewById<TextView>(R.id.change_sound).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
                     buttonA = 15
                     meSpinner.avoidDropdownFocus()
                     meSpinner.performClick()
